@@ -3,7 +3,7 @@ PopupMenuButton < UIButton
   size: 0 21
   text-offset: 4 0
   text-align: left
-  font: verdana-11px-rounded
+  font: $var-cip-font
 
   color: #ebbf90
   background-color: alpha
@@ -16,7 +16,7 @@ PopupMenuButton < UIButton
     color: #6b4d40
 
 PopupMenuShortcutLabel < Label
-  font: verdana-11px-rounded
+  font: $var-cip-font
   text-align: right
   anchors.fill: parent
   margin-right: 2
@@ -38,7 +38,7 @@ PopupMenu < UIPopupMenu
   image-source: /images/ui/menubox
   image-border: 3
   padding: 3
-  font: verdana-11px-rounded
+  font: $var-cip-font
   color: #ebbf90
 
 PopupScrollMenuButton < UIButton
@@ -46,7 +46,7 @@ PopupScrollMenuButton < UIButton
   size: 0 21
   text-offset: 4 0
   text-align: left
-  font: verdana-11px-rounded
+  font: $var-cip-font
 
   color: #a87f68
   background-color: alpha
@@ -60,7 +60,7 @@ PopupScrollMenuButton < UIButton
     color: #6b4d40
 
 PopupScrollMenuShortcutLabel < Label
-  font: verdana-11px-rounded
+  font: $var-cip-font
   text-align: right
   anchors.fill: parent
   margin-right: 2
@@ -88,13 +88,13 @@ PopupMenuCheckBox < UICheckBox
   size: 0 21
   text-offset: 15 -1
   text-align: left
-  font: verdana-11px-rounded
+  font: $var-cip-font
   color: #ebbf90
   text-align: left
   image-rect: 0 2 12 12
   image-source: /images/ui/checkbox
   change-cursor-image: true
-  font: verdana-11px-rounded
+  font: $var-cip-font
   cursor: pointer
   margin-left: 4
 
@@ -120,7 +120,7 @@ PopupMenuCheckBoxCircle < UICheckBox
   text-align: left
   text-offset: 18 -1
   image-rect: 0 0 12 12
-  font: verdana-11px-rounded
+  font: $var-cip-font
   image-source: /images/ui/checkboxcircle
   change-cursor-image: true
   cursor: pointer
