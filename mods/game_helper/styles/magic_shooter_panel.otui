@@ -650,6 +650,7 @@ MagicShooterPanel < Panel
         anchors.right: parent.right
         margin-top: 5
         image-source: /images/ui/buttons-blue
+        color: #ebbf90
         !text: tr('Set Key (Target/Shooter)')
         color: $var-text-cip-color-white
         @onClick: manageHotkeys("Enable/Disable Target and Magic Shooter")

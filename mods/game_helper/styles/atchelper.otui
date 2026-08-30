@@ -5,6 +5,7 @@ ATCHelperButton < UIButton
   text: ATC Helper
   text-align: center
   image-source: /images/ui/buttons-blue
+  color: #ebbf90
   image-clip: 0 0 22 20
   image-border: 3
   focusable: false

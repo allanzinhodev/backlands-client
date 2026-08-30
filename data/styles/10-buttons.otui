@@ -1,6 +1,13 @@
 // A placa ja e a arte pixel nova; so o texto continuava na cipsoftFont de 8px, o
 // que deixava todo botao do cliente com uma legenda miuda no meio de uma UI de
 // 16px. E a inconsistencia que mais aparece, porque nao existe janela sem botao.
+//
+// A placa dourada pede tinta escura. A variante `/images/ui/buttons-blue` e o
+// oposto - fundo #150e0c com anel #4e2f24, o botao secundario da tela de login -
+// entao todo widget que troca a image-source para ela precisa declarar
+// `color: #ebbf90` junto, senao o rotulo fica tinta escura sobre fundo escuro e
+// some. Sao 18 sites: npctrade, announcement, battlepass, cyclopedia, helper,
+// lootsplitter e sidebuttons.
 Button < UIButton
   font: $var-cip-font
   color: #150e0c

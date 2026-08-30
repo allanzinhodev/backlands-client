@@ -294,6 +294,7 @@ SelectRewardWindow < NewHeadlessWindow
       id: collectRewardButton
       size: 80 20
       image-source: /images/ui/buttons-blue
+      color: #ebbf90
       image-border: 2
       anchors.bottom: parent.bottom
       anchors.right: prev.left
@@ -1209,6 +1210,7 @@ NewHeadlessWindow
       id: bPassWiki
       size: 162 20
       image-source: /images/ui/buttons-blue
+      color: #ebbf90
       image-border: 2
       anchors.bottom: parent.bottom
       anchors.right: prev.left
@@ -1220,6 +1222,7 @@ NewHeadlessWindow
       id: getVipPassTicket
       size: 228 20
       image-source: /images/ui/buttons-blue
+      color: #ebbf90
       image-border: 2
       anchors.bottom: parent.bottom
       anchors.right: prev.left

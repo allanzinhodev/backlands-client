@@ -287,6 +287,7 @@ AnnounceWindow < NewHeadlessWindow
     anchors.right: parent.right
     !text: tr('Open Link')
     image-source: /images/ui/buttons-blue
+    color: #ebbf90
     margin-bottom: 10
     margin-right: 15
     visible: false
@@ -446,6 +447,7 @@ AdminFilterPanel < Panel
     margin-top: 10
     !text: tr('Admin Console')
     image-source: /images/ui/buttons-blue
+    color: #ebbf90
     @onClick:
   Button
     id: announcementButton
@@ -455,6 +457,7 @@ AdminFilterPanel < Panel
     margin-top: 5
     !text: tr('Announcement')
     image-source: /images/ui/buttons-blue
+    color: #ebbf90
     @onClick: modules.game_announcement.openAnnouncementList()
   Button
     id: raidsButton
@@ -464,6 +467,7 @@ AdminFilterPanel < Panel
     margin-top: 5
     !text: tr('Raids')
     image-source: /images/ui/buttons-blue
+    color: #ebbf90
     @onClick:
 
 AnnouncementContent < Panel
@@ -483,6 +487,7 @@ AnnouncementContent < Panel
       !text: tr('Preview')
       margin-top: -5
       image-source: /images/ui/buttons-blue
+      color: #ebbf90
       @onClick: previewAnnouncement()
     Label
       id: name
@@ -575,6 +580,7 @@ AnnouncementContent < Panel
       anchors.right: parent.right
       !text: tr('Add Answers')
       image-source: /images/ui/buttons-blue
+      color: #ebbf90
       enabled: false
       @onClick: modules.game_announcement.openPollAnnouncement()
 
@@ -651,6 +657,7 @@ AnnouncementContent < Panel
         !text: tr('Setup Link')
         margin-top: 15
         image-source: /images/ui/buttons-blue
+        color: #ebbf90
         visible: false
         @onClick: setupLinkAnnouncement()
     Label

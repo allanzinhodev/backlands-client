@@ -93,7 +93,7 @@ NpcWindow < UIMiniWindow
     anchors.top: prev.bottom
     anchors.left: parent.left
     anchors.right: parent.right
-    height: 64
+    height: 87
     width: 168
     margin-left: 3
     margin-right: 3
@@ -174,9 +174,10 @@ NpcWindow < UIMiniWindow
       id: quickSellButton
       size: 86 20
       !text: tr('Sell All')
-      anchors.top: prev.bottom
+      anchors.top: quickSellLabel.bottom
       anchors.right: parent.right
       image-source: /images/ui/buttons-blue
+      color: #ebbf90
       margin-right: 3
       margin-top: 3
       visible: true
@@ -367,5 +368,5 @@ NpcWindowContents < TextList
   anchors.bottom: setupPanel.top
   margin-left: 4
   margin-bottom: 2
-  margin-top: 78
+  margin-top: 101
   vertical-scrollbar: miniwindowScrollBar

@@ -295,6 +295,7 @@ CharmDataPanel < Panel
         margin-top: 6
         margin-right: 4
         image-source: /images/ui/buttons-blue
+        color: #ebbf90
         icon: /images/store/icon-store-16x10
         @onClick: modules.game_cyclopedia.Charm.redirectToStore()
       UIWidget

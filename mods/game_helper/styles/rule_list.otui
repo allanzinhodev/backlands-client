@@ -110,6 +110,7 @@ RulesSection < Panel
     font: $var-main-font
     color: $var-text-color
     image-source: /images/ui/buttons-blue
+    color: #ebbf90
 
   TextList
     id: rulesList
