@@ -132,7 +132,7 @@ RenownWindow < MainWindow
     id: preview
     size: 477 221
     !text: tr('Preview')
-    font: Verdana Bold-11px
+    font: $var-cip-font
     color: #a87f68
     text-offset: -2 1
     text-align: Center
@@ -247,7 +247,7 @@ RenownWindow < MainWindow
       CheckBox
         id: showfloorCheck
         size: 12 12
-        font: Verdana Bold-11px
+        font: $var-cip-font
         text: Show Floor
         text-offset: 14 -3
         text-auto-resize: true
@@ -353,7 +353,7 @@ RenownWindow < MainWindow
     id: filter_outfits
     size: 242 51
     !text: tr('Filter Outfits')
-    font: Verdana Bold-11px
+    font: $var-cip-font
     color: #a87f68
     text-offset: -2 1
     text-align: Center
@@ -376,7 +376,7 @@ RenownWindow < MainWindow
     CheckBox
       id: onlyCheck
       size: 12 12
-      font: Verdana Bold-11px
+      font: $var-cip-font
       text: Only mine
       text-offset: 15 -2
       text-auto-resize: true
@@ -510,7 +510,7 @@ RenownWindow < MainWindow
     id: configure
     size: 145 234
     !text: tr('Configure')
-    font: Verdana Bold-11px
+    font: $var-cip-font
     color: #a87f68
     text-offset: -2 1
     text-align: Center
@@ -544,7 +544,7 @@ RenownWindow < MainWindow
       CheckBox
         id: showOutfitCheck
         size: 12 12
-        font: Verdana Bold-11px
+        font: $var-cip-font
         text: Outfit
         text-offset: 14 -3
         text-auto-resize: true
@@ -573,7 +573,7 @@ RenownWindow < MainWindow
       CheckBox
         id: addon1Check
         size: 12 12
-        font: Verdana Bold-11px
+        font: $var-cip-font
         text: Addon 1
         text-offset: 14 -3
         text-auto-resize: true
@@ -603,7 +603,7 @@ RenownWindow < MainWindow
       CheckBox
         id: addon2Check
         size: 12 12
-        font: Verdana Bold-11px
+        font: $var-cip-font
         text: Addon 2
         text-offset: 14 -3
         text-auto-resize: true
@@ -633,7 +633,7 @@ RenownWindow < MainWindow
       CheckBox
         id: showAuraCheck
         size: 12 12
-        font: Verdana Bold-11px
+        font: $var-cip-font
         text: Aura
         text-offset: 14 -3
         text-auto-resize: true
@@ -662,7 +662,7 @@ RenownWindow < MainWindow
       CheckBox
         id: mountedCheck
         size: 12 12
-        font: Verdana Bold-11px
+        font: $var-cip-font
         text: Mount
         text-offset: 14 -3
         text-auto-resize: true
@@ -689,7 +689,7 @@ RenownWindow < MainWindow
       CheckBox
         id: podiumCheck
         size: 12 12
-        font: Verdana Bold-11px
+        font: $var-cip-font
         text: Podium
         text-offset: 14 -3
         text-auto-resize: true
@@ -708,7 +708,7 @@ RenownWindow < MainWindow
     id: appearance
     size: 327 234
     !text: tr('Change Appearance')
-    font: Verdana Bold-11px
+    font: $var-cip-font
     color: #a87f68
     text-offset: -2 1
     text-align: Center
@@ -749,7 +749,7 @@ RenownWindow < MainWindow
     CheckBoxCircle
       id: outfitCheck
       size: 12 12
-      font: Verdana Bold-11px
+      font: $var-cip-font
       text: Outfit:
       text-offset: 16 -3
       text-auto-resize: true
@@ -783,7 +783,7 @@ RenownWindow < MainWindow
     CheckBoxCircle
       id: mountCheck
       size: 12 12
-      font: Verdana Bold-11px
+      font: $var-cip-font
       text: Mount:
       text-offset: 16 -3
       text-auto-resize: true
@@ -813,7 +813,7 @@ RenownWindow < MainWindow
     CheckBoxCircle
       id: auraCheck
       size: 12 12
-      font: Verdana Bold-11px
+      font: $var-cip-font
       text: Aura:
       text-offset: 16 -3
       text-auto-resize: true
@@ -862,7 +862,7 @@ RenownWindow < MainWindow
     CheckBoxCircle
       id: presetCheck
       size: 12 12
-      font: Verdana Bold-11px
+      font: $var-cip-font
       text: Preset:
       text-offset: 16 -3
       text-auto-resize: true

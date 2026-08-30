@@ -1,5 +1,5 @@
 NpcWindow < UIMiniWindow
-  font: verdana-11px-antialised
+  font: $var-cip-font
   color: #a87f68
   icon-rect: 4 4 12 12
   width: 175
@@ -100,17 +100,18 @@ NpcWindow < UIMiniWindow
     margin-top: 2
 
     Label
-      font: verdana-11px-monochrome
+      font: $var-cip-font
       anchors.left: parent.left
       anchors.top: parent.top
       margin-top: 4
       margin-left: 4
       !text: tr('Currency:')
+      width: 106
       color: $var-text-cip-color
 
     UIWidget
       id: currencyLabel
-      font: verdana-11px-monochrome
+      font: $var-cip-font
       anchors.left: parent.left
       anchors.top: prev.bottom
       margin-top: 5
@@ -122,7 +123,7 @@ NpcWindow < UIMiniWindow
 
     Label
       id: quickSellLabel
-      font: verdana-11px-monochrome
+      font: $var-cip-font
       anchors.left: parent.left
       anchors.top: prev.bottom
       margin-top: 10

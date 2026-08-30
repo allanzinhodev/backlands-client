@@ -1,5 +1,5 @@
 MiniWindowHistory < Panel
-  font: verdana-11px-antialised
+  font: $var-cip-font
   icon-rect: 4 4 16 16
   width: 192
   height: 200
@@ -18,7 +18,7 @@ HistoryDescription < UIWidget
 
   Label
     id: date
-    font: verdana-11px-antialised
+    font: $var-cip-font
     color: $var-text-cip-color
     anchors.top: parent.top
     anchors.left: parent.left
@@ -32,7 +32,7 @@ HistoryDescription < UIWidget
     anchors.left: prev.right
   Label
     id: streak
-    font: verdana-11px-antialised
+    font: $var-cip-font
     color: $var-text-cip-color
     size: 48 20
     anchors.top: parent.top
@@ -47,7 +47,7 @@ HistoryDescription < UIWidget
   Label
     id: description
     size: 260 20
-    font: verdana-11px-antialised
+    font: $var-cip-font
     color: $var-text-cip-color
     anchors.top: parent.top
     anchors.bottom: parent.bottom
@@ -66,7 +66,7 @@ HistoryDescriptionPanel < Panel
 
   Label
     !text: tr('Date')
-    font: verdana-11px-antialised
+    font: $var-cip-font
     color: $var-text-cip-color
     anchors.top: parent.top
     anchors.left: parent.left
@@ -80,9 +80,9 @@ HistoryDescriptionPanel < Panel
     height: 19
   Label
     !text: tr('Streak')
-    font: verdana-11px-antialised
+    font: $var-cip-font
     color: $var-text-cip-color
-    size: 48 20
+    size: 72 20
     anchors.top: parent.top
     anchors.left: prev.right
     text-align: center
@@ -95,7 +95,7 @@ HistoryDescriptionPanel < Panel
   Label
     !text: tr('Event')
     size: 260 20
-    font: verdana-11px-antialised
+    font: $var-cip-font
     color: $var-text-cip-color
     anchors.top: parent.top
     anchors.bottom: parent.bottom
@@ -110,7 +110,7 @@ DailyHistoryLabel < Panel
   Label
     id: date
     !text: tr('Date')
-    font: verdana-11px-antialised
+    font: $var-cip-font
     color: $var-text-cip-color
     anchors.top: parent.top
     anchors.left: parent.left
@@ -128,9 +128,9 @@ DailyHistoryLabel < Panel
   Label
     id: streak
     !text: tr('Streak')
-    font: verdana-11px-antialised
+    font: $var-cip-font
     color: $var-text-cip-color
-    size: 50 15
+    size: 72 15
     anchors.top: parent.top
     anchors.left: prev.right
     text-align: right

@@ -136,7 +136,7 @@ OutfitWindow < MainWindow
     id: preview
     size: 477 221
     !text: tr('Preview')
-    font: Verdana Bold-11px
+    font: $var-cip-font
     color: #a87f68
     text-offset: -2 1
     text-align: Center
@@ -156,7 +156,7 @@ OutfitWindow < MainWindow
 
     FlatPanel
       id: movement
-      size: 131 22
+      size: 150 22
       image-source: /game_cyclopedia/images/ui/panel-background
       padding: 1 1 1 1
       anchors.top: parent.top
@@ -166,7 +166,7 @@ OutfitWindow < MainWindow
       CheckBox
         id: movementCheck
         size: 12 12
-        font: Verdana Bold-11px
+        font: $var-cip-font
         text: Movement
         text-offset: 14 -3
         text-auto-resize: true
@@ -182,7 +182,7 @@ OutfitWindow < MainWindow
 
     FlatPanel
       id: previewoutfit
-      size: 320 192
+      size: 302 192
       image-source: /images/game/outfit_ground
       padding: 1 1 1 1
       anchors.top: parent.top
@@ -262,7 +262,7 @@ OutfitWindow < MainWindow
 
     FlatPanel
       id: showoutfit
-      size: 131 22
+      size: 150 22
       image-source: /game_cyclopedia/images/ui/panel-background
       padding: 1 1 1 1
       anchors.top: parent.top
@@ -272,7 +272,7 @@ OutfitWindow < MainWindow
       CheckBox
         id: showoutfitCheck
         size: 12 12
-        font: Verdana Bold-11px
+        font: $var-cip-font
         text: Show Outfit
         text-offset: 14 -3
         text-auto-resize: true
@@ -290,7 +290,7 @@ OutfitWindow < MainWindow
 
     FlatPanel
       id: showAura
-      size: 131 22
+      size: 150 22
       image-source: /game_cyclopedia/images/ui/panel-background
       padding: 1 1 1 1
       anchors.top: parent.top
@@ -300,7 +300,7 @@ OutfitWindow < MainWindow
       CheckBox
         id: showAuraCheck
         size: 12 12
-        font: Verdana Bold-11px
+        font: $var-cip-font
         text: Show Aura
         text-offset: 14 -3
         text-auto-resize: true
@@ -318,7 +318,7 @@ OutfitWindow < MainWindow
 
     FlatPanel
       id: showfamiliar
-      size: 131 22
+      size: 150 22
       image-source: /game_cyclopedia/images/ui/panel-background
       padding: 1 1 1 1
       anchors.top: parent.top
@@ -328,7 +328,7 @@ OutfitWindow < MainWindow
       CheckBox
         id: showfamiliarCheck
         size: 12 12
-        font: Verdana Bold-11px
+        font: $var-cip-font
         text: Show Familiar
         text-offset: 14 -3
         text-auto-resize: true
@@ -344,7 +344,7 @@ OutfitWindow < MainWindow
 
     FlatPanel
       id: showfloor
-      size: 131 22
+      size: 150 22
       image-source: /game_cyclopedia/images/ui/panel-background
       padding: 1 1 1 1
       anchors.top: parent.top
@@ -354,7 +354,7 @@ OutfitWindow < MainWindow
       CheckBox
         id: showfloorCheck
         size: 12 12
-        font: Verdana Bold-11px
+        font: $var-cip-font
         text: Show Floor
         text-offset: 14 -3
         text-auto-resize: true
@@ -459,7 +459,7 @@ OutfitWindow < MainWindow
     id: filter_outfits
     size: 266 51
     !text: tr('Filter Outfits')
-    font: Verdana Bold-11px
+    font: $var-cip-font
     color: #a87f68
     text-offset: -2 1
     text-align: Center
@@ -482,7 +482,7 @@ OutfitWindow < MainWindow
     CheckBox
       id: onlyCheck
       size: 12 12
-      font: Verdana Bold-11px
+      font: $var-cip-font
       text: Only mine
       text-offset: 15 -2
       text-auto-resize: true
@@ -620,7 +620,7 @@ OutfitWindow < MainWindow
     id: configure
     size: 145 260
     !text: tr('Configure')
-    font: Verdana Bold-11px
+    font: $var-cip-font
     color: #a87f68
     text-offset: -2 1
     text-align: Center
@@ -644,7 +644,7 @@ OutfitWindow < MainWindow
 
     FlatPanel
       id: addon1
-      size: 131 22
+      size: 150 22
       image-source: /game_cyclopedia/images/ui/panel-background
       padding: 1 1 1 1
       anchors.top: parent.top
@@ -654,7 +654,7 @@ OutfitWindow < MainWindow
       CheckBox
         id: addon1Check
         size: 12 12
-        font: Verdana Bold-11px
+        font: $var-cip-font
         text: Addon 1
         text-offset: 14 -3
         text-auto-resize: true
@@ -672,7 +672,7 @@ OutfitWindow < MainWindow
 
     FlatPanel
       id: addon2
-      size: 131 22
+      size: 150 22
       image-source: /game_cyclopedia/images/ui/panel-background
       padding: 1 1 1 1
       anchors.top: parent.top
@@ -682,7 +682,7 @@ OutfitWindow < MainWindow
       CheckBox
         id: addon2Check
         size: 12 12
-        font: Verdana Bold-11px
+        font: $var-cip-font
         text: Addon 2
         text-offset: 14 -3
         text-auto-resize: true
@@ -700,7 +700,7 @@ OutfitWindow < MainWindow
 
     FlatPanel
       id: aura
-      size: 131 22
+      size: 150 22
       image-source: /game_cyclopedia/images/ui/panel-background
       padding: 1 1 1 1
       anchors.top: parent.top
@@ -710,7 +710,7 @@ OutfitWindow < MainWindow
       CheckBox
         id: auraCheck
         size: 12 12
-        font: Verdana Bold-11px
+        font: $var-cip-font
         text: Aura
         text-offset: 14 -3
         text-auto-resize: true
@@ -729,7 +729,7 @@ OutfitWindow < MainWindow
 
     FlatPanel
       id: mount
-      size: 131 22
+      size: 150 22
       image-source: /game_cyclopedia/images/ui/panel-background
       padding: 1 1 1 1
       anchors.top: parent.top
@@ -739,7 +739,7 @@ OutfitWindow < MainWindow
       CheckBox
         id: mountCheck
         size: 12 12
-        font: Verdana Bold-11px
+        font: $var-cip-font
         text: Mount
         text-offset: 14 -3
         text-auto-resize: true
@@ -756,7 +756,7 @@ OutfitWindow < MainWindow
 
     FlatPanel
       id: randommount
-      size: 131 22
+      size: 150 22
       image-source: /game_cyclopedia/images/ui/panel-background
       padding: 1 1 1 1
       anchors.top: parent.top
@@ -766,8 +766,8 @@ OutfitWindow < MainWindow
       CheckBox
         id: randomCheck
         size: 12 12
-        font: Verdana Bold-11px
-        text: Random Mount
+        font: $var-cip-font
+        text: Random
         text-offset: 14 -3
         text-auto-resize: true
         color: #ebbf90
@@ -786,7 +786,7 @@ OutfitWindow < MainWindow
     id: appearance
     size: 327 260
     !text: tr('Change Appearance')
-    font: Verdana Bold-11px
+    font: $var-cip-font
     color: #a87f68
     text-offset: -2 1
     text-align: Center
@@ -845,7 +845,7 @@ OutfitWindow < MainWindow
     CheckBoxCircle
       id: outfitCheck
       size: 12 12
-      font: Verdana Bold-11px
+      font: $var-cip-font
       text: Outfit:
       text-offset: 16 -3
       text-auto-resize: true
@@ -893,7 +893,7 @@ OutfitWindow < MainWindow
     CheckBoxCircle
       id: mountCheck
       size: 12 12
-      font: Verdana Bold-11px
+      font: $var-cip-font
       text: Mount:
       text-offset: 16 -3
       text-auto-resize: true
@@ -923,7 +923,7 @@ OutfitWindow < MainWindow
     CheckBoxCircle
       id: auraCheck
       size: 12 12
-      font: Verdana Bold-11px
+      font: $var-cip-font
       text: Aura:
       text-offset: 16 -3
       text-auto-resize: true
@@ -955,7 +955,7 @@ OutfitWindow < MainWindow
     CheckBoxCircle
       id: familiarCheck
       size: 12 12
-      font: Verdana Bold-11px
+      font: $var-cip-font
       text: Familiar:
       text-offset: 16 -3
       text-auto-resize: true
@@ -987,7 +987,7 @@ OutfitWindow < MainWindow
     CheckBoxCircle
       id: presetCheck
       size: 12 12
-      font: Verdana Bold-11px
+      font: $var-cip-font
       text: Preset:
       text-offset: 16 -3
       text-auto-resize: true

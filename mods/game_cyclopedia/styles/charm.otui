@@ -127,7 +127,6 @@ CharmDataPanel < Panel
         anchors.left: charmPanel.right
         margin-left: 6
         !text: tr('Unlock')
-        font: cipsoftFont
         color: $var-text-cip-color
         @onClick: modules.game_cyclopedia.Charm:onUpgradeCharm()
       Panel
@@ -161,12 +160,11 @@ CharmDataPanel < Panel
           margin-top: 1
       Button
         id: clearButton
-        size: 84 20
+        size: 126 20
         anchors.top: prev.bottom
         anchors.left: prev.left
         margin-top: 5
         !text: tr('Clear Charm')
-        font: cipsoftFont
         color: $var-text-cip-color
         @onClick: modules.game_cyclopedia.Charm:onClearCharm()
       Panel
@@ -245,11 +243,10 @@ CharmDataPanel < Panel
 
       Button
         id: selectCreatureButton
-        size: 78 20
+        size: 158 20
         anchors.top: parent.top
         anchors.right: parent.right
         !text: tr('Select Creature')
-        font: cipsoftFont
         color: $var-text-cip-color
         @onClick: modules.game_cyclopedia.Charm:onSelectCreature()
       UIWidget
@@ -312,12 +309,11 @@ CharmDataPanel < Panel
       
       Button
         id: resetCharmsButton
-        size: 100 20
+        size: 172 20
         anchors.top: openStore.bottom
         anchors.right: parent.right
         margin-top: 6
         !text: tr('Reset All Charms')
-        font: cipsoftFont
         color: $var-text-cip-color
         @onClick: modules.game_cyclopedia.Charm:onResetAllCharm()
       

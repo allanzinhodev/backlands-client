@@ -1225,7 +1225,7 @@ InspectLabel < Panel
     anchors.left: prev.right
 
 CategoryListLabel < Label
-  font: verdana-11px-monochrome
+  font: $var-cip-font
   background-color: alpha
   text-offset: 2 0
   focusable: true
@@ -1282,7 +1282,6 @@ ButtonExtraPanel < Panel
   UIWidget
     id: buttonsExtra1
     size: 148 20
-    font: cipsoftFont
     color: $var-text-cip-color-white
     !text: tr("Unknow")
     anchors.top: parent.top
@@ -1331,7 +1330,6 @@ ButtonExtraPanel < Panel
   UIWidget
     id: buttonsExtra2
     size: 148 20
-    font: cipsoftFont
     color: $var-text-cip-color-white
     !text: tr("Unknow")
     anchors.top: prev.bottom
@@ -1382,7 +1380,6 @@ ButtonExtraPanel < Panel
   UIWidget
     id: buttonsExtra3
     size: 148 20
-    font: cipsoftFont
     color: $var-text-cip-color-white
     !text: tr("Unknow")
     anchors.top: prev.bottom
@@ -1433,7 +1430,6 @@ ButtonExtraPanel < Panel
   UIWidget
     id: buttonsExtra4
     size: 148 20
-    font: cipsoftFont
     color: $var-text-cip-color-white
     !text: tr("Unknow")
     anchors.top: prev.bottom
@@ -1491,7 +1487,6 @@ OptionsPanel < Panel
   UIWidget
     id: buttons
     size: 148 20
-    font: cipsoftFont
     color: $var-text-cip-color-white
     anchors.top: parent.top
     anchors.left: parent.left
@@ -2335,7 +2330,7 @@ RecentDeaths < Panel
   UIWidget
     id: previousButton
     size: 86 20
-    font: Verdana-9px-antialiased
+    font: $var-cip-font
     color: $var-text-cip-color
     text: Previous
     text-align: Center
@@ -2380,7 +2375,7 @@ RecentDeaths < Panel
   UIWidget
     id: nextButton
     size: 86 20
-    font: Verdana-9px-antialiased
+    font: $var-cip-font
     color: $var-text-cip-color
     !text: tr("Next")
     text-align: Center
@@ -2523,7 +2518,7 @@ RecentPvpKills < Panel
   UIWidget
     id: previousButton
     size: 86 20
-    font: Verdana-9px-antialiased
+    font: $var-cip-font
     color: $var-text-cip-color
     text: Previous
     text-align: Center
@@ -2568,7 +2563,7 @@ RecentPvpKills < Panel
   UIWidget
     id: nextButton
     size: 86 20
-    font: Verdana-9px-antialiased
+    font: $var-cip-font
     color: $var-text-cip-color
     !text: tr("Next")
     text-align: Center

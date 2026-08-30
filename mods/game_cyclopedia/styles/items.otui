@@ -9,7 +9,7 @@ SaleList < UIWidget
     anchors.top: parent.top
     anchors.left: parent.left
     text-offset: 1 -1
-    font: Verdana Bold-11px
+    font: $var-cip-font
     color: #ebbf90
 
   Label
@@ -20,7 +20,7 @@ SaleList < UIWidget
     anchors.left: parent.left
     margin-top: 14
     text-offset: 1 -2
-    font: Verdana Bold-11px
+    font: $var-cip-font
     color: #ebbf90
 
 ItemListLabel < UIWidget
@@ -50,7 +50,7 @@ ItemListLabel < UIWidget
     id: name
     size: 145 34
     !text: tr("Unknow")
-    font: Verdana Bold-11px
+    font: $var-cip-font
     color: #ebbf90
     text-wrap: true
     text-auto-reduce: true
@@ -157,7 +157,7 @@ ItemDataPanel < UIWidget
       anchors.left: parent.left
       anchors.top: prev.bottom
       margin-top: 6
-      font: Verdana Bold-11px
+      font: $var-cip-font
       color: #ebbf90
       text-offset: -20 2
       size: 77 20
@@ -499,7 +499,7 @@ ItemDataPanel < UIWidget
       id: averageMarketPrice
       !text: tr('0')
       text-auto-resize: true
-      font: Verdana Bold-11px
+      font: $var-cip-font
       color: #ebbf90
       anchors.top: text-gold-box-one-gold.top
       anchors.right: text-gold-box-one-gold.left
@@ -524,7 +524,7 @@ ItemDataPanel < UIWidget
 
     TextEdit
       id: customPrice
-      font: Verdana Bold-11px
+      font: $var-cip-font
       height: 18
       anchors.top: text-gold-box-two.top
       anchors.left: text-gold-box-two.left
@@ -542,7 +542,7 @@ ItemDataPanel < UIWidget
     Label
       id: customPricePlaceholder
       !text: tr('Type to set')
-      font: Verdana Bold-11px
+      font: $var-cip-font
       color: #a87f68
       height: 18
       anchors.top: text-gold-box-two.top
@@ -589,7 +589,7 @@ ItemDataPanel < UIWidget
       id: resultingValue
       !text: tr('0')
       text-auto-resize: true
-      font: Verdana Bold-11px
+      font: $var-cip-font
       color: #ebbf90
       anchors.top: text-gold-box-three-gold.top
       anchors.right: text-gold-box-three-gold.left

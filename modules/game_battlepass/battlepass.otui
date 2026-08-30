@@ -99,7 +99,7 @@ RewardInfoSlot < UIWidget
       margin-bottom: 2
       margin-right: 2
       !text: ''
-      font: verdana-11px-rounded
+      font: $var-cip-font
       color: #ebbf90
       text-auto-resize: true
   UICreature
@@ -143,7 +143,7 @@ SelectRewardWindow < NewHeadlessWindow
       anchors.horizontalCenter: parent.horizontalCenter
       margin-top: 15
       !text: 'Battlepass Reward - Step %d\n Click on the collect button to receive your reward.'
-      font: verdana-11px-rounded
+      font: $var-cip-font
       color: #ebbf90
       text-align: center
       wrap: true
@@ -154,7 +154,7 @@ SelectRewardWindow < NewHeadlessWindow
       anchors.horizontalCenter: parent.horizontalCenter
       margin-top: 10
       !text: tr('This reward does not have a visual representation yet.')
-      font: verdana-11px-rounded
+      font: $var-cip-font
       color: #ebbf90
       text-align: center
       wrap: true
@@ -348,7 +348,7 @@ DailyMissionWidget < UIWidget
       anchors.bottom: parent.bottom
       anchors.horizontalCenter: parent.horizontalCenter
       margin-left: -4
-      font: verdana-11px-rounded
+      font: $var-cip-font
       color: #ebbf90
       text-auto-resize: true
   Label
@@ -359,7 +359,7 @@ DailyMissionWidget < UIWidget
     anchors.left: parent.left
     margin-top: 10
     margin-left: 4
-    font: verdana-11px-rounded
+    font: $var-cip-font
     color: #ebbf90
     text-wrap: true
     text-align: center
@@ -382,7 +382,7 @@ DailyMissionWidget < UIWidget
       anchors.top: parent.top
       anchors.horizontalCenter: parent.horizontalCenter
       margin-top: -1
-      font: verdana-11px-rounded
+      font: $var-cip-font
       color: #ebbf90
       text-auto-resize: true
   UIWidget
@@ -457,7 +457,7 @@ MissionWidget < UIWidget
       anchors.bottom: parent.bottom
       anchors.horizontalCenter: parent.horizontalCenter
       margin-left: -1
-      font: verdana-11px-rounded
+      font: $var-cip-font
       color: #ebbf90
       text-auto-resize: true
   Label
@@ -468,7 +468,7 @@ MissionWidget < UIWidget
     anchors.left: parent.left
     margin-top: 10
     margin-left: 4
-    font: verdana-11px-rounded
+    font: $var-cip-font
     color: #ebbf90
     text-wrap: true
     text-align: center
@@ -491,7 +491,7 @@ MissionWidget < UIWidget
       anchors.top: parent.top
       anchors.horizontalCenter: parent.horizontalCenter
       margin-top: -1
-      font: verdana-11px-rounded
+      font: $var-cip-font
       color: #ebbf90
       text-auto-resize: true
   UIWidget
@@ -564,7 +564,7 @@ MissionPanel < Panel
       anchors.top: parent.top
       anchors.horizontalCenter: parent.horizontalCenter
       margin-top: 2
-      font: verdana-11px-rounded
+      font: $var-cip-font
       color: #a87f68
       text-auto-resize: true
     Panel
@@ -614,7 +614,7 @@ MissionPanel < Panel
         anchors.verticalCenter: parent.verticalCenter
         anchors.horizontalCenter: parent.horizontalCenter
         !text: tr("22 Hours left")
-        font: verdana-11px-rounded
+        font: $var-cip-font
         color: #ebbf90
         text-auto-resize: true
       UIWidget
@@ -640,7 +640,7 @@ MissionPanel < Panel
       anchors.top: parent.top
       anchors.horizontalCenter: parent.horizontalCenter
       margin-top: 2
-      font: verdana-11px-rounded
+      font: $var-cip-font
       color: #a87f68
       text-auto-resize: true
     Panel
@@ -670,7 +670,7 @@ MissionPanel < Panel
             anchors.right: parent.right
             margin-bottom: 4
             margin-left: -3
-            font: verdana-11px-rounded
+            font: $var-cip-font
             color: #ebbf90
             text-auto-resize: true
             text-align: center
@@ -681,7 +681,7 @@ MissionPanel < Panel
         anchors.left: playerLevelBg.right
         margin-top: 7
         margin-left: 45
-        font: verdana-11px-rounded
+        font: $var-cip-font
         color: #ebbf90
         text-auto-resize: true
       Label
@@ -691,7 +691,7 @@ MissionPanel < Panel
         anchors.left: playerLevelBg.right
         margin-top: 5
         margin-left: 95
-        font: verdana-11px-rounded
+        font: $var-cip-font
         color: #ebbf90
         text-auto-resize: true
 
@@ -709,7 +709,7 @@ MissionPanel < Panel
         anchors.bottom: progressBarBg.top
         anchors.horizontalCenter: progressBarBg.horizontalCenter
         margin-bottom: 5
-        font: verdana-11px-rounded
+        font: $var-cip-font
         color: #ebbf90
         text-auto-resize: true
       UIWidget
@@ -733,7 +733,7 @@ MissionPanel < Panel
           anchors.horizontalCenter: parent.horizontalCenter
           margin-left: -5
           text: 0
-          font: verdana-11px-rounded
+          font: $var-cip-font
           color: #ebbf90
           text-auto-resize: true
       VerticalSeparator
@@ -750,7 +750,7 @@ MissionPanel < Panel
         anchors.bottom: seasonTimeBg.top
         anchors.horizontalCenter: seasonTimeBg.horizontalCenter
         margin-bottom: 5
-        font: verdana-11px-rounded
+        font: $var-cip-font
         color: #ebbf90
         text-auto-resize: true
       UIWidget
@@ -775,7 +775,7 @@ MissionPanel < Panel
           !text: tr("48 Days left")
           margin-left: -5
           margin-top: 1
-          font: verdana-11px-rounded
+          font: $var-cip-font
           color: #ebbf90
           text-auto-resize: true
         UIWidget
@@ -834,11 +834,12 @@ RewardWidget < Panel
     Label
       id: collectRewardLabel
       !text: tr('Claim Reward')
+      width: 134
       anchors.bottom: parent.bottom
       anchors.horizontalCenter: parent.horizontalCenter
       margin-bottom: 22
       margin-left: 2
-      font: verdana-11px-rounded
+      font: $var-cip-font
       color: #ebbf90
       text-align: center
   UIWidget
@@ -1066,7 +1067,7 @@ BattlePassShopPanel < Panel
       anchors.left: parent.left
       margin-top: 5
       margin-left: 8
-      font: verdana-11px-rounded
+      font: $var-cip-font
       color: #ebbf90
       text-auto-resize: true
 
@@ -1077,7 +1078,7 @@ BattlePassShopPanel < Panel
       anchors.left: parent.left
       margin-left: 8
       margin-bottom: 5
-      font: verdana-11px-rounded
+      font: $var-cip-font
       color: #a87f68
       text-auto-resize: true
 
@@ -1266,7 +1267,7 @@ NewHeadlessWindow
         margin-top: 3
         text-auto-resize: true
         color: #ebbf90
-        font: Verdana Bold-11px
+        font: $var-cip-font
         tooltip-font: Verdana Bold-11px
 
     BattlePassShopInfoPanel

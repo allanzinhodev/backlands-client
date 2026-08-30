@@ -131,7 +131,7 @@ HirelingOutfitWindow < MainWindow
     id: preview
     size: 477 221
     !text: tr('Preview')
-    font: Verdana Bold-11px
+    font: $var-cip-font
     color: #a87f68
     text-offset: -2 1
     text-align: Center
@@ -246,7 +246,7 @@ HirelingOutfitWindow < MainWindow
       CheckBox
         id: showfloorCheck
         size: 12 12
-        font: Verdana Bold-11px
+        font: $var-cip-font
         text: Show Floor
         text-offset: 14 -3
         text-auto-resize: true
@@ -352,7 +352,7 @@ HirelingOutfitWindow < MainWindow
     id: filter_outfits
     size: 242 51
     !text: tr('Filter Outfits')
-    font: Verdana Bold-11px
+    font: $var-cip-font
     color: #a87f68
     text-offset: -2 1
     text-align: Center
@@ -375,7 +375,7 @@ HirelingOutfitWindow < MainWindow
     CheckBox
       id: onlyCheck
       size: 12 12
-      font: Verdana Bold-11px
+      font: $var-cip-font
       text: Only mine
       text-offset: 15 -2
       text-auto-resize: true
@@ -514,7 +514,7 @@ HirelingOutfitWindow < MainWindow
     id: configure
     size: 145 168
     !text: tr('Configure')
-    font: Verdana Bold-11px
+    font: $var-cip-font
     color: #a87f68
     text-offset: -2 1
     text-align: Center
@@ -551,7 +551,7 @@ HirelingOutfitWindow < MainWindow
     id: appearance
     size: 327 168
     !text: tr('Change Appearance')
-    font: Verdana Bold-11px
+    font: $var-cip-font
     color: #a87f68
     text-offset: -2 1
     text-align: Center
@@ -610,7 +610,7 @@ HirelingOutfitWindow < MainWindow
     CheckBoxCircle
       id: outfitCheck
       size: 12 12
-      font: Verdana Bold-11px
+      font: $var-cip-font
       text: Outfit:
       text-offset: 16 -3
       text-auto-resize: true

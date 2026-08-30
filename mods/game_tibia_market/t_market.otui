@@ -387,7 +387,7 @@ MarketItemList < UIWidget
     anchors.left: parent.left
     anchors.verticalCenter: parent.verticalCenter
     margin-left: 2
-    font: verdana-11px-rounded
+    font: $var-cip-font
     show-count: false
     virtual-count: true
     focusable: true
@@ -397,7 +397,7 @@ MarketItemList < UIWidget
     id: name
     size: 108 32
     !text: tr("Unknow")
-    font: Verdana Bold-11px
+    font: $var-cip-font
     color: #ebbf90
     anchors.top: parent.top
     anchors.left: prev.right
@@ -567,7 +567,7 @@ MarketMainWindow < Panel
     size: 32 32
     virtual: true
     priceable: true
-    font: verdana-11px-rounded
+    font: $var-cip-font
     anchors.top: prev.top
     anchors.left: parent.left
     margin-top: 1
@@ -2002,8 +2002,7 @@ MarketHistory < Panel
         margin-top: 3
         text-auto-resize: true
         color: #ebbf90
-        font: Verdana Bold-11px
-
+        font: $var-cip-font
     Panel
       id: coinPanel
       size: 130 20
@@ -2027,8 +2026,7 @@ MarketHistory < Panel
         margin-top: 3
         text-auto-resize: true
         color: #ebbf90
-        font: Verdana Bold-11px
-
+        font: $var-cip-font
     Button
       id: getCoins
       size: 64 20
@@ -2171,8 +2169,7 @@ MarketHistory < Panel
         margin-top: 3
         text-auto-resize: true
         color: #ebbf90
-        font: Verdana Bold-11px
-
+        font: $var-cip-font
     Panel
       id: coinPanel
       size: 130 20
@@ -2196,8 +2193,7 @@ MarketHistory < Panel
         margin-top: 3
         text-auto-resize: true
         color: #ebbf90
-        font: Verdana Bold-11px
-
+        font: $var-cip-font
     Button
       id: getCoins
       size: 64 20
