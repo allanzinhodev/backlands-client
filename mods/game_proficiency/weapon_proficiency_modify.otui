@@ -556,6 +556,7 @@ ReshapeDialog < UIWindow
 
     Label
       !text: tr('Current perk')
+      width: 136
       font: $var-cip-font-new
       color: #ebbf90
       anchors.verticalCenter: parent.verticalCenter
@@ -593,6 +594,7 @@ ReshapeDialog < UIWindow
 
     Label
       !text: tr('Reshape perk selection')
+      width: 228
       font: $var-cip-font-new
       color: #ebbf90
       anchors.verticalCenter: parent.verticalCenter

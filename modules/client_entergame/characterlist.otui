@@ -428,7 +428,7 @@ StaticMainWindow
       image-source: /images/ui/separator_vertical
     UIButton
       id: levelSort
-      size: 50 14
+      size: 64 14
       anchors.top: parent.top
       anchors.left: prev.right
       !text: tr('Level')

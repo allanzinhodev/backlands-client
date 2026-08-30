@@ -107,7 +107,7 @@ HistoryPanel < Panel
     margin-top: 1
   UIWidget
     id: balanceButton
-    size: 88 15
+    size: 146 15
     !text: tr('Balance')
     color: $var-text-cip-color
     font: $var-cip-font

@@ -169,7 +169,7 @@ function Scan-Containers($file, $lines) {
 foreach ($file in $files) {
     $lines = @(Get-Content $file.FullName)
     # um "bloco" e o widget corrente; propriedades vivem num nivel de indentacao maior
-    $blockIndent = -1; $text = $null; $box = 0; $boxH = 0; $autoResize = $false; $textLine = 0
+    $blockIndent = -1; $text = $null; $box = 0; $boxH = 0; $autoResize = $false; $textLine = 0; $textOffset = 0
     $usesFont = $false; $wrap = $false; $anyFont = $false; $typeInherits = $false
     $aFill = $false; $aLeft = $false; $aRight = $false
     $flush = {
@@ -204,16 +204,16 @@ foreach ($file in $files) {
                 }
             }
             # largura so importa quando o texto nao quebra nem se auto-redimensiona
-            if ($box -gt 0 -and -not $autoResize -and -not $wrap -and $need -gt $box) {
+            if ($box -gt 0 -and -not $autoResize -and -not $wrap -and ($need + $textOffset) -gt $box) {
                 $script:findings += [pscustomobject]@{
                     File = $file.FullName.Substring($repo.Length + 1).Replace('\', '/')
                     Line = $textLine; Text = $text; Kind = 'largura'; Type = $blockType
-                    Box  = $box; Need = $need; Overflow = $need - $box
+                    Box  = $box; Need = $need + $textOffset; Overflow = $need + $textOffset - $box
                 }
             }
         }
         $script:text = $null; $script:box = 0; $script:boxH = 0; $script:blockType = ''
-        $script:autoResize = $false; $script:usesFont = $false; $script:wrap = $false
+        $script:autoResize = $false; $script:usesFont = $false; $script:wrap = $false; $script:textOffset = 0
         $script:anyFont = $false; $script:typeInherits = $false
         $script:aFill = $false; $script:aLeft = $false; $script:aRight = $false
     }
@@ -229,6 +229,7 @@ foreach ($file in $files) {
         elseif ($line -match '^\s*size:\s*(\d+)\s+(\d+)') { $box = [int]$Matches[1]; $boxH = [int]$Matches[2] }
         elseif ($line -match '^\s*width:\s*(\d+)') { $box = [int]$Matches[1] }
         elseif ($line -match '^\s*height:\s*(\d+)') { $boxH = [int]$Matches[1] }
+        elseif ($line -match '^\s*text-offset:\s*(-?\d+)') { $textOffset = [Math]::Abs([int]$Matches[1]) }
         elseif ($line -match '^\s*text-wrap:\s*true') { $wrap = $true }
         elseif ($line -match '^\s*anchors\.fill:') { $aFill = $true }
         elseif ($line -match '^\s*anchors\.left:') { $aLeft = $true }
@@ -236,7 +237,7 @@ foreach ($file in $files) {
         elseif ($line -match '^\s*text-auto-resize:\s*true') { $autoResize = $true }
         elseif ($line -match '^\s*font:') {
             $anyFont = $true
-            if ($line -match '^\s*font:\s*(\$var-cip-font|silkscreen-16)\s*$') { $usesFont = $true }
+            if ($line -match '^\s*font:\s*(\$var-cip-font[a-z-]*|\$var-text-cip-font|silkscreen-16)\s*$') { $usesFont = $true }
         }
         elseif ($line -notmatch ':') {
             # nome de widget = novo bloco; fecha o anterior

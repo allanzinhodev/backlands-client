@@ -619,7 +619,7 @@ NewMainWindow
 
       UIWidget
         id: vocationWarning
-        size: 754 17
+        size: 774 17
         anchors.top: prev.top
         anchors.left: prev.left
         margin-top: 1

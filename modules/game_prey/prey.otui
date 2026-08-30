@@ -396,7 +396,7 @@ InactivePreyPanel < Panel
 
       CheckBox
         id: autoRerollCheck
-        size: 234 15
+        size: 264 15
         anchors.verticalCenter: parent.verticalCenter
         anchors.left: parent.left
         margin-top: 2
@@ -577,7 +577,7 @@ ActivePreyPanel < Panel
 
       CheckBox
         id: autoRerollCheck
-        size: 234 15
+        size: 264 15
         anchors.verticalCenter: parent.verticalCenter
         anchors.left: parent.left
         margin-top: 2

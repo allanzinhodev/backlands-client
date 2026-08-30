@@ -379,13 +379,13 @@ ItemDataPanel < UIWidget
 
   UILabel
     id: emptyLabel
-    size: 333 10
+    size: 430 40
     !text: tr('Please select an item from the list to see its details here.')
     anchors.top: parent.top
     anchors.left: parent.left
     color: #ebbf90
-    font: Verdana Bold-11px
-    text-auto-resize: true
+    font: $var-cip-font
+    text-wrap: true
     margin-left: 221
     margin-top: -1
 

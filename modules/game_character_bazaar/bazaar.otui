@@ -97,7 +97,7 @@ NewMainWindow
     margin: 8 16 0 16
     text-align: center
     text-wrap: true
-    font: $var-cip-main-font
+    font: $var-cip-font
 
   Button
     id: refreshButton

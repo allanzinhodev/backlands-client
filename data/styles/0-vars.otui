@@ -28,6 +28,19 @@
 
 &var-main-font: verdana-11px-antialised
 &var-cip-font: silkscreen-16
+
+// Seis variantes usadas em .otui mas nunca definidas - o mesmo bug latente que
+// &var-cip-font tinha: o OTML resolve para string vazia e UIWidget::setFont cai
+// em getDefaultFont(), ou seja, Verdana. Ficavam fora da skin sem ninguem notar.
+// Nao existe uma silkscreen estreita, arredondada ou com contorno (o atlas de
+// texto esta cheio, ver Atlas::init), entao todas apontam para a mesma fonte:
+// o que elas realmente pediam era "a fonte da UI".
+&var-cip-font-new: silkscreen-16
+&var-cip-font-off: silkscreen-16
+&var-cip-font-rounded: silkscreen-16
+&var-cip-font-lowspace: silkscreen-16
+&var-cip-font-outline: silkscreen-16
+&var-text-cip-font: silkscreen-16
 &var-cip-main-font: Verdana Bold-11px
 &var-cip-font-wheel: Verdana Bold-11px-wheel
 &var-cip-font-mono-rounded: verdana-11px-mono-rounded

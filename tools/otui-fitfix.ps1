@@ -73,7 +73,15 @@ foreach ($group in ($findings | Group-Object File)) {
             $end++
         }
 
-        $newWidth = Round2 ($f.Need + $Pad)
+        # Um CheckBox desenha a legenda a partir de text-offset (a caixa fica a
+        # esquerda), entao a largura util e largura - offset. Sem somar o offset
+        # a caixa sai curta pelo tamanho exato dele.
+        $offset = 0
+        for ($j = $start; $j -le $end; $j++) {
+            if (((($lines[$j]) -replace '^(\s*).*$', '$1').Length) -ne $indent) { continue }
+            if ($lines[$j] -match '^\s*text-offset:\s*(-?\d+)') { $offset = [Math]::Abs([int]$Matches[1]) }
+        }
+        $newWidth = Round2 ($f.Need + $offset + $Pad)
         $done = $false
         for ($j = $start; $j -le $end -and -not $done; $j++) {
             $l = $lines[$j]

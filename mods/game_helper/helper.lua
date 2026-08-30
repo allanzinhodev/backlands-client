@@ -1298,7 +1298,7 @@ local function showFallbackHelperMenu()
     timerPanelContainer:hide()
   end
   if helper then
-    helper:setSize(tosize("329 309"))
+    helper:setSize(tosize("380 309"))
   end
 end
 
@@ -2256,7 +2256,7 @@ function loadMenu(menuId)
       if equipPanelContainer then equipPanelContainer:hide() end
       if cavebotPanel then cavebotPanel:hide() end
       if timerPanelContainer then timerPanelContainer:hide() end
-      helper:setSize(tosize("329 240"))
+      helper:setSize(tosize("380 240"))
     end
     return
   end
@@ -2276,7 +2276,7 @@ function loadMenu(menuId)
     if cavebotPanel then cavebotPanel:hide() end
     if timerPanelContainer then timerPanelContainer:hide() end
     if currentPlayer:isKnight() then
-      helper:setSize(tosize("329 309"))
+      helper:setSize(tosize("380 309"))
       healPanel:setHeight(160)
       if healingTargetModePanel then healingTargetModePanel:setVisible(false) end
       friendHealingPanel:setVisible(false)
@@ -2298,7 +2298,7 @@ function loadMenu(menuId)
       priorityButton3:setTooltip(
         "Uses a healing or mana potion when your health or\nmana reaches the defined percentage.")
     elseif currentPlayer:isPaladin() then
-      helper:setSize(tosize("329 309"))
+      helper:setSize(tosize("380 309"))
       if healingTargetModePanel then healingTargetModePanel:setVisible(false) end
       friendHealingPanel:setVisible(false)
       granSioPanel:setVisible(false)
@@ -2320,7 +2320,7 @@ function loadMenu(menuId)
       priorityButton3:setTooltip(
         "Uses a healing or mana potion when your health or\nmana reaches the defined percentage.\nClick on this button to change the potion priority:\n  - Icon: Blue (Mana Priority)\n  - Icon: Red  (Health Priority)")
     elseif currentPlayer:isSorcerer() then
-      helper:setSize(tosize("329 465"))
+      helper:setSize(tosize("380 465"))
       healPanel:setHeight(120)
       if healingTargetModePanel then healingTargetModePanel:setVisible(true) end
       friendHealingPanel:setVisible(true)
@@ -2342,7 +2342,7 @@ function loadMenu(menuId)
       priorityButton2:setTooltip(
         "Uses a healing or mana potion when your health or\nmana reaches the defined percentage.")
     elseif currentPlayer:isDruid() then
-      helper:setSize(tosize("329 762"))
+      helper:setSize(tosize("380 762"))
       healPanel:setHeight(120)
       if healingTargetModePanel then healingTargetModePanel:setVisible(true) end
       friendHealingPanel:setVisible(true)
@@ -2364,7 +2364,7 @@ function loadMenu(menuId)
       priorityButton2:setTooltip(
         "Uses a healing or mana potion when your health or\nmana reaches the defined percentage.")
     elseif currentPlayer:isMonk() then
-      helper:setSize(tosize("329 507"))
+      helper:setSize(tosize("380 507"))
       healPanel:setHeight(160)
       if healingTargetModePanel then healingTargetModePanel:setVisible(true) end
       friendHealingPanel:setVisible(true)
@@ -2388,7 +2388,7 @@ function loadMenu(menuId)
       priorityButton3:setTooltip(
         "Uses a healing or mana potion when your health or\nmana reaches the defined percentage.\nClick on this button to change the potion priority:\n  - Icon: Blue (Mana Priority)\n  - Icon: Red  (Health Priority)")
     else
-      helper:setSize(tosize("329 271"))
+      helper:setSize(tosize("380 271"))
       healPanel:setHeight(120)
       if healingTargetModePanel then healingTargetModePanel:setVisible(false) end
       friendHealingPanel:setVisible(false)
@@ -2432,7 +2432,7 @@ function loadMenu(menuId)
         extraHeight = 135
       end
     end
-    helper:setSize(tosize("329 " .. (baseHeight + extraHeight)))
+    helper:setSize(tosize("380 " .. (baseHeight + extraHeight)))
   elseif menuId == 'shooterMenu' then
     healingPanel:hide()
     if toolsPanelContainer then toolsPanelContainer:hide() end
