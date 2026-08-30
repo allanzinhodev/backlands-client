@@ -30,7 +30,7 @@ CheckBoxCircle < UICheckBox
   cursor: pointer
 
   $hover !disabled:
-    color: #ffffff
+    color: #ebbf90
 
   $!checked:
     image-clip: 0 0 12 12
@@ -54,7 +54,7 @@ ThickCheckBox < UICheckBox
   cursor: pointer
 
   $hover !disabled:
-    color: #ffffff
+    color: #ebbf90
 
   $checked:
     image-source: /images/ui/checkbox-checked
@@ -81,7 +81,7 @@ ColorBox < UICheckBox
 
 ButtonBox < UICheckBox
   font: $var-cip-font
-  color: white
+  color: #ebbf90
   size: 106 23
   text-offset: 0 0
   text-align: center
@@ -97,7 +97,7 @@ ButtonBox < UICheckBox
 
   $checked:
     image-clip: 0 46 22 23
-    color: white
+    color: #ebbf90
     text-offset: 2 2
     change-cursor-image: false
 

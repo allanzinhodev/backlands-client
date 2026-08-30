@@ -83,14 +83,14 @@ QuestLogTracker < MiniWindow
         text: Add  Tracked  Quest
         margin-left: 20
         margin-right: 20
-        color: white
+        color: #ebbf90
         @onClick: modules.game_questlog.show()
 
 
 ButtonTrackerMenuOption < UIButton
   text-offset: 5 1
   text-align: left
-  color: white
+  color: #ebbf90
   background-color: alpha
   font: $var-cip-font-mono-rounded
   padding: 3 6

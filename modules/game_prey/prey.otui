@@ -14,7 +14,7 @@ WildcardLabel < UIWidget
   phantom: false
   text-offset: 21 0
   $focus:
-    color: #f4f4f4
+    color: #ebbf90
 
   UIWidget
     id: icon

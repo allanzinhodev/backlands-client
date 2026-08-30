@@ -325,7 +325,7 @@ NewMainWindow
       !text: tr('Close')
       anchors.right: parent.right
       anchors.bottom: parent.bottom
-      color: #ffffff
+      color: #ebbf90
       @onClick: modules.game_questlog.hide()
     Button
       id: trackerButton
@@ -333,7 +333,7 @@ NewMainWindow
       !text: tr('Quest Tracker')
       anchors.bottom: parent.bottom
       anchors.left: parent.left
-      color: #ffffff
+      color: #ebbf90
       @onClick: modules.game_questlog.toggleTracker()
 
 QuestTrackerLabel < UIWidget

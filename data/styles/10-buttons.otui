@@ -222,14 +222,14 @@ QtButton < UIButton
   image-border: 3
   padding: 5 10 5 10
   opacity: 1.0
-  color: white
+  color: #ebbf90
 
   $pressed:
     image-clip: 0 46 22 23
     text-offset: 1 1
 
   $disabled:
-    color: white
+    color: #ebbf90
     opacity: 0.6
 
 BigPremiumButton < UIButton
@@ -254,7 +254,7 @@ MiniPremiumButton < UIButton
 
 Button4 < UIButton
   font: $var-main-font
-  color: white
+  color: #ebbf90
   size: 106 23
   text-offset: 0 1
   image-source: /images/ui/button

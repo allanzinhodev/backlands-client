@@ -7,7 +7,7 @@ IgnoreListLabel < Label
 
   $focus:
     background-color: #ffffff22
-    color: #ffffff
+    color: #ebbf90
 
 WhiteListLabel < Label
   font: verdana-11px-monochrome
@@ -18,7 +18,7 @@ WhiteListLabel < Label
 
   $focus:
     background-color: #ffffff22
-    color: #ffffff
+    color: #ebbf90
 
 MainWindow
   id: communicationWindow

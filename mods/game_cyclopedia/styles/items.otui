@@ -287,7 +287,7 @@ ItemDataPanel < UIWidget
       @onClick: modules.game_cyclopedia.CyclopediaItems.onSourceValueChange(self:isChecked(), true)
 
       $hover !disabled:
-        color: #ffffff
+        color: #ebbf90
 
       $!checked:
         image-clip: 0 0 12 12
@@ -329,7 +329,7 @@ ItemDataPanel < UIWidget
       @onClick: modules.game_cyclopedia.CyclopediaItems.onSourceValueChange(self:isChecked(), false)
 
       $hover !disabled:
-        color: #ffffff
+        color: #ebbf90
 
       $!checked:
         image-clip: 0 0 12 12
@@ -659,7 +659,7 @@ ItemDataPanel < UIWidget
       @onClick: modules.game_cyclopedia.CyclopediaItems.updateDropTracker(self, self:isChecked())
 
       $hover !disabled:
-        color: #ffffff
+        color: #ebbf90
 
       $!checked:
         image-clip: 0 0 12 12
@@ -706,7 +706,7 @@ ItemDataPanel < UIWidget
       @onClick: modules.game_cyclopedia.CyclopediaItems.manageQuickloot(self, self:isChecked())
 
       $hover !disabled:
-        color: #ffffff
+        color: #ebbf90
 
       $!checked:
         image-clip: 0 0 12 12
@@ -753,7 +753,7 @@ ItemDataPanel < UIWidget
       @onClick: modules.game_cyclopedia.CyclopediaItems.manageQuickSellWhitelist(self, self:isChecked())
 
       $hover !disabled:
-        color: #ffffff
+        color: #ebbf90
 
       $!checked:
         image-clip: 0 0 12 12

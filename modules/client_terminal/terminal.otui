@@ -33,7 +33,7 @@ UIWindow
     id: titleBar
     !text: tr('Terminal')
     border: 1 black
-    color: white
+    color: #ebbf90
     anchors.top: parent.top
     anchors.left: parent.left
     anchors.right: parent.right

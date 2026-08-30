@@ -10,7 +10,7 @@ ExperienceBar < ProgressBar
 SoulLabel < GameLabel
   id: soulLabel
   text-align: right
-  color: white
+  color: #ebbf90
   font: verdana-11px-rounded
   anchors.bottom: parent.bottom
   anchors.right: parent.right
@@ -26,7 +26,7 @@ SoulLabel < GameLabel
 
 CapLabel < GameLabel
   id: capLabel
-  color: white
+  color: #ebbf90
   font: verdana-11px-rounded
   anchors.bottom: parent.bottom
   anchors.left: parent.left

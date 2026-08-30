@@ -10,7 +10,7 @@ SpellPreview < UICheckBox
   color: $var-text-cip-color
 
   $hover !disabled:
-    color: #ffffff
+    color: #ebbf90
 
   $!checked:
     background-color: alpha
@@ -18,7 +18,7 @@ SpellPreview < UICheckBox
 
   $checked:
     background-color: #35241d
-    color: #f4f4f4
+    color: #ebbf90
 
   $disabled:
     image-color: #dfdfdf88

@@ -48,7 +48,7 @@ FusionItemBox < UICheckBox
     width: 24
     height: 12
     text-align: right
-    color: #ffffff
+    color: #ebbf90
     font: verdana-11px-antialised
 
 Panel

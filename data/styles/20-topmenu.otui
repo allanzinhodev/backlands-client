@@ -57,7 +57,7 @@ TopMenuPanel < Panel
 
 TopMenuFrameCounterLabel < Label
   font: verdana-11px-rounded
-  color: white
+  color: #ebbf90
   margin-top: 4
   margin-left: 5
 

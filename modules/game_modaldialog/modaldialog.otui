@@ -7,7 +7,7 @@ ChoiceListLabel < Label
 
   $focus:
     background-color: #35241d
-    color: #f4f4f4
+    color: #ebbf90
   @onFocusChange: |
     if not self:isFocused() then
       self:setBackgroundColor(self:getActionId() % 2 == 0 and "#414141" or "#484848")

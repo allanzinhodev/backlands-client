@@ -36,7 +36,7 @@ CountWindow < NewMainWindow
       focusable: false
       phantom: true
       font: cipsoftFont
-      color: #ffffff
+      color: #ebbf90
       text-align: bottomRight
 
     UIWidget

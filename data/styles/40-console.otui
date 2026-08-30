@@ -1,6 +1,6 @@
 TextEditCipsoft < UITextEdit
   padding-left: 2
-  color: white
+  color: #ebbf90
   font: verdana-11px-monochrome
   height: 16
   opacity: 1

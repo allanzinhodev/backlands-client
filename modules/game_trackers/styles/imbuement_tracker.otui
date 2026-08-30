@@ -1,7 +1,7 @@
 ImbuementTrackerMenuOption < ThickCheckBox
   text-offset: 18 1
   text-align: left
-  color: white
+  color: #ebbf90
   background-color: alpha
   font: $var-cip-font-mono-rounded
   padding: 3 6

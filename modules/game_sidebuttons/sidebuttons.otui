@@ -69,7 +69,7 @@ NonClosableMiniWindow
 
     Button
       id: battlePassButton
-      size: 152 20
+      size: 108 20
       anchors.top: storeButton.bottom
       anchors.left: parent.left
       image-source: /images/ui/buttons-blue

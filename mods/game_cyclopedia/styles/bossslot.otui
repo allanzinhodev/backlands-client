@@ -520,7 +520,7 @@ BossslotGroupPanel < Panel
         !text: tr("1 / 10")
         font: $var-cip-font
         text-auto-resize: true
-        color: #ffffff
+        color: #ebbf90
         anchors.verticalCenter: parent.verticalCenter
         anchors.horizontalCenter: parent.horizontalCenter
     Label

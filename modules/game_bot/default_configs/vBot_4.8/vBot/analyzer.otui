@@ -19,7 +19,7 @@ BossCreaturePanel < Panel
     anchors.bottom: creature.verticalCenter
     anchors.right: parent.right
     font: verdana-11px-rounded
-    color: #FFFFFF
+    color: #ebbf90
     text: Duke Krule
 
   Label
@@ -217,7 +217,7 @@ AnalyzerLootItem < UIItem
   Label
     id: count
     font: verdana-11px-rounded
-    color: white
+    color: #ebbf90
     opacity: 0.87
     anchors.left: parent.left
     anchors.right: parent.right

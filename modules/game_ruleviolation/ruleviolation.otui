@@ -5,7 +5,7 @@ RVListLabel < Label
 
   $focus:
     background-color: #ffffff22
-    color: #ffffff
+    color: #ebbf90
 
 RVLabel < Label
   anchors.left: parent.left

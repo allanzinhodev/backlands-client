@@ -18,7 +18,7 @@ TableRow < UITableRow
 
   $focus:
     background-color: #294f6d
-    color: #ffffff
+    color: #ebbf90
 
 TableColumn < Label
   width: 30

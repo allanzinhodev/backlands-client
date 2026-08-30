@@ -1232,10 +1232,10 @@ CategoryListLabel < Label
 
   $focus:
     background-color: #ffffff22
-    color: #ffffff
+    color: #ebbf90
   $!focus:
     background-color: #281b17
-    color: #ffffff
+    color: #ebbf90
 
 SlotItems < UIWidget
   size: 34 34

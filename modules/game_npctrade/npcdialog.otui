@@ -174,5 +174,5 @@ Window
       text-align: center
       text-offset: 0 1
       font: verdana-11px-rounded
-      color: #ffffff
+      color: #ebbf90
       phantom: true
