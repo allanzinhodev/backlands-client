@@ -1,5 +1,5 @@
 HotkeyListLabel < UILabel
-  font: verdana-11px-monochrome
+  font: $var-cip-font
   background-color: alpha
   text-offset: 2 0
   focusable: true

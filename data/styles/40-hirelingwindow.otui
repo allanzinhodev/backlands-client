@@ -537,7 +537,7 @@ HirelingOutfitWindow < MainWindow
     phantom: true
     Label
       id: addon1
-      size: 131 22
+      size: 210 22
       padding: 1 1 1 1
       text: Nothing to configure
       font: $var-cip-font

@@ -55,7 +55,7 @@ EquipPanel < Panel
 
       Button
         id: clearButton
-        size: 45 17
+        size: 62 17
         anchors.left: itemNameLabel.right
         anchors.verticalCenter: itemButton.verticalCenter
         margin-left: 8

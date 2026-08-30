@@ -4102,7 +4102,7 @@ CharacterTitles < Panel
         margin-top: 1
       UIWidget
         id: permanentButton
-        size: 79 15
+        size: 110 15
         text: Permanent
         color: $var-text-cip-color
         text-offset: 1 -1
@@ -4127,7 +4127,7 @@ CharacterTitles < Panel
         margin-top: 1
       UIWidget
         id: unlockedButton
-        size: 68 15
+        size: 96 15
         text: Unlocked
         color: $var-text-cip-color
         text-offset: 1 -1

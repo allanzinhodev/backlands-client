@@ -12,6 +12,7 @@ CaveBotConfigPanel < Panel
   Label
     text-align: center
     text: CaveBot Config
+    width: 154
     margin-top: 5
 
 CaveBotConfigNumberValuePanel < Panel

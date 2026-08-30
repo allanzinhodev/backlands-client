@@ -34,6 +34,11 @@ $PixelFontTypes = 'Label|MenuLabel|Button|QtButton|InputBoxButton|MessageBoxButt
 
 # Largura que o estilo ja da a quem nao declara size:. Sem isto, todo botao sem
 # tamanho virava "sem-tam" mesmo cabendo: um QtButton nasce com 106px, nao 43.
+# Tipos que ja herdam text-auto-resize do proprio estilo: o widget cresce com o
+# texto e nao existe "sem tamanho" para eles. Sem isto a varredura pede largura
+# para quem nao precisa.
+$AutoResizeTypes = 'RoundCheckBox|SmartMode'
+
 $DefaultWidth = @{
     'Label'            = 86
     'MenuLabel'        = 86
@@ -134,7 +139,7 @@ function Scan-Containers($file, $lines) {
             $stack[$stack.Count - 1].Width = [int]$Matches[1]
         }
         elseif ($line -match '^\s*margin-left:\s*(\d+)') { $stack[$stack.Count - 1].Inset += [int]$Matches[1] }
-        elseif ($line -match '^\s*!?text:\s*(?:tr\()?[''"]([^''"]+)[''"]') {
+        elseif ($line -match '^\s*!?text:.*?[''"]([^''"]+)[''"]' -or $line -match '^\s*!?text:\s*([^''"\s][^\r\n]*?)\s*$') {
             $txt = $Matches[1]
             # TextButton e os Qt*/Next/Previous derivam de UIButton e seguem em Verdana
             if ($stack[$stack.Count - 1].Type -match '^(TextButton|ImageButton|TabButton|(Next|Previous).*Button)$') { continue }
@@ -169,6 +174,7 @@ foreach ($file in $files) {
         # Label e MenuLabel herdam silkscreen-16 de 10-labels.otui quando nao declaram fonte.
         # FlatLabel e GameLabel derivam direto de UILabel e seguem em Verdana - nao entram.
         if ($typeInherits -and -not $anyFont) { $usesFont = $true }
+        if ($blockType -and $blockType -match "^($script:AutoResizeTypes)`$") { $autoResize = $true }
         if ($text -and $usesFont) {
             $need = Measure-Text $text
             # altura: compara com a tinta real do texto. Uma caixa de 15px so corta se o
@@ -214,7 +220,7 @@ foreach ($file in $files) {
         $indent = ($line -replace '^(\s*).*$', '$1').Length
 
         # linha de propriedade? (contem ':' e nao abre bloco novo no mesmo nivel)
-        if ($line -match '^\s*!?text:\s*(?:tr\()?[''"]([^''"]+)[''"]') {
+        if ($line -match '^\s*!?text:.*?[''"]([^''"]+)[''"]' -or $line -match '^\s*!?text:\s*([^''"\s][^\r\n]*?)\s*$') {
             $text = $Matches[1]; $textLine = $i + 1
         }
         elseif ($line -match '^\s*size:\s*(\d+)\s+(\d+)') { $box = [int]$Matches[1]; $boxH = [int]$Matches[2] }

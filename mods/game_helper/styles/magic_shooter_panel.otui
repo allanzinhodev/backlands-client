@@ -255,7 +255,7 @@ MagicShooterPanel < Panel
 
       Button
         id: clearButton
-        size: 45 17
+        size: 62 17
         anchors.left: itemNameLabel.right
         anchors.verticalCenter: spellButton.verticalCenter
         margin-left: 8
@@ -505,7 +505,7 @@ MagicShooterPanel < Panel
 
       Button
         id: applyIgnoreButton
-        size: 50 17
+        size: 66 17
         anchors.top: ignoreMonsterLabel.bottom
         anchors.right: parent.right
         margin-top: 2
@@ -537,7 +537,7 @@ MagicShooterPanel < Panel
 
       Button
         id: applyPriorityButton
-        size: 50 17
+        size: 66 17
         anchors.top: priorityMonsterLabel.bottom
         anchors.right: parent.right
         margin-top: 2

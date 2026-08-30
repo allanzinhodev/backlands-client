@@ -444,6 +444,7 @@ SettingsPanel < Panel
 
   Button
     id: resetSettings
+    width: 146
     anchors.right: parent.right
     anchors.bottom: parent.bottom
     text-align: center

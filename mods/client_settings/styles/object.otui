@@ -1,6 +1,7 @@
 SmartMode < CheckBox
   id: smartMode
   text: Smart mode
+  text-auto-resize: true
   margin-top: 6
   margin-left: 32
   font: $var-cip-font
@@ -10,6 +11,7 @@ SmartMode < CheckBox
 RoundCheckBox < CheckBox
   image-source: /images/ui/checkboxcircle
   text-offset: 15 -3
+  text-auto-resize: true
 
   $first:
     margin-top: 2

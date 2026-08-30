@@ -396,7 +396,7 @@ InactivePreyPanel < Panel
 
       CheckBox
         id: autoRerollCheck
-        size: 170 15
+        size: 234 15
         anchors.verticalCenter: parent.verticalCenter
         anchors.left: parent.left
         margin-top: 2
@@ -577,7 +577,7 @@ ActivePreyPanel < Panel
 
       CheckBox
         id: autoRerollCheck
-        size: 170 15
+        size: 234 15
         anchors.verticalCenter: parent.verticalCenter
         anchors.left: parent.left
         margin-top: 2
@@ -1074,9 +1074,8 @@ NewMainWindow
     anchors.bottom: parent.bottom
     margin-bottom: 12
     margin-right: 12
-    size: 43 20
+    size: 62 20
     text: Close
-    font: cipsoftFont
     @onClick: modules.game_prey.hide(true)
 
   Panel

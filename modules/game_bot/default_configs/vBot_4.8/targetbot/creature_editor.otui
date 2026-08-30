@@ -95,6 +95,7 @@ TargetBotCreatureEditorWindow < MainWindow
     anchors.verticalCenter: prev.verticalCenter
     anchors.left: parent.left
     text: Target name:
+    width: 130
 
   VerticalScrollBar
     id: contentScroll

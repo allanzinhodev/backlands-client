@@ -61,8 +61,8 @@ ItemListLabel < UIWidget
     margin-left: 5
 
 CategoryItemListLabel < Label
-  font: Verdana Bold-11px
-  height: 16
+  font: $var-cip-font
+  height: 17
   background-color: alpha
   text-offset: 1 -1
   focusable: true
@@ -116,12 +116,11 @@ ItemDataPanel < UIWidget
 
     Button
       id: levelButton
-      size: 47 20
+      size: 60 20
       anchors.top: categoriesList.bottom
       anchors.left: parent.left
       !text: tr('Level')
       margin-top: 31
-      font: cipsoftFont
       @onClick: modules.game_cyclopedia.CyclopediaItems.onSortFields(self, self:isChecked())
 
     Button
@@ -131,7 +130,6 @@ ItemDataPanel < UIWidget
       anchors.left: prev.right
       !text: tr('Voc.')
       margin-left: 6
-      font: cipsoftFont
       @onClick: modules.game_cyclopedia.CyclopediaItems.onSortFields(self, self:isChecked())
 
     Button
@@ -141,7 +139,6 @@ ItemDataPanel < UIWidget
       anchors.left: prev.right
       !text: tr('1H')
       margin-left: 6
-      font: cipsoftFont
       enabled: false
       @onClick: modules.game_cyclopedia.CyclopediaItems.onSortFields(self, self:isChecked())
 
@@ -152,7 +149,6 @@ ItemDataPanel < UIWidget
       anchors.left: prev.right
       !text: tr('2H')
       margin-left: 6
-      font: cipsoftFont
       enabled: false
       @onClick: modules.game_cyclopedia.CyclopediaItems.onSortFields(self, self:isChecked())
 
@@ -271,6 +267,7 @@ ItemDataPanel < UIWidget
       font: $var-cip-font
       color: $var-text-cip-color
       text: Loot Value Source:
+      text-auto-resize: true
 
     CheckBox
       id: circlenpc
@@ -792,12 +789,11 @@ ItemDataPanel < UIWidget
 
   Button
     id: manageContainer
-    size: 128 20
+    size: 190 20
     anchors.top: parent.bottom
     anchors.left: parent.left
     !text: tr('Manage Containers')
     margin-top: -31
-    font: cipsoftFont
     text-color: #c0c0c0
     enabled: true
     @onClick: modules.game_cyclopedia.CyclopediaItems.onClickLootContainers()

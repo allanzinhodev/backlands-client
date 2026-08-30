@@ -1620,7 +1620,7 @@ MarketHistory < Panel
 
     UIWidget
       id: amountButton
-      size: 59 15
+      size: 76 15
       text: Amount
       font: $var-cip-font
       color: $var-text-cip-color
@@ -1647,7 +1647,7 @@ MarketHistory < Panel
 
     UIWidget
       id: piecepriceButton
-      size: 84 15
+      size: 110 15
       text: Piece Price
       font: $var-cip-font
       color: $var-text-cip-color
@@ -1674,7 +1674,7 @@ MarketHistory < Panel
 
     UIWidget
       id: totalpriceButton
-      size: 84 15
+      size: 114 15
       text: Total Price
       font: $var-cip-font
       color: $var-text-cip-color
@@ -1701,7 +1701,7 @@ MarketHistory < Panel
 
     UIWidget
       id: sellEndButton
-      size: 220 15
+      size: 147 15
       //220 tela 1 - 149 tela 2
       text: Ended At
       font: $var-cip-font
@@ -1831,7 +1831,7 @@ MarketHistory < Panel
 
     UIWidget
       id: amountButton
-      size: 59 15
+      size: 76 15
       text: Amount
       font: $var-cip-font
       color: $var-text-cip-color
@@ -1858,7 +1858,7 @@ MarketHistory < Panel
 
     UIWidget
       id: piecepriceButton
-      size: 84 15
+      size: 110 15
       text: Piece Price
       font: $var-cip-font
       color: $var-text-cip-color
@@ -1885,7 +1885,7 @@ MarketHistory < Panel
 
     UIWidget
       id: totalpriceButton
-      size: 84 15
+      size: 114 15
       text: Total Price
       font: $var-cip-font
       color: $var-text-cip-color
@@ -1912,7 +1912,7 @@ MarketHistory < Panel
 
     UIWidget
       id: buyEndButton
-      size: 220 15
+      size: 147 15
       text: Ended At
       font: $var-cip-font
       color: $var-text-cip-color
