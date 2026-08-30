@@ -20,7 +20,7 @@ DailyRewardPanel < UIButton
     enabled: false
 
 MiniWindowDailyReward < Panel
-  font: verdana-11px-antialised
+  font: $var-cip-font
   icon-rect: 4 4 16 16
   width: 192
   height: 200
@@ -121,6 +121,7 @@ MainWindow
 
       FlatPanel
         id: streakWidget
+        font: $var-cip-font
         anchors.bottom: timerStreakPanel.top
         anchors.right: parent.right
         margin-bottom: 5
@@ -217,7 +218,8 @@ MainWindow
       id: bonusLabel
       anchors.top: preyBonus.bottom
       anchors.left: parent.left
-      size: 416 28
+      size: 416 64
+      text-wrap: true
       margin-top: 5
       margin-left: 78
       !text: tr('You already claimed your daily reward.')
@@ -709,7 +711,7 @@ MainWindow
       anchors.left: parent.left
       margin-left: 5
       margin-top: 1
-      font: pVerdana Bold-11px
+      font: $var-cip-font
       Label
         id: freeDescLabel
         anchors.top: parent.top
@@ -721,7 +723,7 @@ MainWindow
         margin-left: 1
         opacity: 0.5
         !text: tr('')
-        font: pVerdana Bold-11px
+        font: $var-cip-font
         color: $var-text-cip-color
 
     UIWidget

@@ -1,5 +1,5 @@
 IgnoreListLabel < Label
-  font: verdana-11px-monochrome
+  font: $var-cip-font
   background-color: alpha
   text-offset: 2 0
   focusable: true
@@ -10,7 +10,7 @@ IgnoreListLabel < Label
     color: #ebbf90
 
 WhiteListLabel < Label
-  font: verdana-11px-monochrome
+  font: $var-cip-font
   background-color: alpha
   text-offset: 2 0
   focusable: true

@@ -343,7 +343,7 @@ BountyTaskContainer < UIWidget
     margin-left: 10
 
 TalismanEntry < Panel
-  width: 222
+  width: 216
   anchors.top: parent.top
   anchors.bottom: parent.bottom
 
@@ -363,9 +363,9 @@ TalismanEntry < Panel
     anchors.right: parent.right
     margin-left: 6
     margin-right: 4
+    height: 32
     font: $var-cip-main-font
     color: $var-text-cip-color
-    text-wrap: true
 
   Label
     id: entryCurrentLabel
@@ -381,16 +381,16 @@ TalismanEntry < Panel
     anchors.bottom: parent.bottom
     anchors.left: parent.left
     margin-left: 8
-    size: 128 20
+    size: 124 20
     !text: tr('Upgrade')
     color: $var-text-cip-color-white
 
   Panel
     id: entryCostPanel
-    size: 86 20
+    size: 80 20
     anchors.verticalCenter: entryUpgradeButton.verticalCenter
     anchors.left: entryUpgradeButton.right
-    margin-left: 6
+    margin-left: 4
     image-source: /images/ui/infoPanel
     image-border: 2
 
@@ -443,7 +443,7 @@ BountyTalismanWindow < StaticWindow
   TalismanEntry
     id: talismanEntry1
     anchors.left: talismanSeparator.right
-    margin-left: 6
+    margin-left: 2
 
   VerticalSeparator
     id: talismanSep2
@@ -455,7 +455,7 @@ BountyTalismanWindow < StaticWindow
   TalismanEntry
     id: talismanEntry2
     anchors.left: talismanSep2.right
-    margin-left: 6
+    margin-left: 2
 
   VerticalSeparator
     id: talismanSep3
@@ -467,7 +467,7 @@ BountyTalismanWindow < StaticWindow
   TalismanEntry
     id: talismanEntry3
     anchors.left: talismanSep3.right
-    margin-left: 6
+    margin-left: 2
 
   VerticalSeparator
     id: talismanSep4
@@ -479,4 +479,4 @@ BountyTalismanWindow < StaticWindow
   TalismanEntry
     id: talismanEntry4
     anchors.left: talismanSep4.right
-    margin-left: 6
+    margin-left: 2

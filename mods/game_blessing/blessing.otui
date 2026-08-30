@@ -47,7 +47,7 @@ BlessingPanel < UIWidget
   image-source: /images/ui/item66
 
 MiniWindowBlessing < Panel
-  font: verdana-11px-antialised
+  font: $var-cip-font
   icon-rect: 4 4 16 16
   width: 192
   height: 200

@@ -1,5 +1,5 @@
 NpcDialogLabel < UITextEdit
-  font: verdana-11px-antialised
+  font: $var-cip-font
   height: 14
   color: #ebbf90
   margin-left: 2
@@ -173,6 +173,6 @@ Window
       anchors.fill: parent
       text-align: center
       text-offset: 0 1
-      font: verdana-11px-rounded
+      font: $var-cip-font
       color: #ebbf90
       phantom: true

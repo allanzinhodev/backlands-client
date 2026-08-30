@@ -15,7 +15,7 @@ VoteLabel < Label
 
 
 ListAnnouncementLabel < UIWidget
-  font: verdana-11px-antialised
+  font: $var-cip-font
   color: #ebbf90
   text-align: left
 
