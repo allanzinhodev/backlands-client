@@ -1,4 +1,5 @@
 CheckBox < UICheckBox
+  font: $var-cip-font
   size: 12 12
   text-align: left
   text-offset: 18 -1
@@ -19,6 +20,7 @@ CheckBox < UICheckBox
     change-cursor-image: false
 
 CheckBoxCircle < UICheckBox
+  font: $var-cip-font
   size: 12 12
   text-align: left
   text-offset: 18 -1
@@ -78,7 +80,7 @@ ColorBox < UICheckBox
     image-clip: 0 0 13 13
 
 ButtonBox < UICheckBox
-  font: verdana-11px-antialised
+  font: $var-cip-font
   color: white
   size: 106 23
   text-offset: 0 0

@@ -343,18 +343,22 @@ CavebotPanel < Panel
                 CheckBox
                   id: dirNW
                   !text: tr('NW')
+                  width: 36
                   @onCheckChange: modules.game_helper.cavebot.updateDirection(self)
                 CheckBox
                   id: dirN
                   !text: tr('N')
+                  width: 24
                   @onCheckChange: modules.game_helper.cavebot.updateDirection(self)
                 CheckBox
                   id: dirNE
                   !text: tr('NE')
+                  width: 32
                   @onCheckChange: modules.game_helper.cavebot.updateDirection(self)
                 CheckBox
                   id: dirW
                   !text: tr('W')
+                  width: 24
                   @onCheckChange: modules.game_helper.cavebot.updateDirection(self)
                 CheckBox
                   id: dirC
@@ -368,6 +372,7 @@ CavebotPanel < Panel
                 CheckBox
                   id: dirSW
                   !text: tr('SW')
+                  width: 34
                   @onCheckChange: modules.game_helper.cavebot.updateDirection(self)
                 CheckBox
                   id: dirS
@@ -376,6 +381,7 @@ CavebotPanel < Panel
                 CheckBox
                   id: dirSE
                   !text: tr('SE')
+                  width: 30
                   @onCheckChange: modules.game_helper.cavebot.updateDirection(self)
 
           Panel

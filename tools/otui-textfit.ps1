@@ -30,7 +30,7 @@ Add-Type -AssemblyName System.Drawing
 # 10-labels.otui; Button e os que derivam dele herdam de 10-buttons.otui desde que
 # a fonte dos botoes deixou de ser a cipsoftFont de 8px. FlatLabel e GameLabel
 # derivam direto de UILabel e seguem em Verdana - nao entram.
-$PixelFontTypes = 'Label|MenuLabel|Button|QtButton|InputBoxButton|MessageBoxButton|PageButton'
+$PixelFontTypes = 'Label|MenuLabel|Button|QtButton|InputBoxButton|MessageBoxButton|PageButton|CheckBox|CheckBoxCircle|ButtonBox'
 
 # Largura que o estilo ja da a quem nao declara size:. Sem isto, todo botao sem
 # tamanho virava "sem-tam" mesmo cabendo: um QtButton nasce com 106px, nao 43.
@@ -46,6 +46,9 @@ $DefaultWidth = @{
     'InputBoxButton'   = 43
     'PageButton'       = 16
     'QtButton'         = 106
+    'CheckBox'         = 12
+    'CheckBoxCircle'   = 12
+    'ButtonBox'        = 106
 }
 
 $repo = Split-Path -Parent $PSScriptRoot

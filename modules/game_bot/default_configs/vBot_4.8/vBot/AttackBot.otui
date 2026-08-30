@@ -455,7 +455,7 @@ SettingsPanel < Panel
     anchors.top: parent.top
     anchors.left: parent.left
     margin-top: 5
-    width: 200
+    width: 248
     text: Check RL Tibia conditions
 
   CheckBox
@@ -486,7 +486,7 @@ SettingsPanel < Panel
     anchors.top: Kills.bottom
     anchors.left: Kills.left
     margin-top: 8
-    width: 220
+    width: 320
     text: Turn to side with most monsters
 
   CheckBox
@@ -502,7 +502,7 @@ SettingsPanel < Panel
     anchors.top: prev.bottom
     anchors.left: prev.left
     margin-top: 8
-    width: 245
+    width: 352
     text: Items must be visible (recommended)
 
   CheckBox
@@ -526,7 +526,7 @@ SettingsPanel < Panel
     anchors.top: prev.bottom
     anchors.left: prev.left
     margin-top: 8
-    width: 245
+    width: 294
     text: Stop when attacking trainers
 
   CheckBox
@@ -534,7 +534,7 @@ SettingsPanel < Panel
     anchors.top: prev.bottom
     anchors.left: prev.left
     margin-top: 8
-    width: 200
+    width: 312
     height: 18
     text: Stop if Anti-RS player in range
 

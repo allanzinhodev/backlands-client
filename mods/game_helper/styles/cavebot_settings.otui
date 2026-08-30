@@ -261,7 +261,7 @@ CavebotSettingsWindow < NewMainWindow
         anchors.left: parent.left
         margin-top: 8
         margin-left: 8
-        width: 80
+        width: 98
 
       CheckBoxCircle
         id: walkArrowKeys
@@ -270,7 +270,7 @@ CavebotSettingsWindow < NewMainWindow
         anchors.left: walkMapWalk.right
         margin-top: 8
         margin-left: 10
-        width: 80
+        width: 120
 
       Label
         id: walkDelayLabel

@@ -22,7 +22,7 @@ HotkeyListLabel < UILabel
 MainWindow
   id: hotkeysWindow
   !text: tr('Hotkeys')
-  size: 380 494
+  size: 460 494
 
   @onEnter: modules.game_hotkeys.ok()
   @onEscape: modules.game_hotkeys.cancel()
@@ -157,7 +157,7 @@ MainWindow
   ButtonBox
     id: useOnSelf
     !text: tr('Use on yourself')
-    width: 128
+    width: 228
     enabled: false
     anchors.left: selectObjectButton.right
     anchors.right: parent.right
@@ -168,7 +168,7 @@ MainWindow
   ButtonBox
     id: useOnTarget
     !text: tr('Use on target')
-    width: 128
+    width: 228
     enabled: false
     anchors.left: prev.left
     anchors.right: parent.right
@@ -179,7 +179,7 @@ MainWindow
   ButtonBox
     id: useWith
     !text: tr('With crosshair')
-    width: 128
+    width: 228
     enabled: false
     anchors.left: prev.left
     anchors.right: parent.right
@@ -190,7 +190,7 @@ MainWindow
   ButtonBox
     id: useAtCursor
     !text: tr('Use at cursor position')
-    width: 128
+    width: 228
     enabled: false
     anchors.left: prev.left
     anchors.right: parent.right
