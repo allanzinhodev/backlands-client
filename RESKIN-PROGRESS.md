@@ -4,176 +4,204 @@ Branch `telaLOGIN`. Documento de continuidade: leia isto primeiro ao retomar em 
 
 ## Contexto
 
-A skin pixel-art (sprites cobre/marrom + fonte `silkscreen-16`) começou pela tela de login e
-está sendo estendida ao resto do cliente.
+A skin pixel-art (sprites cobre/marrom + fonte `silkscreen-16`) substitui a skin cinza do
+Tibia em todo o cliente. A estratégia da branch é **reskinar os sprites genéricos
+compartilhados** (`/images/ui/popupwindow`, `checkbox`, `buttons`, …) em vez de criar uma
+pasta de sprites dedicada a cada tela — decisão registrada no commit `b0b9548`.
 
-O ponto de alavanca é `&var-cip-font` em `data/styles/0-vars.otui`. Essa variável era
-**referenciada 1510 vezes em 155 arquivos mas nunca definida** — o OTML resolvia para string
-vazia e `UIWidget::setFont` caía em `getDefaultFont()` (= `verdana-11px-antialised`).
-Definir a variável vira todas essas telas de uma vez.
+O ponto de alavanca da fonte é `&var-cip-font` em `data/styles/0-vars.otui`. Essa variável
+era **referenciada 1510 vezes em 155 arquivos mas nunca definida**: o OTML resolvia para
+string vazia e `UIWidget::setFont` caía em `getDefaultFont()` (= `verdana-11px-antialised`).
+Defini-la virou todas essas telas de uma vez.
 
 ## O problema central da migração
 
-`silkscreen-16` é **~1,7x mais largo** que `verdana-11px-antialised` (16px de altura contra 11px).
-Todo layout com largura fixa calibrada para o Verdana corta texto quando recebe a fonte nova.
+`silkscreen-16` é **~1,7x mais largo** que `verdana-11px-antialised`. Todo layout com largura
+fixa calibrada para o Verdana corta texto quando recebe a fonte nova.
 
-Não há atalho: testei se o atlas era um 8px escalado 2x (daria para gerar uma variante estreita
-sem perda) — **não é**, 21,7% dos blocos 2x2 divergem. A fonte é desenhada em 16px de verdade.
+Não há atalho: o atlas da silkscreen **não** é um 8px escalado 2x (21,7% dos blocos 2x2
+divergem), então não dá para gerar uma variante estreita. E não dá para registrar uma fonte
+nova: o atlas de texto é fixo em 2048x2048 (`Atlas::init`, sem `BIG_FONTS`) e já está cheio —
+foi preciso desativar `Verdana-11px-italic.otfont` para caber a silkscreen.
 
-Então a migração é tela a tela: trocar a fonte, remedir as larguras, validar rodando.
+---
 
-## Blast radius — menor do que parece
+## Estado atual: todas as telas alcançáveis auditam limpas
 
-O HUD do jogo (abas de chat, `ATC Helper`, `Soul`/`Cap`, `Map View`, barra de hotkeys, contadores
-de fps) **não usa** `$var-cip-font`; define fontes explicitamente. Ficou intacto com o var global
-ligado. O que a variável atinge são as janelas modais e de feature.
+`tools/uisweep.ps1` abre 28 janelas no cliente rodando e audita cada uma. **28 de 28 limpas.**
+A varredura estática (`tools/otui-textfit.ps1`) reporta **0 estouros**. `tools/otui-lint.js`
+passa nos 473 arquivos OTML do cliente.
 
-## Feito e validado rodando
+A única janela que não abre é `npctrade`: o Lua dela quer dados de troca vindos do servidor,
+não é defeito de UI.
 
-| Tela | Arquivo | Status |
+### O que foi corrigido, por classe de defeito
+
+| Classe | Onde estava | Correção |
 |---|---|---|
-| Login (entergame) | `modules/client_entergame/entergame.otui` | ✅ fonte + layout refeitos |
-| Título da janela de login | `data/styles/40-entergame.otui` | ✅ |
-| Select Character | `modules/client_entergame/characterlist.otui` | ✅ colunas e checkboxes remedidos |
-| Chrome compartilhado | `data/styles/10-windows.otui` | ✅ divisor do popupwindow não repete mais |
-| `&var-cip-font` definido | `data/styles/0-vars.otui` | ✅ vira as ~155 telas que usavam a var |
-| 27 rótulos que cortavam | wheel, cyclopedia, announcement, gem menu, healthcircle, hotkey, graphics, prey, offsets | ⚠️ medidos e corrigidos, **sem validação visual** |
-| "Join Discord" no topo | `data/styles/20-topmenu.otui` | ✅ aparecia como "IN DISCO" |
-| 73 rótulos sem largura | console, mainpanel, bazaar, soulseal, prey, forge, wheel, cyclopedia, settings, trackers | ⚠️ `text-auto-resize`, cliente sobe limpo, **sem validação visual** |
+| 9-slice da moldura errado | `NewWindow`/`WindowCyclopedia`/`WindowPodium`, ~68 otui | borda medida na arte: 6 nas laterais, 30 no topo. Antes o anel `#9a6651` e o divisor preto se **repetiam** por toda janela |
+| Botões na fonte de 8px | `Button`, `QtButton`, ~680 instâncias | `$var-cip-font`; 251 botões alargados por medição |
+| Título em Verdana | `Window` (base de `MainWindow`, 64 arquivos) | `$var-cip-font` |
+| Combobox transbordando à esquerda | estilo `ComboBox` | `text-offset` de -15 para -10 (metade da seta, não a seta inteira) |
+| Rótulo cresce contra valor | questlog, forge, market, highscores | o par ancorado junto, crescendo para o lado que tem espaço |
+| Alinhamento falso por `text-offset` negativo | highscores, character list | `text-align: left` de verdade |
+| Título de mini-janela cortado | 13 janelas da sidebar | títulos encurtados contra o espaço real (~119px) |
+| Nome de outfit quebrando no meio | 18 de 132 | margem do rótulo e tile próprio de 120px; restam 3 |
+| Colunas desalinhadas | character list | cabeçalho e linha nos mesmos limites |
+| Arte cinza dentro de moldura nova | 260 sprites, 800+ literais hex | rampa de luminância para a paleta fechada |
 
-### Correções de bug que vieram junto (todas pré-existentes, não regressões)
+Depois disso restam **34 sprites cinza referenciados**, e são ícones
+(`icon-questionmark`, `back-icons`, `copy-all`, `hide-pin`, `item-blessed`), não chrome.
 
-1. `silkscreen-16.otfont` trazia `fixed-glyph-width: 0` — `BitmapFont::load` testa se a chave
-   **existe**, não se é não-zero, então todo glifo ficava com largura 0 e a fonte não desenhava
-   nada. Estava latente desde que a fonte foi adicionada.
-2. `UITextEdit::setTextHidden` ignorava o argumento (`m_textHidden = true` fixo) — os dois olhos
-   de mostrar/ocultar eram de mão única. **Exige recompilar** (`vc23`, config `OpenGL|x64`).
-3. `popupwindow.png` tem um divisor preto de 2px nas linhas 28-29, e `image-border-top: 27`
-   deixava ele dentro da faixa que se repete; qualquer janela acima de ~207px repetia a linha.
-4. `client_background.updateBoostedInfo` não existe — a chamada nil abortava
-   `finishCharacterList` antes do `CharacterList.show()` e travava o login depois de autenticar.
-5. Estados `$pressed`/`$hover` dos botões de olho sobrescreviam o `setImageSource` do Lua.
+---
 
-## Armadilha recorrente: `image-offset` das setas de ordenação
+## As ferramentas (é o que fica)
 
-Ao **estreitar** um `UIButton` que tem `image-offset`, a seta pode cair fora do widget — e isso
-desloca o cálculo do texto, jogando o label para fora da janela. Aconteceu com `characterSort`.
-Sempre reduza o `image-offset` junto com a largura (regra: `largura - 7 - 4`).
+Tudo em `tools/` da raiz do workspace, porque atravessa repositórios.
 
-## A ferramenta: `tools/otui-textfit.ps1`
-
-Varredura estática que mede cada rótulo `.otui` com a métrica real do atlas (mesma regra do
-`BitmapFont::calculateGlyphsWidthsAutomatically`) e lista o que não cabe na largura fixa.
-Muito mais rápido que abrir 155 janelas no cliente rodando.
+### Pilotar o cliente rodando
 
 ```powershell
-.\tools\otui-textfit.ps1                          # varre modules/ e mods/
-.\tools\otui-textfit.ps1 -Path mods/game_wheel    # escopo menor
+.\tools\uidrive.ps1 -Action start          # sobe o cliente com o mod de dev injetado
+.\tools\uidrive.ps1 -Action lua -Script "return UID.windows()"
+.\tools\uidrive.ps1 -Action shot -Out shot.png
+.\tools\uiplay.ps1                          # start -> autentica -> entra no mundo
+.\tools\uiwin.ps1 -Open "modules.game_forge.show()" -Name forge -OutDir shots
+.\tools\uisweep.ps1 -OutDir shots           # as 28 janelas, uma a uma
 ```
 
-Duas lições que ela incorpora, para não reintroduzir ruído:
+O mod fica em `tools/uidriver/` e o `uidrive.ps1` copia para `client/mods/zz_uidriver/` ao
+subir. O cliente **não** versiona essa pasta. Screenshot sai por `g_app.doScreenshot`, que
+grava o framebuffer sem borda de janela — pixel (0,0) é o canto do conteúdo, e a imagem entra
+direto no `probe.js`.
 
-- **Não checa altura por padrão.** O cliente não corta texto na altura do widget — a tela de
-  login desenha rótulos de 16px ao lado de checkboxes de 12px inteiros. Além disso quase todo
-  glifo termina na linha 13; só `Q q & _ , $ |` chegam à 15. Checar altura nominal gerava 204
-  falso-positivos. Use `-CheckHeight` só ao caçar um caso com `clipping: true` no pai.
-- **Filtra por fonte real.** `Button` usa `cipsoftFont` (8px) e nunca estoura; incluí-lo
-  enterrava os achados reais sob ~100 falso-positivos. `Label` e `MenuLabel` herdam
-  silkscreen-16 quando não declaram fonte; `FlatLabel` e `GameLabel` seguem em Verdana.
+### A auditoria em runtime (`UID.audit`)
 
-Ao aplicar correções em lote, **confira que a largura encontrada bate com a que a varredura
-reportou** antes de escrever — numa passagem anterior o sed redimensionou o widget errado no
-`cyclopedia.otui` porque pegou o `size:` do bloco seguinte.
+É a metade que a varredura estática não faz. Reporta quatro coisas:
 
-## Próximos passos, em ordem
+- `ESTOURA` — texto pintado fora do próprio widget, e quanto é cortado de cada lado
+- `COLIDE` — dois textos pintados um sobre o outro
+- `ESCAPA` — texto fora da área útil da janela
+- `SAI-RECT` — filho cujo retângulo sai da área útil
 
-### 1. Os 2 templates de estilo que sobraram
+Ela mede onde os glifos **realmente caem**, e isso exigiu ler o engine em vez de supor:
 
-`.\tools\otui-textfit.ps1` hoje reporta **0 largura, 0 altura, 2 sem-tamanho**. Eram 75 em 33
-arquivos. Os 73 resolvidos levaram `text-auto-resize: true`, que é independente de fonte.
+- `BitmapFont::calculateDrawTextCoords` alinha os glifos dentro de `screenCoords`. Texto
+  centralizado **não** começa em `rect.x + text-offset`.
+- A mesma função **descarta** glifos fora de `screenCoords` e corta os que cruzam a borda.
+  Texto não pinta por cima do vizinho: ele é **cortado**.
+- Widget dentro de container com `clipping` só pinta onde o container mostra.
+- `getTextSize()` devolve a caixa nominal de 16px, mas quase todo glifo da silkscreen para na
+  linha 13 — dois rótulos a 13px de distância não se tocam.
 
-Os 2 restantes são **templates**, não instâncias, e por isso ficaram de fora:
+### Medir e corrigir largura
 
-- `VipGroupBox < CheckBox` em `modules/game_viplist/editvip.otui:2`
-- `EventsScheduleLabel < UIWidget` em `modules/client_background/background.otui:3`
+```powershell
+.\tools\otui-textfit.ps1                    # varre modules/, mods/ e data/styles
+.\tools\otui-fitfix.ps1 -Types '^Button$'   # aplica as larguras que ela pediu
+```
 
-Mexer neles muda **todas** as instâncias de uma vez. Veja os pontos de uso antes de decidir.
+O `otui-fitfix.ps1` existe para não repetir um acidente: uma passagem anterior casou por
+número de linha, pegou o `size:` do bloco **seguinte** e redimensionou o widget errado no
+`cyclopedia.otui`. Ele só escreve quando o valor encontrado bate com o que a varredura
+reportou, e procura só em linhas na indentação do próprio widget.
 
-> Ao aplicar `text-auto-resize` em lote, o filtro que importa é: **o próximo irmão ancora em
-> `prev.right`?** Cuidado que o rótulo costuma ele mesmo ter `anchors.left: prev.right` (ele
-> fica à direita de um checkbox) — isso não conta. Olhe o bloco seguinte, não o próprio. Errei
-> nos dois sentidos antes de acertar: primeiro pulei 13 casos seguros, depois uma janela de
-> busca larga demais pegou a âncora do rótulo seguinte.
+### Paleta
 
-### 2. Validar visualmente o que já foi corrigido por medição
+```powershell
+node tools\pixelui\palettecheck.js client\data\images\ui   # quanto de cada sprite é cinza
+node tools\pixelui\greyrefs.js client                      # cruzado com quem referencia
+node tools\pixelui\regrade.js in.png out.png               # um sprite
+node tools\pixelui\regrade-batch.js client --apply         # chrome cinza + referenciado
+node tools\pixelui\regrade-otui.js client --apply --text   # literais hex em .otui e .lua
+```
 
-Os rótulos alargados em wheel, cyclopedia, announcement, gem menu, healthcircle, prey e offsets
-passam na medição e o cliente sobe limpo, mas **ninguém abriu essas janelas no cliente**.
-Navegar até elas dentro do jogo é o que falta. Já validados visualmente: login, Select
-Character, Options e Customise Character.
+O `regrade` **não redesenha**: mapeia a luminância de cada pixel para a paleta fechada
+(`#000000 #150e0c #231815 #33231d #4e2f24 #9a6651 #c68f66 #ebbf90`). A arte antiga é
+dessaturada, então a luminância carrega a forma inteira — borda, sombra, ruído e relevo
+sobrevivem, só a cor anda.
 
-> **A medição não é suficiente.** Abrir o Options revelou três colisões que nenhuma varredura
-> de largura pega, porque nada é *cortado* — os widgets simplesmente se sobrepõem. O padrão é
-> sempre o mesmo: **um lado ancorado em `parent.left` crescendo contra outro ancorado em
-> `parent.right`**. Nas cinco linhas de walk delay o rótulo encontrava o slider no meio; em
-> "Show Advanced Options" o container fixo deixava o texto passar por baixo do botão Repair.
-> Procure esse par de âncoras opostas ao revisar cada janela.
+Texto usa uma rampa em degrau, porque a paleta nomeia três papéis e só três:
+`>=176 → #ebbf90` (texto), `>=112 → #a87f68` (dim), abaixo → `#6b4d40` (placeholder).
 
-> ⚠️ **`text-auto-resize` pode CRIAR sobreposição.** Ele resolve o corte, mas deixa o rótulo
-> ocupar a largura real — e num layout de duas colunas isso faz a coluna da esquerda invadir a
-> da direita. Aconteceu na janela de ignore list: `Ctrl+I` mostrava
-> "CHARACTERS YOU WISH TO IGNO**CHARACTERS YOU ALLOW**...". Alargar a janela não resolvia
-> (os títulos pediam colunas de ~380px); a saída foi **encurtar os textos**.
->
-> Isso vale para os 73 rótulos que receberam auto-resize: só uma parte foi vista rodando.
-> **Cada janela ainda precisa ser aberta uma vez.** A varredura estática já não ajuda aqui.
+---
 
-### 3. Títulos de mini-janela cortados na sidebar
+## ⚠️ O mockup em `ui-login/` é o pacote ANTIGO
 
-`Ctrl+B` mostra "BATTLE LI" em vez de "BATTLE LIST". `MiniWindow` em `30-miniwindow.otui` tem
-`width: 178` com `text-offset: 20 0`, e os botões da barra de título comem o resto — sobram
-~95px para o texto, contra os ~94px que "Battle List" pede em silkscreen.
+`ui-login/reference/login-module.png` na raiz do workspace **não é a referência válida**. O
+commit `b0b9548` a rejeita explicitamente:
 
-**Não tem largura que resolva todos.** A sidebar (`modules/game_interface/gameinterface.otui:7`)
-compartilha os mesmos 178px, então alargar mini-janela obriga a alargar a sidebar, o que tira
-espaço do viewport do jogo. E títulos como "Unjustified Points" pedem ~165px — não caberiam nem
-a 200. As saídas reais são encurtar os títulos longos um a um, ou aceitar o corte. Deixei sem
-mexer porque mexe no layout principal do jogo.
+> O pacote `D:\backlands\ui-login` usado nos 2 commits anteriores estava desatualizado: foi
+> escrito antes de alguém ler o código real do cliente. A janela real tem token 2FA, seleção
+> de servidor, servidor customizado, login com Google e botão de gravações — nada disso
+> existe no mock que o pacote antigo assumia.
 
-### 4. Nomes de outfit quebrando com hífen
+O pacote correto é `Login Pixel Art Retro\ui-login`, com `AUDITORIA-CLIENTE.md`, e a
+abordagem dele é a que esta branch segue: reskinar os sprites genéricos compartilhados.
 
-Na janela "Customise Character" os tiles do grid de outfits têm largura fixa e os nomes longos
-agora quebram: "ENTREPREN-EUR", "ELEMENTALI-ST". Não é corte, é `text-wrap` fazendo o trabalho
-dele num tile estreito demais para a fonte nova. A varredura não pega porque texto que quebra
-é explicitamente ignorado. Ou alarga o tile, ou aceita a quebra.
+**Esse pacote não está nesta máquina.** `Login Pixel Art Retro.zip` na raiz do workspace tem
+22 bytes — é um ZIP vazio (só o end-of-central-directory). E o `AUDITORIA-CLIENTE.md` nunca
+foi commitado em nenhum dos repositórios.
 
-### 5. `NewWindow` / `WindowCyclopedia` / `WindowPodium`
+Consequência prática: **não dá para comparar contra mockup**. Reconstruir a tela de login a
+partir de `ui-login/reference/login-module.png` desfaria uma decisão registrada e apagaria
+funcionalidades. Enquanto o pacote certo não aparecer, a referência utilizável é a coerência
+interna — que é o critério que esta sessão usou.
 
-Em `10-windows.otui` ainda usam `image-border-top: 17` com a arte nova, que quer 30 — fatiam no
-meio da faixa de título. 68 otui usam essa família, e o conserto mexe também no `padding-top`
-delas, o que desloca o conteúdo. Precisa validar tela a tela.
+---
+
+## Próximos passos
+
+1. **Recuperar o pacote `Login Pixel Art Retro`** (com `AUDITORIA-CLIENTE.md`) e commitá-lo,
+   ou pelo menos o `.md`, para o próximo agente não tropeçar no mock velho de novo.
+2. **82 widgets ainda forçam `font: cipsoftFont`.** Parte é botão de janela e deveria migrar;
+   parte é a letra da tecla num slot de action bar de 32px, onde 16px não cabe. Precisa de
+   leitura caso a caso, não de passagem em lote.
+3. **`color: white` (73 valores).** Nem tudo é texto: `Item < UIItem` usa como *tint* do
+   sprite, e mapear branco para dourado tingiria todo item do jogo. Separar antes de mexer.
+4. **Barras do topo do HUD** (vida/mana/XP) e a barra de título do Map View continuam cinza —
+   são sprites fora do filtro de chrome.
+5. **3 nomes de outfit** ainda quebram (`Necromancer`, `Entrepreneur`, `Orcsoberfest`).
+   Caberiam num tile de 134px, mas dois deles mais a coluna de preview não cabem na janela.
+6. **Cabeçalho da tabela do Highscores** segue em Verdana: `Rank` (44px) e `Level` (53px) não
+   cabem nas colunas de 40px em silkscreen. Precisa de mais largura vinda de outra coluna.
 
 ## Armadilhas já pagas — não repita
 
-- **`image-offset` ao estreitar um `UIButton`**: se a seta cair fora do widget, o cálculo do
-  texto se desloca e o rótulo vai parar fora da janela. Aconteceu com `characterSort`. Reduza o
-  `image-offset` junto com a largura (regra prática: `largura - 7 - 4`).
-- **Aplicar largura em lote por número de linha**: numa passagem o sed pegou o `size:` do bloco
-  seguinte e redimensionou o widget errado no `cyclopedia.otui`. Sempre confira que o valor
-  encontrado bate com o que a varredura reportou antes de escrever.
-- **`Set-Content -Encoding utf8` no PowerShell 5.1 grava BOM** e suja o diff inteiro. Use `sed`
-  ou `[System.IO.File]::WriteAllLines`.
-- **Automação de captura**: minimizar/restaurar a janela para forçar foco às vezes abre o menu
-  Iniciar por cima e provoca `Render error: 1286` (GL_INVALID_FRAMEBUFFER_OPERATION) nessa GPU
-  antiga. É artefato da automação, não do cliente.
+- **`text-offset` negativo para fingir alinhamento à esquerda.** Empurra texto centralizado
+  para fora do widget e quebra sozinho na próxima mudança de largura. Aconteceu no cabeçalho
+  do Highscores e no da character list. Use `text-align: left`.
+- **Ancorar um par rótulo/valor cruzado.** `A.right: B.left` com `B.top: A.top` é ciclo para
+  o resolvedor de âncoras mesmo em eixos diferentes: ele loga
+  `recursively anchored to itself` e **descarta** a âncora. Ancore o valor num terceiro
+  widget com id próprio.
+- **`image-offset` ao estreitar um `UIButton`.** Se a seta cair fora do widget, o cálculo do
+  texto se desloca e o rótulo vai parar fora da janela. Reduza junto (`largura - 7 - 4`).
+- **`WriteAllLines` do .NET junta com `Environment.NewLine`**, que no Windows é CRLF. Os
+  `.otui` deste repo são LF: uma passagem em lote reescreveu 108 arquivos inteiros e afogou
+  450 linhas reais em 44k de ruído. Use `WriteAllText` com `\n` explícito.
+- **`Set-Content -Encoding utf8` no PowerShell 5.1 grava BOM.**
+- **`Get-Content` devolve string, não array, quando o arquivo tem uma linha só** — indexar
+  entrega um `Char`. Use `@(Get-Content ...)`.
+- **Estilos duplicados.** `SelectionButton` está declarado igual em `40-hirelingwindow`,
+  `40-outfitwindow` e `40-renownwindow`; os estilos carregam em ordem alfabética e o último
+  vence. Editar o arquivo "certo" pode não mudar nada na tela.
+- **Automação de captura**: minimizar/restaurar a janela para forçar foco às vezes abre o
+  menu Iniciar por cima e provoca `Render error: 1286` nessa GPU antiga. Artefato da
+  automação, não do cliente.
 
 ## Como validar
 
-Servidor: `docker start backlands-db backlands-srv` (config já aponta para `backlands-db:3306`).
-O binário Windows `theforgottenserver-x64.exe` **não roda nesta máquina** — crasha com
-`0xC000001D`, compilado para CPU com AVX2. Docker é o único caminho.
+Nesta máquina **não há Docker**. O stack sobe nativo:
 
-Conta de teste: usuário `1`, senha `1`. O servidor autentica por `accounts.name`, não por email,
-apesar do label dizer "Email:". Personagem jogável: **Tester** (nível 20, Thais).
-O "Account Manager" não carrega — tem caminho especial em `iologindata.cpp` que força Town ID 1,
-que não existe no mapa.
+```powershell
+.\tools\run-local.ps1 -NoClient    # MariaDB portátil + server\build\tfs.exe
+.\tools\uiplay.ps1                 # cliente, login e entrada no mundo
+```
+
+MariaDB portátil em `%USERPROFILE%\mariadb`; banco `forgottenserver`, usuário
+`forgottenserver` sem senha (`mysql_native_password`).
+
+Conta de teste: **`god` / `god`**, personagem **Backlands God** (level 200, conta type 5 —
+abre qualquer janela do jogo). A conta `1` / `1` existe mas só tem o "Account Manager", que
+não carrega: `iologindata.cpp` força Town ID 1, que não existe no mapa.
