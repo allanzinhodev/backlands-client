@@ -62,7 +62,7 @@ NewConsoleIconButton < UIButton
 
 ConsoleTabBarButton < UIButton
   size: 20 20
-  font: verdana-11px-rounded
+  font: $var-cip-font
   image-source: /images/ui/chat_channel_deselected
   image-border: 2
   anchors.top: parent.top
@@ -73,7 +73,7 @@ ConsoleTabBarButton < UIButton
   margin-bottom: 0
   padding-left: 20
   padding-right: 20
-  &tabWidth: 95
+  &tabWidth: 112
   
   $checked:
     color: #ebbf90
