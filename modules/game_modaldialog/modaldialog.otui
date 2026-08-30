@@ -6,7 +6,7 @@ ChoiceListLabel < Label
   color: $var-text-cip-color
 
   $focus:
-    background-color: #585858
+    background-color: #35241d
     color: #f4f4f4
   @onFocusChange: |
     if not self:isFocused() then
@@ -54,7 +54,7 @@ ModalDialog < MainWindow
   &minimumChoices: 4
   &maximumChoices: 10
   font: $var-cip-font
-  color: #909090
+  color: #a87f68
 
   UIWidget
     id: messageLabel

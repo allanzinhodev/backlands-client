@@ -13,7 +13,7 @@ CavebotPanel < Panel
       margin-top: 5
       !text: tr('Map Preview')
       font: $var-main-font
-      color: #AAAAAA
+      color: #a87f68
       text-auto-resize: true
 
 
@@ -46,9 +46,10 @@ CavebotPanel < Panel
         Label
           id: sessionsTitle
           !text: tr('Scripts')
+          text-auto-resize: true
           anchors.top: parent.top
           anchors.horizontalCenter: parent.horizontalCenter
-          color: #AAAAAA
+          color: #a87f68
 
         Panel
           id: sessionsBorder
@@ -158,9 +159,10 @@ CavebotPanel < Panel
         Label
           id: configTitle
           !text: tr('Waypoints')
+          text-auto-resize: true
           anchors.top: parent.top
           anchors.horizontalCenter: parent.horizontalCenter
-          color: #AAAAAA
+          color: #a87f68
 
         Panel
           id: configBorder
@@ -184,7 +186,7 @@ CavebotPanel < Panel
             QtButton
               id: tabWaypoints
               !text: tr('Waypoints')
-              width: 90
+              width: 108
               height: 20
               margin-right: 2
               @onClick: modules.game_helper.cavebot.selectTab('waypoints')
@@ -392,7 +394,7 @@ CavebotPanel < Panel
               anchors.left: parent.left
               anchors.right: parent.right
               font: $var-main-font
-              color: #DDDDDD
+              color: #ebbf90
 
             Label
               id: lblStop

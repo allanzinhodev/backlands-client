@@ -543,9 +543,9 @@ function CharacterList.create(characters, account, otui)
 
   local showOutfit = Options.getOption("characterSelectionShowOutfits")
   if not showOutfit then
-    charactersWindow.characterTable.characterSort:setTextOffset("-206 0")
+    charactersWindow.characterTable.characterSort:setTextOffset("2 0")
   else
-    charactersWindow.characterTable.characterSort:setTextOffset("-73 0")
+    charactersWindow.characterTable.characterSort:setTextOffset("68 0")
   end
 
   local outfitCheckBox = charactersWindow:recursiveGetChildById('checkBoxOutfit')
@@ -770,7 +770,7 @@ function onUpdateOnStates(self)
     return
   end
 
-  self:setBackgroundColor("#585858")
+  self:setBackgroundColor("#35241d")
   local children = self:getChildren()
   for i=1,#children do
     children[i]:setColor("#f4f4f4")
@@ -851,9 +851,9 @@ function onReorderCharacterList()
   local showOutfit = Options.getOption("characterSelectionShowOutfits")
   if charactersWindow.characterTable then
     if not showOutfit then
-      charactersWindow.characterTable.characterSort:setTextOffset("-206 0")
+      charactersWindow.characterTable.characterSort:setTextOffset("2 0")
     else
-      charactersWindow.characterTable.characterSort:setTextOffset("-73 0")
+      charactersWindow.characterTable.characterSort:setTextOffset("68 0")
     end
   end
 

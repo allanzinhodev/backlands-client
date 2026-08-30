@@ -16,7 +16,7 @@ ListHighscore < UIWidget
     margin-bottom: -1
   Panel
     id: name
-    width: 225
+    width: 209
     anchors.top: parent.top
     anchors.left: prev.right
     text-align: left
@@ -42,7 +42,7 @@ ListHighscore < UIWidget
     margin-bottom: -1
   Panel
     id: gameworld
-    width: 84
+    width: 100
     anchors.top: parent.top
     anchors.left: prev.right
     font: $var-cip-font
@@ -102,9 +102,10 @@ MainWindow
     anchors.right: parent.right
     anchors.left: parent.left
     size: 668 118
-    margin-top: -6
+    // sem recuo negativo: ele existia para encostar na faixa de titulo fina de
+    // antes e agora empurra o painel para dentro do titulo
     !text: tr('Highscores Filters')
-    color: #909090
+    color: #a87f68
     text-offset: 285 2
     image-source: /images/ui/t2pixel-up-frame-borderimage
     image-border: 3
@@ -131,7 +132,7 @@ MainWindow
       margin-left: 7
     ComboBox
       id: gameworldbox
-      size: 235 20
+      size: 200 20
       anchors.top: parent.top
       anchors.left: gameworldlabel.right
       margin-top: 22
@@ -148,7 +149,7 @@ MainWindow
       margin-top: 50
     ComboBox
       id: vocationbox
-      size: 235 20
+      size: 200 20
       anchors.top: parent.top
       anchors.left: vocationlabel.right
       margin-top: 47
@@ -165,7 +166,7 @@ MainWindow
       text-auto-resize: true
     ComboBox
       id: categorybox
-      size: 235 20
+      size: 200 20
       anchors.top: gameworldbox.top
       anchors.left: categorylabel.right
       margin-left: 14
@@ -196,7 +197,7 @@ MainWindow
       id: optionalPvpCheck
       anchors.top: openPvpLabel.top
       anchors.left: openPvpLabel.right
-      margin-left: 100
+      margin-left: 84
     UIWidget
       id: optionalPvpLabel
       anchors.top: optionalPvpCheck.top
@@ -210,7 +211,7 @@ MainWindow
       id: hardcorePvpCheck
       anchors.top: optionalPvpLabel.top
       anchors.left: optionalPvpLabel.right
-      margin-left: 100
+      margin-left: 67
     UIWidget
       id: hardcorePvpLabel
       anchors.top: hardcorePvpCheck.top
@@ -254,6 +255,7 @@ MainWindow
       margin-bottom: 5
       margin-right: 10
       !text: tr("Submit")
+      width: 70
       color: $var-text-cip-color
   UIWidget
     id: highscoreTable
@@ -264,7 +266,7 @@ MainWindow
     margin-top: 5
     border-width: 1
     border-color: #171817
-    background-color: #363636
+    background-color: #221714
     UIWidget
       id: rank
       size: 40 14
@@ -282,13 +284,14 @@ MainWindow
       margin-left: 1
     UIWidget
       id: character
-      size: 225 14
+      size: 209 14
       anchors.top: parent.top
       anchors.left: prev.right
       !text: tr("Character")
       color: $var-text-cip-color
       margin-top: 1
-      text-offset: -159 0
+      text-align: left
+      text-offset: 5 0
 
     UIWidget
       anchors.left: prev.right
@@ -312,7 +315,7 @@ MainWindow
       margin-bottom: -1
     UIWidget
       id: gameworld
-      size: 84 14
+      size: 100 14
       anchors.top: parent.top
       anchors.left: prev.right
       !text: tr("Game World")
@@ -366,7 +369,7 @@ MainWindow
   Button
     id: close
     !text: tr('Close')
-    size: 43 20
+    size: 62 20
     anchors.right: parent.right
     anchors.top: prev.bottom
     margin-top: 10

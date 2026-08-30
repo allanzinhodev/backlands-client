@@ -1,12 +1,12 @@
 // Colors
-&var-text-color: #dfdfdf
-&var-text-cip-color-white: #f7f7f7
-&var-text-cip-color-highlight: #f4f4f4
-&var-text-cip-color-grey: #909090
-&var-text-cip-color: #c0c0c0
-&var-cip-inactive-color: #707070
+&var-text-color: #ebbf90
+&var-text-cip-color-white: #ebbf90
+&var-text-cip-color-highlight: #ebbf90
+&var-text-cip-color-grey: #a87f68
+&var-text-cip-color: #ebbf90
+&var-cip-inactive-color: #6b4d40
 &var-text-cip-color-green: #44ad25
-&var-text-color-disabled: #dfdfdf88
+&var-text-color-disabled: #ebbf9088
 &var-text-cip-color-orange: #ff9854
 &var-text-cip-color-yellow: #ffda34
 &var-text-cip-color-light-red: #f75f5f
@@ -19,14 +19,15 @@
 &var-text-cip-store-sale-disabled: #6f5f18
 &var-text-cip-store-timed: #1872c3
 &var-text-cip-store-timed-disabled: #183f63
-&var-textlist-selected: #585858
-&var-textlist-even: #414141
-&var-textlist-odd: #484848
+&var-textlist-selected: #33231d
+&var-textlist-even: #281b17
+&var-textlist-odd: #2c1e19
 
 
 // Labels
 
 &var-main-font: verdana-11px-antialised
+&var-cip-font: silkscreen-16
 &var-cip-main-font: Verdana Bold-11px
 &var-cip-font-wheel: Verdana Bold-11px-wheel
 &var-cip-font-mono-rounded: verdana-11px-mono-rounded

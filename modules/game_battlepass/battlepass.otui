@@ -25,7 +25,7 @@ ConfirmReward < NewHeadlessWindow
       padding: 5
       focusable: false
       multi-line: true
-      background-color: #484848
+      background-color: #2c1e19
       text-wrap: true
 
     VerticalScrollBar
@@ -48,7 +48,7 @@ ConfirmReward < NewHeadlessWindow
       anchors.bottom: parent.bottom
       anchors.right: parent.right
       !text: tr('Cancel')
-      size: 43 20
+      size: 74 20
       enabled: true
     Button
       id: confirm
@@ -56,7 +56,7 @@ ConfirmReward < NewHeadlessWindow
       anchors.right: prev.left
       margin-right: 5
       !text: tr('Confirm')
-      size: 43 20
+      size: 84 20
 
 RewardInfoSlot < UIWidget
   size: 66 66
@@ -64,8 +64,8 @@ RewardInfoSlot < UIWidget
   border-width: 1
   border-color-top: #161616
   border-color-left: #161616
-  border-color-bottom: #787878
-  border-color-right: #787878
+  border-color-bottom: #573529
+  border-color-right: #573529
   focusable: false
 
   $focus:
@@ -76,8 +76,8 @@ RewardInfoSlot < UIWidget
     border-width: 1
     border-color-top: #161616
     border-color-left: #161616
-    border-color-bottom: #787878
-    border-color-right: #787878
+    border-color-bottom: #573529
+    border-color-right: #573529
 
   UIItem
     id: rewardItem
@@ -100,7 +100,7 @@ RewardInfoSlot < UIWidget
       margin-right: 2
       !text: ''
       font: verdana-11px-rounded
-      color: #c0c0c0
+      color: #ebbf90
       text-auto-resize: true
   UICreature
     id: rewardOutfit
@@ -144,7 +144,7 @@ SelectRewardWindow < NewHeadlessWindow
       margin-top: 15
       !text: 'Battlepass Reward - Step %d\n Click on the collect button to receive your reward.'
       font: verdana-11px-rounded
-      color: #c0c0c0
+      color: #ebbf90
       text-align: center
       wrap: true
       text-auto-resize: true
@@ -155,7 +155,7 @@ SelectRewardWindow < NewHeadlessWindow
       margin-top: 10
       !text: tr('This reward does not have a visual representation yet.')
       font: verdana-11px-rounded
-      color: #c0c0c0
+      color: #ebbf90
       text-align: center
       wrap: true
       text-auto-resize: true
@@ -289,10 +289,10 @@ SelectRewardWindow < NewHeadlessWindow
       anchors.bottom: parent.bottom
       anchors.right: parent.right
       !text: tr('Close')
-      size: 43 20
+      size: 62 20
     Button
       id: collectRewardButton
-      size: 63 20
+      size: 80 20
       image-source: /images/ui/buttons-blue
       image-border: 2
       anchors.bottom: parent.bottom
@@ -349,7 +349,7 @@ DailyMissionWidget < UIWidget
       anchors.horizontalCenter: parent.horizontalCenter
       margin-left: -4
       font: verdana-11px-rounded
-      color: #c0c0c0
+      color: #ebbf90
       text-auto-resize: true
   Label
     id: dailyMissionName
@@ -360,7 +360,7 @@ DailyMissionWidget < UIWidget
     margin-top: 10
     margin-left: 4
     font: verdana-11px-rounded
-    color: #c0c0c0
+    color: #ebbf90
     text-wrap: true
     text-align: center
   Panel
@@ -383,7 +383,7 @@ DailyMissionWidget < UIWidget
       anchors.horizontalCenter: parent.horizontalCenter
       margin-top: -1
       font: verdana-11px-rounded
-      color: #c0c0c0
+      color: #ebbf90
       text-auto-resize: true
   UIWidget
     id: dailyCompletedIcon
@@ -458,7 +458,7 @@ MissionWidget < UIWidget
       anchors.horizontalCenter: parent.horizontalCenter
       margin-left: -1
       font: verdana-11px-rounded
-      color: #c0c0c0
+      color: #ebbf90
       text-auto-resize: true
   Label
     id: missionName
@@ -469,7 +469,7 @@ MissionWidget < UIWidget
     margin-top: 10
     margin-left: 4
     font: verdana-11px-rounded
-    color: #c0c0c0
+    color: #ebbf90
     text-wrap: true
     text-align: center
   Panel
@@ -492,7 +492,7 @@ MissionWidget < UIWidget
       anchors.horizontalCenter: parent.horizontalCenter
       margin-top: -1
       font: verdana-11px-rounded
-      color: #c0c0c0
+      color: #ebbf90
       text-auto-resize: true
   UIWidget
     id: completedIcon
@@ -565,7 +565,7 @@ MissionPanel < Panel
       anchors.horizontalCenter: parent.horizontalCenter
       margin-top: 2
       font: verdana-11px-rounded
-      color: #888888
+      color: #a87f68
       text-auto-resize: true
     Panel
       id: dailyMissionsBg
@@ -615,7 +615,7 @@ MissionPanel < Panel
         anchors.horizontalCenter: parent.horizontalCenter
         !text: tr("22 Hours left")
         font: verdana-11px-rounded
-        color: #c0c0c0
+        color: #ebbf90
         text-auto-resize: true
       UIWidget
         id: hourglassIcon
@@ -641,7 +641,7 @@ MissionPanel < Panel
       anchors.horizontalCenter: parent.horizontalCenter
       margin-top: 2
       font: verdana-11px-rounded
-      color: #888888
+      color: #a87f68
       text-auto-resize: true
     Panel
       id: progressPanel
@@ -671,7 +671,7 @@ MissionPanel < Panel
             margin-bottom: 4
             margin-left: -3
             font: verdana-11px-rounded
-            color: #c0c0c0
+            color: #ebbf90
             text-auto-resize: true
             text-align: center
       Label
@@ -682,7 +682,7 @@ MissionPanel < Panel
         margin-top: 7
         margin-left: 45
         font: verdana-11px-rounded
-        color: #c0c0c0
+        color: #ebbf90
         text-auto-resize: true
       Label
         id: unlockInfo
@@ -692,7 +692,7 @@ MissionPanel < Panel
         margin-top: 5
         margin-left: 95
         font: verdana-11px-rounded
-        color: #c0c0c0
+        color: #ebbf90
         text-auto-resize: true
 
       HorizontalSeparator
@@ -710,7 +710,7 @@ MissionPanel < Panel
         anchors.horizontalCenter: progressBarBg.horizontalCenter
         margin-bottom: 5
         font: verdana-11px-rounded
-        color: #c0c0c0
+        color: #ebbf90
         text-auto-resize: true
       UIWidget
         id: progressBarBg
@@ -734,7 +734,7 @@ MissionPanel < Panel
           margin-left: -5
           text: 0
           font: verdana-11px-rounded
-          color: #c0c0c0
+          color: #ebbf90
           text-auto-resize: true
       VerticalSeparator
         id: separator
@@ -751,7 +751,7 @@ MissionPanel < Panel
         anchors.horizontalCenter: seasonTimeBg.horizontalCenter
         margin-bottom: 5
         font: verdana-11px-rounded
-        color: #c0c0c0
+        color: #ebbf90
         text-auto-resize: true
       UIWidget
         id: seasonTimeBg
@@ -776,7 +776,7 @@ MissionPanel < Panel
           margin-left: -5
           margin-top: 1
           font: verdana-11px-rounded
-          color: #c0c0c0
+          color: #ebbf90
           text-auto-resize: true
         UIWidget
           id: seasonHourglassIcon
@@ -839,7 +839,7 @@ RewardWidget < Panel
       margin-bottom: 22
       margin-left: 2
       font: verdana-11px-rounded
-      color: #c0c0c0
+      color: #ebbf90
       text-align: center
   UIWidget
     id: rewardBoxImage
@@ -1067,7 +1067,7 @@ BattlePassShopPanel < Panel
       margin-top: 5
       margin-left: 8
       font: verdana-11px-rounded
-      color: #c0c0c0
+      color: #ebbf90
       text-auto-resize: true
 
     Label
@@ -1078,7 +1078,7 @@ BattlePassShopPanel < Panel
       margin-left: 8
       margin-bottom: 5
       font: verdana-11px-rounded
-      color: #888888
+      color: #a87f68
       text-auto-resize: true
 
   UIWidget
@@ -1201,12 +1201,12 @@ NewHeadlessWindow
       anchors.bottom: parent.bottom
       anchors.right: parent.right
       !text: tr('Close')
-      size: 43 20
+      size: 62 20
       @onClick: modules.game_battlepass.BattlePass.hide()
 
     Button
       id: bPassWiki
-      size: 80 20
+      size: 162 20
       image-source: /images/ui/buttons-blue
       image-border: 2
       anchors.bottom: parent.bottom
@@ -1217,7 +1217,7 @@ NewHeadlessWindow
 
     Button
       id: getVipPassTicket
-      size: 130 20
+      size: 228 20
       image-source: /images/ui/buttons-blue
       image-border: 2
       anchors.bottom: parent.bottom
@@ -1265,7 +1265,7 @@ NewHeadlessWindow
         margin-right: 5
         margin-top: 3
         text-auto-resize: true
-        color: #c0c0c0
+        color: #ebbf90
         font: Verdana Bold-11px
         tooltip-font: Verdana Bold-11px
 

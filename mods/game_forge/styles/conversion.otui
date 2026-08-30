@@ -109,7 +109,8 @@ Panel
       anchors.horizontalCenter: parent.horizontalCenter
       anchors.top: parent.top
       !text: tr('Convert Dust')
-      color: #8f8f8f
+      text-auto-resize: true
+      color: #a87f68
 
     ItemConvertButton
       id: dustButton
@@ -168,7 +169,8 @@ Panel
       anchors.horizontalCenter: parent.horizontalCenter
       anchors.top: parent.top
       !text: tr('Convert Slivers')
-      color: #8f8f8f
+      text-auto-resize: true
+      color: #a87f68
 
     ItemConvertButton
       id: sliverButton
@@ -226,7 +228,8 @@ Panel
       anchors.horizontalCenter: parent.horizontalCenter
       anchors.top: parent.top
       !text: tr('Increase Dust Limit')
-      color: #8f8f8f
+      text-auto-resize: true
+      color: #a87f68
 
     ItemConvertButton
       id: increaseButton

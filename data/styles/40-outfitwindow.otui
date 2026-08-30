@@ -13,7 +13,7 @@ MiniPanel < Panel
   padding-bottom: 7
   padding-top: 24
   padding-right: 7
-  color: #929292
+  color: #a87f68
 
 RotateButton < UIButton
   anchors.bottom: parent.bottom
@@ -94,13 +94,17 @@ SelectionButton < UIButton
     margin-bottom: 13
     idle-animate: true
   
+  // Margem de 1, nao de 5: o tile e pixel-art com image-clip fixo, entao alargar
+  // ele esticaria a arte. Os 8px que as margens devolvem sao exatamente o que
+  // faltava - dos 132 outfits, os 18 que quebravam pediam 100 a 106px e a coluna
+  // tinha 98, e por isso nomes de uma palavra so viravam BEASTMAST-ER.
   Label
     id: name
     anchors.bottom: parent.bottom
     anchors.left: parent.left
     anchors.right: parent.right
-    margin-left: 5
-    margin-right: 5
+    margin-left: 1
+    margin-right: 1
     margin-bottom: 4
     text-align: bottom
     text-wrap: true
@@ -108,10 +112,19 @@ SelectionButton < UIButton
     color: $var-text-cip-color
     font: $var-cip-font
 
+// 120 e a largura que o nome de outfit mais longo pede em silkscreen-16 (115px
+// mais os 2 de margem de cada lado). Com 108 os nomes de uma palavra so quebravam
+// no meio - BEASTMASTE-R.
+OutfitTile < SelectionButton
+  size: 120 100
+  image-border: 2
+
 OutfitWindow < MainWindow
-  size: 756 565
+  // +24 de largura, que vao inteiros para a coluna da direita: as duas colunas
+  // de tiles passam de 108 para 120 cada
+  size: 780 565
   text: Customise Character
-  color: #929292
+  color: #a87f68
   padding-top: 0
   padding-bottom: 0
   padding-left: 0
@@ -124,7 +137,7 @@ OutfitWindow < MainWindow
     size: 477 221
     !text: tr('Preview')
     font: Verdana Bold-11px
-    color: #909090
+    color: #a87f68
     text-offset: -2 1
     text-align: Center
     text-align: Top
@@ -157,7 +170,7 @@ OutfitWindow < MainWindow
         text: Movement
         text-offset: 14 -3
         text-auto-resize: true
-        color: #c0c0c0
+        color: #ebbf90
         image-source: /images/ui/checkbox
         image-clip: 0 0 12 12
         anchors.left: parent.left
@@ -263,7 +276,7 @@ OutfitWindow < MainWindow
         text: Show Outfit
         text-offset: 14 -3
         text-auto-resize: true
-        color: #c0c0c0
+        color: #ebbf90
         image-source: /images/ui/checkbox
         image-clip: 0 0 12 12
         anchors.left: parent.left
@@ -271,7 +284,7 @@ OutfitWindow < MainWindow
         margin-left: 4
         change-cursor-image: false
         $disabled:
-          color: #707070
+          color: #a87f68
         $hover !disabled:
           color: $var-text-cip-color
 
@@ -291,7 +304,7 @@ OutfitWindow < MainWindow
         text: Show Aura
         text-offset: 14 -3
         text-auto-resize: true
-        color: #c0c0c0
+        color: #ebbf90
         image-source: /images/ui/checkbox
         image-clip: 0 0 12 12
         anchors.left: parent.left
@@ -299,7 +312,7 @@ OutfitWindow < MainWindow
         margin-left: 4
         change-cursor-image: false
         $disabled:
-          color: #707070
+          color: #a87f68
         $hover !disabled:
           color: $var-text-cip-color
 
@@ -319,7 +332,7 @@ OutfitWindow < MainWindow
         text: Show Familiar
         text-offset: 14 -3
         text-auto-resize: true
-        color: #c0c0c0
+        color: #ebbf90
         image-source: /images/ui/checkbox
         image-clip: 0 0 12 12
         anchors.left: parent.left
@@ -345,7 +358,7 @@ OutfitWindow < MainWindow
         text: Show Floor
         text-offset: 14 -3
         text-auto-resize: true
-        color: #c0c0c0
+        color: #ebbf90
         image-source: /images/ui/checkbox
         image-clip: 0 0 12 12
         anchors.left: parent.left
@@ -444,10 +457,10 @@ OutfitWindow < MainWindow
 
   WindowCyclopedia
     id: filter_outfits
-    size: 242 51
+    size: 266 51
     !text: tr('Filter Outfits')
     font: Verdana Bold-11px
-    color: #909090
+    color: #a87f68
     text-offset: -2 1
     text-align: Center
     text-align: Top
@@ -473,7 +486,7 @@ OutfitWindow < MainWindow
       text: Only mine
       text-offset: 15 -2
       text-auto-resize: true
-      color: #c0c0c0
+      color: #ebbf90
       image-source: /images/ui/checkbox
       image-clip: 0 0 12 12
       anchors.left: parent.left
@@ -483,7 +496,7 @@ OutfitWindow < MainWindow
       change-cursor-image: false
       @onCheckChange: modules.game_outfit.onOnlyMineThings()
       $disabled:
-        color: #707070
+        color: #a87f68
       $hover !disabled:
         color: $var-text-cip-color
 
@@ -569,7 +582,7 @@ OutfitWindow < MainWindow
 
   FlatPanel
     id: ScrollBar
-    size: 240 430
+    size: 264 430
     image-source: /game_cyclopedia/images/ui/panel-background
     padding: 1 1 1 1
     anchors.top: parent.top
@@ -589,7 +602,7 @@ OutfitWindow < MainWindow
       vertical-scrollbar: outfitScrollBar
       layout:
         type: grid
-        cell-size: 108 100
+        cell-size: 120 100
         cell-spacing: 2
         num-columns: 2
         flow: true
@@ -608,7 +621,7 @@ OutfitWindow < MainWindow
     size: 145 260
     !text: tr('Configure')
     font: Verdana Bold-11px
-    color: #909090
+    color: #a87f68
     text-offset: -2 1
     text-align: Center
     text-align: Top
@@ -645,7 +658,7 @@ OutfitWindow < MainWindow
         text: Addon 1
         text-offset: 14 -3
         text-auto-resize: true
-        color: #c0c0c0
+        color: #ebbf90
         image-source: /images/ui/checkbox
         image-clip: 0 0 12 12
         anchors.left: parent.left
@@ -655,7 +668,7 @@ OutfitWindow < MainWindow
         $hover !disabled:
           color: $var-text-cip-color
         $disabled
-          color: #707070
+          color: #a87f68
 
     FlatPanel
       id: addon2
@@ -673,7 +686,7 @@ OutfitWindow < MainWindow
         text: Addon 2
         text-offset: 14 -3
         text-auto-resize: true
-        color: #c0c0c0
+        color: #ebbf90
         image-source: /images/ui/checkbox
         image-clip: 0 0 12 12
         anchors.left: parent.left
@@ -683,7 +696,7 @@ OutfitWindow < MainWindow
         $hover !disabled:
           color: $var-text-cip-color
         $disabled
-          color: #707070
+          color: #a87f68
 
     FlatPanel
       id: aura
@@ -701,7 +714,7 @@ OutfitWindow < MainWindow
         text: Aura
         text-offset: 14 -3
         text-auto-resize: true
-        color: #c0c0c0
+        color: #ebbf90
         image-source: /images/ui/checkbox
         image-clip: 0 0 12 12
         anchors.left: parent.left
@@ -712,7 +725,7 @@ OutfitWindow < MainWindow
         $hover !disabled:
           color: $var-text-cip-color
         $disabled:
-          color: #707070
+          color: #a87f68
 
     FlatPanel
       id: mount
@@ -730,7 +743,7 @@ OutfitWindow < MainWindow
         text: Mount
         text-offset: 14 -3
         text-auto-resize: true
-        color: #c0c0c0
+        color: #ebbf90
         image-source: /images/ui/checkbox
         image-clip: 0 0 12 12
         anchors.left: parent.left
@@ -757,7 +770,7 @@ OutfitWindow < MainWindow
         text: Random Mount
         text-offset: 14 -3
         text-auto-resize: true
-        color: #c0c0c0
+        color: #ebbf90
         image-source: /images/ui/checkbox
         image-clip: 0 0 12 12
         anchors.left: parent.left
@@ -774,7 +787,7 @@ OutfitWindow < MainWindow
     size: 327 260
     !text: tr('Change Appearance')
     font: Verdana Bold-11px
-    color: #909090
+    color: #a87f68
     text-offset: -2 1
     text-align: Center
     text-align: Top
@@ -836,7 +849,7 @@ OutfitWindow < MainWindow
       text: Outfit:
       text-offset: 16 -3
       text-auto-resize: true
-      color: #c0c0c0
+      color: #ebbf90
       image-source: /images/ui/checkboxcircle
       image-clip: 0 0 12 12
       anchors.top: parent.top
@@ -884,7 +897,7 @@ OutfitWindow < MainWindow
       text: Mount:
       text-offset: 16 -3
       text-auto-resize: true
-      color: #c0c0c0
+      color: #ebbf90
       image-source: /images/ui/checkboxcircle
       image-clip: 0 0 12 12
       anchors.top: parent.top
@@ -914,7 +927,7 @@ OutfitWindow < MainWindow
       text: Aura:
       text-offset: 16 -3
       text-auto-resize: true
-      color: #c0c0c0
+      color: #ebbf90
       image-source: /images/ui/checkboxcircle
       image-clip: 0 0 12 12
       anchors.top: parent.top
@@ -925,7 +938,7 @@ OutfitWindow < MainWindow
       $hover !disabled:
         color: $var-text-cip-color
       $disabled:
-        color: #707070
+        color: #a87f68
 
     FlatPanel
       id: familiar
@@ -946,7 +959,7 @@ OutfitWindow < MainWindow
       text: Familiar:
       text-offset: 16 -3
       text-auto-resize: true
-      color: #c0c0c0
+      color: #ebbf90
       image-source: /images/ui/checkboxcircle
       image-clip: 0 0 12 12
       anchors.top: parent.top
@@ -957,7 +970,7 @@ OutfitWindow < MainWindow
       $hover !disabled:
         color: $var-text-cip-color
       $disabled:
-        color: #707070
+        color: #a87f68
 
     FlatPanel
       id: preset
@@ -978,7 +991,7 @@ OutfitWindow < MainWindow
       text: Preset:
       text-offset: 16 -3
       text-auto-resize: true
-      color: #c0c0c0
+      color: #ebbf90
       image-source: /images/ui/checkboxcircle
       image-clip: 0 0 12 12
       anchors.top: parent.top
@@ -1147,7 +1160,7 @@ OutfitWindow < MainWindow
       text-offset: 1 1
 
     $disabled:
-      color: #c0c0c0
+      color: #ebbf90
       opacity: 0.8
       change-cursor-image: false
 

@@ -33,10 +33,10 @@ PerksPanel < Panel
 
 PresetLabel < Panel
   size: 207 16
-  background-color: #484848
+  background-color: #2c1e19
 
   $focus:
-    background-color: #585858
+    background-color: #35241d
 
   Label
     id: name
@@ -80,7 +80,8 @@ Panel
       anchors.horizontalCenter: parent.horizontalCenter
       anchors.top: parent.top
       !text: tr('Selection')
-      color: #909090
+      text-auto-resize: true
+      color: #a87f68
       margin-top: 2
 
     Panel
@@ -288,7 +289,7 @@ Panel
         anchors.bottom: parent.bottom
         anchors.right: parent.right
         !text: tr('+ Max')
-        size: 34 20
+        size: 68 20
         margin-bottom: 3
         enabled: false
         @onClick: modules.game_wheel.onAddMax()
@@ -308,7 +309,7 @@ Panel
         anchors.bottom: parent.bottom
         anchors.left: parent.left
         !text: tr('- Max')
-        size: 34 20
+        size: 64 20
         margin-bottom: 3
         enabled: false
         @onClick: modules.game_wheel.onRmvMax()
@@ -635,10 +636,10 @@ Panel
           margin-left: 1
           margin-right: 1
           height: 16
-          background-color: #363636
+          background-color: #221714
           border-color-top: #141414
           border-color-left: #141414
-          border-color-right: #747474
+          border-color-right: #4e2f24
           border-color-bottom: #141414
           border-width: 1
           UIWidget
@@ -659,7 +660,7 @@ Panel
             margin-bottom: 1
           UIWidget
             id: points
-            size: 48 14
+            size: 68 14
             anchors.top: parent.top
             anchors.left: prev.right
             !text: tr("Points")
@@ -709,7 +710,8 @@ Panel
       anchors.horizontalCenter: parent.horizontalCenter
       anchors.top: parent.top
       !text: tr('Summary')
-      color: #909090
+      text-auto-resize: true
+      color: #a87f68
       margin-top: 2
     ScrollablePanel
       id: tabContent
@@ -765,7 +767,8 @@ Panel
       anchors.horizontalCenter: parent.horizontalCenter
       anchors.top: parent.top
       !text: tr('Dedication Perks')
-      color: #909090
+      text-auto-resize: true
+      color: #a87f68
       margin-top: 2
     Panel
       id: tabContent
@@ -857,7 +860,7 @@ Panel
         Label
           id: perk
           !text: tr('Mitigation Mult.')
-          width: 102
+          width: 155
           anchors.top: parent.top
           anchors.left: parent.left
           text-align: topleft
@@ -895,7 +898,8 @@ Panel
       anchors.horizontalCenter: parent.horizontalCenter
       anchors.top: parent.top
       !text: tr('Conviction Perks')
-      color: #909090
+      text-auto-resize: true
+      color: #a87f68
       margin-top: 2
     ScrollablePanel
       id: tabContent
@@ -937,7 +941,8 @@ Panel
       anchors.horizontalCenter: parent.horizontalCenter
       anchors.top: parent.top
       !text: tr('Vessels')
-      color: #909090
+      text-auto-resize: true
+      color: #a87f68
       margin-top: 2
 
     ScrollablePanel
@@ -992,7 +997,8 @@ Panel
       anchors.horizontalCenter: parent.horizontalCenter
       anchors.top: parent.top
       !text: tr('Revelation Perks')
-      color: #909090
+      text-auto-resize: true
+      color: #a87f68
       margin-top: 2
     Panel
       id: tabContent
@@ -1013,7 +1019,7 @@ Panel
         Label
           id: dmgHealing
           !text: tr('Damage and Healing')
-          width: 140
+          width: 194
           anchors.top: parent.top
           anchors.left: parent.left
           text-align: topleft
@@ -1047,7 +1053,7 @@ Panel
         Label
           id: perk1
           !text: tr('Avatar Of Nature')
-          width: 135
+          width: 174
           anchors.top: parent.top
           anchors.left: parent.left
           text-align: topleft
@@ -1082,7 +1088,7 @@ Panel
         Label
           id: perk2
           !text: tr('Blessing of the...')
-          width: 135
+          width: 168
           anchors.top: parent.top
           anchors.left: parent.left
           text-align: topleft

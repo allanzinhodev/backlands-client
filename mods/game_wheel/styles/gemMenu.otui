@@ -45,7 +45,7 @@ GemDetailPanel < UIWidget
 
   UIWidget
     id: modLabel0
-    size: 192 30
+    size: 206 30
     !text: tr('+3%% Fire Resistence')
     text-auto-resize: false
     font: $var-cip-font
@@ -102,7 +102,7 @@ GemDetailPanel < UIWidget
 
   UIWidget
     id: modLabel1
-    size: 192 30
+    size: 206 30
     !text: tr('+3%% Fire Resistence')
     font: $var-cip-font
     color: $var-cip-inactive-color
@@ -159,7 +159,7 @@ GemDetailPanel < UIWidget
 
   UIWidget
     id: modLabel2
-    size: 192 30
+    size: 206 30
     !text: tr('+3%% Fire Resistence')
     font: $var-cip-font
     color: $var-cip-inactive-color
@@ -412,7 +412,8 @@ Panel
       anchors.horizontalCenter: parent.horizontalCenter
       anchors.top: parent.top
       !text: tr('Vessels')
-      color: #909090
+      text-auto-resize: true
+      color: #a87f68
       margin-top: 2
     Panel
       id: vesselsContent
@@ -630,7 +631,8 @@ Panel
       anchors.horizontalCenter: parent.horizontalCenter
       anchors.top: parent.top
       !text: tr('Gem Revelation')
-      color: #909090
+      text-auto-resize: true
+      color: #a87f68
       margin-top: 2
 
     UIWidget
@@ -897,7 +899,8 @@ Panel
       anchors.horizontalCenter: parent.horizontalCenter
       anchors.top: parent.top
       !text: tr('Click on a gem to see its mods')
-      color: #909090
+      text-auto-resize: true
+      color: #a87f68
       margin-top: 2
 
     Panel

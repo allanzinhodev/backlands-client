@@ -77,7 +77,7 @@ RewardSelectLabel < UIWidget
 MainWindowSelect < MainWindow
   id: selectRewardWindow
   !text: tr('Pick Reward')
-  color: #909090
+  color: #a87f68
   size: 450 378
   @onEscape: closeSelectReward()
 
@@ -99,11 +99,11 @@ MainWindowSelect < MainWindow
     margin-top: 2
     size: 418 265
     vertical-scrollbar: itemsPanelListScrollBar
-    background-color: #484848
+    background-color: #2c1e19
     border-color-top: #141414
     border-color-left: #141414
-    border-color-right: #747474
-    border-color-bottom: #747474
+    border-color-right: #4e2f24
+    border-color-bottom: #4e2f24
     border-width: 1
 
   VerticalScrollBar
@@ -133,6 +133,7 @@ MainWindowSelect < MainWindow
     anchors.bottom: bottomSep.top
     margin-bottom: 5
     !text: tr('Total Weight:        0.00 oz')
+    text-auto-resize: true
     font: $var-cip-font
     color: $var-text-cip-color
 
@@ -156,7 +157,7 @@ MainWindowSelect < MainWindow
   Button
     id: closeButton
     !text: tr('Close')
-    size: 43 20
+    size: 62 20
     anchors.right: parent.right
     anchors.bottom: parent.bottom
     margin-bottom: 7

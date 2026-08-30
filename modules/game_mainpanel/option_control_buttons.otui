@@ -19,18 +19,19 @@ UIWidget
     border-width-left: 1
     border-color-left: black
     border-width-bottom: 1
-    border-color-bottom: #747474
+    border-color-bottom: #4e2f24
     border-width-right: 1
-    border-color-right: #747474
+    border-color-right: #4e2f24
 
     Label
       id: displayedButtonsLabel
       !text: tr('Displayed Buttons')
+      text-auto-resize: true
       anchors.top: parent.top
       anchors.left: parent.left
       margin-top: 5
       margin-left: 10
-      color: #C0C0C0
+      color: #ebbf90
 
     TextList
       id: displayedButtonsList
@@ -42,7 +43,7 @@ UIWidget
       margin-left: 10
       margin-right: 35
       vertical-scrollbar: displayedButtonsScrollBar
-      background-color: #404040
+      background-color: #271b17
     VerticalQtScrollBar
       id: displayedButtonsScrollBar
       anchors.top: displayedButtonsList.top
@@ -101,17 +102,18 @@ UIWidget
     border-width-left: 1
     border-color-left: black
     border-width-bottom: 1
-    border-color-bottom: #747474
+    border-color-bottom: #4e2f24
     border-width-right: 1
-    border-color-right: #747474
+    border-color-right: #4e2f24
     Label
       id: displayedButtonsLabel
       !text: tr('Available Buttons')
+      text-auto-resize: true
       anchors.top: parent.top
       anchors.left: parent.left
       margin-top: 5
       margin-left: 10
-      color: #C0C0C0
+      color: #ebbf90
 
     TextList
       id: displayedAvailableButtonsList
@@ -123,7 +125,7 @@ UIWidget
       margin-left: 10
       margin-right: 35
       vertical-scrollbar: displayedButtonsScrollBar
-      background-color: #404040
+      background-color: #271b17
     VerticalQtScrollBar
       id: displayedButtonsScrollBar
       anchors.top: prev.top

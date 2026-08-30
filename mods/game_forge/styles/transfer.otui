@@ -12,7 +12,8 @@ Panel
       anchors.horizontalCenter: parent.horizontalCenter
       anchors.top: parent.top
       !text: tr('Select Items for the Transfer')
-      color: #909090
+      text-auto-resize: true
+      color: #a87f68
       margin-top: 2
 
     TextList
@@ -126,7 +127,8 @@ Panel
       anchors.horizontalCenter: parent.horizontalCenter
       anchors.top: parent.top
       !text: tr('Transfer Requirements')
-      color: #909090
+      text-auto-resize: true
+      color: #a87f68
       margin-top: 2
 
     Panel
@@ -397,7 +399,8 @@ Panel
       anchors.horizontalCenter: parent.horizontalCenter
       anchors.top: parent.top
       !text: tr('Convergence Transfer Requirements')
-      color: #909090
+      text-auto-resize: true
+      color: #a87f68
       margin-top: 2
 
     Panel

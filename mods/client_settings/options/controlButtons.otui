@@ -7,7 +7,7 @@ ControlLabel < Label
 
   $focus:
     color: #f4f4f4
-    background-color: #585858
+    background-color: #35241d
 
 ControlsButtonsWindow < Panel
   id: controlButtons
@@ -31,7 +31,7 @@ ControlsButtonsWindow < Panel
       !text: tr('Displayed Buttons')
       font: $var-cip-font
       text-auto-resize: true
-      color: #909090
+      color: #a87f68
       anchors.left: parent.left
       anchors.top: parent.top
       margin-top: 4
@@ -118,7 +118,7 @@ ControlsButtonsWindow < Panel
       !text: tr('Available Buttons')
       font: $var-cip-font
       text-auto-resize: true
-      color: #909090
+      color: #a87f68
       anchors.left: parent.left
       anchors.top: parent.top
       margin-top: 4
@@ -170,7 +170,7 @@ ControlsButtonsWindow < Panel
 
   Button
     id: resetButton
-    size: 43 20
+    size: 60 20
     !text: tr('Reset')
     anchors.bottom: parent.bottom
     anchors.right: parent.right

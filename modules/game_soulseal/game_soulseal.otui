@@ -129,6 +129,7 @@ NewMainWindow
       font: $var-cip-font
       color: $var-text-cip-color
       !text: tr('Creatures')
+      text-auto-resize: true
 
     Label
       id: soulsealsHeader
@@ -138,6 +139,7 @@ NewMainWindow
       font: $var-cip-font
       color: $var-text-cip-color
       !text: tr('Soulseals')
+      text-auto-resize: true
 
   Panel
     id: listPanel
@@ -199,7 +201,7 @@ NewMainWindow
 
     Button
       id: fightBtn
-      size: 40 20
+      size: 56 20
       anchors.top: parent.top
       anchors.left: creatureFrame.right
       margin-left: 6

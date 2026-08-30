@@ -12,6 +12,7 @@ HirelingNameChange < NewMainWindow
       anchors.top: parent.top
       anchors.left: parent.left
       !text: tr('Please enter the new name for your hireling:')
+      text-auto-resize: true
       font: $var-cip-font
       color: $var-text-cip-color
 
@@ -38,7 +39,7 @@ HirelingNameChange < NewMainWindow
       anchors.bottom: parent.bottom
       anchors.right: parent.right
       !text: tr('Cancel')
-      size: 43 20
+      size: 74 20
       @onClick: modules.game_store.onCloseHirelingNameWindow(false)
 
     Button

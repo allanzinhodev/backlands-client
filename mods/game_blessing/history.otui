@@ -1,7 +1,7 @@
 MainWindow
   id: blessingWindow
   !text: tr('Blessings')
-  color: #909090
+  color: #a87f68
   size: 615 427
   @onEscape: modules.game_blessing.closeBlessing()
 
@@ -12,7 +12,7 @@ MainWindow
     size: 583 340
     margin-top: -6
     !text: tr('History')
-    color: #909090
+    color: #a87f68
     text-offset: 270 2
     image-source: /images/ui/t2pixel-up-frame-borderimage
     image-border: 26
@@ -29,7 +29,7 @@ MainWindow
       anchors.left: historyList.left
       margin-left: 1
       border-width-bottom: 1
-      border-color-bottom: #757575
+      border-color-bottom: #503125
 
     UIWidget
       id: dateButton
@@ -44,8 +44,8 @@ MainWindow
       margin-top: 1
       margin-left: 1
       border-width-bottom: 1
-      border-color-bottom: #292a29
-      background-color: #363636
+      border-color-bottom: #110b0a
+      background-color: #221714
       opacity: 1.0
       $pressed:
         color: #dfdfdf88
@@ -71,8 +71,8 @@ MainWindow
       margin-top: 1
       margin-left: 2
       border-width-bottom: 1
-      border-color-bottom: #292a29
-      background-color: #363636
+      border-color-bottom: #110b0a
+      background-color: #221714
       opacity: 1.0
       $pressed:
         color: #dfdfdf88
@@ -96,7 +96,7 @@ MainWindow
     anchors.top: prev.bottom
     margin-top: 12
   Button
-    size: 45 20
+    size: 62 20
     !text: tr('Close')
     anchors.right: parent.right
     anchors.top: separator.bottom

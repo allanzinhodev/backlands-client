@@ -1,6 +1,6 @@
 ButtonInformation < Button
 QuicklootContainerBox < UIWidget
-  background-color: #484848
+  background-color: #2c1e19
   height: 38
   Label
     id: containerType
@@ -55,7 +55,7 @@ QuicklootContainerBox < UIWidget
     virtual: true
 
 QuicklootItemBox < UIWidget
-  background-color: #484848
+  background-color: #2c1e19
   height: 38
   Label
     id: itemType
@@ -334,7 +334,7 @@ NewMainWindow
     anchors.bottom: parent.bottom
     anchors.right: parent.right
     !text: tr('Close')
-    size: 43 20
+    size: 62 20
     margin-bottom: 12
     margin-right: 12
     @onClick: modules.game_quickloot.hideQuickLoot()

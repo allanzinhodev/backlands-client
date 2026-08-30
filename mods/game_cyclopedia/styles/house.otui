@@ -338,7 +338,7 @@ HouseData < UIWidget
   UIWidget
     id: main
     font: $var-cip-font
-    color: #909090
+    color: #a87f68
     text-offset: -2 -38
     image-source: /game_cyclopedia/images/ui/widget-house
     image-fixed-ratio: true
@@ -346,6 +346,7 @@ HouseData < UIWidget
     anchors.left: parent.left
     margin-left: 4
     !text: tr('House')
+    text-auto-resize: true
     @onClick: modules.game_cyclopedia.House.onSelectHouse(self)
 
     UIWidget
@@ -435,7 +436,7 @@ CyclopediaHouseWindow < FlatPanel
   size: 159 151
   !text: tr('Unknow')
   font: $var-cip-font
-  color: #909090
+  color: #a87f68
   text-offset: -2 1
   text-align: Center
   text-align: Top
@@ -471,7 +472,7 @@ CyclopediaHouseWindow < FlatPanel
     size: 48 14
     background-color: #ff8a00
     border-width: 1
-    border-color: #747474
+    border-color: #4e2f24
     border-color-top: #181818
     border-color-left: #181818
   ProgressBar
@@ -483,7 +484,7 @@ CyclopediaHouseWindow < FlatPanel
     size: 47 14
     background-color: #ff8a00
     border-width: 1
-    border-color: #747474
+    border-color: #4e2f24
     border-color-top: #181818
     border-color-left: #181818
     Label
@@ -502,7 +503,7 @@ CyclopediaHouseWindow < FlatPanel
     size: 48 14
     background-color: #ff8a00
     border-width: 1
-    border-color: #747474
+    border-color: #4e2f24
     border-color-top: #181818
     border-color-left: #181818
   Label
@@ -937,7 +938,7 @@ HouseGroupPanel < Panel
     draggable: false
     phantom: true
     font: $var-cip-font
-    color: #909090
+    color: #a87f68
     text-offset: -2 1
     text-align: Center
     text-align: Top
@@ -969,7 +970,7 @@ HouseGroupPanel < Panel
       id: nameIndex
       font: $var-cip-font
       !text: tr("Name:")
-      color: #909090
+      color: #a87f68
       anchors.top: houseInformation.bottom
       anchors.right: houseInformation.right
       text-align: topRight
@@ -993,7 +994,7 @@ HouseGroupPanel < Panel
       id: sizeIndex
       font: $var-cip-font
       !text: tr("Size:")
-      color: #909090
+      color: #a87f68
       anchors.top: nameIndex.bottom
       anchors.right: houseInformation.right
       text-align: topRight
@@ -1017,7 +1018,7 @@ HouseGroupPanel < Panel
       id: bedsIndex
       font: $var-cip-font
       !text: tr("Max. Beds:")
-      color: #909090
+      color: #a87f68
       anchors.top: sizeIndex.bottom
       anchors.right: houseInformation.right
       text-align: topRight
@@ -1041,7 +1042,7 @@ HouseGroupPanel < Panel
       id: rentIndex
       font: $var-cip-font
       !text: tr("Rent:")
-      color: #909090
+      color: #a87f68
       anchors.top: bedsIndex.bottom
       anchors.right: houseInformation.right
       text-align: topRight
@@ -1156,7 +1157,7 @@ HouseGroupPanel < Panel
       id: limitText
       font: $var-cip-font
       !text: tr("Set bid limit:")
-      color: #909090
+      color: #a87f68
       anchors.top: thereFar.bottom
       anchors.left: thereFar.left
       margin-top: 6
@@ -1385,7 +1386,7 @@ HouseGroupPanel < Panel
 
       Button
         id: cancelButton
-        size: 43 20
+        size: 74 20
         !text: tr('Cancel')
         anchors.bottom: parent.bottom
         anchors.right: parent.right
@@ -1397,7 +1398,7 @@ HouseGroupPanel < Panel
 
       Button
         id: keepHouseButton
-        size: 86 20
+        size: 112 20
         !text: tr('Keep House')
         anchors.bottom: parent.bottom
         anchors.right: prev.left
@@ -1658,7 +1659,7 @@ HouseGroupPanel < Panel
 
       Button
         id: cancelButton
-        size: 43 20
+        size: 74 20
         !text: tr('Cancel')
         anchors.bottom: parent.bottom
         anchors.right: parent.right
@@ -1670,7 +1671,7 @@ HouseGroupPanel < Panel
 
       Button
         id: moveOutButton
-        size: 64 20
+        size: 96 20
         !text: tr('Move Out')
         anchors.bottom: parent.bottom
         anchors.right: prev.left
@@ -2003,7 +2004,7 @@ HouseGroupPanel < Panel
 
       Button
         id: cancelButton
-        size: 43 20
+        size: 74 20
         !text: tr('Cancel')
         anchors.bottom: parent.bottom
         anchors.right: parent.right
@@ -2015,7 +2016,7 @@ HouseGroupPanel < Panel
 
       Button
         id: tranferButton
-        size: 64 20
+        size: 94 20
         !text: tr('Transfer')
         anchors.bottom: parent.bottom
         anchors.right: prev.left
@@ -2138,7 +2139,7 @@ HouseGroupPanel < Panel
         text-auto-resize: true
       Button
         id: cancelButton
-        size: 43 20
+        size: 74 20
         !text: tr('Cancel')
         anchors.bottom: parent.bottom
         anchors.right: parent.right
@@ -2149,7 +2150,7 @@ HouseGroupPanel < Panel
           cancelHouseWindow:setVisible(false)
       Button
         id: cancelTransferButton
-        size: 86 20
+        size: 166 20
         !text: tr('Cancel Transfer')
         anchors.bottom: parent.bottom
         anchors.right: prev.left
@@ -2290,7 +2291,7 @@ HouseGroupPanel < Panel
         margin-left: 5
       Button
         id: cancelButton
-        size: 43 20
+        size: 74 20
         !text: tr('Cancel')
         anchors.bottom: parent.bottom
         anchors.right: parent.right
@@ -2301,7 +2302,7 @@ HouseGroupPanel < Panel
           acceptHouseWindow:setVisible(false)
       Button
         id: acceptTransferButton
-        size: 86 20
+        size: 164 20
         !text: tr('Accept Transfer')
         anchors.bottom: parent.bottom
         anchors.right: prev.left
@@ -2442,7 +2443,7 @@ HouseGroupPanel < Panel
         margin-left: 5
       Button
         id: cancelButton
-        size: 43 20
+        size: 74 20
         !text: tr('Cancel')
         anchors.bottom: parent.bottom
         anchors.right: parent.right
@@ -2453,7 +2454,7 @@ HouseGroupPanel < Panel
           rejectHouseWindow:setVisible(false)
       Button
         id: rejectTransferButton
-        size: 86 20
+        size: 162 20
         !text: tr('Reject Transfer')
         anchors.bottom: parent.bottom
         anchors.right: prev.left

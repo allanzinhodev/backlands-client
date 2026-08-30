@@ -180,7 +180,7 @@ function onHighscores(worlds, selectedWorld, vocations, selectedVocation, catego
       widget.rank:setText(character[1])
       widget.name:setText(character[2])
       widget.vocation:setText(g_game.getVocationName(character[3]))
-      widget.gameworld:setText(short_text(character[4], 8))
+      widget.gameworld:setText(short_text(character[4], 10))
       widget.level:setText(character[5])
       widget.points:setText(comma_value(character[7]))
       if character[6] then
@@ -201,7 +201,7 @@ function onHighscores(worlds, selectedWorld, vocations, selectedVocation, catego
     widget.gameworld:setColor(color)
     widget.level:setColor("#c0c0c0")
     widget.points:setColor(color)
-    widget:setBackgroundColor((rowIndex % 2 == 0 and '#484848' or '#414141'))
+    widget:setBackgroundColor((rowIndex % 2 == 0 and '#2c1e19' or '#281b17'))
 
     rowIndex = rowIndex + 1
     if rowIndex <= totalRows then

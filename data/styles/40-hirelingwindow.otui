@@ -13,7 +13,7 @@ MiniPanel < Panel
   padding-bottom: 7
   padding-top: 24
   padding-right: 7
-  color: #929292
+  color: #a87f68
 
 RotateButton < UIButton
   anchors.bottom: parent.bottom
@@ -94,13 +94,21 @@ SelectionButton < UIButton
     margin-bottom: 13
     idle-animate: true
   
+  // Margem de 1, nao de 5: o tile e pixel-art com image-clip fixo, entao alargar
+  // ele esticaria a arte. Os 8px que as margens devolvem sao exatamente o que
+  // faltava - dos 132 outfits, os 18 que quebravam pediam 100 a 106px e a coluna
+  // tinha 98, e por isso nomes de uma palavra so viravam BEASTMAST-ER.
+  //
+  // SelectionButton esta declarado IGUAL em 40-hirelingwindow, 40-outfitwindow e
+  // 40-renownwindow. Os estilos carregam em ordem alfabetica, entao quem vale e
+  // o ultimo - mexer so no arquivo do outfit nao muda nada na tela.
   Label
     id: name
     anchors.bottom: parent.bottom
     anchors.left: parent.left
     anchors.right: parent.right
-    margin-left: 5
-    margin-right: 5
+    margin-left: 1
+    margin-right: 1
     margin-bottom: 4
     text-align: bottom
     text-wrap: true
@@ -111,7 +119,7 @@ SelectionButton < UIButton
 HirelingOutfitWindow < MainWindow
   size: 756 471
   text: Customise Hireling
-  color: #929292
+  color: #a87f68
   padding-top: 0
   padding-bottom: 0
   padding-left: 0
@@ -124,7 +132,7 @@ HirelingOutfitWindow < MainWindow
     size: 477 221
     !text: tr('Preview')
     font: Verdana Bold-11px
-    color: #909090
+    color: #a87f68
     text-offset: -2 1
     text-align: Center
     text-align: Top
@@ -153,8 +161,8 @@ HirelingOutfitWindow < MainWindow
       border-width: 1
       border-color-top: #171717
       border-color-left: #171717
-      border-color-right: #747474
-      border-color-bottom: #747474
+      border-color-right: #4e2f24
+      border-color-bottom: #4e2f24
 
       UICreature
         id: creature
@@ -242,7 +250,7 @@ HirelingOutfitWindow < MainWindow
         text: Show Floor
         text-offset: 14 -3
         text-auto-resize: true
-        color: #c0c0c0
+        color: #ebbf90
         image-source: /images/ui/checkbox
         image-clip: 0 0 12 12
         anchors.left: parent.left
@@ -345,7 +353,7 @@ HirelingOutfitWindow < MainWindow
     size: 242 51
     !text: tr('Filter Outfits')
     font: Verdana Bold-11px
-    color: #909090
+    color: #a87f68
     text-offset: -2 1
     text-align: Center
     text-align: Top
@@ -371,7 +379,7 @@ HirelingOutfitWindow < MainWindow
       text: Only mine
       text-offset: 15 -2
       text-auto-resize: true
-      color: #c0c0c0
+      color: #ebbf90
       image-source: /images/ui/checkbox
       image-clip: 0 0 12 12
       anchors.left: parent.left
@@ -385,7 +393,7 @@ HirelingOutfitWindow < MainWindow
         search:clearText(false)
 
       $disabled:
-        color: #707070
+        color: #a87f68
       $hover !disabled:
         color: $var-text-cip-color
 
@@ -507,7 +515,7 @@ HirelingOutfitWindow < MainWindow
     size: 145 168
     !text: tr('Configure')
     font: Verdana Bold-11px
-    color: #909090
+    color: #a87f68
     text-offset: -2 1
     text-align: Center
     text-align: Top
@@ -544,7 +552,7 @@ HirelingOutfitWindow < MainWindow
     size: 327 168
     !text: tr('Change Appearance')
     font: Verdana Bold-11px
-    color: #909090
+    color: #a87f68
     text-offset: -2 1
     text-align: Center
     text-align: Top
@@ -606,7 +614,7 @@ HirelingOutfitWindow < MainWindow
       text: Outfit:
       text-offset: 16 -3
       text-auto-resize: true
-      color: #c0c0c0
+      color: #ebbf90
       image-source: /images/ui/checkboxcircle
       image-clip: 0 0 12 12
       anchors.top: parent.top
@@ -808,7 +816,7 @@ HirelingOutfitWindow < MainWindow
       text-offset: 1 1
 
     $disabled:
-      color: #c0c0c0
+      color: #ebbf90
       opacity: 0.8
       change-cursor-image: false
 
@@ -841,6 +849,6 @@ HirelingOutfitWindow < MainWindow
       text-offset: 1 1
 
     $disabled:
-      color: #c0c0c0
+      color: #ebbf90
       opacity: 0.8
       change-cursor-image: false

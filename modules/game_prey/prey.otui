@@ -147,8 +147,8 @@ CreatureAndBonus < Panel
     border-width: 1
     border-color-top: #181818
     border-color-left: #181818
-    border-color-bottom: #757575
-    border-color-right: #757575
+    border-color-bottom: #503125
+    border-color-right: #503125
     size: 134 134
 
   UICreature
@@ -234,8 +234,8 @@ SelectCreature < Panel
     border-width: 1
     border-color-top: #181818
     border-color-left: #181818
-    border-color-bottom: #757575
-    border-color-right: #757575
+    border-color-bottom: #503125
+    border-color-right: #503125
     size: 204 204
 
   UICreature
@@ -258,8 +258,8 @@ NoCreaturePanel < Panel
     border-width: 1
     border-color-top: #181818
     border-color-left: #181818
-    border-color-bottom: #757575
-    border-color-right: #757575
+    border-color-bottom: #503125
+    border-color-right: #503125
     size: 134 134
 
     UIWidget
@@ -918,7 +918,7 @@ PreySlotPanel < Panel
     margin-top: 2
     text-align: center
     font: $var-cip-font
-    color: #909090
+    color: #a87f68
 
   InactivePreyPanel
     id: inactive
@@ -1016,7 +1016,7 @@ NewMainWindow
 
     Label
       !text: tr('Prey Creatures')
-      width: 140
+      width: 153
       text-align: center
       anchors.horizontalCenter: parent.horizontalCenter
       anchors.verticalCenter: parent.verticalCenter
@@ -1233,6 +1233,7 @@ PreyTracker < MiniWindow
 
     Label
       !text: tr('Prey Creatures')
+      text-auto-resize: true
       font: $var-cip-font
       color: $var-text-cip-color
 

@@ -93,7 +93,7 @@ ElementPanel < Panel
 
 CyclopediaWindow < FlatPanel
   font: $var-cip-font
-  color: #909090
+  color: #a87f68
   text-offset: -2 1
   text-align: Center
   text-align: Top
@@ -357,7 +357,7 @@ BestiaryOverviewPanel < Panel
 
 CyclopediaCreatureWindow < FlatPanel
   font: $var-cip-font
-  color: #909090
+  color: #a87f68
   text-offset: -2 1
   text-align: Center
   text-align: Top
@@ -603,7 +603,7 @@ BestiaryGroupPanel < Panel
 //TERCEIRA PARTE DO BESSTIARY
 BestiaryMonsterWindow < Panel
   font: $var-cip-font
-  color: #909090
+  color: #a87f68
   text-offset: -2 1
   text-align: Center
   text-align: Top
@@ -618,6 +618,7 @@ BestiaryMonsterWindow < Panel
   padding-right: 2
   focusable: false
   !text: tr('Unknow')
+  text-auto-resize: true
 
 //TERCEIRA PARTE DO BESSTIARY
 BestiaryMonsterPanel < Panel
@@ -772,6 +773,7 @@ BestiaryMonsterPanel < Panel
         font: $var-cip-font
         color: $var-text-cip-color
         !text: tr('?')
+        text-auto-resize: true
         margin-top: 6
       Label
         id: castSpell
@@ -1002,7 +1004,7 @@ BestiaryMonsterPanel < Panel
         margin-left: 5
         Button
           id: selectAssignButton
-          size: 99 20
+          size: 138 20
           !text: tr('Assign Charm')
           anchors.top: parent.top
           anchors.left: parent.left
@@ -1012,7 +1014,7 @@ BestiaryMonsterPanel < Panel
 
         Button
           id: selectClearButton
-          size: 99 20
+          size: 126 20
           !text: tr('Clear Charm')
           anchors.top: parent.top
           anchors.left: parent.left
@@ -1080,12 +1082,12 @@ BestiaryMonsterPanel < Panel
       margin-bottom: 10
       focusable: false
       text-wrap: true
-      background-color: #363636
+      background-color: #221714
       vertical-scrollbar: locationsPanelListScrollBar
       border-width: 1
       border-color: #181818
-      border-color-bottom: #747474
-      border-color-right: #747474
+      border-color-bottom: #4e2f24
+      border-color-right: #4e2f24
       text-align: TopLeft
       text-offset: 4 4
       layout:
@@ -1304,7 +1306,7 @@ BestiaryTrackerLabel < UIWidget
 
 BestiaryTracker < MiniWindow
   id: bestiaryTracker
-  !text: tr('Bestiary Tracker')
+  !text: tr('Bestiary')
   height: 95
   &save: true
   icon: /images/icons/icon-bestiarytracker-widget

@@ -39,16 +39,17 @@ MainWindow
       anchors.right: parent.right
       anchors.verticalCenter: parent.verticalCenter
       margin: 5
-      color: #b5b5b5
+      color: #ebbf90
       $hover:
-        color: #b5b5b5
+        color: #ebbf90
 
   Label
-    !text: tr('Characters you wish to ignore:')
+    !text: tr('Ignored characters:')
+    text-auto-resize: true
     anchors.left: parent.left
     anchors.top: prev.bottom
     margin-top: 15
-    color: #c2c2c2
+    color: #ebbf90
 
   TextList
     id: ignoreList
@@ -82,18 +83,19 @@ MainWindow
   Button
     id: buttonIgnoreRemove
     !text: tr('Delete')
-    width: 43
+    width: 66
     height: 20
     margin-left: 5
     anchors.top: prev.top
     anchors.left: prev.right
 
   Label
-    !text: tr('Global settings for ignoring messages:')
+    !text: tr('Global ignore settings:')
+    text-auto-resize: true
     anchors.left: parent.left
     anchors.top: prev.bottom
     margin-top: 15
-    color: #c4c4c4
+    color: #ebbf90
 
   FlatPanel
     size: 244 22
@@ -108,9 +110,9 @@ MainWindow
       anchors.right: parent.right
       anchors.verticalCenter: parent.verticalCenter
       margin: 5
-      color: #b5b5b5
+      color: #ebbf90
       $hover:
-        color: #b5b5b5
+        color: #ebbf90
 
   FlatPanel
     size: 244 22
@@ -125,9 +127,9 @@ MainWindow
       anchors.right: parent.right
       anchors.verticalCenter: parent.verticalCenter
       margin: 5
-      color: #b5b5b5
+      color: #ebbf90
       $hover:
-        color: #b5b5b5
+        color: #ebbf90
 
   FlatPanel
     id: checkboxUseWhiteListPanel
@@ -143,16 +145,17 @@ MainWindow
       anchors.right: parent.right
       anchors.verticalCenter: parent.verticalCenter
       margin: 5
-      color: #b5b5b5
+      color: #ebbf90
       $hover:
-        color: #b5b5b5
+        color: #ebbf90
 
   Label
-    !text: tr('Characters you allow to message you:')
+    !text: tr('Allowed to message you:')
+    text-auto-resize: true
     anchors.top: prev.bottom
     anchors.left: prev.left
     margin-top: 15
-    color: #c2c2c2
+    color: #ebbf90
 
   TextList
     id: whiteList
@@ -186,18 +189,19 @@ MainWindow
   Button
     id: buttonWhitelistRemove
     !text: tr('Delete')
-    width: 43
+    width: 66
     height: 20
     margin-left: 5
     anchors.top: prev.top
     anchors.left: prev.right
 
   Label
-    !text: tr('Global settings for allowing messages:')
+    !text: tr('Global allow settings:')
+    text-auto-resize: true
     anchors.left: whiteList.left
     anchors.top: prev.bottom
     margin-top: 15
-    color: #c4c4c4
+    color: #ebbf90
 
   FlatPanel
     size: 244 22
@@ -212,9 +216,9 @@ MainWindow
       anchors.right: parent.right
       anchors.verticalCenter: parent.verticalCenter
       margin: 5
-      color: #b5b5b5
+      color: #ebbf90
       $hover:
-        color: #b5b5b5
+        color: #ebbf90
 
   HorizontalSeparator
     id: separator
@@ -234,7 +238,7 @@ MainWindow
   Button
     id: buttonCancel
     !text: tr('Cancel')
-    width: 44
+    width: 74
     anchors.bottom: parent.bottom
     anchors.right: parent.right
 

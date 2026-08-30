@@ -9,7 +9,7 @@ CharacterWidgetOn < UIWidget
     size: 12 12
     anchors.left: parent.left
     anchors.top: parent.top
-    margin-left: 264
+    margin-left: 204
     margin-top: 1
     image-source: /images/ui/pin-button
     image-clip: 0 0 12 12
@@ -59,7 +59,7 @@ CharacterWidgetOn < UIWidget
     anchors.left: parent.left
     anchors.top: parent.top
     anchors.bottom: parent.bottom
-    margin-left: 277
+    margin-left: 221
     margin-top: -1
     margin-bottom: -1
     image-source: /images/ui/separator_vertical66
@@ -91,7 +91,7 @@ CharacterWidgetOn < UIWidget
     anchors.left: parent.left
     anchors.top: parent.top
     anchors.bottom: parent.bottom
-    margin-left: 332
+    margin-left: 301
     margin-top: -1
     margin-bottom: -1
     image-source: /images/ui/separator_vertical66
@@ -107,7 +107,7 @@ CharacterWidgetOn < UIWidget
     color: $var-text-cip-color
     background-color: alpha
     text-align: left
-    width: 44
+    width: 50
 
     $on:
       color: $var-text-cip-color
@@ -116,7 +116,7 @@ CharacterWidgetOn < UIWidget
     anchors.left: parent.left
     anchors.top: parent.top
     anchors.bottom: parent.bottom
-    margin-left: 382
+    margin-left: 355
     margin-top: -1
     margin-bottom: -1
     image-source: /images/ui/separator_vertical66
@@ -133,7 +133,7 @@ CharacterWidgetOn < UIWidget
     color: $var-text-cip-color
     text-align: left
     background-color: alpha
-    width: 108
+    width: 165
 
     $on:
       color: $var-text-cip-color
@@ -142,7 +142,7 @@ CharacterWidgetOn < UIWidget
     anchors.left: parent.left
     anchors.top: parent.top
     anchors.bottom: parent.bottom
-    margin-left: 497
+    margin-left: 524
     margin-top: -1
     margin-bottom: -1
     image-source: /images/ui/separator_vertical66
@@ -174,7 +174,7 @@ CharacterWidgetOff < UIWidget
     size: 12 12
     anchors.left: parent.left
     anchors.top: parent.top
-    margin-left: 264
+    margin-left: 204
     margin-top: 1
     image-source: /images/ui/pin-button
     image-clip: 0 0 12 12
@@ -216,7 +216,7 @@ CharacterWidgetOff < UIWidget
     anchors.left: parent.left
     anchors.top: parent.top
     anchors.bottom: parent.bottom
-    margin-left: 277
+    margin-left: 221
     margin-top: -1
     margin-bottom: -1
     image-source: /images/ui/separator_vertical66
@@ -248,7 +248,7 @@ CharacterWidgetOff < UIWidget
     anchors.left: parent.left
     anchors.top: parent.top
     anchors.bottom: parent.bottom
-    margin-left: 332
+    margin-left: 301
     margin-top: -1
     margin-bottom: -1
     image-source: /images/ui/separator_vertical66
@@ -264,7 +264,7 @@ CharacterWidgetOff < UIWidget
     color: $var-text-cip-color
     background-color: alpha
     text-align: left
-    width: 44
+    width: 50
 
     $on:
       color: $var-text-cip-color
@@ -273,7 +273,7 @@ CharacterWidgetOff < UIWidget
     anchors.left: parent.left
     anchors.top: parent.top
     anchors.bottom: parent.bottom
-    margin-left: 382
+    margin-left: 355
     margin-top: -1
     margin-bottom: -1
     image-source: /images/ui/separator_vertical66
@@ -290,7 +290,7 @@ CharacterWidgetOff < UIWidget
     color: $var-text-cip-color
     text-align: left
     background-color: alpha
-    width: 108
+    width: 165
 
     $on:
       color: $var-text-cip-color
@@ -299,7 +299,7 @@ CharacterWidgetOff < UIWidget
     anchors.left: parent.left
     anchors.top: parent.top
     anchors.bottom: parent.bottom
-    margin-left: 497
+    margin-left: 524
     margin-top: -1
     margin-bottom: -1
     image-source: /images/ui/separator_vertical66
@@ -325,9 +325,9 @@ StaticMainWindow
   !text: tr('Select Character')
   font: $var-cip-font
   visible: false
-  size: 745 429
+  size: 745 449
   $mobile:
-    size: 745 429
+    size: 745 449
   @onEnter: CharacterList.doLogin()
   @onEscape: CharacterList.hide(true)
   @onSetup: |
@@ -337,11 +337,11 @@ StaticMainWindow
   TextList
     id: characters
     height: 278
-    background-color: #565656
+    background-color: #33231d
     anchors.left: parent.left
     anchors.right: parent.right
     anchors.top: parent.top
-    margin-top: 10
+    margin-top: 19
     padding: 1
     focusable: false
     vertical-scrollbar: characterListScrollBar
@@ -352,30 +352,32 @@ StaticMainWindow
     width: 713
     anchors.left: parent.left
     anchors.top: parent.top
-    margin-top: -6
+    margin-top: 0
     height: 17
     border-width: 1
-    border-color-top: #1B1B1A
-    border-color-left: #1B1B1A
-    border-color-right: #6b6b6b
-    border-color-bottom: #6b6b6b
-    background-color: #363636
+    border-color-top: #150e0c
+    border-color-left: #150e0c
+    border-color-right: #462b22
+    border-color-bottom: #462b22
+    background-color: #221714
     UIButton
       id: characterSort
-      size: 277 14
+      size: 220 14
       anchors.top: parent.top
       anchors.left: parent.left
       !text: tr('Character')
-      text-offset: -73 0
+      text-align: left
+      // o Lua reposiciona este offset conforme a lista mostre ou nao o outfit
+      text-offset: 2 0
       font: $var-cip-font
       color: $var-text-cip-color
       image-source: /images/game/entergame/sort-button
       image-clip: 0 0 7 4
       image-size: 7 4
-      image-offset: 269 5
+      image-offset: 209 5
       @onClick: setupSortButton(self, "character", 1)
       $pressed:
-        color: #9d9d9d
+        color: #a87f68
         image-clip: 0 4 7 4
       $checked:
         image-clip: 0 4 7 4
@@ -394,20 +396,21 @@ StaticMainWindow
       image-source: /images/ui/separator_vertical
     UIButton
       id: statusSort
-      size: 53 14
+      size: 76 14
       anchors.top: parent.top
       anchors.left: prev.right
       !text: tr('Status')
-      text-offset: -6 0
+      text-offset: 2 0
+      text-align: left
       font: $var-cip-font
       color: $var-text-cip-color
       image-source: /images/game/entergame/sort-button
       image-clip: 0 0 7 4
       image-size: 7 4
-      image-offset: 46 5
+      image-offset: 65 5
       @onClick: setupSortButton(self, "status", 2)
       $pressed:
-        color: #9d9d9d
+        color: #a87f68
         image-clip: 0 4 7 4
       $checked:
         image-clip: 0 4 7 4
@@ -425,17 +428,18 @@ StaticMainWindow
       image-source: /images/ui/separator_vertical
     UIButton
       id: levelSort
-      size: 48 14
+      size: 50 14
       anchors.top: parent.top
       anchors.left: prev.right
       !text: tr('Level')
-      text-offset: -8 0
+      text-offset: 2 0
+      text-align: left
       font: $var-cip-font
       color: $var-text-cip-color
       image-source: /images/game/entergame/sort-button
       image-clip: 0 0 7 4
       image-size: 7 4
-      image-offset: 40 5
+      image-offset: 39 5
       @onClick: setupSortButton(self, "level", 3)
       $pressed:
         image-clip: 0 4 7 4
@@ -444,7 +448,7 @@ StaticMainWindow
       $!on:
         image-source:
       $on:
-        color: #9d9d9d
+        color: #a87f68
         image-source: /images/game/entergame/sort-button
     UIWidget
       height: 14
@@ -456,7 +460,7 @@ StaticMainWindow
       image-source: /images/ui/separator_vertical
     UIButton
       id: vocationSort
-      size: 113 14
+      size: 165 14
       anchors.top: parent.top
       anchors.left: prev.right
       !text: tr('Vocation')
@@ -467,10 +471,10 @@ StaticMainWindow
       image-source: /images/game/entergame/sort-button
       image-clip: 0 0 7 4
       image-size: 7 4
-      image-offset: 105 5
+      image-offset: 154 5
       @onClick: setupSortButton(self, "vocation", 4)
       $pressed:
-        color: #9d9d9d
+        color: #a87f68
         image-clip: 0 4 7 4
       $checked:
         image-clip: 0 4 7 4
@@ -488,7 +492,7 @@ StaticMainWindow
       image-source: /images/ui/separator_vertical
     UIButton
       id: worldSort
-      size: 211 14
+      size: 186 14
       anchors.top: parent.top
       anchors.left: prev.right
       !text: tr('World')
@@ -499,10 +503,10 @@ StaticMainWindow
       image-source: /images/game/entergame/sort-button
       image-clip: 0 0 7 4
       image-size: 7 4
-      image-offset: 192 5
+      image-offset: 175 5
       @onClick: setupSortButton(self, "world", 5)
       $pressed:
-        color: #9d9d9d
+        color: #a87f68
         image-clip: 0 4 7 4
       $checked:
         image-clip: 0 4 7 4
@@ -520,11 +524,11 @@ StaticMainWindow
 
   VerticalScrollBar
     id: characterListScrollBar
-    height: 290
+    height: 278
     anchors.top: parent.top
     anchors.right: parent.right
     margin-right: 1
-    margin-top: -5
+    margin-top: 19
     step: 14
     pixels-scroll: true
 
@@ -582,7 +586,7 @@ StaticMainWindow
   Button
     id: buttonCancel
     !text: tr('Cancel')
-    size: 43 20
+    size: 74 20
     anchors.right: parent.right
     anchors.bottom: parent.bottom
     margin-bottom: 6
@@ -593,7 +597,7 @@ StaticMainWindow
     anchors.top: separator.bottom
     anchors.left: parent.left
     margin-top: 12
-    size: 185 22
+    size: 250 22
     CheckBox
       id: checkBoxHidden
       anchors.left: parent.left
@@ -617,7 +621,7 @@ StaticMainWindow
     anchors.left: prev.right
     margin-top: 12
     margin-left: 10
-    size: 107 22
+    size: 130 22
     CheckBox
       id: checkBoxOutfit
       anchors.left: parent.left
@@ -642,7 +646,7 @@ StaticMainWindow
     anchors.left: prev.right
     margin-top: 12
     margin-left: 10
-    size: 127 22
+    size: 165 22
     CheckBox
       id: recordSession
       anchors.left: parent.left

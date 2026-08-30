@@ -1,6 +1,6 @@
 HotkeyDescriptionPanel < UIWidget
   @onFocusChange: modules.client_settings.onCFocusChange(self)
-  background-color: #353535
+  background-color: #221714
   height: 20
   Label
     id: action
@@ -149,6 +149,7 @@ HotkeyPanel < FlatPanel
       enabled: false
     Label
       !text: tr('Auto-Switch Hotkey Preset')
+      text-auto-resize: true
       anchors.top: parent.top
       anchors.left: prev.right
       margin-left: 5
@@ -182,6 +183,7 @@ HotkeyPanel < FlatPanel
       image-source: /images/ui/checkbox_round
     Label
       !text: tr('Chat Mode On')
+      text-auto-resize: true
       anchors.top: parent.top
       anchors.left: prev.right
       margin-left: 5
@@ -192,6 +194,7 @@ HotkeyPanel < FlatPanel
       image-source: /images/ui/checkbox_round
     Label
       !text: tr('Chat Mode Off')
+      text-auto-resize: true
       anchors.top: parent.top
       anchors.left: prev.right
       margin-left: 5
@@ -213,7 +216,7 @@ HotkeyPanel < FlatPanel
     margin-top: 8
     margin-left: 5
     anchors.left: parent.left
-    width: 175
+    width: 285
 
   TextEdit
     id: searchText
@@ -243,7 +246,7 @@ HotkeyPanel < FlatPanel
       anchors.top: parent.top
       anchors.left: parent.left
       size: 485 20
-      background-color: #353535
+      background-color: #221714
       border-width: 1
       Label
         !text: tr('Action')
@@ -272,7 +275,7 @@ HotkeyPanel < FlatPanel
         height: 20
       Label
         !text: tr('Second Key')
-        size: 100 20
+        size: 115 20
         anchors.top: parent.top
         anchors.left: prev.right
         margin-left: 5
@@ -300,7 +303,7 @@ HotkeyPanel < FlatPanel
       anchors.top: descLabel.bottom
       anchors.bottom: parent.bottom
       vertical-scrollbar: actionScrollBar
-      background-color: #414141
+      background-color: #281b17
       margin-left: 1
       margin-right: 1
       margin-bottom: 1

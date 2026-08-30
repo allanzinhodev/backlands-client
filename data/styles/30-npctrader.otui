@@ -1,6 +1,6 @@
 NpcWindow < UIMiniWindow
   font: verdana-11px-antialised
-  color: #959595
+  color: #a87f68
   icon-rect: 4 4 12 12
   width: 175
   height: 365
@@ -141,8 +141,8 @@ NpcWindow < UIMiniWindow
       border-width: 1
       border-color-top: #181818
       border-color-left: #181818
-      border-color-bottom: #757575
-      border-color-right: #757575
+      border-color-bottom: #503125
+      border-color-right: #503125
     UIItem
       id: currencyItem
       size: 32 32
@@ -171,7 +171,7 @@ NpcWindow < UIMiniWindow
       anchors.right: parent.right
     Button
       id: quickSellButton
-      size: 43 20
+      size: 86 20
       !text: tr('Sell All')
       anchors.top: prev.bottom
       anchors.right: parent.right

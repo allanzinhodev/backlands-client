@@ -15,7 +15,7 @@ ToolsPanel < Panel
       margin-top: 1
       !text: tr('Tools Helper')
       font: $var-main-font
-      color: #AAAAAA
+      color: #a87f68
       text-auto-resize: true
     Panel
       id: firstPanel
@@ -189,7 +189,7 @@ ToolsPanel < Panel
 
       CheckBox
         id: autoTrainingCheck
-        width: 110
+        width: 136
         anchors.top: toolsLabel2.bottom
         anchors.left: parent.left
         !text: tr('Exercise Training')
@@ -254,7 +254,7 @@ ToolsPanel < Panel
         !tooltip: tr('Smart Follow: re-follows the target across different floors.')
       Button
         id: setKeyFollowButton
-        size: 41 15
+        size: 80 15
         anchors.verticalCenter: smartFollow.verticalCenter
         anchors.left: smartFollow.right
         margin-left: 2
@@ -302,7 +302,7 @@ ToolsPanel < Panel
       margin-top: 1
       !text: tr('Quiver Refill')
       font: $var-main-font
-      color: #AAAAAA
+      color: #a87f68
       text-auto-resize: true
     UITooltipGrey
       id: quiverHelpIcon
@@ -398,7 +398,7 @@ ToolsPanel < Panel
       margin-top: 1
       !text: tr('Magic Shield')
       font: $var-main-font
-      color: #AAAAAA
+      color: #a87f68
       text-auto-resize: true
     UITooltipGrey
       id: mageHelpIcon
