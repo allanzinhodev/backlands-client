@@ -1434,12 +1434,12 @@ function ConditionsHUD:notifierTaintsChange(localPlayer, now, old)
         if specialCondition:isVisibleBar() and m_settings.getOption('showInBarCheckBox') then
             inventoryWidget:setVisible(true)
             inventoryWidget:setTooltip(specialCondition:getTooltipBar())
-            inventoryWidget:setTooltipFont("Verdana Bold-11px-wheel")
+            inventoryWidget:setTooltipFont("silkscreen-16")
 
             if topbarWidget then
                 topbarWidget:setVisible(true)
                 topbarWidget:setTooltip(specialCondition:getTooltipBar())
-                topbarWidget:setTooltipFont("Verdana Bold-11px-wheel")
+                topbarWidget:setTooltipFont("silkscreen-16")
             end
         end
     else

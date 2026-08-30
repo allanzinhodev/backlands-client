@@ -163,7 +163,7 @@ UIWidget
       Label
         !text: tr('Grand Opening')
         text-auto-resize: true
-        font: Verdana Bold-11px
+        font: $var-cip-font
         color: #a87f68
         margin-top: 1
         anchors.top: parent.top
@@ -180,7 +180,7 @@ UIWidget
           !text: tr(' Baltrium & Tormentum')
           anchors.top: parent.top
           anchors.horizontalCenter: parent.horizontalCenter
-          font: Verdana Bold-11px
+          font: $var-cip-font
           color: $var-text-cip-color-grey
           text-auto-resize: true
           margin-top: 1
@@ -278,6 +278,6 @@ UIWidget
           anchors.left: parent.left
           margin-top: 2
           margin-left: 13
-          font: Verdana Bold-11px
+          font: $var-cip-font
           color: $var-text-cip-color-grey
           text-auto-resize: true

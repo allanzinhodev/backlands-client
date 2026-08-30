@@ -272,6 +272,7 @@ HotkeysWindow < Panel
       anchors.top: parent.top
       anchors.left: parent.left
       !text: tr("Action")
+      font: $var-cip-font
       text-align: left
       text-offset: 3 0
       color: $var-text-cip-color
@@ -288,6 +289,7 @@ HotkeysWindow < Panel
       anchors.top: parent.top
       anchors.left: prev.right
       !text: tr("First Key")
+      font: $var-cip-font
       text-align: left
       text-offset: 3 0
       color: $var-text-cip-color
@@ -303,6 +305,7 @@ HotkeysWindow < Panel
       anchors.top: parent.top
       anchors.left: prev.right
       !text: tr("Second Key")
+      font: $var-cip-font
       text-align: left
       text-offset: 3 0
       color: $var-text-cip-color

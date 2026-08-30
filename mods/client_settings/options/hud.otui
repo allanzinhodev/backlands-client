@@ -1,7 +1,7 @@
 ConditionLabelSettings < UIWidget
   size: 456 16
   tooltip-delayed: true
-  tooltip-font: Verdana Bold-11px-wheel
+  tooltip-font: silkscreen-16
   $checked:
     background-color: $var-textlist-selected
 

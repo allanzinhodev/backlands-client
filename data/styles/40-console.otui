@@ -1,8 +1,8 @@
 TextEditCipsoft < UITextEdit
   padding-left: 2
   color: #ebbf90
-  font: verdana-11px-monochrome
-  height: 16
+  font: $var-cip-font
+  height: 18
   opacity: 1
   image-source: /images/ui/textedit
   image-border: 1
@@ -18,8 +18,8 @@ TextEditCipsoft < UITextEdit
     padding-left: 2
 
 ConsoleLabel < UITextEdit
-  font: verdana-11px-monochrome
-  height: 14
+  font: $var-cip-font
+  height: 18
   color: #f0f000
   margin-left: 2
   text-wrap: true
@@ -34,8 +34,8 @@ ConsoleLabel < UITextEdit
   focusable: false
 
 ConsolePhantomLabel < UILabel
-  font: verdana-11px-monochrome
-  height: 14
+  font: $var-cip-font
+  height: 18
   color: #f0f000
   text-wrap: true
   text-auto-resize: true
@@ -43,7 +43,7 @@ ConsolePhantomLabel < UILabel
   selection-background-color: #808080
 
 ConsoleTabBar < MoveableTabBar
-  height: 14
+  height: 18
   padding: 0 5
   border-width-top: 0
   margin-top:1

@@ -100,6 +100,7 @@ NewMainWindow
 
     TextList
       id: compendiumContent
+      font: $var-cip-font
       size: 721 372
       anchors.top: prev.bottom
       anchors.left: parent.left

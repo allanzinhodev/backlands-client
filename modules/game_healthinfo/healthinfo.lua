@@ -249,7 +249,7 @@ function onTaintsChange(localPlayer, now, old)
       local icon = g_ui.createWidget('ConditionWidget', content)
       icon:setId('condition_taints')
       icon:setImageSource('/images/game/states/' .. now + 30 )
-      icon:setTooltipFont("Verdana Bold-11px-wheel")
+      icon:setTooltipFont("silkscreen-16")
       icon:setTooltip(TaintsDescriptions[now])
       icon:setParent(content)
   end

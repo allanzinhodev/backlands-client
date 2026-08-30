@@ -78,7 +78,7 @@ NewHeadlessWindow
     MultilineTextEdit
       id: resultLogContent
       size: 350 250
-      font: Verdana Bold-11px-wheel
+      font: $var-cip-font
       anchors.top: prev.bottom
       anchors.left: parent.left
       anchors.right: parent.right
