@@ -1372,7 +1372,7 @@ function updateSearchWildcard(prey)
     end
 
     local monsterInfo = currentSearchRaces[slot][i]
-    local color = ((i % 2 == 0) and '#484848' or '#414141')
+    local color = ((i % 2 == 0) and '#2c1e19' or '#281b17')
     monsterLabel:setFocusable(true)
     monsterLabel:setBackgroundColor(color)
     monsterLabel.background = color
@@ -1408,7 +1408,7 @@ function onSearchValueChange(scrollbar, value, delta, slot)
     local itemId = value > 0 and (startItem + i - 1) or (startItem + i)
     local monsterInfo = currentSearchRaces[slot][itemId]
 
-    local color = ((itemId % 2 == 0) and '#484848' or '#414141')
+    local color = ((itemId % 2 == 0) and '#2c1e19' or '#281b17')
     monsterLabel:setBackgroundColor(color)
     monsterLabel.background = color
     monsterLabel:setId(monsterInfo)
@@ -1450,7 +1450,7 @@ function onWildcardValueChange(scrollbar, value, delta, slot)
     local itemId = value > 0 and (startItem + i - 1) or (startItem + i)
     local monsterInfo = currentRaces[slot][itemId]
 
-    local color = ((itemId % 2 == 0) and '#484848' or '#414141')
+    local color = ((itemId % 2 == 0) and '#2c1e19' or '#281b17')
     monsterLabel:setBackgroundColor(color)
     monsterLabel.background = color
     monsterLabel:setId(monsterInfo)
@@ -1505,7 +1505,7 @@ function updateWildCardWindow()
       monster:setActionId(i + 1)
       monster:setTextAlign(AlignLeft)
       count = count + 1
-      local color = ((count % 2 == 0) and '#484848' or '#414141')
+      local color = ((count % 2 == 0) and '#2c1e19' or '#281b17')
       monster:setBackgroundColor(color)
       monster.background = color
       local creature = creatureList[monsterInfo]

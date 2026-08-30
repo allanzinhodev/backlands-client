@@ -1957,7 +1957,7 @@ function displayControlButtons()
   local count = 1
   for _, id in pairs(activeButtons) do
     local label = g_ui.createWidget("ControlLabel", activeList)
-    local background = count % 2 == 0 and "#484848" or "#414141"
+    local background = count % 2 == 0 and "#2c1e19" or "#281b17"
     label:setText(ControlButtonNames[id])
     label:setId(id)
     label:setBackgroundColor(background)
@@ -1973,7 +1973,7 @@ function displayControlButtons()
   count = 1
   for _, id in pairs(inactiveButtons) do
     local label = g_ui.createWidget("ControlLabel", inactiveList)
-    local background = count % 2 == 0 and "#484848" or "#414141"
+    local background = count % 2 == 0 and "#2c1e19" or "#281b17"
     label:setText(ControlButtonNames[id])
     label:setId(id)
     label:setBackgroundColor(background)
@@ -2035,7 +2035,7 @@ function onHideControlButton()
   widget:destroy()
 
   local newLabel = g_ui.createWidget("ControlLabel", inactiveList)
-  local background = inactiveList:getChildCount() % 2 == 0 and "#484848" or "#414141"
+  local background = inactiveList:getChildCount() % 2 == 0 and "#2c1e19" or "#281b17"
   newLabel:setId(currentId)
   newLabel:setText(ControlButtonNames[currentId])
   newLabel:setBackgroundColor(background)
@@ -2072,7 +2072,7 @@ function onDisplayControlButton()
   widget:destroy()
 
   local newLabel = g_ui.createWidget("ControlLabel", activeList)
-  local background = activeList:getChildCount() % 2 == 0 and "#484848" or "#414141"
+  local background = activeList:getChildCount() % 2 == 0 and "#2c1e19" or "#281b17"
   newLabel:setId(currentId)
   newLabel:setText(ControlButtonNames[currentId])
   newLabel:setBackgroundColor(background)

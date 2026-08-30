@@ -956,7 +956,7 @@ function onReorderCharacterList()
 
   for i, characterInfo in ipairs(characters) do
     local widget = g_ui.createWidget(showOutfit and 'CharacterWidgetOn' or 'CharacterWidgetOff', characterList)
-    widget.realColor = (i % 2 == 0 and "#414141" or "#484848")
+    widget.realColor = (i % 2 == 0 and "#281b17" or "#2c1e19")
     widget:setBackgroundColor(widget.realColor)
 
     for key,value in pairs(characterInfo) do

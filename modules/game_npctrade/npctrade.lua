@@ -1082,7 +1082,7 @@ local function updateBlacklist(window)
   for i, itemId in pairs(sellAllWhitelist) do
     count = count + 1
     local widget = g_ui.createWidget('QuickSellItemBox', list)
-    local color = (count % 2) == 0 and '#414141' or '#484848'
+    local color = (count % 2) == 0 and '#281b17' or '#2c1e19'
     widget:setId(itemId)
     widget.itemName:setText(getItemServerName(itemId))
     widget.itemId:setItemId(itemId)

@@ -10,7 +10,7 @@ ChoiceListLabel < Label
     color: #ebbf90
   @onFocusChange: |
     if not self:isFocused() then
-      self:setBackgroundColor(self:getActionId() % 2 == 0 and "#414141" or "#484848")
+      self:setBackgroundColor(self:getActionId() % 2 == 0 and "#281b17" or "#2c1e19")
     end
 
 ChoiceList < TextList

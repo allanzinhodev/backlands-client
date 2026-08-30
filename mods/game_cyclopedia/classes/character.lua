@@ -1242,7 +1242,7 @@ function Character.showRecentDeaths(currentPage, totalPages, deaths)
             widget.name:setTooltip(entry.name)
         end
 
-        local color = ((count % 2 == 0) and '#484848' or '#414141')
+        local color = ((count % 2 == 0) and '#2c1e19' or '#281b17')
         count = count + 1
         widget:setBackgroundColor(color)
     end
@@ -1338,7 +1338,7 @@ function Character.showPvPDeaths(currentPage, totalPages, deaths)
             widget.status:setColor("#d33c3c")
         end
 
-        local color = ((count % 2 == 0) and '#484848' or '#414141')
+        local color = ((count % 2 == 0) and '#2c1e19' or '#281b17')
         count = count + 1
         widget:setBackgroundColor(color)
     end

@@ -196,7 +196,7 @@ function init()
     if getObjectCategoryName(i) ~= '' then
       count = count + 1
       local widget = g_ui.createWidget('QuicklootContainerBox', quickLootContainersPanel)
-      local color = (count % 2) == 0 and '#414141' or '#484848'
+      local color = (count % 2) == 0 and '#281b17' or '#2c1e19'
 
       widget:setId(i)
       widget:setBackgroundColor(color)
@@ -493,7 +493,7 @@ function updateLootItems(searchText)
     count = count + 1
     local itemName = getQuickLootItemDisplayName(itemId)
     local widget = g_ui.createWidget('QuicklootItemBox', itemList)
-    local color = (count % 2) == 0 and '#414141' or '#484848'
+    local color = (count % 2) == 0 and '#281b17' or '#2c1e19'
 
     widget:setId(itemId)
     widget:setBackgroundColor(color)
@@ -541,7 +541,7 @@ function onItemListValueChange(scroll, value, delta)
 	  local itemId = cache.listData[index]
 
     if itemId then
-      local color = (index % 2) == 0 and '#414141' or '#484848'
+      local color = (index % 2) == 0 and '#281b17' or '#2c1e19'
       local itemName = getQuickLootItemDisplayName(itemId)
       widget:setId(itemId)
       widget:setBackgroundColor(color)

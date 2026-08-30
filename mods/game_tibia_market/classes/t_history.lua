@@ -35,7 +35,7 @@ function MarketHistory.onTopListValueChange(scroll, value, delta)
     local index = value > 0 and (startLabel + i - 1) or (startLabel + i)
     local data = topListData[index]
 	if data then
-		local color = ((index % 2 == 0) and '#484848' or '#414141')
+		local color = ((index % 2 == 0) and '#2c1e19' or '#281b17')
 		widget:setId(color)
 		widget:setActionId(index)
 		widget:setBackgroundColor(color)
@@ -90,7 +90,7 @@ function MarketHistory.onBottomListValueChange(scroll, value, delta)
 		break
 	  end
 
-	  local color = ((index % 2 == 0) and '#484848' or '#414141')
+	  local color = ((index % 2 == 0) and '#2c1e19' or '#281b17')
 	  widget:setId(color)
 	  widget:setActionId(index)
 	  widget:setBackgroundColor(color)
@@ -157,7 +157,7 @@ function MarketHistory.onParseMarketHistory(buyOffers, sellOffers)
 			goto continue
 		end
 
-		local color = i % 2 == 0 and '#414141' or '#484848'
+		local color = i % 2 == 0 and '#281b17' or '#2c1e19'
 		widget:setId(color)
 		widget:setActionId(i)
 		widget:setBackgroundColor(color)
@@ -205,7 +205,7 @@ function MarketHistory.onParseMarketHistory(buyOffers, sellOffers)
 			goto continue
 		end
 
-		local color = i % 2 == 0 and '#414141' or '#484848'
+		local color = i % 2 == 0 and '#281b17' or '#2c1e19'
 		widget:setId(color)
 		widget:setActionId(i)
 		widget:setBackgroundColor(color)

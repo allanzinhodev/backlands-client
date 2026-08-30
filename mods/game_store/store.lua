@@ -512,7 +512,7 @@ function onStoreTransactionHistory(currentPage, pageCount, offers)
   local count = 0
   for key, item in pairs(offers) do
     local itemBox = g_ui.createWidget('HistoryLabel', Offers.displayPanel.historyListPanel)
-    local color = (count % 2) == 0 and '#484848' or '#414141'
+    local color = (count % 2) == 0 and '#2c1e19' or '#281b17'
     itemBox:setBackgroundColor(color)
 
     if count == 0 then

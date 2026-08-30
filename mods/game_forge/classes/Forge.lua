@@ -1195,7 +1195,7 @@ end
 
 function ForgeSystem.onForgeHistory(history)
     historyMenu.historyList:destroyChildren()
-    local colors = { '#414141', '#484848' }
+    local colors = { '#281b17', '#2c1e19' }
 
     for id, info in ipairs(history) do
         local widget = g_ui.createWidget('HistoryForgePanel', historyMenu.historyList)

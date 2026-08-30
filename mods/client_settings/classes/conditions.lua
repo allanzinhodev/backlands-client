@@ -793,7 +793,7 @@ function ConditionsHUD:configure()
             condition:setVisibleBar(visibleBar)
             widget.showInBarCheckBox:setChecked(visibleBar)
 
-            widget.bgcolor = i % 2 == 0 and "#414141" or "#484848"
+            widget.bgcolor = i % 2 == 0 and "#281b17" or "#2c1e19"
             widget:setBackgroundColor(widget.bgcolor)
             ConditionsHUD.widgets[condition:getId()] = widget
 
@@ -1156,7 +1156,7 @@ function ConditionsHUD:updateOrder(reset)
         local widget = ConditionsHUD.widgets[condition:getId()]
         if widget then
             widget:getParent():moveChildToIndex(widget, condition:getIndex())
-            widget.bgcolor = i % 2 == 0 and "#414141" or "#484848"
+            widget.bgcolor = i % 2 == 0 and "#281b17" or "#2c1e19"
             widget:setBackgroundColor(widget.bgcolor)
             if reset then
                 widget.showInHudCheckBox:setChecked(condition.visibleHud)

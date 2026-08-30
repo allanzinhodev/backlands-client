@@ -847,7 +847,7 @@ function onHuntingWildcardState(slot, monsterList, state)
 		monster:setActionId(slot + 1)
 		monster:setTextAlign(AlignLeft)
 		count = count + 1
-		local color = ((count % 2 == 0) and '#484848' or '#414141')
+		local color = ((count % 2 == 0) and '#2c1e19' or '#281b17')
 		monster:setBackgroundColor(color)
 		local creature = creatures[k]
 		if creature then
@@ -940,7 +940,7 @@ function onSearchChange(widget)
 	for i, widget in pairs(monsterList:getChildren()) do
 		widget:show()
 		count = count + 1
-		local color = ((count % 2 == 0) and '#484848' or '#414141')
+		local color = ((count % 2 == 0) and '#2c1e19' or '#281b17')
 		widget:setBackgroundColor(color)
 	end
 
@@ -951,7 +951,7 @@ function onSearchChange(widget)
 		end
 
 		count = count + 1
-		local color = ((count % 2 == 0) and '#484848' or '#414141')
+		local color = ((count % 2 == 0) and '#2c1e19' or '#281b17')
 		widget:setBackgroundColor(color)
 	end
 end
