@@ -20,13 +20,13 @@ BountySetupWindow < StaticWindow
     anchors.top: parent.top
     anchors.bottom: parent.bottom
     anchors.left: setupTooltipIcon.right
-    margin-left: 25
+    margin-left: 12
 
   Label
     id: difficultyLabel
     anchors.verticalCenter: parent.verticalCenter
     anchors.left: prev.right
-    margin-left: 25
+    margin-left: 12
     font: $var-cip-main-font
     color: $var-text-cip-color
     text-auto-resize: true
@@ -37,7 +37,7 @@ BountySetupWindow < StaticWindow
     size: 108 20
     anchors.verticalCenter: parent.verticalCenter
     anchors.left: difficultyLabel.right
-    margin-left: 25
+    margin-left: 12
     mouse-scroll: false
     @onSetup: |
       self:addOption(tr('Beginner'))
@@ -52,13 +52,13 @@ BountySetupWindow < StaticWindow
     size: 144 20
     anchors.verticalCenter: parent.verticalCenter
     anchors.left: difficultyComboBox.right
-    margin-left: 25
+    margin-left: 12
 
   VerticalSeparator
     anchors.top: parent.top
     anchors.bottom: parent.bottom
     anchors.left: preferredList.right
-    margin-left: 25
+    margin-left: 12
     
   Button
     id: rerollTasks   
@@ -66,7 +66,7 @@ BountySetupWindow < StaticWindow
     size: 132 20
     anchors.verticalCenter: parent.verticalCenter
     anchors.left: prev.right
-    margin-left: 25
+    margin-left: 12
 
   Panel
     id: claimDailyValue
@@ -112,18 +112,18 @@ BountySetupWindow < StaticWindow
 
   Button
     id: claimDaily
-    size: 108 20
+    size: 116 20
     anchors.verticalCenter: parent.verticalCenter
-    anchors.left: claimDailyWarning.right
-    margin-left: 15
+    anchors.right: boostKills.left
+    margin-right: 8
     !text: tr("Claim Daily")
 
   Button
     id: boostKills
-    size: 108 20
+    size: 116 20
     anchors.verticalCenter: parent.verticalCenter
-    anchors.left: claimDaily.right
-    margin-left: 8
+    anchors.right: parent.right
+    margin-right: 4
     image-source: /images/ui/button-blue-qt
     image-clip: 0 0 98 40
     image-border: 1
@@ -145,11 +145,11 @@ BountySetupWindow < StaticWindow
     Label
       id: btnLabel
       anchors.centerIn: parent
-      margin-left: 12
       font: $var-cip-main-font
       color: $var-text-cip-color-white
       text-align: center
       !text: tr('Boost Kills')
+      width: 116
       phantom: true
 
 BountyTaskPanel < Panel
@@ -227,7 +227,7 @@ BountyTaskPanel < Panel
     anchors.top: rewardTitle.bottom
     anchors.left: parent.left
     margin-top: 8
-    margin-left: 20
+    margin-left: 30
     font: $var-cip-main-font
     color: $var-text-cip-color
     text-auto-resize: true
@@ -235,6 +235,7 @@ BountyTaskPanel < Panel
 
   Label
     id: bulletXp
+    text-auto-resize: true
     anchors.verticalCenter: rewardXpLabel.verticalCenter
     anchors.left: parent.left
     margin-left: 12
@@ -248,7 +249,7 @@ BountyTaskPanel < Panel
     anchors.top: rewardXpLabel.bottom
     anchors.left: parent.left
     margin-top: 2
-    margin-left: 20
+    margin-left: 30
     font: $var-cip-main-font
     color: $var-text-cip-color
     text-auto-resize: true
@@ -256,6 +257,7 @@ BountyTaskPanel < Panel
 
   Label
     id: bulletPoints
+    text-auto-resize: true
     anchors.verticalCenter: rewardPointsLabel.verticalCenter
     anchors.left: parent.left
     margin-left: 12
@@ -278,7 +280,7 @@ BountyTaskPanel < Panel
     anchors.top: rewardPointsLabel.bottom
     anchors.left: parent.left
     margin-top: 2
-    margin-left: 20
+    margin-left: 30
     font: $var-cip-main-font
     color: $var-text-cip-color
     text-auto-resize: true
@@ -286,6 +288,7 @@ BountyTaskPanel < Panel
 
   Label
     id: bulletReroll
+    text-auto-resize: true
     anchors.verticalCenter: rewardRerollLabel.verticalCenter
     anchors.left: parent.left
     margin-left: 12
@@ -357,10 +360,12 @@ TalismanEntry < Panel
     id: entryTitle
     anchors.top: entryIcon.top
     anchors.left: entryIcon.right
+    anchors.right: parent.right
     margin-left: 6
+    margin-right: 4
     font: $var-cip-main-font
     color: $var-text-cip-color
-    text-auto-resize: true
+    text-wrap: true
 
   Label
     id: entryCurrentLabel

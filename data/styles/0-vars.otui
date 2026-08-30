@@ -41,7 +41,7 @@
 &var-cip-font-lowspace: silkscreen-16
 &var-cip-font-outline: silkscreen-16
 &var-text-cip-font: silkscreen-16
-&var-cip-main-font: Verdana Bold-11px
+&var-cip-main-font: silkscreen-16
 &var-cip-font-wheel: Verdana Bold-11px-wheel
 &var-cip-font-mono-rounded: verdana-11px-mono-rounded
 &var-cip-font-rounded-lowspace: verdana-11px-rounded-lowspace
