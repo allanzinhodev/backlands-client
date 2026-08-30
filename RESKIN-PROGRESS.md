@@ -49,7 +49,7 @@ não é defeito de UI.
 | Nome de outfit quebrando no meio | 18 de 132 | margem do rótulo e tile próprio de 120px; restam 3 |
 | Colunas desalinhadas | character list | cabeçalho e linha nos mesmos limites |
 | Arte cinza dentro de moldura nova | 260 sprites, 800+ literais hex | rampa de luminância para a paleta fechada |
-| Texto fora da fonte pixel | `CheckBox`, `ButtonBox`, listas, cabeçalhos | 9 → **22 de 22 janelas 100% silkscreen** |
+| Texto fora da fonte pixel | `CheckBox`, `ButtonBox`, listas, cabeçalhos, HUD | 9 → **22 de 22 janelas 100% silkscreen**; HUD também |
 | Variável de fonte nunca definida | 6 aliases, 39 usos | mesmo bug de `&var-cip-font`: OTML resolvia vazio e caía no Verdana |
 | Branco fora da paleta | 70 valores de texto | `#ebbf90`; barra de progresso e tint de item ficam |
 
@@ -164,11 +164,15 @@ interna — que é o critério que esta sessão usou.
    ou pelo menos o `.md`, para o próximo agente não tropeçar no mock velho de novo.
 2. **Restam `font: cipsoftFont` em slots de action bar** — a letra da tecla num slot de
    32px, onde 16px não cabe. Os botões de janela já migraram.
-3. **Texto do HUD ainda em Verdana.** Medido contra a silkscreen: o número de mana tem 78px
-   para 113, o contador de level 24 para 33, o botão Battle Pass 108 para 142, e os rótulos
-   de tecla ficam em slots de 32px. Migrar exige redimensionar a parte mais densa da tela, e
-   migrar só o que cabe partiria um mesmo painel em duas fontes. As abas do chat já foram
-   (grupo fechado de três, alargadas de 95 para 112).
+3. **O que sobra do HUD em Verdana são números sobre slot de 32px** — os rótulos F1..F12 da
+   action bar, e Soul/Cap ("10000" mede 53px num slot de 34 centralizado nele, e imprime por
+   cima dos slots vizinhos). O resto do topo já migrou: barras de vida e mana, contador de
+   level, painel de status do canto, abas do chat.
+
+   > A leitura anterior de que o HUD "não cabia" estava errada, e por um motivo mensurável:
+   > comparava cada rótulo com a largura declarada dele, não com o contêiner. O número de vida
+   > tem 78px próprios mas 642 de contêiner. O obstáculo real era outro: 	opbar.lua chamava
+   > setFont("Verdana Bold-11px") em runtime, então o que o .otui declarava nunca valia.
 4. **3 nomes de outfit** ainda quebram (`Necromancer`, `Entrepreneur`, `Orcsoberfest`).
    Caberiam num tile de 134px, mas dois deles mais a coluna de preview não cabem na janela.
 5. **24 sprites cinza** ainda referenciados, todos ícones (`icon-questionmark`, `copy-all`,
