@@ -16,15 +16,17 @@ UIWidget
     margin-left: -10
   Label
     id: ping
-    font: verdana-11px-rounded
+    font: $var-cip-font
     margin-left: 32
     margin-top: -14
     text-auto-resize: true
   Label
     id: worldName
-    font: verdana-11px-rounded
+    font: $var-cip-font
+    text-auto-resize: true
     margin-left: 32
   Label
     id: fps
-    font: verdana-11px-rounded
+    font: $var-cip-font
+    text-auto-resize: true
     margin-left: 32

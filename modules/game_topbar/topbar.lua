@@ -557,7 +557,7 @@ function onHealthChange(localPlayer, health, maxHealth)
     healthBar:setImageSource(imageSource)
     healthBar:setImageClip(healthClip)
     healthBar:setImageRect(imageRect)
-    healthBar:setFont("Verdana Bold-11px")
+    healthBar:setFont("silkscreen-16")
     healthBar:setColor("#ffffff")
     healthBar:setValue(health, 0, maxHealth)
     if healthBar.statusHealth then
@@ -671,7 +671,7 @@ function onManaChange(localPlayer, mana, maxMana)
     manaBarToUpdate:setImageRect(imageRect)
 
     manaText:setText(string.format("%d / %d", mana, maxMana))
-    manaText:setFont("Verdana Bold-11px")
+    manaText:setFont("silkscreen-16")
     manaText:setColor("#ffffff")
     manaBarToUpdate:setValue(mana, 0, maxMana)
     manaText:setMarginBottom(currentLayout == 'large' and (useShield and 7 or 0) or 0)
@@ -699,7 +699,7 @@ function onLevelChange(localPlayer, value, percent)
     experienceBar:setPercent(percent)
     if levelLabel then
         levelLabel:setText(value)
-        levelLabel:setFont("Verdana Bold-11px")
+        levelLabel:setFont("silkscreen-16")
         levelLabel:setColor("#c0c0c0")
         levelLabel:setTextAutoResize(true)
     end
@@ -950,7 +950,7 @@ function setSkillValue(id, value)
     local levelLabel = panel.level
     if levelLabel then
         levelLabel:setText(value)
-        levelLabel:setFont("Verdana Bold-11px")
+        levelLabel:setFont("silkscreen-16")
         levelLabel:setColor("#c0c0c0")
         levelLabel:setTextAutoResize(true)
     end
