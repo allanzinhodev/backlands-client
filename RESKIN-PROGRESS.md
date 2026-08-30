@@ -50,8 +50,13 @@ não é defeito de UI.
 | Colunas desalinhadas | character list | cabeçalho e linha nos mesmos limites |
 | Arte cinza dentro de moldura nova | 260 sprites, 800+ literais hex | rampa de luminância para a paleta fechada |
 
-Depois disso restam **34 sprites cinza referenciados**, e são ícones
-(`icon-questionmark`, `back-icons`, `copy-all`, `hide-pin`, `item-blessed`), não chrome.
+Depois disso restam **24 sprites cinza referenciados**, e são ícones
+(`icon-questionmark`, `back-icons`, `copy-all`, `paste`, `hide-pin`, `item-blessed`),
+não chrome. A rampa neles custaria legibilidade sem ganhar nada.
+
+O HUD ficou na mesma paleta: barra do topo, slots da action bar, abas do chat, sidebar,
+minimapa. A arte de jogo (criaturas, itens, a bússola) mantém as cores dela, e as barras de
+vida e mana continuam verde e azul — a rampa só toca pixel cinza neutro.
 
 ---
 
@@ -159,8 +164,11 @@ interna — que é o critério que esta sessão usou.
    leitura caso a caso, não de passagem em lote.
 3. **`color: white` (73 valores).** Nem tudo é texto: `Item < UIItem` usa como *tint* do
    sprite, e mapear branco para dourado tingiria todo item do jogo. Separar antes de mexer.
-4. **Barras do topo do HUD** (vida/mana/XP) e a barra de título do Map View continuam cinza —
-   são sprites fora do filtro de chrome.
+4. **Texto do HUD ainda em Verdana.** Medido contra a silkscreen: o número de mana tem 78px
+   para 113, o contador de level 24 para 33, o botão Battle Pass 108 para 142, e os rótulos
+   de tecla ficam em slots de 32px. Migrar exige redimensionar a parte mais densa da tela, e
+   migrar só o que cabe partiria um mesmo painel em duas fontes. As abas do chat já foram
+   (grupo fechado de três, alargadas de 95 para 112).
 5. **3 nomes de outfit** ainda quebram (`Necromancer`, `Entrepreneur`, `Orcsoberfest`).
    Caberiam num tile de 134px, mas dois deles mais a coluna de preview não cabem na janela.
 6. **Cabeçalho da tabela do Highscores** segue em Verdana: `Rank` (44px) e `Level` (53px) não
