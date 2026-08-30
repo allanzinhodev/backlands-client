@@ -74,6 +74,7 @@ MessageBoxButtonHolder < UIWidget
 
 MessageBoxButton < Button
   margin-left: 10
+  text-auto-resize: true
 
 WarningToolWindow < UIWindow
   size: 420 280
