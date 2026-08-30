@@ -71,7 +71,7 @@ EquipPanel < Panel
         text: When:
         font: $var-main-font
         color: #a87f68
-        width: 40
+        width: 62
 
       // Row 3: cond1Resource + cond1Operator + cond1Value
       ComboBox
@@ -182,7 +182,7 @@ EquipPanel < Panel
 
       CheckBox
         id: cond2Enable
-        size: 140 12
+        size: 252 12
         anchors.bottom: cond2Value.top
         anchors.right: cond2Value.right
         margin-bottom: 4
@@ -201,7 +201,7 @@ EquipPanel < Panel
         text: Action:
         font: $var-main-font
         color: #a87f68
-        width: 45
+        width: 76
 
       CheckBox
         id: actionEquip
@@ -217,7 +217,7 @@ EquipPanel < Panel
 
       CheckBox
         id: actionUnequip
-        size: 70 15
+        size: 82 15
         anchors.top: actionEquip.top
         anchors.left: actionEquip.right
         margin-left: 10
@@ -229,7 +229,7 @@ EquipPanel < Panel
       // Row 6: Skip if equipped
       CheckBox
         id: skipIfEquippedCheck
-        size: 120 12
+        size: 192 12
         anchors.top: actionEquip.bottom
         anchors.left: parent.left
         margin-top: 15
@@ -287,12 +287,13 @@ EquipPanel < Panel
         anchors.left: condSeparator.right
         margin-left: 8
         text: Conditions:
+        width: 116
         font: $var-main-font
         color: #a87f68
 
       CheckBox
         id: condRooted
-        size: 60 12
+        size: 72 12
         anchors.top: conditionsLabel.bottom
         anchors.left: conditionsLabel.left
         margin-top: 5
@@ -322,7 +323,7 @@ EquipPanel < Panel
 
       CheckBox
         id: condNonPz
-        size: 60 12
+        size: 76 12
         anchors.top: condRooted.bottom
         anchors.left: conditionsLabel.left
         margin-top: 5
@@ -332,7 +333,7 @@ EquipPanel < Panel
 
       CheckBox
         id: condUtamo
-        size: 80 12
+        size: 112 12
         anchors.top: condNonPz.top
         anchors.left: condNonPz.right
         margin-left: 8
@@ -361,7 +362,7 @@ EquipPanel < Panel
 
       CheckBox
         id: enableEquipment
-        width: 140
+        width: 208
         anchors.verticalCenter: parent.verticalCenter
         anchors.left: parent.left
         !text: tr('Enable Equipment')

@@ -278,7 +278,7 @@ MagicShooterPanel < Panel
           anchors.top: parent.top
           margin-top: 15
           !text: tr('Creature:')
-          width: 60
+          width: 98
           font: $var-main-font
           color: #a87f68
 
@@ -329,6 +329,7 @@ MagicShooterPanel < Panel
           anchors.bottom: hpMinInput.top
           margin-bottom: 2
           !text: tr('HP%% Min.')
+          width: 102
           font: $var-main-font
           color: #a87f68
 
@@ -350,6 +351,7 @@ MagicShooterPanel < Panel
           anchors.bottom: hpMaxInput.top
           margin-bottom: 2
           !text: tr('HP%% Max.')
+          width: 108
           font: $var-main-font
           color: #a87f68
 
@@ -359,7 +361,7 @@ MagicShooterPanel < Panel
           anchors.left: parent.left
           anchors.bottom: parent.bottom
           !text: tr('Player:')
-          width: 60
+          width: 80
           font: $var-main-font
           color: #a87f68
 
@@ -460,6 +462,7 @@ MagicShooterPanel < Panel
           anchors.left: parent.left
           anchors.verticalCenter: parent.verticalCenter
           text: Ranged Monster Names:
+          width: 232
           font: $var-main-font
           color: #a87f68
 
@@ -500,6 +503,7 @@ MagicShooterPanel < Panel
         anchors.left: parent.left
         margin-top: 3
         text: Ignore Monster List
+        width: 198
         font: $var-main-font
         color: #a87f68
 
@@ -561,7 +565,7 @@ MagicShooterPanel < Panel
 
       CheckBox
         id: enableAutoTarget
-        width: 90
+        width: 146
         anchors.top: ignoreMonsterInput.bottom
         anchors.left: parent.left
         !text: tr('Auto Target')
@@ -616,7 +620,7 @@ MagicShooterPanel < Panel
 
       CheckBox
         id: enableMagicShooter
-        width: 140
+        width: 180
         anchors.top: enableAutoTarget.bottom
         anchors.left: parent.left
         !text: tr('Enable Shooter')
@@ -652,7 +656,7 @@ MagicShooterPanel < Panel
 
       CheckBox
         id: disableInProtectZone
-        width: 140
+        width: 232
         anchors.top: setKeyDisableButton.bottom
         anchors.left: parent.left
         anchors.verticalCenter: setKeyDisableButton.bottom

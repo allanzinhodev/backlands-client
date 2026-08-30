@@ -26,7 +26,7 @@
 
 // Labels
 
-&var-main-font: verdana-11px-antialised
+&var-main-font: silkscreen-16
 &var-cip-font: silkscreen-16
 
 // Seis variantes usadas em .otui mas nunca definidas - o mesmo bug latente que

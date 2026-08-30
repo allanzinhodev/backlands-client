@@ -25,6 +25,7 @@ CavebotSettingsWindow < NewMainWindow
       Label
         id: safetyLureTitle
         !text: tr('[Safety Lure Settings]')
+        width: 220
         anchors.top: parent.top
         anchors.horizontalCenter: parent.horizontalCenter
         margin-top: 3
@@ -35,6 +36,7 @@ CavebotSettingsWindow < NewMainWindow
       Label
         id: minMonstersLabel
         !text: tr('Min monsters to wait lure:')
+        width: 264
         anchors.top: safetyLureTitle.bottom
         anchors.left: parent.left
         margin-top: 8
@@ -62,6 +64,7 @@ CavebotSettingsWindow < NewMainWindow
       Label
         id: nearMonstersLabel
         !text: tr('Near monsters to run:')
+        width: 226
         anchors.top: minMonstersLabel.bottom
         anchors.left: parent.left
         margin-top: 10
@@ -100,6 +103,7 @@ CavebotSettingsWindow < NewMainWindow
       Label
         id: autoRecorderTitle
         !text: tr('[Auto Recorder Settings]')
+        width: 244
         anchors.top: parent.top
         anchors.horizontalCenter: parent.horizontalCenter
         margin-top: 3
@@ -163,6 +167,7 @@ CavebotSettingsWindow < NewMainWindow
       Label
         id: recordingKeyLabel
         !text: tr('Recording Key:')
+        width: 150
         anchors.top: typeLabel.bottom
         anchors.left: parent.left
         margin-top: 10
@@ -192,6 +197,7 @@ CavebotSettingsWindow < NewMainWindow
       Label
         id: nodeTitle
         !text: tr('[Node Settings]')
+        width: 154
         anchors.top: parent.top
         anchors.horizontalCenter: parent.horizontalCenter
         margin-top: 3
@@ -239,6 +245,7 @@ CavebotSettingsWindow < NewMainWindow
       Label
         id: walkingTitle
         !text: tr('[Walking Settings]')
+        width: 184
         anchors.top: parent.top
         anchors.horizontalCenter: parent.horizontalCenter
         margin-top: 3
@@ -275,6 +282,7 @@ CavebotSettingsWindow < NewMainWindow
       Label
         id: walkDelayLabel
         !text: tr('Walk Delay:')
+        width: 120
         anchors.top: walkMapWalk.bottom
         anchors.left: parent.left
         margin-top: 8

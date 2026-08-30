@@ -374,7 +374,7 @@ MoveDownButton < UIButton
 RemoveButton < UIButton
   size: 17 17
   image-color: #c0c0c0
-  font: $var-main-font
+  font: verdana-11px-antialised
   color: #ebbf90
   text: ✕
   text-align: center

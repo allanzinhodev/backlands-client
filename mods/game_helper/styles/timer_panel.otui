@@ -83,7 +83,7 @@ TimerPanel < Panel
 
         CheckBoxCircle
           id: wordsRadio
-          width: 65
+          width: 104
           height: 15
           anchors.left: parent.left
           anchors.verticalCenter: parent.verticalCenter
@@ -172,6 +172,7 @@ TimerPanel < Panel
           anchors.left: parent.left
           anchors.verticalCenter: parent.verticalCenter
           !text: tr('Cooldown:')
+          width: 106
           font: $var-main-font
           color: $var-text-color
 
@@ -225,7 +226,7 @@ TimerPanel < Panel
 
         CheckBox
           id: forceItemCheck
-          width: 180
+          width: 294
           anchors.left: parent.left
           anchors.verticalCenter: parent.verticalCenter
           !text: tr('Force Item Count Decrease')
@@ -257,6 +258,7 @@ TimerPanel < Panel
           anchors.top: parent.top
           anchors.left: parent.left
           !text: tr('Conditions:')
+          width: 116
           font: $var-main-font
           color: #a87f68
 
@@ -273,7 +275,7 @@ TimerPanel < Panel
 
         CheckBox
           id: nonPzCheck
-          width: 80
+          width: 112
           anchors.top: conditionsLabel.bottom
           anchors.left: pzCheck.right
           margin-top: 5
@@ -285,7 +287,7 @@ TimerPanel < Panel
 
         CheckBox
           id: targetingMonsterCheck
-          width: 200
+          width: 292
           anchors.top: pzCheck.bottom
           anchors.left: parent.left
           margin-top: 5
@@ -313,7 +315,7 @@ TimerPanel < Panel
 
       CheckBox
         id: enableTimer
-        width: 110
+        width: 164
         anchors.verticalCenter: parent.verticalCenter
         anchors.left: parent.left
         !text: tr('Enable Timer')

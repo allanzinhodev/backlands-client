@@ -237,7 +237,7 @@ foreach ($file in $files) {
         elseif ($line -match '^\s*text-auto-resize:\s*true') { $autoResize = $true }
         elseif ($line -match '^\s*font:') {
             $anyFont = $true
-            if ($line -match '^\s*font:\s*(\$var-cip-font|\$var-cip-font-(?:new|off|rounded|lowspace|outline)|\$var-cip-main-font|\$var-text-cip-font|silkscreen-16)\s*$') { $usesFont = $true }
+            if ($line -match '^\s*font:\s*(\$var-cip-font|\$var-cip-font-(?:new|off|rounded|lowspace|outline)|\$var-cip-main-font|\$var-main-font|\$var-text-cip-font|silkscreen-16)\s*$') { $usesFont = $true }
         }
         elseif ($line -notmatch ':') {
             # nome de widget = novo bloco; fecha o anterior

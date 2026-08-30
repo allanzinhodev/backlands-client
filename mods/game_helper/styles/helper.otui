@@ -1466,7 +1466,7 @@ HealingPanel < Panel
       anchors.left: targetModeLabel.right
       anchors.verticalCenter: parent.verticalCenter
       margin-left: 10
-      width: 70
+      width: 100
       !text: tr('Screen')
       font: $var-main-font
       color: $var-text-color
@@ -1477,7 +1477,7 @@ HealingPanel < Panel
       anchors.left: targetModeScreen.right
       anchors.verticalCenter: parent.verticalCenter
       margin-left: 10
-      width: 60
+      width: 92
       !text: tr('Party')
       font: $var-main-font
       color: $var-text-color
@@ -2260,7 +2260,7 @@ HealingPanel < Panel
 
       CheckBox
         id: masResExtended
-        width: 200
+        width: 228
         anchors.top: enableMasResMonk.bottom
         anchors.left: parent.left
         margin-top: 12

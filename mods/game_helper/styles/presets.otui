@@ -83,7 +83,7 @@ PresetsSection < Panel
     id: duplicateButton
     anchors.top: parent.top
     anchors.right: newPresetButton.right
-    width: 57
+    width: 98
     height: 20
     !text: tr('Duplicate')
     font: $var-main-font

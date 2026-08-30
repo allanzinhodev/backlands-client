@@ -6,7 +6,7 @@ AlarmSettingsWindow < MainWindow
 
   CheckBox
     id: lowCapacityAlarm
-    width: 80
+    width: 132
     anchors.top: parent.top
     anchors.left: parent.left
     margin-top: 5
@@ -33,7 +33,7 @@ AlarmSettingsWindow < MainWindow
 
   CheckBox
     id: lowHealthAlarm
-    width: 80
+    width: 138
     anchors.top: lowCapacityAlarm.bottom
     anchors.left: parent.left
     margin-top: 8
@@ -54,7 +54,7 @@ AlarmSettingsWindow < MainWindow
     text-align: center
   UIWidget
     id: lowHealthPercentLabel
-    size: 12 12
+    size: 24 12
     anchors.verticalCenter: lowHealthAlarm.verticalCenter
     anchors.left: lowHealthThreshold.right
     margin-left: 2
@@ -69,7 +69,7 @@ AlarmSettingsWindow < MainWindow
 
   CheckBox
     id: lowManaAlarm
-    width: 80
+    width: 126
     anchors.top: lowHealthAlarm.bottom
     anchors.left: parent.left
     margin-top: 8
@@ -90,7 +90,7 @@ AlarmSettingsWindow < MainWindow
     text-align: center
   UIWidget
     id: lowManaPercentLabel
-    size: 12 12
+    size: 24 12
     anchors.verticalCenter: lowManaAlarm.verticalCenter
     anchors.left: lowManaThreshold.right
     margin-left: 2
@@ -105,7 +105,7 @@ AlarmSettingsWindow < MainWindow
 
   CheckBox
     id: fullDustAlarm
-    width: 80
+    width: 124
     anchors.top: lowManaAlarm.bottom
     anchors.left: parent.left
     margin-top: 8
@@ -124,7 +124,7 @@ AlarmSettingsWindow < MainWindow
 
   CheckBox
     id: privateMessageAlarm
-    width: 110
+    width: 188
     anchors.top: fullDustAlarm.bottom
     anchors.left: parent.left
     margin-top: 8
@@ -143,7 +143,7 @@ AlarmSettingsWindow < MainWindow
 
   CheckBox
     id: lowSupplyAlarm
-    width: 80
+    width: 144
     anchors.top: privateMessageAlarm.bottom
     anchors.left: parent.left
     margin-top: 8
@@ -189,7 +189,7 @@ AlarmSettingsWindow < MainWindow
     anchors.top: miscellaneous.bottom
     anchors.left: parent.left
     margin-top: 8
-    width: 120
+    width: 184
     !text: tr('Flash ATC Taskbar')
     font: $var-main-font
     color: $var-text-color
