@@ -28,12 +28,27 @@ foi preciso desativar `Verdana-11px-italic.otfont` para caber a silkscreen.
 
 ## Estado atual: todas as telas alcançáveis auditam limpas
 
-`tools/uisweep.ps1` abre 28 janelas no cliente rodando e audita cada uma. **28 de 28 limpas.**
-A varredura estática (`tools/otui-textfit.ps1`) reporta **0 estouros**. `tools/otui-lint.js`
-passa nos 473 arquivos OTML do cliente.
+`tools/uisweep.ps1` abre **36 janelas de módulo**, `tools/uiminis.ps1` audita as **47
+mini-janelas** dos painéis laterais, e as duas passam limpas. A varredura estática
+(`tools/otui-textfit.ps1`) reporta **0 estouros**. `tools/otui-lint.js` passa nos 473 arquivos
+OTML do cliente.
+
+`tools/fontcensus.lua` pergunta `getFont()` nos 20446 widgets do cliente com tudo aberto:
+**1725 widgets com texto em silkscreen-16**, 14 nas duas exceções documentadas (F1–F12 e
+Cap/Soul nos slots de 32px) e 45 no terminal de dev, que fica de fora de propósito.
 
 A única janela que não abre é `npctrade`: o Lua dela quer dados de troca vindos do servidor,
 não é defeito de UI.
+
+> **A medição errada esconde a metade do trabalho.** Três vezes nesta migração uma
+> ferramenta deu "tudo limpo" enquanto a tela estava errada, sempre pelo mesmo motivo: ela
+> perguntava ao *disco* ou ao *fonte* uma coisa que só o **cliente rodando** sabe.
+> `palettecheck` conta 836 sprites cinzas varrendo pastas, mas a maioria é arte de conteúdo
+> ou morta; `regrade-batch` decide por referência literal no fonte e não vê
+> `setImageSource("/images/topbuttons/%s.png", v)`; `fontaudit` mede a largura do texto que
+> existe *agora* e por isso não viu que a mensagem de chat estava em Verdana. As três
+> respostas certas — `imgsources.lua`, `greyshot.js`, `fontcensus.lua` — perguntam ao
+> cliente. Ao retomar, prefira sempre a ferramenta que pergunta ao cliente.
 
 ### O que foi corrigido, por classe de defeito
 
@@ -53,9 +68,23 @@ não é defeito de UI.
 | Variável de fonte nunca definida | 6 aliases, 39 usos | mesmo bug de `&var-cip-font`: OTML resolvia vazio e caía no Verdana |
 | Branco fora da paleta | 70 valores de texto | `#ebbf90`; barra de progresso e tint de item ficam |
 
-Depois disso restam **24 sprites cinza referenciados**, e são ícones
-(`icon-questionmark`, `back-icons`, `copy-all`, `paste`, `hide-pin`, `item-blessed`),
-não chrome. A rampa neles custaria legibilidade sem ganhar nada.
+| Chrome que a varredura por pasta não via | 312 sprites | `imgsources.lua` pergunta ao cliente o que está preso a um widget; `regrade-live.js` age só nisso |
+| Zebra de lista em cinza | `#414141`/`#484848`, 49 usos em 19 arquivos | o par que `0-vars.otui` já definia: `#281b17` / `#2c1e19` |
+| Placa escura com tinta escura | `/images/ui/buttons-blue`, 18 widgets | `color: #ebbf90` junto da image-source; o rótulo tinha sumido por completo |
+| Chat, mensagem de tela e barra de vida em Verdana | `ConsoleLabel`, `TextMessageLabel`, healthinfo, boss health | achados só pelo censo de fonte; larguras de quebra crescidas junto |
+
+Depois disso o que ainda está cinza é **arte de conteúdo ou informação**: 51 sprites que o
+`regrade-live` recusa de propósito (a pasta inteira de `combatmodes` e de `states`, onde
+`whitedovemode` e `redfistmode` são o mesmo desenho em cores que significam coisas
+diferentes; `button-blessings-grey-idle` ao lado da variante colorida; o seletor de cores),
+e o chão de pedra do mapa, que é sprite de jogo.
+
+**O texto sobre o mapa não é resíduo da skin antiga.** Nomes de criatura
+(`creature.cpp:103`), números de dano (`animatedtext.cpp:32`) e fala
+(`statictext.cpp:35`) usam `verdana-11px-rounded`, e essa face tem **dois níveis de alfa
+(0 e 255)** — é bitmap sem antialiasing, tão pixel quanto a silkscreen, só mais estreita.
+Trocá-la por silkscreen-16 exigiria recompilar e deixaria um nome de 13 letras com 130px
+sobre um tile de 32. Fica como está, de propósito.
 
 O HUD ficou na mesma paleta: barra do topo, slots da action bar, abas do chat, sidebar,
 minimapa. A arte de jogo (criaturas, itens, a bússola) mantém as cores dela, e as barras de
@@ -75,8 +104,16 @@ Tudo em `tools/` da raiz do workspace, porque atravessa repositórios.
 .\tools\uidrive.ps1 -Action shot -Out shot.png
 .\tools\uiplay.ps1                          # start -> autentica -> entra no mundo
 .\tools\uiwin.ps1 -Open "modules.game_forge.show()" -Name forge -OutDir shots
-.\tools\uisweep.ps1 -OutDir shots           # as 28 janelas, uma a uma
+.\tools\uisweep.ps1 -OutDir shots           # as 36 janelas de módulo, uma a uma
+.\tools\uiminis.ps1                         # as 47 mini-janelas da sidebar
 ```
+
+`uisweep` acha a janela recém-aberta pelo último filho visível da raiz. Mini-janela não
+aparece ali — ancora dentro do `gameRootPanel` —, e são justamente as que mais sofrem com a
+fonte nova, porque dividem 178px de sidebar. Daí o `uiminis.ps1`, que **pergunta ao cliente**
+quais existem em vez de manter uma lista de `toggle()` à mão (a lista alcançava 13 de 47).
+Ele revela cada janela fechada, mede e devolve ao estado anterior — em chamadas separadas ao
+driver, porque `setVisible` só agenda o layout e medir no mesmo quadro lê o rect velho.
 
 O mod fica em `tools/uidriver/` e o `uidrive.ps1` copia para `client/mods/zz_uidriver/` ao
 subir. O cliente **não** versiona essa pasta. Screenshot sai por `g_app.doScreenshot`, que
@@ -117,12 +154,25 @@ reportou, e procura só em linhas na indentação do próprio widget.
 ### Paleta
 
 ```powershell
-node tools\pixelui\palettecheck.js client\data\images\ui   # quanto de cada sprite é cinza
-node tools\pixelui\greyrefs.js client                      # cruzado com quem referencia
-node tools\pixelui\regrade.js in.png out.png               # um sprite
+node tools\pixelui\greyshot.js shots                       # quanto de cada TELA ainda é cinza
+.\tools\uidrive.ps1 -Action lua -File tools\imgsources.lua # o que o cliente prende a um widget
+node tools\pixelui\regrade-live.js lista.txt client --apply
+node tools\pixelui\regrade.js in.png out.png [--force]     # um sprite
+node tools\pixelui\palettecheck.js client\data\images\ui   # quanto de cada ARQUIVO é cinza
 node tools\pixelui\regrade-batch.js client --apply         # chrome cinza + referenciado
 node tools\pixelui\regrade-otui.js client --apply --text   # literais hex em .otui e .lua
 ```
+
+As duas primeiras linhas são a ordem certa de trabalho: `greyshot` ranqueia as capturas do
+`uisweep` pela fração de cinza neutro — que é a assinatura da skin antiga, já que a paleta
+fechada não tem nenhum tom neutro — e diz **qual tela** ainda ficou para trás; `imgsources` +
+`regrade-live` resolvem essa tela. `palettecheck` e `regrade-batch` continuam úteis, mas
+respondem por arquivo e por isso enganam nos dois sentidos.
+
+`--force` no `regrade.js` passa a rampa em **todo** pixel, não só no cinza neutro. É para o
+sprite que é inteiro de outra paleta e não tem acento a preservar — foi o caso do botão azul
+da Store no meio de uma sidebar marrom. Use com parcimônia: o guarda de acento existe porque
+uma passagem anterior apagou o verde do aceitar e o vermelho do recusar em 24 sprites.
 
 O `regrade` **não redesenha**: mapeia a luminância de cada pixel para a paleta fechada
 (`#000000 #150e0c #231815 #33231d #4e2f24 #9a6651 #c68f66 #ebbf90`). A arte antiga é
@@ -175,11 +225,18 @@ interna — que é o critério que esta sessão usou.
    > setFont("Verdana Bold-11px") em runtime, então o que o .otui declarava nunca valia.
 4. **3 nomes de outfit** ainda quebram (`Necromancer`, `Entrepreneur`, `Orcsoberfest`).
    Caberiam num tile de 134px, mas dois deles mais a coluna de preview não cabem na janela.
-5. **24 sprites cinza** ainda referenciados, todos ícones (`icon-questionmark`, `copy-all`,
-   `paste`, `hide-pin`, `item-blessed`). A rampa ali custaria legibilidade sem ganhar nada.
+5. **Rótulo assado em fonte não-pixel.** Sobrou tipografia rasterizada dentro de sprite:
+   as abas do Forge (`fusionButton.png` e irmãos), `Categories:`/`Items:`/`Search:` do
+   Cyclopedia (`mods/game_cyclopedia/images/ui/names/`), o `Store` da sidebar. A skin
+   permite rótulo fixo assado (Lei 1), então não é defeito — mas eles não são silkscreen, e
+   redesenhá-los em `silkscreen-16` 1:1 fecharia a última diferença visível de tipografia.
 6. **8 valores `color: white`** ficaram de fora porque ali `color` não é texto: barra de
    progresso (preenchimento), `UIItem` (tint do sprite) e três `UIWidget` onde o papel não
    dá para ler pelo tipo.
+7. **`#dfdfdf88` é a cor de `$disabled`** em ~89 lugares (`Label`, `CheckBox`, `ComboBox`,
+   `Button`). É cinza translúcido, não resíduo de skin: funciona, mas a paleta tem
+   `$var-text-color-disabled` para o mesmo papel. Trocar é seguro e uniformiza; ainda não
+   foi feito.
 
 ## Armadilhas já pagas — não repita
 
@@ -204,6 +261,21 @@ interna — que é o critério que esta sessão usou.
 - **Automação de captura**: minimizar/restaurar a janela para forçar foco às vezes abre o
   menu Iniciar por cima e provoca `Render error: 1286` nessa GPU antiga. Artefato da
   automação, não do cliente.
+- **`setVisible(true)` só agenda o layout.** Medir no mesmo quadro lê o rect antigo. O
+  impact analyser relatou seis colisões que sumiram sozinhas no quadro seguinte, e a janela
+  de skills uma entre "Bonus" e "Food" que nunca existiu. Revele numa chamada ao driver,
+  meça em outra, e descarte o achado que não sobrevive a uma segunda medição.
+- **Placa clara pede tinta escura, e vice-versa.** `Button` pinta o rótulo em `#150e0c`,
+  pensado para a placa dourada. Os 18 widgets que trocam a image-source para
+  `/images/ui/buttons-blue` (fundo `#150e0c`) ficavam com rótulo invisível — não cortado,
+  não deslocado: **ausente**, e nenhuma auditoria de geometria ou de fonte pega isso. Ao
+  trocar a placa de um botão, declare a cor do texto junto.
+- **Crescer um painel não move o que não está ancorado nele.** `NpcWindowContents` usa
+  `margin-top` fixo a partir do topo da janela, não `headPanel.bottom`. Crescer o cabeçalho
+  23px pôs a lista de itens por cima do botão que eu tinha acabado de mover para lá.
+- **`sed "Na\\${ind}texto"` não indenta.** O `\\$` vira `$` literal e a linha entra na coluna
+  0, quebrando a indentação de 2 do OTML em 18 arquivos de uma vez. Para inserir linha
+  indentada, use `awk` lendo a indentação da linha anterior.
 
 ## Como validar
 
