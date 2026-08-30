@@ -20,7 +20,7 @@ ListAnnouncementLabel < UIWidget
   text-align: left
 
   $disabled:
-    color: #dfdfdf88
+    color: #ebbf9088
 
 SetupPool < NewHeadlessWindow
   id: setuPoolWindow

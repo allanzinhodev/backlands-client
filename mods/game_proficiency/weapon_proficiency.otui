@@ -667,7 +667,7 @@ NewMainWindow
       image-clip: 0 0 43 20
       text-offset: 0 2
     $!on:
-      color: #dfdfdf88
+      color: #ebbf9088
       opacity: 0.8
       change-cursor-image: false
     $on pressed:
@@ -692,7 +692,7 @@ NewMainWindow
       image-clip: 0 0 43 20
       text-offset: 0 2
     $!on:
-      color: #dfdfdf88
+      color: #ebbf9088
       opacity: 0.8
       change-cursor-image: false
     $on pressed:
@@ -717,7 +717,7 @@ NewMainWindow
       image-clip: 0 0 43 20
       text-offset: 0 2
     $!on:
-      color: #dfdfdf88
+      color: #ebbf9088
       opacity: 0.8
       change-cursor-image: false
     $on pressed:
@@ -742,7 +742,7 @@ NewMainWindow
       image-clip: 0 0 43 20
       text-offset: 0 2
     $!on:
-      color: #dfdfdf88
+      color: #ebbf9088
       opacity: 0.8
       change-cursor-image: false
     $on pressed:

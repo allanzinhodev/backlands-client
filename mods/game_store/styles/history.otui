@@ -97,7 +97,7 @@ HistoryPanel < Panel
     background-color: #221714
     opacity: 1.0
     $pressed:
-      color: #dfdfdf88
+      color: #ebbf9088
       opacity: 0.8
   UIWidget
     height: 14
@@ -121,7 +121,7 @@ HistoryPanel < Panel
     background-color: #221714
     opacity: 1.0
     $pressed:
-      color: #dfdfdf88
+      color: #ebbf9088
       opacity: 0.8
   UIWidget
     height: 14
@@ -146,7 +146,7 @@ HistoryPanel < Panel
     background-color: #221714
     opacity: 1.0
     $pressed:
-      color: #dfdfdf88
+      color: #ebbf9088
       opacity: 0.8
   UIWidget
     height: 14
@@ -165,7 +165,7 @@ HistoryPanel < Panel
     background-color: #221714
     opacity: 1.0
     $pressed:
-      color: #dfdfdf88
+      color: #ebbf9088
       opacity: 0.8
   Button
     id: previousButton

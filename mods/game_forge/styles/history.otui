@@ -73,7 +73,7 @@ Panel
     background-color: #221714
     opacity: 1.0
     $pressed:
-      color: #dfdfdf88
+      color: #ebbf9088
       opacity: 0.8
   UIWidget
     height: 285
@@ -98,7 +98,7 @@ Panel
     background-color: #221714
     opacity: 1.0
     $pressed:
-      color: #dfdfdf88
+      color: #ebbf9088
       opacity: 0.8
   UIWidget
     height: 285
@@ -123,5 +123,5 @@ Panel
     background-color: #221714
     opacity: 1.0
     $pressed:
-      color: #dfdfdf88
+      color: #ebbf9088
       opacity: 0.8

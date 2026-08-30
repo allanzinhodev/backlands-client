@@ -12,7 +12,7 @@ ComboBoxPopupScrollMenuButton < UIButton
     background-color: #86868750
 
   $disabled:
-    color: #dfdfdf88
+    color: #ebbf9088
 
 ComboBoxPopupScrollMenu < UIPopupScrollMenu
   image-source: /images/ui/combobox_square
@@ -33,7 +33,7 @@ ComboBoxPopupMenuButton < UIButton
     background-color: #86868750
 
   $disabled:
-    color: #dfdfdf88
+    color: #ebbf9088
 
 ComboBoxPopupMenu < UIPopupMenu
   image-source: /images/ui/combobox_square
@@ -62,7 +62,7 @@ ComboBox < UIComboBox
     image-clip: 0 40 91 20
 
   $disabled:
-    color: #dfdfdf88
+    color: #ebbf9088
     opacity: 0.8
   
   $checked:
@@ -81,7 +81,7 @@ ComboBoxRoundedPopupScrollMenuButton < UIButton
     background-color: #355d89
 
   $disabled:
-    color: #dfdfdf88
+    color: #ebbf9088
 
 ComboBoxRoundedPopupScrollMenu < UIPopupScrollMenu
   image-source: /images/ui/combobox_rounded
@@ -101,7 +101,7 @@ ComboBoxRoundedPopupMenuButton < UIButton
     background-color: #355d89
 
   $disabled:
-    color: #dfdfdf88
+    color: #ebbf9088
 
 ComboBoxRoundedPopupMenu < UIPopupMenu
   image-source: /images/ui/combobox_rounded

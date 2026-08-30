@@ -64,7 +64,7 @@ ThickCheckBox < UICheckBox
 
   $disabled:
     image-color: #dfdfdf88
-    color: #dfdfdf88
+    color: #ebbf9088
     opacity: 0.8
     change-cursor-image: false
 
@@ -102,7 +102,7 @@ ButtonBox < UICheckBox
     change-cursor-image: false
 
   $disabled:
-    color: #dfdfdf88
+    color: #ebbf9088
     image-color: #dfdfdf88
     change-cursor-image: false
 

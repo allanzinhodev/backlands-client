@@ -819,7 +819,7 @@ MarketMainWindow < Panel
       background-color: #221714
       opacity: 1.0
       $pressed:
-        color: #dfdfdf88
+        color: #ebbf9088
         opacity: 0.8
 
     UIWidget
@@ -846,7 +846,7 @@ MarketMainWindow < Panel
       background-color: #221714
       opacity: 1.0
       $pressed:
-        color: #dfdfdf88
+        color: #ebbf9088
         opacity: 0.8
 
     UIWidget
@@ -873,7 +873,7 @@ MarketMainWindow < Panel
       background-color: #221714
       opacity: 1.0
       $pressed:
-        color: #dfdfdf88
+        color: #ebbf9088
         opacity: 0.8
 
     UIWidget
@@ -900,7 +900,7 @@ MarketMainWindow < Panel
       background-color: #221714
       opacity: 1.0
       $pressed:
-        color: #dfdfdf88
+        color: #ebbf9088
         opacity: 0.8
 
     UIWidget
@@ -927,7 +927,7 @@ MarketMainWindow < Panel
       background-color: #221714
       opacity: 1.0
       $pressed:
-        color: #dfdfdf88
+        color: #ebbf9088
         opacity: 0.8
     // HEADER
     VerticalScrollBar
@@ -1068,7 +1068,7 @@ MarketMainWindow < Panel
       background-color: #221714
       opacity: 1.0
       $pressed:
-        color: #dfdfdf88
+        color: #ebbf9088
         opacity: 0.8
 
     UIWidget
@@ -1095,7 +1095,7 @@ MarketMainWindow < Panel
       background-color: #221714
       opacity: 1.0
       $pressed:
-        color: #dfdfdf88
+        color: #ebbf9088
         opacity: 0.8
 
     UIWidget
@@ -1122,7 +1122,7 @@ MarketMainWindow < Panel
       background-color: #221714
       opacity: 1.0
       $pressed:
-        color: #dfdfdf88
+        color: #ebbf9088
         opacity: 0.8
 
     UIWidget
@@ -1149,7 +1149,7 @@ MarketMainWindow < Panel
       background-color: #221714
       opacity: 1.0
       $pressed:
-        color: #dfdfdf88
+        color: #ebbf9088
         opacity: 0.8
 
     UIWidget
@@ -1176,7 +1176,7 @@ MarketMainWindow < Panel
       background-color: #221714
       opacity: 1.0
       $pressed:
-        color: #dfdfdf88
+        color: #ebbf9088
         opacity: 0.8
 
     VerticalScrollBar
@@ -1608,7 +1608,7 @@ MarketHistory < Panel
       background-color: #221714
       opacity: 1.0
       $pressed:
-        color: #dfdfdf88
+        color: #ebbf9088
         opacity: 0.8
 
     UIWidget
@@ -1635,7 +1635,7 @@ MarketHistory < Panel
       background-color: #221714
       opacity: 1.0
       $pressed:
-        color: #dfdfdf88
+        color: #ebbf9088
         opacity: 0.8
 
     UIWidget
@@ -1662,7 +1662,7 @@ MarketHistory < Panel
       background-color: #221714
       opacity: 1.0
       $pressed:
-        color: #dfdfdf88
+        color: #ebbf9088
         opacity: 0.8
 
     UIWidget
@@ -1689,7 +1689,7 @@ MarketHistory < Panel
       background-color: #221714
       opacity: 1.0
       $pressed:
-        color: #dfdfdf88
+        color: #ebbf9088
         opacity: 0.8
 
     UIWidget
@@ -1717,7 +1717,7 @@ MarketHistory < Panel
       background-color: #221714
       opacity: 1.0
       $pressed:
-        color: #dfdfdf88
+        color: #ebbf9088
         opacity: 0.8
 
     UIWidget
@@ -1748,7 +1748,7 @@ MarketHistory < Panel
       opacity: 1.0
       visible: false
       $pressed:
-        color: #dfdfdf88
+        color: #ebbf9088
         opacity: 0.8
 
     VerticalScrollBar
@@ -1819,7 +1819,7 @@ MarketHistory < Panel
       background-color: #221714
       opacity: 1.0
       $pressed:
-        color: #dfdfdf88
+        color: #ebbf9088
         opacity: 0.8
 
     UIWidget
@@ -1846,7 +1846,7 @@ MarketHistory < Panel
       background-color: #221714
       opacity: 1.0
       $pressed:
-        color: #dfdfdf88
+        color: #ebbf9088
         opacity: 0.8
 
     UIWidget
@@ -1873,7 +1873,7 @@ MarketHistory < Panel
       background-color: #221714
       opacity: 1.0
       $pressed:
-        color: #dfdfdf88
+        color: #ebbf9088
         opacity: 0.8
 
     UIWidget
@@ -1900,7 +1900,7 @@ MarketHistory < Panel
       background-color: #221714
       opacity: 1.0
       $pressed:
-        color: #dfdfdf88
+        color: #ebbf9088
         opacity: 0.8
 
     UIWidget
@@ -1927,7 +1927,7 @@ MarketHistory < Panel
       background-color: #221714
       opacity: 1.0
       $pressed:
-        color: #dfdfdf88
+        color: #ebbf9088
         opacity: 0.8
 
     UIWidget
@@ -1958,7 +1958,7 @@ MarketHistory < Panel
       opacity: 1.0
       visible: false
       $pressed:
-        color: #dfdfdf88
+        color: #ebbf9088
         opacity: 0.8
 
     VerticalScrollBar
