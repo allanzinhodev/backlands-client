@@ -225,11 +225,14 @@ interna — que é o critério que esta sessão usou.
    > setFont("Verdana Bold-11px") em runtime, então o que o .otui declarava nunca valia.
 4. **3 nomes de outfit** ainda quebram (`Necromancer`, `Entrepreneur`, `Orcsoberfest`).
    Caberiam num tile de 134px, mas dois deles mais a coluna de preview não cabem na janela.
-5. **Rótulo assado em fonte não-pixel.** Sobrou tipografia rasterizada dentro de sprite:
-   as abas do Forge (`fusionButton.png` e irmãos), `Categories:`/`Items:`/`Search:` do
-   Cyclopedia (`mods/game_cyclopedia/images/ui/names/`), o `Store` da sidebar. A skin
-   permite rótulo fixo assado (Lei 1), então não é defeito — mas eles não são silkscreen, e
-   redesenhá-los em `silkscreen-16` 1:1 fecharia a última diferença visível de tipografia.
+5. **Rótulo assado em fonte não-pixel — medido e mantido.** Sobrou tipografia rasterizada
+   dentro de sprite: os 20 botões de `data/images/common_buttons/` (`Close`, `Apply`,
+   `Cancel`…), as abas do Forge, `Categories:`/`Items:`/`Search:` do Cyclopedia
+   (`mods/game_cyclopedia/images/ui/names/`), o `Store` da sidebar. A skin permite rótulo
+   fixo assado (Lei 1), e **rebaixá-los para silkscreen não cabe**: `Close` mede 51px na
+   fonte pixel e o botão tem 43 de largura; `Categories:` mede 112 num sprite de 72x10.
+   Fechar essa diferença exige alargar o widget em cada um dos ~60 pontos de uso, não
+   redesenhar o sprite. Não vale o risco de layout pelo ganho.
 6. **8 valores `color: white`** ficaram de fora porque ali `color` não é texto: barra de
    progresso (preenchimento), `UIItem` (tint do sprite) e três `UIWidget` onde o papel não
    dá para ler pelo tipo.
