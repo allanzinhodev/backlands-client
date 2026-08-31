@@ -309,7 +309,9 @@ function onOverlayGeometryChange()
     return
   end
 
-  local classic = g_settings.getBoolean("classicView")
+  -- Mesma regra do game_interface: ler `classicView` cru ignora `extended-view-ui`
+  -- e faz as barras calcularem a margem pelo modo errado.
+  local classic = modules.game_interface.isClassicViewActive()
   local minMargin = 40
   if classic then
     topHealthBar:setMarginTop(15)

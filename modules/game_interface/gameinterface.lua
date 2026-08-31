@@ -7,7 +7,9 @@ gameBottomPanel = nil
 horizontalRightPanel = nil
 horizontalLeftPanel = nil
 
-local function isClassicViewActive()
+-- Exportada: healthinfo precisa da mesma resposta, e duplicar a regra ja rendeu
+-- divergencia (as barras de HP/MP liam `classicView` cru e ignoravam a flag).
+function isClassicViewActive()
   return g_settings.getBoolean("classicView") and not g_gameConfig.isExtendedViewUI()
 end
 
@@ -18,19 +20,24 @@ local function getExtendedMaxZoomOut()
 
   local awareRange = g_map.getAwareRange()
   local aspectRatio = gameRootPanel:getWidth() / gameRootPanel:getHeight()
-  local maxZoom = math.floor(awareRange.height)
+
+  -- MapView desenha drawDimension = visibleDimension + 3 (mapview.cpp:428), entao o
+  -- maximo que cabe dentro do que o servidor manda e aware-3, nao aware. O classico
+  -- ja obedece isso: 15 = 18-3 e 11 = 14-3. Sem o -3 na altura, uma janela 16:9 com
+  -- aware 26x14 aceitava zoom 13 e abria duas faixas pretas horizontais.
+  local maxVisibleWidth = awareRange.width - 3
+  local maxZoom = awareRange.height - 3
   if maxZoom % 2 == 0 then
     maxZoom = maxZoom - 1
   end
 
-  -- UIMap rounds both dimensions to odd values. Find the furthest zoom that
-  -- still fits completely inside the map area sent by the server.
+  -- UIMap arredonda as duas dimensoes para impar.
   while maxZoom > 3 do
     local visibleWidth = math.floor(maxZoom * aspectRatio)
     if visibleWidth % 2 == 0 then
       visibleWidth = visibleWidth + 1
     end
-    if visibleWidth <= awareRange.width then
+    if visibleWidth <= maxVisibleWidth then
       return maxZoom
     end
     maxZoom = maxZoom - 2
@@ -759,7 +766,10 @@ function tryLogout(prompt)
 end
 
 function updateStretchShrink()
-  if m_settings.getOption('dontStretchShrink') and not alternativeView then
+  -- `alternativeView` era global inexistente, entao esta condicao era sempre verdadeira
+  -- e travava o mapa em 15x11, anulando o viewport largo. A intencao original era
+  -- "so force 15x11 no modo classico".
+  if m_settings.getOption('dontStretchShrink') and isClassicViewActive() then
     gameMapPanel:setVisibleDimension({ width = 15, height = 11 })
     -- Set gameMapPanel size to height = 11 * 32 + 2
     bottomSplitter:setMarginBottom(bottomSplitter:getMarginBottom() + (gameMapPanel:getHeight() - 32 * 11) - 10)
@@ -2685,22 +2695,19 @@ function updateSize()
     local dheight = dimenstion.height
     local dwidth = dimenstion.width
     local tileSize = rheight / dheight
-    local maxWidth = tileSize * (awareRange.width + 1)
-    if g_game.getFeature(GameChangeMapAwareRange) and g_game.getFeature(GameNewWalking) then
-      maxWidth = tileSize * (awareRange.width - 1)
-    end
+    -- Mesma margem de 3 do getExtendedMaxZoomOut: alem disso o painel entra na
+    -- faixa que o servidor nao manda. O `+1` daqui deixava monitor ultrawide
+    -- desenhar duas colunas fora do aware range.
+    local maxWidth = tileSize * (awareRange.width - 3)
     gameMapPanel:setMarginTop(-tileSize)
     if modules.game_stats then
       modules.game_stats.ui:setMarginTop(tileSize)
     end
-    if g_settings.getBoolean("cacheMap") then
-      gameMapPanel:setMarginLeft(0)
-      gameMapPanel:setMarginRight(0)
-    else
-      local margin = math.max(0, math.floor((rwidth - maxWidth) / 2))
-      gameMapPanel:setMarginLeft(margin)
-      gameMapPanel:setMarginRight(margin)
-    end
+    -- O clamp precisa valer tambem com cacheMap ligado; pular ele dava ao painel a
+    -- largura cheia da janela. cacheMap so deve controlar GameBiggerMapCache.
+    local margin = math.max(0, math.floor((rwidth - maxWidth) / 2))
+    gameMapPanel:setMarginLeft(margin)
+    gameMapPanel:setMarginRight(margin)
   else
     if modules.game_stats then
       modules.game_stats.ui:setMarginTop(0)
