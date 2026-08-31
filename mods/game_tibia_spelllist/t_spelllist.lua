@@ -201,13 +201,13 @@ function onSelectedSpell(list, focused, oldFocus)
 
   if oldFocus then
     oldFocus:setBackgroundColor('alpha')
-    oldFocus:recursiveGetChildById('words'):setColor("#c0c0c0")
-    oldFocus:recursiveGetChildById('name'):setColor("#c0c0c0")
+    oldFocus:recursiveGetChildById('words'):setColor("#a87f68")
+    oldFocus:recursiveGetChildById('name'):setColor("#a87f68")
   end
 
   focused:setBackgroundColor('#35241d')
-  focused:recursiveGetChildById('words'):setColor("#f4f4f4")
-  focused:recursiveGetChildById('name'):setColor("#f4f4f4")
+  focused:recursiveGetChildById('words'):setColor("#ebbf90")
+  focused:recursiveGetChildById('name'):setColor("#ebbf90")
   t_spelllist:recursiveGetChildById('spellName'):setText(short_text(focused.spellData.name, 19))
   t_spelllist:recursiveGetChildById('spellName'):setTooltip('')
   if #focused.spellData.name > 18 then

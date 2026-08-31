@@ -520,7 +520,7 @@ function CyclopediaItems.categoryListChildFocus(self, selected)
 		if modules.game_analyser.isInDropTracker(itemInfo.thingType:getId()) then
 			widget.name:setColor("#FF9854")
 		else
-			widget.name:setColor("#c0c0c0")
+			widget.name:setColor("#a87f68")
 		end
 		widget:setBackgroundColor('#271b17')
 
@@ -658,8 +658,8 @@ function CyclopediaItems.showNpcData(item)
 
 			if sellToCount == 0 then
 				widget:setBackgroundColor("#35241d")
-				widget.valueLabel:setColor("#f4f4f4")
-				widget.locationLabel:setColor("#f4f4f4")
+				widget.valueLabel:setColor("#ebbf90")
+				widget.locationLabel:setColor("#ebbf90")
 				oldBuyChild = widget
 			else
 				widget:setBackgroundColor(color)
@@ -682,8 +682,8 @@ function CyclopediaItems.showNpcData(item)
 
 			if buyFromCount == 0 then
 				widget:setBackgroundColor("#35241d")
-				widget.valueLabel:setColor("#f4f4f4")
-				widget.locationLabel:setColor("#f4f4f4")
+				widget.valueLabel:setColor("#ebbf90")
+				widget.locationLabel:setColor("#ebbf90")
 				oldSaleChild = widget
 			else
 				widget:setBackgroundColor(color)
@@ -878,7 +878,7 @@ function CyclopediaItems.showSearchResult(list)
 		if modules.game_analyser.isInDropTracker(data.thingType:getId()) then
 			widget.name:setColor("#FF9854")
 		else
-			widget.name:setColor("#c0c0c0")
+			widget.name:setColor("#a87f68")
 		end
 		widget:setBackgroundColor('#271b17')
 		:: Continue ::
@@ -991,7 +991,7 @@ function CyclopediaItems.onSortFields(widget, checked)
 		if modules.game_analyser.isInDropTracker(itemInfo.thingType:getId()) then
 			widget.name:setColor("#FF9854")
 		else
-			widget.name:setColor("#c0c0c0")
+			widget.name:setColor("#a87f68")
 		end
 		widget:setBackgroundColor('#271b17')
 
@@ -1189,7 +1189,7 @@ function CyclopediaItems.onRedirect(itemId)
 				if modules.game_analyser.isInDropTracker(itemInfo.thingType:getId()) then
 					widget.name:setColor("#FF9854")
 				else
-					widget.name:setColor("#c0c0c0")
+					widget.name:setColor("#a87f68")
 				end
 				widget:setBackgroundColor('#271b17')
 				goto escape

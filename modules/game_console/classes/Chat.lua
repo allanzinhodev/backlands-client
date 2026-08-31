@@ -64,7 +64,7 @@ function Chat:onTabChange(tab)
         end
 
         if tabMessage:isLocalChat() then
-            self.textEdit:setColor("#dfdfdf")
+            self.textEdit:setColor("#a87f68")
         else
             self.textEdit:setColor("#9f9ffe")
         end

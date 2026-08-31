@@ -824,7 +824,7 @@ if BotServer._websocket then
 
       local t = membersData[name]
       widget.name:setText(name)
-      widget.name:setColor("white")
+      widget.name:setColor("#ebbf90")
       if t.leader then
         widget.name:setColor('#f8db38')
       end
@@ -851,7 +851,7 @@ if BotServer._websocket then
       elseif t.balance > 0 then
         widget.balance.value:setColor('#45ad25')
       else
-        widget.balance.value:setColor('white')
+        widget.balance.value:setColor("#ebbf90")
       end
       widget.damage.value:setText(format_thousand(t.damage))
       widget.healing.value:setText(format_thousand(t.heal))
@@ -1744,7 +1744,7 @@ macro(2000, function()
   elseif totalBalance > 0 then
     partyBalanceLabel:setColor('#45ad25')
   else
-    partyBalanceLabel:setColor('white')
+    partyBalanceLabel:setColor("#ebbf90")
   end
 
   for bossName, dueTime in pairs(storage.analyzers.trackedBoss) do

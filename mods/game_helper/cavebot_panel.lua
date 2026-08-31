@@ -1732,7 +1732,7 @@ function cavebot.refreshSessionList()
       label:setColor('yellow')
       label:setFont('$var-cip-font-mono-rounded')
     else
-      label:setColor('white')
+      label:setColor("#ebbf90")
       label:setFont('$var-main-font')
     end
 

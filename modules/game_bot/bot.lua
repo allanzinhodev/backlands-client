@@ -661,7 +661,7 @@ function message(category, msg)
     g_logger.warning("[BOT] " .. msg)
   elseif category == 'info' then
     widget:setText(msg)
-    widget:setColor("white")
+    widget:setColor("#ebbf90")
     g_logger.info("[BOT] " .. msg)
   end
 

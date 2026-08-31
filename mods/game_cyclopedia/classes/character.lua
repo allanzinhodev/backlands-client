@@ -1268,14 +1268,14 @@ function Character.onSelectRecentWidget(self)
 
 	for _, data in pairs(lastSelectedRecentDeath) do
 		data.widget:setBackgroundColor(data.color)
-		data.widget.rank:setColor("#c0c0c0")
-		data.widget.name:setColor("#c0c0c0")
+		data.widget.rank:setColor("#a87f68")
+		data.widget.name:setColor("#a87f68")
 	end
 
 	local oldBackgroundColor = parent:getBackgroundColor()
 	parent:setBackgroundColor("#35241d")
-	parent.rank:setColor("#f4f4f4")
-	parent.name:setColor("#f4f4f4")
+	parent.rank:setColor("#ebbf90")
+	parent.name:setColor("#ebbf90")
 	lastSelectedRecentDeath = {{widget = parent, color = oldBackgroundColor}}
 end
 

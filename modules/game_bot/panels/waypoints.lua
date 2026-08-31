@@ -211,7 +211,7 @@ Panel
         label:setColor("yellow")
       elseif commands[i].command == "comment" then
         label:setText(commands[i].text)
-        label:setColor("white")
+        label:setColor("#ebbf90")
       elseif commands[i].command == "use" or commands[i].command == "usewith" then
         label:setColor("orange")
       elseif commands[i].command == "gotolabel" then

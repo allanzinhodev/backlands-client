@@ -349,7 +349,7 @@ function CustomHotkeys.assignSpellButton(button, param)
   widget.action:setMarginLeft(-15)
   widget.item:setItem(nil)
   widget.item:setVisible(false)
-  widget.action:setColor("#dfdfdf")
+  widget.action:setColor("#a87f68")
 
   widget.actionEdit.onClick = function()
     local menu = g_ui.createWidget('PopupMenu')
@@ -719,7 +719,7 @@ function CustomHotkeys.assignTextButton(button, text, autoSay)
     widget.action:setMarginLeft(-15)
     widget.item:setItem(nil)
     widget.item:setVisible(false)
-    widget.action:setColor("#dfdfdf")
+    widget.action:setColor("#a87f68")
 
     if text then
       local spellData, param = Spells.getSpellDataByParamWords(text:lower())

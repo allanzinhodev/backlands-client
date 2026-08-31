@@ -871,11 +871,11 @@ function onBuyListValueChange(scroll, value, delta)
 
 		if index == cache.SCROLL_BUY_OFFERS.lastSelected then
 			widget:setBackgroundColor('#35241d')
-			widget.piecePrice:setColor("#f4f4f4")
-			widget.totalPrice:setColor("#f4f4f4")
-			widget.name:setColor("#f4f4f4")
-			widget.amount:setColor("#f4f4f4")
-			widget.endAt:setColor("#f4f4f4")
+			widget.piecePrice:setColor("#ebbf90")
+			widget.totalPrice:setColor("#ebbf90")
+			widget.name:setColor("#ebbf90")
+			widget.amount:setColor("#ebbf90")
+			widget.endAt:setColor("#ebbf90")
 		end
 	  end
 	end
@@ -931,11 +931,11 @@ function onSellListValueChange(scroll, value, delta)
 
 		if index == cache.SCROLL_SELL_OFFERS.lastSelected then
 			widget:setBackgroundColor('#35241d')
-			widget.piecePrice:setColor("#f4f4f4")
-			widget.totalPrice:setColor("#f4f4f4")
-			widget.name:setColor("#f4f4f4")
-			widget.amount:setColor("#f4f4f4")
-			widget.endAt:setColor("#f4f4f4")
+			widget.piecePrice:setColor("#ebbf90")
+			widget.totalPrice:setColor("#ebbf90")
+			widget.name:setColor("#ebbf90")
+			widget.amount:setColor("#ebbf90")
+			widget.endAt:setColor("#ebbf90")
 		end
 	  end
 	end
@@ -1294,11 +1294,11 @@ function onSelectSellOffer(widget, selected, oldFocus)
 	end
 
 	selected:setBackgroundColor('#35241d')
-	selected.piecePrice:setColor("#f4f4f4")
-	selected.totalPrice:setColor("#f4f4f4")
-	selected.name:setColor("#f4f4f4")
-	selected.amount:setColor("#f4f4f4")
-	selected.endAt:setColor("#f4f4f4")
+	selected.piecePrice:setColor("#ebbf90")
+	selected.totalPrice:setColor("#ebbf90")
+	selected.name:setColor("#ebbf90")
+	selected.amount:setColor("#ebbf90")
+	selected.endAt:setColor("#ebbf90")
 	cache.SCROLL_SELL_OFFERS.lastSelected = selected:getActionId()
 
 	local currentOffer = sellOffers[cache.SCROLL_SELL_OFFERS.lastSelected]
@@ -1356,11 +1356,11 @@ function onSelectBuyOffer(widget, selected, oldFocus)
 	end
 
 	selected:setBackgroundColor('#35241d')
-	selected.piecePrice:setColor("#f4f4f4")
-	selected.totalPrice:setColor("#f4f4f4")
-	selected.name:setColor("#f4f4f4")
-	selected.amount:setColor("#f4f4f4")
-	selected.endAt:setColor("#f4f4f4")
+	selected.piecePrice:setColor("#ebbf90")
+	selected.totalPrice:setColor("#ebbf90")
+	selected.name:setColor("#ebbf90")
+	selected.amount:setColor("#ebbf90")
+	selected.endAt:setColor("#ebbf90")
 	cache.SCROLL_BUY_OFFERS.lastSelected = selected:getActionId()
 
 	if count == 0 then

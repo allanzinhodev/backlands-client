@@ -163,7 +163,7 @@ local activeProfileColor = function()
     if i == HealBotConfig.currentHealBotProfile then
       ui[i]:setColor("green")
     else
-      ui[i]:setColor("white")
+      ui[i]:setColor("#ebbf90")
     end
   end
 end

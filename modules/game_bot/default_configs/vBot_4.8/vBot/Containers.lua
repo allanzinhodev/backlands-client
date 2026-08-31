@@ -518,7 +518,7 @@ if rootWidget then
             end
             contListWindow.contId:setItemId(0)
             contListWindow.contName:setText('')
-            contListWindow.contName:setColor('white')
+            contListWindow.contName:setColor("#ebbf90")
             contListWindow.contName:setImageColor('#ffffff')
             contListWindow.contId:setImageColor('#ffffff')
             refreshContNames(id)

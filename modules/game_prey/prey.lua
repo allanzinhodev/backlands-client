@@ -558,13 +558,13 @@ function refreshPreyControls(slot)
       local pickSpecificPrey = state.buttonsPanel.select.button.pickSpecificPrey
       state.buttonsPanel.select.price.text:setText("5")
       pickSpecificPrey:setOn(bonusRerolls >= 5)
-      state.buttonsPanel.select.price.text:setColor("#c0c0c0")
+      state.buttonsPanel.select.price.text:setColor("#a87f68")
       if bonusRerolls < 5 then
         state.buttonsPanel.select.price.text:setColor("#d33c3c")
       end
 
       state.buttonsPanel.reroll.button.rerollButton:setOn(canReroll)
-      state.buttonsPanel.reroll.price.text:setColor("#c0c0c0")
+      state.buttonsPanel.reroll.price.text:setColor("#a87f68")
       if not canReroll then
         state.buttonsPanel.reroll.price.text:setColor("#d33c3c")
       end
@@ -574,20 +574,20 @@ function refreshPreyControls(slot)
       local state = panel[stateName]
       local rerollBonus = state.buttonsPanel.choose.button.rerollBonus
       state.buttonsPanel.choose.price.text:setText("1")
-      state.buttonsPanel.choose.price.text:setColor("#c0c0c0")
+      state.buttonsPanel.choose.price.text:setColor("#a87f68")
       rerollBonus:setOn(bonusRerolls >= 1)
       if bonusRerolls < 1 then
         state.buttonsPanel.choose.price.text:setColor("#d33c3c")
       end
 
       state.buttonsPanel.autoRerollPrice.text:setText("1")
-      state.buttonsPanel.autoRerollPrice.text:setColor("#c0c0c0")
+      state.buttonsPanel.autoRerollPrice.text:setColor("#a87f68")
       if bonusRerolls < 1 then
         state.buttonsPanel.autoRerollPrice.text:setColor("#d33c3c")
       end
 
       state.buttonsPanel.lockPreyPrice.text:setText("5")
-      state.buttonsPanel.lockPreyPrice.text:setColor("#c0c0c0")
+      state.buttonsPanel.lockPreyPrice.text:setColor("#a87f68")
       if bonusRerolls < 5 then
         state.buttonsPanel.lockPreyPrice.text:setColor("#d33c3c")
       end
@@ -995,7 +995,7 @@ function onWildcardChange(prey, selected, lastSelected, slot)
 
   if lastSelectedLabel[slot] then
     lastSelectedLabel[slot]:setBackgroundColor(lastSelectedLabel[slot].background)
-    lastSelectedLabel[slot]:setColor("#c0c0c0")
+    lastSelectedLabel[slot]:setColor("#a87f68")
   end
 
   lastSelectedLabel[slot] = selected

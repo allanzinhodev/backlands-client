@@ -821,7 +821,7 @@ function House.onBidChangeValue(widget)
 	bidWindow.infoRed:setTooltip("")
 	bidWindow.infoOrange:setVisible(false)
 	bidWindow.infoOrange:setTooltip("")
-	bidWindow.limitBox:setColor("#c0c0c0")
+	bidWindow.limitBox:setColor("#a87f68")
 	bidWindow.bidButtonHouseWindow:setOn(true)
 	bidWindow.bidButtonHouseWindow:setTooltip("")
 

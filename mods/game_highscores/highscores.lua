@@ -199,7 +199,7 @@ function onHighscores(worlds, selectedWorld, vocations, selectedVocation, catego
     widget.name:setColor(color)
     widget.vocation:setColor(color)
     widget.gameworld:setColor(color)
-    widget.level:setColor("#c0c0c0")
+    widget.level:setColor("#a87f68")
     widget.points:setColor(color)
     widget:setBackgroundColor((rowIndex % 2 == 0 and '#2c1e19' or '#281b17'))
 
@@ -221,7 +221,7 @@ function onHighscores(worlds, selectedWorld, vocations, selectedVocation, catego
   scheduleRender(generation, renderRow)
 
   highscoresWindow.page:setText(string.format("%d / %d", page, pages))
-  highscoresWindow.page:setColor("#c0c0c0")
+  highscoresWindow.page:setColor("#a87f68")
   highscoresWindow.lastUpdate:setText("Last Update: "..getTimeinWords(os.time() - lastUpdate) .. " ago")
   highscoresWindow.lastUpdate:setColor("#909090")
 

@@ -193,7 +193,7 @@ function BosstiarySlot.showFirstSlot(data, sortText)
 				slotPanel.slot1.selectBoss.gold.text:setColor("#d33c3c")
 			else
 				slotPanel.slot1.selectBoss.removeButton:enable()
-				slotPanel.slot1.selectBoss.gold.text:setColor("#c0c0c0")
+				slotPanel.slot1.selectBoss.gold.text:setColor("#a87f68")
 			end
 		end
 	else
@@ -321,7 +321,7 @@ function BosstiarySlot.showSecondSlot(data, sortText)
 				slotPanel.slot2.selectBoss.gold:setColor("#d33c3c")
 			else
 				slotPanel.slot2.selectBoss.removeButton:enable()
-				slotPanel.slot2.selectBoss.gold:setColor("#c0c0c0")
+				slotPanel.slot2.selectBoss.gold:setColor("#a87f68")
 			end
 		end
 	else

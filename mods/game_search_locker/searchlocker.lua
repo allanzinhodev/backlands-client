@@ -394,12 +394,12 @@ function onSelectChildCategory(widget, selected, resetFilter)
 
     if lastSelectedCategory then
         lastSelectedCategory:setBackgroundColor(lastSelectedCategory.color)
-        lastSelectedCategory:setColor("#c0c0c0")
+        lastSelectedCategory:setColor("#a87f68")
     end
 
     lastSelectedCategory = selected
     selected:setBackgroundColor("#35241d")
-    selected:setColor("#f4f4f4")
+    selected:setColor("#ebbf90")
 
     if table.contains(enableCategories, selected:getActionId()) then
         searchlocker:recursiveGetChildById("oneButton"):setEnabled(true)

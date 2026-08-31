@@ -230,11 +230,11 @@ function onItemBoxChecked(widget)
 	if bestiaryUnlocked == 1 then
 		panel.inactive.maxCount:setChecked(false)
 		panel.inactive.maxCount:enable()
-		panel.inactive.maxCount:setColor("#c0c0c0")
+		panel.inactive.maxCount:setColor("#a87f68")
 	else
 		panel.inactive.maxCount:setChecked(false)
 		panel.inactive.maxCount:disable()
-		panel.inactive.maxCount:setColor("#707070")
+		panel.inactive.maxCount:setColor("#6b4d40")
 	end
 
 	lastSelectedCreature[slot] = widget
@@ -523,10 +523,10 @@ function onWildcardHuntingChange(panel, selected)
 	if bestiaryUnlocked == 0 then
 		panel.selection.maxCount:setChecked(false)
 		panel.selection.maxCount:disable()
-		panel.selection.maxCount:setColor("#707070")
+		panel.selection.maxCount:setColor("#6b4d40")
 	else
 		panel.selection.maxCount:enable()
-		panel.selection.maxCount:setColor("#c0c0c0")
+		panel.selection.maxCount:setColor("#a87f68")
 	end
 
 	oldSelectionBGColor[slot] = selected:getBackgroundColor()
@@ -535,7 +535,7 @@ function onWildcardHuntingChange(panel, selected)
 	wildcardSelectedMonster[slot] = selected
 
 	wildcardSelectedMonster[slot]:setBackgroundColor("#35241d")
-	wildcardSelectedMonster[slot]:setColor("#f4f4f4")
+	wildcardSelectedMonster[slot]:setColor("#ebbf90")
 end
 
 function onPreyResourceBalance(type, amount)
@@ -634,13 +634,13 @@ function onHuntingSelectState(slot, creatureList, state)
 	panel.inactive.minCount:setChecked(true)
 	panel.inactive.maxCount:setChecked(false)
 	panel.inactive.maxCount:disable()
-	panel.inactive.maxCount:setColor("#707070")
+	panel.inactive.maxCount:setColor("#6b4d40")
 
 	local wildcardButton = panel.inactive:recursiveGetChildById('pickSpecificHunting')
 	wildcardButton:setActionId(slot)
 	panel.inactive.select.price.text:setText(wildcardSelectPrice)
 	panel.inactive.reroll.price.text:setText(convertLongGold(goldUpdatePrice, true))
-	panel.inactive.select.price.text:setColor("#c0c0c0")
+	panel.inactive.select.price.text:setColor("#a87f68")
 	wildcardButton:setEnabled(true)
 	wildcardButton:setOn(true)
 
@@ -652,7 +652,7 @@ function onHuntingSelectState(slot, creatureList, state)
 
 	local rerollButton = panel.inactive:recursiveGetChildById('rerollButton')
 	rerollButton:setActionId(slot)
-	panel.inactive.reroll.price.text:setColor("#c0c0c0")
+	panel.inactive.reroll.price.text:setColor("#a87f68")
 	rerollButton:setEnabled(true)
 	rerollButton:setOn(true)
 
@@ -660,7 +660,7 @@ function onHuntingSelectState(slot, creatureList, state)
 	local nextTime = (nextRerollTime[slot + 1] or {timeLeft = 0, startTime = 0})
 	if nextTime.timeLeft == 0 then
 		rerollTime:setText("Free")
-		panel.inactive.select.price.text:setColor("#c0c0c0")
+		panel.inactive.select.price.text:setColor("#a87f68")
 		panel.inactive.reroll.price.textOff:setVisible(true)
 		panel.inactive.reroll.price.text:setText("0")
 		panel.inactive.reroll.price.textOff:setText(convertLongGold(goldUpdatePrice, true, true))
@@ -737,7 +737,7 @@ function onHuntingActiveState(slot, currentMonster, unlocked, toKill, killed, st
 
 	local cancelButton = panel.active:recursiveGetChildById('removeButton')
 	cancelButton:setActionId(slot)
-	panel.active.removeCreature.price.text:setColor("#c0c0c0")
+	panel.active.removeCreature.price.text:setColor("#a87f68")
 	cancelButton:setEnabled(true)
 	cancelButton:setOn(true)
 
@@ -750,7 +750,7 @@ function onHuntingActiveState(slot, currentMonster, unlocked, toKill, killed, st
 	local noWildcard = rerollWildcardPrice > wildcardBalance
 	local upgradeButton = panel.active:recursiveGetChildById('pickHigherReward')
 	upgradeButton:setActionId(slot)
-	panel.active.higherReward.price:setColor("#c0c0c0")
+	panel.active.higherReward.price:setColor("#a87f68")
 	upgradeButton:setEnabled(true)
 	upgradeButton:setOn(true)
 
@@ -852,7 +852,7 @@ function onHuntingWildcardState(slot, monsterList, state)
 		local creature = creatures[k]
 		if creature then
 			monster:setText(string.capitalize(creature[1]))
-			monster:setColor("#c0c0c0")
+			monster:setColor("#a87f68")
 			monster:setFont("Verdana Bold-11px")
 		end
 	end
@@ -890,13 +890,13 @@ function onHuntingExhaustedState(slot, state)
 	end
 
 	panel.exhaust.exhaustReroll.price.text:setText(convertLongGold(goldUpdatePrice, true))
-	panel.exhaust.exhaustReroll.price.text:setColor("#c0c0c0")
+	panel.exhaust.exhaustReroll.price.text:setColor("#a87f68")
 	if bankBalance + invetoryMoney < goldUpdatePrice then
 		panel.exhaust.exhaustReroll.price.text:setColor("#d33c3c")
 	end
 
 	panel.exhaust.exhaustSelect.price.text:setText(wildcardSelectPrice)
-	panel.exhaust.exhaustSelect.price.text:setColor("#c0c0c0")
+	panel.exhaust.exhaustSelect.price.text:setColor("#a87f68")
 	if wildcardBalance < wildcardSelectPrice then
 		panel.exhaust.exhaustSelect.price.text:setColor("#d33c3c")
 	end
@@ -910,7 +910,7 @@ end
 function onSearchChange(widget)
 	local text = widget:getText()
 	if #text > 0 then
-		widget:setColor("#c0c0c0")
+		widget:setColor("#a87f68")
 	end
 
 	local panel = huntingSlots[widget:getActionId()]
@@ -1048,7 +1048,7 @@ function onUpdate()
 				wildcardButton:setEnabled(false)
 				wildcardButton:setOn(false)
 			else
-				panel.inactive.select.price:setColor("#c0c0c0")
+				panel.inactive.select.price:setColor("#a87f68")
 				wildcardButton:setEnabled(true)
 				wildcardButton:setOn(true)
 			end
@@ -1060,7 +1060,7 @@ function onUpdate()
 				rerollButton:setEnabled(false)
 				rerollButton:setOn(false)
 			else
-				panel.inactive.reroll.price.text:setColor("#c0c0c0")
+				panel.inactive.reroll.price.text:setColor("#a87f68")
 				rerollButton:setEnabled(true)
 				rerollButton:setOn(true)
 			end
@@ -1082,7 +1082,7 @@ function onUpdate()
 				cancelButton:setEnabled(false)
 				cancelButton:setOn(false)
 			else
-				panel.active.removeCreature.price.text:setColor("#c0c0c0")
+				panel.active.removeCreature.price.text:setColor("#a87f68")
 
 				local counter = panel.active:recursiveGetChildById('killCounter')
 				if counter:getPercent() < 100 then
@@ -1099,7 +1099,7 @@ function onUpdate()
 					panel.active.higherReward.price:setColor("#d33c3c")
 				end
 			else
-				panel.active.higherReward.price:setColor("#c0c0c0")
+				panel.active.higherReward.price:setColor("#a87f68")
 				upgradeButton:setEnabled(true)
 				upgradeButton:setOn(true)
 			end
@@ -1108,13 +1108,13 @@ function onUpdate()
 			if bankBalance + invetoryMoney < goldUpdatePrice then
 				panel.exhaust.exhaustReroll.price:setColor("#d33c3c")
 			else
-				panel.exhaust.exhaustReroll.price:setColor("#c0c0c0")
+				panel.exhaust.exhaustReroll.price:setColor("#a87f68")
 			end
 
 			if wildcardBalance < wildcardSelectPrice then
 				panel.exhaust.exhaustSelect.price:setColor("#d33c3c")
 			else
-				panel.exhaust.exhaustSelect.price:setColor("#c0c0c0")
+				panel.exhaust.exhaustSelect.price:setColor("#a87f68")
 			end
 
 			local rerollTime = panel.exhaust.exhaustReroll:recursiveGetChildById('time')
