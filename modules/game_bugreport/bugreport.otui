@@ -1,4 +1,5 @@
 BugReportWindow < NewMainWindow
+  id: bugReportWindow
   !text: tr('Reporting')
   size: 440 318
   @onEscape: self:hide()
