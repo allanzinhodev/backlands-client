@@ -2997,7 +2997,7 @@ Summary < Panel
         text-align: LeftCenter
         !placeholder: tr("Search")
         placeholder-font: $var-cip-font
-        placeholder-color: #707070
+        placeholder-color: $var-cip-inactive-color
         placeholder-align: LeftCenter
         @onTextChange: modules.game_cyclopedia.Character.onSummarySearch(self)
       CheckBox

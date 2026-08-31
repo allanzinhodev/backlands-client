@@ -1174,7 +1174,7 @@ HouseGroupPanel < Panel
       margin-bottom: -2
       text-align: right
       text-offset: 15 0
-      placeholder-color: #707070
+      placeholder-color: $var-cip-inactive-color
       placeholder-align: LeftCenter
       @onTextChange: modules.game_cyclopedia.House.onBidChangeValue(self)
     UIWidget

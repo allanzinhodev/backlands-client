@@ -434,7 +434,7 @@ MapDataPanel < Panel
             size: 63 16
             !placeholder: tr("Amount")
             placeholder-font: $var-cip-font
-            placeholder-color: #6b4d40
+            placeholder-color: $var-cip-inactive-color
             placeholder-align: LeftCenter
             anchors.top: goldProgressBox.bottom
             anchors.left: goldProgressBox.left

@@ -511,7 +511,7 @@ OutfitWindow < MainWindow
       text-align: LeftCenter
       !placeholder: tr("Search")
       placeholder-font: $var-cip-font
-      placeholder-color: #707070
+      placeholder-color: $var-cip-inactive-color
       placeholder-align: center
       placeholder-align: left
       focusable: true

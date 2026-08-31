@@ -520,7 +520,7 @@ NewMainWindow
         @onTextChange: modules.game_proficiency.WeaponProficiency:onSearchTextChange(self:getText())
         !placeholder: tr('Search')
         placeholder-font: $var-cip-font
-        placeholder-color: #707070
+        placeholder-color: $var-cip-inactive-color
 
       UIWidget
         id: clearSearchButton

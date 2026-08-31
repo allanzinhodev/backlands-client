@@ -748,7 +748,7 @@ PerkShapingOptionsDialog < UIWindow
     anchors.left: parent.left
     !placeholder: tr('Search')
     placeholder-font: $var-cip-font
-    placeholder-color: #6E706F
+    placeholder-color: $var-cip-inactive-color
     placeholder-offset: 1 -1
     padding-right: 18
     padding-top: 3

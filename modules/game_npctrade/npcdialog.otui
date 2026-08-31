@@ -117,7 +117,7 @@ Window
     margin-bottom: 2
     placeholder: Type here to chat...
     placeholder-font: $var-cip-font
-    placeholder-color: #6e706f
+    placeholder-color: $var-cip-inactive-color
     shift-navigation: true
     change-cursor-image: false
     max-length: 255

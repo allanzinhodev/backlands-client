@@ -118,7 +118,7 @@ NewMainWindow
       placeholder-font: $var-cip-font
       padding: 2
       font: $var-main-font
-      placeholder-color: #888888
+      placeholder-color: $var-cip-inactive-color
       @onTextChange: modules.game_helper.onSearchTextChange(self:getText(), self:getParent():getParent())
     Button
       id: clearButton

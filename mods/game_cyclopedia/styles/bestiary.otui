@@ -329,7 +329,7 @@ BestiaryOverviewPanel < Panel
     text-align: LeftCenter
     !placeholder: tr("Search")
     placeholder-font: $var-cip-font
-    placeholder-color: #707070
+    placeholder-color: $var-cip-inactive-color
     placeholder-align: LeftCenter
     @onEnter: modules.game_cyclopedia.Bestiary.onSearch()
     @onTextChange: modules.game_cyclopedia.Bestiary.onSearchChange(self)
@@ -574,7 +574,7 @@ BestiaryGroupPanel < Panel
     text-align: LeftCenter
     !placeholder: tr("Search")
     placeholder-font: $var-cip-font
-    placeholder-color: #707070
+    placeholder-color: $var-cip-inactive-color
     placeholder-align: LeftCenter
     box-text-padding: 27
     @onEnter: modules.game_cyclopedia.Bestiary.onSearch()
@@ -1241,7 +1241,7 @@ BestiaryMonsterPanel < Panel
     text-align: LeftCenter
     !placeholder: tr("Search")
     placeholder-font: $var-cip-font
-    placeholder-color: #707070
+    placeholder-color: $var-cip-inactive-color
     placeholder-align: LeftCenter
     box-text-padding: 3
     @onEnter: modules.game_cyclopedia.Bestiary.onSearch()

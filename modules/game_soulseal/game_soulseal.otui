@@ -87,7 +87,7 @@ NewMainWindow
       margin-right: 6
       placeholder: Search
       placeholder-font: $var-cip-font
-      placeholder-color: #6E706F
+      placeholder-color: $var-cip-inactive-color
       color: $var-text-cip-color
 
       ClearSearch

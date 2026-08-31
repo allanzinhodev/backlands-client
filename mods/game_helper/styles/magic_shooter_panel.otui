@@ -480,7 +480,7 @@ MagicShooterPanel < Panel
           margin-left: 5
           placeholder: minotaur archer, minotaur mage
           placeholder-font: $var-cip-font
-          placeholder-color: #666666
+          placeholder-color: $var-cip-inactive-color
           color: $var-text-color
           !tooltip: tr('Monster names to count for this spell (comma-separated). Only these monsters will be counted for the creature threshold.')
 
@@ -531,7 +531,7 @@ MagicShooterPanel < Panel
         margin-right: 5
         placeholder: rat, cave rat, minotaur
         placeholder-font: $var-cip-font
-        placeholder-color: #666666
+        placeholder-color: $var-cip-inactive-color
         color: $var-text-color
         !tooltip: tr('Monsters to ignore (separated by comma). Affects Auto Target and Magic Shooter. Numbers are not allowed.')
 
@@ -566,7 +566,7 @@ MagicShooterPanel < Panel
         margin-right: 5
         placeholder: dragon, dragon lord, demon
         placeholder-font: $var-cip-font
-        placeholder-color: #666666
+        placeholder-color: $var-cip-inactive-color
         color: $var-text-color
         visible: false
         !tooltip: tr('Priority targets in order (separated by comma). First monster has highest priority.')
