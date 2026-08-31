@@ -227,7 +227,7 @@ Panel
       id: title
       anchors.horizontalCenter: parent.horizontalCenter
       anchors.top: parent.top
-      !text: tr('Increase Dust Limit')
+      !text: tr('Dust Limit')
       text-auto-resize: true
       color: #a87f68
 

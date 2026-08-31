@@ -1176,7 +1176,7 @@ function ForgeSystem.updateConversion()
 	conversionMenu.windowIncreaseDustLimit.nextDust:setText('to ' .. math.min(ForgeSystem.maxPlayerDust + 1, ForgeSystem.maxDust))
 
 	if ForgeSystem.maxPlayerDust >= ForgeSystem.maxDust then
-		conversionMenu.windowIncreaseDustLimit.baseText:setText('Maximum Reached')
+		conversionMenu.windowIncreaseDustLimit.baseText:setText('Max Reached')
 		conversionMenu.windowIncreaseDustLimit.currentDust:setVisible(false)
 		conversionMenu.windowIncreaseDustLimit.img1:setVisible(false)
 		conversionMenu.windowIncreaseDustLimit.img2:setVisible(false)

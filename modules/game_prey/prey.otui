@@ -404,7 +404,7 @@ InactivePreyPanel < Panel
         margin-left: 5
         image-source: /images/ui/checkbox
         image-border: 1
-        text: Automatic Bonus Reroll
+        text: Auto Reroll
         text-offset: 15 -3
         font: $var-cip-font
         color: $var-text-cip-color
@@ -585,7 +585,7 @@ ActivePreyPanel < Panel
         margin-left: 5
         image-source: /images/ui/checkbox
         image-border: 1
-        text: Automatic Bonus Reroll
+        text: Auto Reroll
         text-offset: 15 -3
         font: $var-cip-font
         color: $var-text-cip-color

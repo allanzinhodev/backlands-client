@@ -408,7 +408,7 @@ WeeklyRewardsWindow < Window
     font: $var-cip-main-font
     color: $var-text-cip-color
     text-align: center
-    !text: tr('7 day(s) remaining')
+    !text: tr('7 day(s) left')
 
 DifficultyButton < BaseLargeButtonTemplate
   $on:
