@@ -49,7 +49,7 @@ ScreenshotWindow < Panel
     SettingsCheckBox
       id: screenshotCombo
       size: 12 12
-      !text: tr('Keep Backlog of the Screenshots of the Last 5 Seconds')
+      !text: tr('Keep Backlog of the Last 5 Seconds')
       font: $var-cip-font
       text-auto-resize: true
       color: $var-text-cip-color
@@ -105,7 +105,7 @@ ScreenshotWindow < Panel
 
     Label
       id: selectLabel
-      !text: tr('Select all events that should trigger auto screenshots:')
+      !text: tr('Events that trigger auto screenshots:')
       font: $var-cip-font
       text-auto-resize: true
       color: $var-text-cip-color
@@ -242,10 +242,10 @@ ScreenshotWindow < Panel
       text-auto-resize: true
       color: $var-text-cip-color
       text-offset: 14 -2
-      anchors.right: parent.right
+      anchors.left: parent.left
       anchors.top: selectLabel.bottom
       margin-top: 6
-      margin-right: 152
+      margin-left: 290
       image-source: /images/ui/checkbox
       image-clip: 0 0 12 12
 
@@ -257,10 +257,10 @@ ScreenshotWindow < Panel
       text-auto-resize: true
       color: $var-text-cip-color
       text-offset: 14 -2
-      anchors.right: parent.right
+      anchors.left: parent.left
       anchors.top: prev.bottom
       margin-top: 6
-      margin-right: 152
+      margin-left: 290
       image-source: /images/ui/checkbox
       image-clip: 0 0 12 12
 
@@ -272,10 +272,10 @@ ScreenshotWindow < Panel
       text-auto-resize: true
       color: $var-text-cip-color
       text-offset: 14 -2
-      anchors.right: parent.right
+      anchors.left: parent.left
       anchors.top: prev.bottom
       margin-top: 6
-      margin-right: 152
+      margin-left: 290
       image-source: /images/ui/checkbox
       image-clip: 0 0 12 12
 
@@ -287,10 +287,10 @@ ScreenshotWindow < Panel
       text-auto-resize: true
       color: $var-text-cip-color
       text-offset: 14 -2
-      anchors.right: parent.right
+      anchors.left: parent.left
       anchors.top: prev.bottom
       margin-top: 6
-      margin-right: 108
+      margin-left: 290
       image-source: /images/ui/checkbox
       image-clip: 0 0 12 12
 
@@ -302,10 +302,10 @@ ScreenshotWindow < Panel
       text-auto-resize: true
       color: $var-text-cip-color
       text-offset: 14 -2
-      anchors.right: parent.right
+      anchors.left: parent.left
       anchors.top: prev.bottom
       margin-top: 6
-      margin-right: 108
+      margin-left: 290
       image-source: /images/ui/checkbox
       image-clip: 0 0 12 12
 
@@ -317,10 +317,10 @@ ScreenshotWindow < Panel
       text-auto-resize: true
       color: $var-text-cip-color
       text-offset: 14 -2
-      anchors.right: parent.right
+      anchors.left: parent.left
       anchors.top: prev.bottom
       margin-top: 6
-      margin-right: 80
+      margin-left: 290
       image-source: /images/ui/checkbox
       image-clip: 0 0 12 12
 
@@ -332,10 +332,10 @@ ScreenshotWindow < Panel
       text-auto-resize: true
       color: $var-text-cip-color
       text-offset: 14 -2
-      anchors.right: parent.right
+      anchors.left: parent.left
       anchors.top: prev.bottom
       margin-top: 6
-      margin-right: 86
+      margin-left: 290
       image-source: /images/ui/checkbox
       image-clip: 0 0 12 12
 
@@ -347,10 +347,10 @@ ScreenshotWindow < Panel
       text-auto-resize: true
       color: $var-text-cip-color
       text-offset: 14 -2
-      anchors.right: parent.right
+      anchors.left: parent.left
       anchors.top: prev.bottom
       margin-top: 6
-      margin-right: 146
+      margin-left: 290
       image-source: /images/ui/checkbox
       image-clip: 0 0 12 12
 
@@ -362,10 +362,10 @@ ScreenshotWindow < Panel
       text-auto-resize: true
       color: $var-text-cip-color
       text-offset: 14 -2
-      anchors.right: parent.right
+      anchors.left: parent.left
       anchors.top: prev.bottom
       margin-top: 6
-      margin-right: 75
+      margin-left: 290
       image-source: /images/ui/checkbox
       image-clip: 0 0 12 12
 
