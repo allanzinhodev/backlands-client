@@ -19,6 +19,7 @@ PlayerOptionInfo < Panel
     padding-top: 2
     box-text-padding: 70
     !placeholder: tr('Extra Gold Costs')
+    placeholder-font: $var-cip-font
   CheckBox
     id: removePlayer
     size: 12 12

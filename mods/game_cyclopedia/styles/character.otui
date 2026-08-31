@@ -1478,7 +1478,7 @@ ButtonExtraPanel < Panel
       visible: false
 
 OptionsPanel < Panel
-  size: 150 22
+  size: 182 22
   image-source: /images/ui/panel-1-pixel
   image-border: 1
   anchors.top: parent.top
@@ -1486,8 +1486,9 @@ OptionsPanel < Panel
   phantom: true
   UIWidget
     id: buttons
-    size: 148 20
+    size: 180 20
     color: $var-text-cip-color-white
+    font: $var-cip-font
     anchors.top: parent.top
     anchors.left: parent.left
     margin-left: 1
@@ -2994,7 +2995,8 @@ Summary < Panel
         margin-top: 13
         margin-left: 365
         text-align: LeftCenter
-        !placeholder: tr("Type to search")
+        !placeholder: tr("Search")
+        placeholder-font: $var-cip-font
         placeholder-color: #707070
         placeholder-align: LeftCenter
         @onTextChange: modules.game_cyclopedia.Character.onSummarySearch(self)
@@ -3541,7 +3543,7 @@ CharacterDataPanel < Panel
   anchors.fill: parent
   UIWidget
     id: outfitWindow
-    size: 164 119
+    size: 196 119
     anchors.top: parent.top
     anchors.left: parent.left
     image-source: /game_cyclopedia/images/ui/bestiary-slot
@@ -3600,7 +3602,7 @@ CharacterDataPanel < Panel
       phantom: true
   UIWidget
     id: buttonsWindow
-    size: 164 291
+    size: 196 291
     anchors.top: outfitWindow.bottom
     anchors.left: parent.left
     margin-top: 6
@@ -3614,7 +3616,7 @@ CharacterDataPanel < Panel
     phantom: true
     Panel
       id: buttonPanel
-      size: 150 276
+      size: 182 276
       anchors.top: parent.top
       anchors.left: parent.left
       margin-top: 5
@@ -4019,7 +4021,8 @@ CharacterTitles < Panel
       margin-right: 7
       box-text-padding: 30
       @onTextChange: modules.game_cyclopedia.Titles.onSearchTextChange()
-      !placeholder: tr('Type to search')
+      !placeholder: tr('Search')
+      placeholder-font: $var-cip-font
       Button
         id: clearSearchText
         anchors.top: parent.top

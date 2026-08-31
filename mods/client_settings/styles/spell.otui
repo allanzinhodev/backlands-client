@@ -114,7 +114,8 @@ SpellMainWindow < NewMainWindow
       margin-top: 1
       margin-right: 1
       margin-left: 1
-      !placeholder: tr('Type to search')
+      !placeholder: tr('Search')
+      placeholder-font: $var-cip-font
       padding: 2
       font: $var-cip-font
       placeholder-color: $var-cip-inactive-color

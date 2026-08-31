@@ -520,7 +520,8 @@ Panel
       anchors.top: parent.top
       anchors.left: parent.left
       margin-left: 1
-      !placeholder: tr('Type to search')
+      !placeholder: tr('Search')
+      placeholder-font: $var-cip-font
       box-text-padding: 27
       @onTextChange: modules.game_wheel.Workshop.onSearchChange(self)
       Button

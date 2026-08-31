@@ -60,7 +60,7 @@ function BosstiarySlot.configureWindow()
 
     slotPanel.informationProgress.bossPointsProgress.bossPointsText:setText(tr('%s/%s', bossBalance, requiredPoints))
     slotPanel.informationProgress.bossPointsProgress:setPercent(bossBalance * 100 / requiredPoints)
-    slotPanel.informationProgress.inforText:setText("Equipment Loot Bonus: " .. lootBonus .. "% Next: " .. nextLootBonus .. "%")
+    slotPanel.informationProgress.inforText:setText("Loot Bonus: " .. lootBonus .. "% Next: " .. nextLootBonus .. "%")
 
     if lootBonus > 100 and nextLootBonus > 100 then
         slotPanel.informationProgress.bossPointsBg:setWidth(262)

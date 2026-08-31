@@ -104,6 +104,7 @@ TimerPanel < Panel
           font: $var-main-font
           color: $var-text-color
           placeholder: exura vita
+          placeholder-font: $var-cip-font
           placeholder-color: #666666
 
         UITooltipGrey

@@ -377,7 +377,8 @@ MainWindow
         margin-top: 4
         padding-top: 2
         padding-left: 2
-        !placeholder: tr('Type to search')
+        !placeholder: tr('Search')
+        placeholder-font: $var-cip-font
 
       Button
         id: clearSearchButton

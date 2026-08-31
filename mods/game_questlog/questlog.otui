@@ -130,7 +130,8 @@ NewMainWindow
           image-source: /images/ui/search-text-void
           margin-top: 6
           text-align: LeftCenter
-          !placeholder: tr("Type to search")
+          !placeholder: tr("Search")
+          placeholder-font: $var-cip-font
           focusable: true
           padding-left: 4
           padding-top: 2

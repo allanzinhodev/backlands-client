@@ -327,7 +327,8 @@ BestiaryOverviewPanel < Panel
     margin-top: 3
     margin-left: 75
     text-align: LeftCenter
-    !placeholder: tr("Type to search")
+    !placeholder: tr("Search")
+    placeholder-font: $var-cip-font
     placeholder-color: #707070
     placeholder-align: LeftCenter
     @onEnter: modules.game_cyclopedia.Bestiary.onSearch()
@@ -571,7 +572,8 @@ BestiaryGroupPanel < Panel
     margin-top: 3
     margin-left: 75
     text-align: LeftCenter
-    !placeholder: tr("Type to search")
+    !placeholder: tr("Search")
+    placeholder-font: $var-cip-font
     placeholder-color: #707070
     placeholder-align: LeftCenter
     box-text-padding: 27
@@ -1237,7 +1239,8 @@ BestiaryMonsterPanel < Panel
     margin-top: 3
     margin-left: 75
     text-align: LeftCenter
-    !placeholder: tr("Type to search")
+    !placeholder: tr("Search")
+    placeholder-font: $var-cip-font
     placeholder-color: #707070
     placeholder-align: LeftCenter
     box-text-padding: 3

@@ -116,6 +116,7 @@ Window
     margin-right: 5
     margin-bottom: 2
     placeholder: Type here to chat...
+    placeholder-font: $var-cip-font
     placeholder-color: #6e706f
     shift-navigation: true
     change-cursor-image: false

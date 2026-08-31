@@ -746,7 +746,8 @@ PerkShapingOptionsDialog < UIWindow
     size: 568 20
     anchors.top: parent.top
     anchors.left: parent.left
-    !placeholder: tr('Type to search')
+    !placeholder: tr('Search')
+    placeholder-font: $var-cip-font
     placeholder-color: #6E706F
     placeholder-offset: 1 -1
     padding-right: 18

@@ -41,6 +41,7 @@ NewMainWindow
       margin-top: 7
       @onTextChange: modules.game_wheel.WheelOfDestiny.onPresetNameChange(self:getText())
       !placeholder: tr('Enter a unique name')
+      placeholder-font: $var-cip-font
 
     HorizontalSeparator
       id: separator

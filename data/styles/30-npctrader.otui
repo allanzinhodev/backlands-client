@@ -228,7 +228,8 @@ NpcWindow < UIMiniWindow
       @onClick: modules.game_npctrade.toggleNPCFocus(true)
       @onHoverChange: modules.game_npctrade.onTypeFieldsHover(self, self:isHovered())
       @onTextChange: modules.game_npctrade.onSearchTextChange()
-      !placeholder: tr('Type to search')
+      !placeholder: tr('Search')
+      placeholder-font: $var-cip-font
       UIButton
         id: clearSearchButton
         anchors.top: parent.top
@@ -283,6 +284,7 @@ NpcWindow < UIMiniWindow
       @onTextChange: modules.game_npctrade.onAmountEdit(self)
       only-number: true
       !placeholder: tr('0')
+      placeholder-font: $var-cip-font
 
     Label
       text-auto-resize: true

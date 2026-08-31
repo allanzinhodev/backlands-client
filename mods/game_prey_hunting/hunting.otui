@@ -154,7 +154,8 @@ WildcardHuntingPanel < Panel
   TextEdit
     id: searchText
     size: 204 21
-    !placeholder: tr('Type to search')
+    !placeholder: tr('Search')
+    placeholder-font: $var-cip-font
     color: #a87f68
     text-offset: 1 1
     anchors.right: parent.right

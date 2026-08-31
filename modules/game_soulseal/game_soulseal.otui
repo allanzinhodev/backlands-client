@@ -85,7 +85,8 @@ NewMainWindow
       anchors.right: categoryCombo.left
       height: 22
       margin-right: 6
-      placeholder: Type to search
+      placeholder: Search
+      placeholder-font: $var-cip-font
       placeholder-color: #6E706F
       color: $var-text-cip-color
 

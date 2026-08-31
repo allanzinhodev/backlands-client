@@ -417,7 +417,8 @@ SpellListPanel < Panel
     anchors.bottom: parent.bottom
     anchors.left: parent.left
     padding-top: 3
-    !placeholder: tr('Type to search')
+    !placeholder: tr('Search')
+    placeholder-font: $var-cip-font
     font: $var-cip-font
     placeholder-color: $var-cip-inactive-color
     @onTextChange: modules.game_cyclopedia.MagicalArchive.onSearchTextChange(self)

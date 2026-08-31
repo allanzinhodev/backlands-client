@@ -518,7 +518,8 @@ NewMainWindow
         padding-top: 2
         padding-left: 5
         @onTextChange: modules.game_proficiency.WeaponProficiency:onSearchTextChange(self:getText())
-        !placeholder: tr('Type to search')
+        !placeholder: tr('Search')
+        placeholder-font: $var-cip-font
         placeholder-color: #707070
 
       UIWidget

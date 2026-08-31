@@ -509,7 +509,8 @@ OutfitWindow < MainWindow
       margin-left: 12
       margin-top: -1
       text-align: LeftCenter
-      !placeholder: tr("Type to search")
+      !placeholder: tr("Search")
+      placeholder-font: $var-cip-font
       placeholder-color: #707070
       placeholder-align: center
       placeholder-align: left

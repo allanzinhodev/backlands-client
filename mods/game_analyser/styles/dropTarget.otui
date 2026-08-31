@@ -30,6 +30,7 @@ NewMainWindow
       anchors.right: parent.right
       margin-top: 6
       !placeholder: tr('0')
+      placeholder-font: $var-cip-font
       only-number: true
       @onTextChange: modules.game_analyser.checkNumber(self, self:getText())
 

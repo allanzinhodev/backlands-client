@@ -1940,6 +1940,7 @@ HouseGroupPanel < Panel
         margin-top: -2
         @onTextChange:
         !placeholder: tr('Name of new owner')
+        placeholder-font: $var-cip-font
         @onTextChange: modules.game_cyclopedia.House.onTransferTarget(self)
 
       UIWidget
@@ -1981,6 +1982,7 @@ HouseGroupPanel < Panel
         margin-top: -2
         @onTextChange:
         !placeholder: tr('0')
+        placeholder-font: $var-cip-font
         @onTextChange: modules.game_cyclopedia.House.onTransferValue(self)
 
       UIWidget

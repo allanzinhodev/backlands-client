@@ -275,7 +275,8 @@ NewMainWindow
     margin-top: 12
     margin-left: 5
     margin-right: 12
-    !placeholder: tr('Type to search')
+    !placeholder: tr('Search')
+    placeholder-font: $var-cip-font
     padding-left: 4
     padding-top: 2
     box-text-padding: 27

@@ -35,7 +35,8 @@ BossCreaturePanel < Panel
 
 
 SearchPanel < TextEdit
-  placeholder: Type to search
+  placeholder: Search
+  placeholder-font: $var-cip-font
   margin-top: 1
   @onClick: modules.client_textedit.show(self)
 

@@ -595,7 +595,8 @@ MarketMainWindow < Panel
     margin-left: 8
     margin-top: 5
     @onTextChange: modules.game_tibia_market.onSearchItem(self)
-    !placeholder: tr('Type to search')
+    !placeholder: tr('Search')
+    placeholder-font: $var-cip-font
 
   Button
     id: clearSearchButton

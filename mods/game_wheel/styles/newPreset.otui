@@ -41,6 +41,7 @@ NewMainWindow
       margin-top: 6
       @onTextChange: modules.game_wheel.WheelOfDestiny.onEditName(self:getText())
       !placeholder: tr('Enter a unique name')
+      placeholder-font: $var-cip-font
       placeholder-color: $var-cip-inactive-color
       placeholder-align: left
 
@@ -109,6 +110,7 @@ NewMainWindow
       margin-top: 5
       @onTextChange: modules.game_wheel.WheelOfDestiny.onEditCode(self:getText())
       !placeholder: tr('Enter copied export code or URL of the planner, e.g. EKAABkZJbI...')
+      placeholder-font: $var-cip-font
       placeholder-color: $var-cip-inactive-color
 
     HorizontalSeparator

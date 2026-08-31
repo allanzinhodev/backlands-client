@@ -245,7 +245,8 @@ SearchPage < Panel
     margin-top: 3
     margin-right: 6
     @onTextChange: onTextChange()
-    !placeholder: tr('Type to search')
+    !placeholder: tr('Search')
+    placeholder-font: $var-cip-font
 
   Button
     id: clearSearchButton

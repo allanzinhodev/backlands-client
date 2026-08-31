@@ -698,6 +698,7 @@ AnnouncementContent < Panel
       only-number: true
       @onTextChange: modules.game_announcement.onEditTimeDate(self, self:getText(), 'day')
       !placeholder: tr('00')
+      placeholder-font: $var-cip-font
     Label
       id: monthLabel
       !text: tr('Month:')
@@ -728,6 +729,7 @@ AnnouncementContent < Panel
       only-number: true
       @onTextChange: modules.game_announcement.onEditTimeDate(self, self:getText(), 'month')
       !placeholder: tr('00')
+      placeholder-font: $var-cip-font
     Label
       id: yearLabel
       focusable: false
@@ -758,6 +760,7 @@ AnnouncementContent < Panel
       only-number: true
       @onTextChange: modules.game_announcement.onEditTimeDate(self, self:getText(), 'year')
       !placeholder: tr('00')
+      placeholder-font: $var-cip-font
     Label
       id: hourLabel
       focusable: false
@@ -788,6 +791,7 @@ AnnouncementContent < Panel
       only-number: true
       @onTextChange: modules.game_announcement.onEditTimeDate(self, self:getText(), 'hour')
       !placeholder: tr('00')
+      placeholder-font: $var-cip-font
     Label
       id: minuteLabel
       focusable: false
@@ -817,6 +821,7 @@ AnnouncementContent < Panel
       only-number: true
       @onTextChange: modules.game_announcement.onEditTimeDate(self, self:getText(), 'minutes')
       !placeholder: tr('00')
+      placeholder-font: $var-cip-font
 
     Label
       id: endTitle
@@ -857,6 +862,7 @@ AnnouncementContent < Panel
       margin-top: 5
       only-number: true
       !placeholder: tr('00')
+      placeholder-font: $var-cip-font
     Label
       id: endMonthLabel
       focusable: false
@@ -887,6 +893,7 @@ AnnouncementContent < Panel
       only-number: true
       @onTextChange: modules.game_announcement.onEditTimeDate(self, self:getText(), 'month')
       !placeholder: tr('00')
+      placeholder-font: $var-cip-font
     Label
       id: endYearLabel
       focusable: false
@@ -917,6 +924,7 @@ AnnouncementContent < Panel
       only-number: true
       @onTextChange: modules.game_announcement.onEditTimeDate(self, self:getText(), 'year')
       !placeholder: tr('00')
+      placeholder-font: $var-cip-font
     Label
       id: endHourLabel
       focusable: false
@@ -947,6 +955,7 @@ AnnouncementContent < Panel
       only-number: true
       @onTextChange: modules.game_announcement.onEditTimeDate(self, self:getText(), 'hour')
       !placeholder: tr('00')
+      placeholder-font: $var-cip-font
     Label
       id: endMinuteLabel
       focusable: false
@@ -977,6 +986,7 @@ AnnouncementContent < Panel
       only-number: true
       @onTextChange: modules.game_announcement.onEditTimeDate(self, self:getText(), 'minutes')
       !placeholder: tr('00')
+      placeholder-font: $var-cip-font
   Panel
     id: historyPanel
     focusable: false
@@ -1234,6 +1244,7 @@ RaidsContent < Panel
         only-number: true
         @onTextChange:
         !placeholder: tr('00')
+        placeholder-font: $var-cip-font
       Label
         id: monthLabel
         !text: tr('Month:')
@@ -1264,6 +1275,7 @@ RaidsContent < Panel
         only-number: true
         @onTextChange:
         !placeholder: tr('00')
+        placeholder-font: $var-cip-font
       Label
         id: yearLabel
         focusable: false
@@ -1294,6 +1306,7 @@ RaidsContent < Panel
         only-number: true
         @onTextChange:
         !placeholder: tr('00')
+        placeholder-font: $var-cip-font
       Label
         id: hourLabel
         focusable: false
@@ -1324,6 +1337,7 @@ RaidsContent < Panel
         only-number: true
         @onTextChange:
         !placeholder: tr('00')
+        placeholder-font: $var-cip-font
       Label
         id: minuteLabel
         focusable: false
@@ -1353,6 +1367,7 @@ RaidsContent < Panel
         only-number: true
         @onTextChange:
         !placeholder: tr('00')
+        placeholder-font: $var-cip-font
 
   Panel
     id: raidMessagePanel
@@ -1380,6 +1395,7 @@ RaidsContent < Panel
       padding-left: 3
       padding-top: 1
       !placeholder: tr('Enter the message to be displayed during the raid.')
+      placeholder-font: $var-cip-font
 
   Panel
     id: worldsRaidPanel

@@ -238,7 +238,8 @@ ItemDataPanel < UIWidget
       margin-left: -1
       margin-top: 8
       focusable: true
-      !placeholder: tr('Type to search...')
+      !placeholder: tr('Search')
+      placeholder-font: $var-cip-font
       box-text-padding: 20
       @onTextChange: modules.game_cyclopedia.CyclopediaItems.onSearch(self)
 

@@ -77,7 +77,8 @@ MiniWindow
       margin-top: 2
       box-text-padding: 27
       @onTextChange: modules.game_analyser.checkBossSearch(self:getText())
-      !placeholder: tr('Type to search')
+      !placeholder: tr('Search')
+      placeholder-font: $var-cip-font
 
       Button
         id: clearSearchButton

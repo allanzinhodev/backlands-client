@@ -53,6 +53,7 @@ NewMainWindow
     width: 210
     margin: 4 16 0 16
     placeholder: 100
+    placeholder-font: $var-cip-font
 
   Label
     id: durationLabel
@@ -69,6 +70,7 @@ NewMainWindow
     anchors.right: parent.right
     margin: 4 20 0 16
     placeholder: 24
+    placeholder-font: $var-cip-font
 
   Label
     id: descriptionLabel

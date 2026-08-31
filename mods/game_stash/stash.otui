@@ -45,7 +45,8 @@ NewMainWindow
     margin-left: 12
     padding-top: 2
     blink-speed: 600
-    !placeholder: tr('Type to search')
+    !placeholder: tr('Search')
+    placeholder-font: $var-cip-font
     box-text-padding: 27
     @onTextChange: modules.game_stash.requestStashRefresh(self:getText())
     UIButton
