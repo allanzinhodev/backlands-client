@@ -29,9 +29,15 @@ foi preciso desativar `Verdana-11px-italic.otfont` para caber a silkscreen.
 ## Estado atual: todas as telas alcançáveis auditam limpas
 
 `tools/uisweep.ps1` abre **36 janelas de módulo**, `tools/uiminis.ps1` audita as **47
-mini-janelas** dos painéis laterais, e as duas passam limpas. A varredura estática
+mini-janelas** dos painéis laterais, `tools/uideep.ps1` percorre **26 janelas painel a
+painel** (todas as abas, não só a visível), e as três passam limpas. A varredura estática
 (`tools/otui-textfit.ps1`) reporta **0 estouros**. `tools/otui-lint.js` passa nos 473 arquivos
 OTML do cliente.
+
+> **Auditar a aba visível esconde a maior parte do trabalho.** O Cyclopedia tem nove abas, a
+> janela de Opções quinze páginas, o Helper seis, o Prey três estados por slot. A varredura
+> normal via uma de cada. Percorrer todas achou **49 defeitos** que doze varreduras anteriores
+> não tinham tocado — 24 só no Helper. `uideep.ps1` faz isso hoje.
 
 `tools/fontcensus.lua` pergunta `getFont()` nos 20446 widgets do cliente com tudo aberto:
 **1725 widgets com texto em silkscreen-16**, 14 nas duas exceções documentadas (F1–F12 e
@@ -106,7 +112,16 @@ Tudo em `tools/` da raiz do workspace, porque atravessa repositórios.
 .\tools\uiwin.ps1 -Open "modules.game_forge.show()" -Name forge -OutDir shots
 .\tools\uisweep.ps1 -OutDir shots           # as 36 janelas de módulo, uma a uma
 .\tools\uiminis.ps1                         # as 47 mini-janelas da sidebar
+.\tools\uideep.ps1                          # 26 janelas, painel a painel
 ```
+
+`uideep` junta as duas maneiras de trocar de painel. Onde o módulo só mostra e esconde,
+`uipanels.lua` **descobre os grupos sozinho**: irmãos com o mesmo retângulo, dos quais no
+máximo um está visível (painel fora do retângulo da janela não entra — é grade rolada para
+fora da vista). Onde o módulo faz mais do que isso, o script chama a função dele: o
+`game_helper` **redimensiona a janela por aba** (380x275 no tools, 430x550 no cavebot), e
+auditar ali sem passar pelo módulo mede tudo no tamanho errado e ainda deixa dois painéis
+visíveis ao mesmo tempo, gerando colisões que não existem.
 
 `uisweep` acha a janela recém-aberta pelo último filho visível da raiz. Mini-janela não
 aparece ali — ancora dentro do `gameRootPanel` —, e são justamente as que mais sofrem com a
@@ -279,6 +294,25 @@ interna — que é o critério que esta sessão usou.
 - **`sed "Na\\${ind}texto"` não indenta.** O `\\$` vira `$` literal e a linha entra na coluna
   0, quebrando a indentação de 2 do OTML em 18 arquivos de uma vez. Para inserir linha
   indentada, use `awk` lendo a indentação da linha anterior.
+- **O placeholder não herda a fonte do widget.** `uitextedit.cpp:63` faz
+  `m_placeholderFont = g_fonts.getDefaultFont()`. Nenhum censo de `getFont()` pega isso, e as
+  75 caixas de busca continuaram em Verdana muito depois de todo o resto migrar. Existe
+  `placeholder-font` no OTML — declare junto do `placeholder`.
+- **Rótulo com âncora esquerda E direita ignora `text-auto-resize`.** A caixa fica do
+  tamanho do vão entre as duas âncoras e o texto é cortado nos dois lados. Foi o
+  "Raise limit from" do Forge, ancorado nas duas bordas de um botão de 128px.
+- **Dois widgets com o mesmo `id`.** `game_report` e `game_transfer` declaravam ambos
+  `id: mainWindow`; `UID.find` e `getChildById` devolvem o primeiro, então a segunda janela
+  não podia ser auditada nem referenciada. Janela sem `id` (só o automático `widget21125`,
+  que muda a cada carga) tem o mesmo problema.
+- **Coluna alinhada por `margin-right` afinado a mão.** A página de screenshot alinhava nove
+  checkboxes fazendo cada uma ancorar à direita com uma margem própria, para que os rótulos
+  começassem todos no mesmo x **naquela** fonte. Com outra fonte cada um cresce para a
+  esquerda em ritmo diferente. Ancore a coluna à esquerda num x fixo.
+- **Rótulo sem `size:` e sem `text-auto-resize`** fica com a largura que o estilo base deu, e
+  o estilo base foi medido na fonte antiga. Dez rótulos do Helper estavam assim. Auto-resize
+  é a correção certa quando há espaço à direita — mas confira o vizinho depois, porque dois
+  pares que antes cabiam passaram a se tocar.
 
 ## Como validar
 
