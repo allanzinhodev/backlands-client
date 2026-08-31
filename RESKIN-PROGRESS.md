@@ -35,7 +35,8 @@ Quatro varreduras, cada uma alcançando o que a anterior não via, e as quatro p
 | `tools/uisweep.ps1` | 47 janelas de módulo | abre pela função pública do módulo |
 | `tools/uiminis.ps1` | 47 mini-janelas | pergunta ao cliente quais existem nos painéis |
 | `tools/uideep.ps1` | 26 janelas, painel a painel | todas as abas, não só a visível |
-| `tools/uistyles.ps1` | 50 estilos de janela | instancia pelo nome, sem passar pelo módulo |
+| `tools/uistyles.lua` | 50 estilos de janela | instancia pelo nome, sem passar pelo módulo |
+| `tools/uicontrast.ps1` | 20 telas, pixel a pixel | mede se o texto **aparece**, não só onde cai |
 
 A varredura estática (`tools/otui-textfit.ps1`) reporta **0 estouros**. `tools/otui-lint.js`
 passa nos 473 arquivos OTML do cliente.
@@ -157,8 +158,19 @@ direto no `probe.js`.
 
 - `ESTOURA` — texto pintado fora do próprio widget, e quanto é cortado de cada lado
 - `COLIDE` — dois textos pintados um sobre o outro
-- `ESCAPA` — texto fora da área útil da janela
+- `ESCAPA` / `ESCAPA-Y` — texto fora da área útil da janela
+- `ALTURA` — texto quebrado mais alto que a caixa
 - `SAI-RECT` — filho cujo retângulo sai da área útil
+- `TAPADO` — texto enterrado sob um painel opaco desenhado depois
+
+> **A geometria não prova que o texto aparece.** Duas vezes nesta migração um texto sumiu por
+> inteiro sem violar nenhuma das seis regras acima: o `Sell All` do npctrade, quando o botão
+> ganhou a placa escura e manteve a tinta escura que `Button` pinta para a placa dourada; e o
+> `Anonymous` do Market, desenhado 4px abaixo do painel que o contém — não cortava, não
+> colidia com texto, não saía da *janela*. Nas duas a única prova foi uma captura ampliada,
+> olhada por acaso. Hoje é `uicontrast.ps1` quem prova: caixa de texto legível tem duas
+> populações de luminância (glifo e fundo) separadas; se tudo cabe numa faixa estreita, não há
+> glifo visível ali.
 
 Ela mede onde os glifos **realmente caem**, e isso exigiu ler o engine em vez de supor:
 
