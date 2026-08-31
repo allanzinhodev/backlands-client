@@ -428,7 +428,7 @@ ConditionsWindow < MainWindow
     anchors.top: parent.top
     anchors.left: parent.left
     text: Cure Conditions
-    color: #88e3dd
+    color: $var-text-cip-color
     margin-left: 10
     font: verdana-11px-rounded
 
@@ -443,7 +443,7 @@ ConditionsWindow < MainWindow
     anchors.top: parent.top
     anchors.right: parent.right
     text: Hold Conditions
-    color: #88e3dd
+    color: $var-text-cip-color
     margin-right: 100
     font: verdana-11px-rounded
 
