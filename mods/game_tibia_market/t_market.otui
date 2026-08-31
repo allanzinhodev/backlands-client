@@ -1389,10 +1389,9 @@ MarketMainWindow < Panel
       text-auto-resize: true
       color: $var-text-cip-color
       text-offset: 14 -2
-      anchors.left: profitLabel.right
-      anchors.top: profitLabel.bottom
-      margin-top: 8
-      margin-left: -22
+      anchors.right: profitLabel.left
+      anchors.verticalCenter: profitLabel.verticalCenter
+      margin-right: 15
       image-source: /images/ui/checkbox
       image-clip: 0 0 12 12
       change-cursor-image: false
