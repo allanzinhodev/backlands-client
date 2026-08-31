@@ -10,7 +10,7 @@ TextEdit < UITextEdit
   cursor: none
   blink-speed: 600
   $disabled:
-    color: #27272788
+    color: $var-text-color-disabled
     opacity: 0.5
 
 PasswordTextEdit < TextEdit
@@ -36,5 +36,5 @@ AccTextEdit < TextEdit
   cursor: none
   blink-speed: 600
   $disabled:
-    color: #27272788
+    color: $var-text-color-disabled
     opacity: 0.5

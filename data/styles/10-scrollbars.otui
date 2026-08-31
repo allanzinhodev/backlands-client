@@ -70,7 +70,7 @@ HorizontalScrollBar < UIScrollBar
   image-border: 1
 
   $disabled:
-    color: #bbbbbb88
+    color: $var-text-color-disabled
 
   UIButton
     id: decrementButton

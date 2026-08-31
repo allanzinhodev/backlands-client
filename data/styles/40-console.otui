@@ -12,7 +12,7 @@ TextEditCipsoft < UITextEdit
   cursor: none
   blink-speed: 600
   $disabled:
-    background-color: white
+    background-color: #150e0c
     border: 1 #000000
     opacity: 0.9
     padding-left: 2
