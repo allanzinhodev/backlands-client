@@ -95,6 +95,17 @@ Depois disso o que ainda está cinza é **arte de conteúdo ou informação**: 5
 diferentes; `button-blessings-grey-idle` ao lado da variante colorida; o seletor de cores),
 e o chão de pedra do mapa, que é sprite de jogo.
 
+**Cinza não era o único jeito de estar fora da paleta.** `regrade-live` só troca cinza
+neutro, então nada saturado jamais entrava — e sobraram dez sprites de chrome gritando azul
+ou verde: o botão da Store, o `Boost Kills` do Task Hunt, o `large_blue_button`, o
+`buy-potions-button`, as cartas do prey, a faixa de XP Boost, o `getCoins`. Uma varredura por
+**matiz** nos sprites vivos acha isso, e `regrade.js --force` resolve (passa a rampa em todo
+pixel, não só no cinza). Cuidado com a métrica: matiz só faz sentido em pixel claro e
+saturado — nos escuros ele oscila, e a primeira tentativa acusou `panel_flat` a 94% "fora"
+logo depois de eu tê-lo recolorizado. Dos 30 restantes, 29 são conteúdo ou informação: barra
+de vida verde, barra de mana azul, ícones de magia e de imbuement, o mostrador dia/noite do
+minimapa, as chaves de cor.
+
 **O texto sobre o mapa não é resíduo da skin antiga.** Nomes de criatura
 (`creature.cpp:103`), números de dano (`animatedtext.cpp:32`) e fala
 (`statictext.cpp:35`) usam `verdana-11px-rounded`, e essa face tem **dois níveis de alfa
