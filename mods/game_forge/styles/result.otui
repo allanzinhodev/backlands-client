@@ -82,12 +82,12 @@ ResultWindow < UIWindow
     margin-top: 29
   Button
     id: finishButton
-    size: 43 20
+    size: 54 20
     anchors.bottom: parent.bottom
     anchors.right: parent.right
     !text: tr("Next")
     enabled: false
-    font: cipsoftFont
+    font: $var-cip-font
     @onClick: modules.game_forge.ForgeSystem.closeFinish()
     Panel
       id: locked

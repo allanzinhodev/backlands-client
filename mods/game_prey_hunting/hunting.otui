@@ -1113,9 +1113,9 @@ NewMainWindow
     anchors.top: prev.bottom
     margin-top: 10
     margin-right: 10
-    size: 43 20
+    size: 62 20
     text: Close
-    font: cipsoftFont
+    font: $var-cip-font
     @onClick: modules.game_prey_hunting.hide()
 
   Panel

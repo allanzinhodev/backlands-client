@@ -58,8 +58,8 @@ HirelingWindow < MainWindow
 
   Button
     id: cancelHirelingButton
-    font: cipsoftFont
-    size: 40 20
+    font: $var-cip-font
+    size: 74 20
     !text: tr('Cancel')
     anchors.right: parent.right
     anchors.top: separator.bottom
@@ -68,8 +68,8 @@ HirelingWindow < MainWindow
 
   Button
     id: okHirelingButton
-    font: cipsoftFont
-    size: 40 20
+    font: $var-cip-font
+    size: 90 20
     !text: tr('Buy Now')
     anchors.right: prev.left
     anchors.top: separator.bottom

@@ -41,7 +41,7 @@ StowContainer < NewMainWindow
       anchors.bottom: parent.bottom
       size: 43 20
       margin-bottom: 1
-      font: cipsoftFont
+      font: $var-cip-font
       !text: tr('No')
     Button
       id: buttonYes
@@ -50,5 +50,5 @@ StowContainer < NewMainWindow
       margin-right: 6
       margin-bottom: 1
       size: 43 20
-      font: cipsoftFont
+      font: $var-cip-font
       !text: tr('Yes')

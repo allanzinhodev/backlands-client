@@ -35,7 +35,7 @@ CountWindow < NewMainWindow
       anchors.bottom: item.bottom
       focusable: false
       phantom: true
-      font: cipsoftFont
+      font: $var-cip-font
       color: #ebbf90
       text-align: bottomRight
 
@@ -67,8 +67,8 @@ CountWindow < NewMainWindow
       id: buttonCancel
       anchors.right: parent.right
       anchors.bottom: parent.bottom
-      size: 43 20
-      font: cipsoftFont
+      size: 74 20
+      font: $var-cip-font
       !text: tr('Cancel')
 
     Button
@@ -77,5 +77,5 @@ CountWindow < NewMainWindow
       anchors.bottom: parent.bottom
       margin-right: 6
       size: 43 20
-      font: cipsoftFont
+      font: $var-cip-font
       !text: tr('Ok')

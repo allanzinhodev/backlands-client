@@ -451,7 +451,7 @@ MapDataPanel < Panel
               margin-right: 2
           Button
             id: donateButton
-            size: 64 20
+            size: 76 20
             !text: tr('Donate')
             font: $var-cip-font
             text-align: Center

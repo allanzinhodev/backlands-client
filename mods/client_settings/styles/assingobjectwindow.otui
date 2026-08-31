@@ -93,8 +93,8 @@ AssingObjectWindow < MainWindow
     !text: tr('Cancel')
     anchors.bottom: parent.bottom
     anchors.right: parent.right
-    size: 60 20
-    font: cipsoftFont
+    size: 74 20
+    font: $var-cip-font
     opacity: 0.7
   Button
     id: okButton
@@ -102,6 +102,6 @@ AssingObjectWindow < MainWindow
     anchors.bottom: parent.bottom
     anchors.right: prev.left
     size: 60 20
-    font: cipsoftFont
+    font: $var-cip-font
     margin-right: 5
     opacity: 0.7
