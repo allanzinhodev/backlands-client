@@ -159,6 +159,15 @@ map
   sea-floor: 7
   underground-floor: 8
   aware-underground-floor-range: 2
+health-bar:
+  # Marcacoes de escala sobre a barra de vida, para ler HP absoluto sem abrir
+  # janela. Um corte fino por micro-step, um grosso por macro-step.
+  micro-step: 100
+  macro-step: 1000
+  # Abaixo disto a barra fica lisa: marcar rat e coelho so polui.
+  min-health: 200
+  # Acima disto os cortes finos somem e sobram so os grossos.
+  micro-limit: 3000
 game_interface:
   splitterMarginBottom: 200
 game_console:

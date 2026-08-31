@@ -49,7 +49,10 @@ public:
     virtual void draw(const Point& dest, bool animate = true, LightView* lightView = nullptr);
     virtual void drawOutfit(const Rect& destRect, Otc::Direction direction = Otc::InvalidDirection, const Color& color = Color::white, bool animate = false, bool ui = false, bool oldScaling = false);
 
-    void drawInformation(const Point& point, bool useGray, const Rect& parentRect, int drawFlags);
+    // `scale` e a escala do SQM na tela (1.0 = tile no tamanho nativo do sprite).
+    // A barra de vida e dimensionada a partir dela, senao fica minuscula quando o
+    // viewport largo faz o tile passar de 70px.
+    void drawInformation(const Point& point, bool useGray, const Rect& parentRect, int drawFlags, float scale = 1.0f);
 
     bool isInsideOffset(Point offset);
 

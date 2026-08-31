@@ -288,7 +288,7 @@ void MapView::drawMapForeground(const Rect& rect)
             if (m_drawHealthBars) { flags |= Otc::DrawBars; }
             if (m_drawManaBar) { flags |= Otc::DrawManaBar; }
         }
-        c.first->drawInformation(c.second, g_map.isCovered(c.first->getPrewalkingPosition(), m_cachedFirstVisibleFloor), rect, flags);
+        c.first->drawInformation(c.second, g_map.isCovered(c.first->getPrewalkingPosition(), m_cachedFirstVisibleFloor), rect, flags, horizontalStretchFactor * g_sprites.getOffsetFactor());
     }
 
     if (m_lightView) {
@@ -346,7 +346,7 @@ void MapView::drawMapForeground(const Rect& rect)
                 if (m_drawHealthBars) { flags |= Otc::DrawBars; }
                 if (m_drawManaBar) { flags |= Otc::DrawManaBar; }
             }
-            c.first->drawInformation(c.second, g_map.isCovered(c.first->getPrewalkingPosition(), m_cachedFirstVisibleFloor), rect, flags);
+            c.first->drawInformation(c.second, g_map.isCovered(c.first->getPrewalkingPosition(), m_cachedFirstVisibleFloor), rect, flags, horizontalStretchFactor * g_sprites.getOffsetFactor());
         }
     }
 	

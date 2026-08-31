@@ -1,0 +1,11 @@
+Module
+  name: zz_uidriver
+  description: Dev-only driver - runs Lua sent from the outside and reports back
+  author: dev
+  reloadable: false
+  sandboxed: false
+  autoload: true
+  autoload-priority: 9999
+  scripts: [ uidriver ]
+  @onLoad: UIDriver_init()
+  @onUnload: UIDriver_terminate()

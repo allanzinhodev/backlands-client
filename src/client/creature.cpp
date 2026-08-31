@@ -31,6 +31,7 @@
 #include "luavaluecasts_client.h"
 #include "lightview.h"
 #include "healthbars.h"
+#include "gameconfig.h"
 
 #include <framework/graphics/graphics.h>
 #include <framework/core/eventdispatcher.h>
@@ -45,6 +46,7 @@
 #include <framework/util/stats.h>
 #include <framework/util/extras.h>
 
+#include <cmath>
 #include <memory>
 #include <unordered_map>
 #include <unordered_set>
@@ -185,7 +187,53 @@ void Creature::drawOutfit(const Rect& destRect, Otc::Direction direction, const 
     m_outfit.draw(destRect, direction, 0, animate, ui, oldScaling);
 }
 
-void Creature::drawInformation(const Point& point, bool useGray, const Rect& parentRect, int drawFlags)
+// Marcacoes de escala por cima da barra ja preenchida, para dar leitura do valor
+// absoluto sem abrir janela: um corte fino por microStep, um grosso a cada
+// macroStep. Nao mexe na cor da barra - quem pinta o preenchimento continua sendo
+// a codificacao por porcentagem.
+//
+// So e chamada quando ha maximo real. O protocolo 8.60 manda apenas a porcentagem
+// das outras criaturas (uint8), entao para elas nao ha escala para marcar.
+static void drawBarHatchMarks(const Rect& barRect, double maxValue, float scale)
+{
+    const int microStep = g_gameConfig.getHealthBarMicroStep();
+    const int macroStep = g_gameConfig.getHealthBarMacroStep();
+
+    if (maxValue < g_gameConfig.getHealthBarMinHealth())
+        return; // barra lisa: marcar bicho de 50 de vida so polui
+
+    // Acima do teto os cortes finos viram ruido; sobram so os de milhar.
+    const bool drawMicro = maxValue <= g_gameConfig.getHealthBarMicroLimit();
+
+    const int microWidth = std::max(1, static_cast<int>(std::lround(scale)));
+    const int macroWidth = std::max(2, static_cast<int>(std::lround(2.0f * scale)));
+
+    const Color microColor(0, 0, 0, 110);
+    const Color macroColor(0, 0, 0, 210);
+
+    const double pxPerHp = barRect.width() / maxValue;
+
+    // Um so laco no passo fino: a cada macroStep a marca vira grossa. Assim as
+    // duas escalas ficam alinhadas por construcao, sem risco de o corte grosso
+    // cair meio pixel ao lado do fino.
+    for (double hp = microStep; hp < maxValue; hp += microStep) {
+        const bool isMacro = (std::fmod(hp, static_cast<double>(macroStep)) < 0.5);
+        if (!isMacro && !drawMicro)
+            continue;
+
+        const int width = isMacro ? macroWidth : microWidth;
+        int x = barRect.left() + static_cast<int>(hp * pxPerHp);
+
+        // Nao deixa a marca vazar da barra pela direita.
+        if (x + width > barRect.right())
+            break;
+
+        g_drawQueue->addFilledRect(Rect(x, barRect.top(), width, barRect.height()),
+                                   isMacro ? macroColor : microColor);
+    }
+}
+
+void Creature::drawInformation(const Point& point, bool useGray, const Rect& parentRect, int drawFlags, float scale)
 {
     if (!g_game.getFeature(Otc::GameOldInformationBar) && g_game.getClientVersion() >= 760) {
         if (m_healthPercent < 1)  // creature is dead, we get rid of its information bar
@@ -198,7 +246,20 @@ void Creature::drawInformation(const Point& point, bool useGray, const Rect& par
         fillColor = m_informationColor;
 
     // calculate main rects - hp/mana
-    Rect backgroundRect = Rect(point.x + m_informationOffset.x - (13.5), point.y + m_informationOffset.y, 27, 4);
+    //
+    // As medidas originais (27x4) foram desenhadas contra um SQM de 32px. Com o
+    // viewport largo o tile passa de 70px na tela, e a barra fixa ficava
+    // minuscula em cima da criatura. Mantemos a proporcao com o SQM em vez do
+    // valor absoluto: o preenchimento e o invariante (25x2 unidades, como no
+    // original) e a moldura preta de 1px e derivada dele, dando os 27x4 de sempre.
+    const float barScale = (scale > 0.0f) ? scale : 1.0f;
+    const int barInset = std::max(1, static_cast<int>(std::lround(barScale))); // moldura de 1px
+    const int fillWidth = std::max(8, static_cast<int>(std::lround(25.0f * barScale)));
+    const int fillHeight = std::max(2, static_cast<int>(std::lround(2.0f * barScale)));
+    const int barWidth = fillWidth + barInset * 2;
+    const int barHeight = fillHeight + barInset * 2;
+
+    Rect backgroundRect = Rect(point.x + m_informationOffset.x - (barWidth / 2.0), point.y + m_informationOffset.y, barWidth, barHeight);
     backgroundRect.bind(parentRect);
 
     //debug            
@@ -245,8 +306,10 @@ void Creature::drawInformation(const Point& point, bool useGray, const Rect& par
     }
 
     // health rect is based on background rect, so no worries
-    Rect healthRect = backgroundRect.expanded(-1);
-    healthRect.setWidth((m_healthPercent / 100.0) * 25);
+    // Recuado pela moldura E pelo vao, entao o preenchimento nunca encosta na borda.
+    Rect healthRect = backgroundRect.expanded(-barInset);
+    const int healthFullWidth = healthRect.width();
+    healthRect.setWidth((m_healthPercent / 100.0) * healthFullWidth);
 
     // draw
     if (g_game.getFeature(Otc::GameBlueNpcNameColor) && isNpc() && m_healthPercent == 100 && !useGray)
@@ -263,14 +326,26 @@ void Creature::drawInformation(const Point& point, bool useGray, const Rect& par
         g_drawQueue->addFilledRect(backgroundRect, Color::black);
         g_drawQueue->addFilledRect(healthRect, fillColor);
 
+        // Marcacoes por cima do preenchimento, cobrindo a barra inteira (cheia e
+        // vazia), que e o que da a nocao de escala. Requer HP absoluto: o
+        // protocolo 8.60 so manda porcentagem das outras criaturas, entao hoje
+        // isso vale para o proprio jogador. Se um dia o servidor mandar o
+        // maxValue alheio (extended opcode), basta alimentar `maxValue` aqui.
+        if (isLocalPlayer()) {
+            LocalPlayerPtr player = g_game.getLocalPlayer();
+            if (player && player->getMaxHealth() > 0) {
+                drawBarHatchMarks(backgroundRect.expanded(-barInset), player->getMaxHealth(), barScale);
+            }
+        }
+
         if (getProgressBarPercent()) {
             backgroundRect.moveTop(backgroundRect.bottom());
 
             g_drawQueue->addFilledRect(backgroundRect, Color::black);
 
-            Rect progressBarRect = backgroundRect.expanded(-1);
+            Rect progressBarRect = backgroundRect.expanded(-barInset);
             double maxBar = 100;
-            progressBarRect.setWidth(getProgressBarPercent() / (maxBar * 1.0) * 25);
+            progressBarRect.setWidth(getProgressBarPercent() / (maxBar * 1.0) * progressBarRect.width());
 
             g_drawQueue->addFilledRect(progressBarRect, Color::white);
         }
@@ -309,9 +384,17 @@ void Creature::drawInformation(const Point& point, bool useGray, const Rect& par
             }
             g_drawQueue->addFilledRect(manaBg, Color::black);
 
-            Rect manaRect = manaBg.expanded(-1);
-            manaRect.setWidth(((float)manaPercent / 100.f) * 25);
+            Rect manaRect = manaBg.expanded(-barInset);
+            manaRect.setWidth(((float)manaPercent / 100.f) * manaRect.width());
             g_drawQueue->addFilledRect(manaRect, Color::blue);
+
+            // Mesma escala da vida. So o proprio jogador tem mana absoluta.
+            if (isLocalPlayer()) {
+                LocalPlayerPtr player = g_game.getLocalPlayer();
+                if (player && player->getMaxMana() > 0) {
+                    drawBarHatchMarks(manaBg.expanded(-barInset), player->getMaxMana(), barScale);
+                }
+            }
         }
     }
 

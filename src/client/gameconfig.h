@@ -41,8 +41,15 @@ public:
     uint8_t getMapAwareUndergroundFloorRange() const { return m_mapAwareUndergroundFloorRange; }
     bool isExtendedViewUI() const { return m_extendedViewUI; }
 
+    // Marcacoes de escala na barra de vida (hatch marks). Intervalos em HP.
+    int getHealthBarMicroStep() const { return m_healthBarMicroStep; }
+    int getHealthBarMacroStep() const { return m_healthBarMacroStep; }
+    int getHealthBarMinHealth() const { return m_healthBarMinHealth; }
+    int getHealthBarMicroLimit() const { return m_healthBarMicroLimit; }
+
 private:
     void loadMapNode(const OTMLNodePtr& node);
+    void loadHealthBarNode(const OTMLNodePtr& node);
 
     Size m_mapViewPort{8, 6};
     uint8_t m_mapMaxZ{15};
@@ -50,6 +57,14 @@ private:
     uint8_t m_mapUndergroundFloor{8};
     uint8_t m_mapAwareUndergroundFloorRange{2};
     bool m_extendedViewUI{false};
+
+    // um corte fino a cada 100 de vida, um grosso a cada 1000
+    int m_healthBarMicroStep{100};
+    int m_healthBarMacroStep{1000};
+    // abaixo disto a barra fica lisa (rat, coelho): marcar so polui
+    int m_healthBarMinHealth{200};
+    // acima disto os cortes finos somem e ficam so os grossos
+    int m_healthBarMicroLimit{3000};
 };
 
 extern GameConfig g_gameConfig;

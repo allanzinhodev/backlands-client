@@ -64,6 +64,14 @@ void GameConfig::init()
         if (!foundMapNode) {
             g_logger.warning(stdext::format("Map config not found in '%s.otml'; using defaults.", MAP_CONFIG_FILE));
         }
+
+        // opcional: sem o no, ficam os defaults do header
+        for (const OTMLNodePtr& node : document->children()) {
+            if (node->tag() == "health-bar") {
+                loadHealthBarNode(node);
+                break;
+            }
+        }
     } catch (const std::exception& e) {
         g_logger.warning(stdext::format("Unable to load map config '%s.otml': %s. Using defaults.", MAP_CONFIG_FILE, e.what()));
     }
@@ -73,6 +81,10 @@ void GameConfig::init()
         m_mapViewPort.width(), m_mapViewPort.height(), m_mapViewPort.width() * 2 + 2,
         m_mapViewPort.height() * 2 + 2, m_extendedViewUI ? "true" : "false", m_mapMaxZ, m_mapSeaFloor,
         m_mapUndergroundFloor, m_mapAwareUndergroundFloorRange));
+
+    g_logger.info(stdext::format(
+        "Health bar: micro-step=%d, macro-step=%d, min-health=%d, micro-limit=%d",
+        m_healthBarMicroStep, m_healthBarMacroStep, m_healthBarMinHealth, m_healthBarMicroLimit));
 }
 
 void GameConfig::loadMapNode(const OTMLNodePtr& mainNode)
@@ -129,4 +141,37 @@ void GameConfig::loadMapNode(const OTMLNodePtr& mainNode)
     }
 
     m_extendedViewUI = extendedViewUI;
+}
+
+void GameConfig::loadHealthBarNode(const OTMLNodePtr& mainNode)
+{
+    int microStep = m_healthBarMicroStep;
+    int macroStep = m_healthBarMacroStep;
+    int minHealth = m_healthBarMinHealth;
+    int microLimit = m_healthBarMicroLimit;
+
+    for (const OTMLNodePtr& node : mainNode->children()) {
+        if (node->tag() == "micro-step")
+            microStep = node->value<int>();
+        else if (node->tag() == "macro-step")
+            macroStep = node->value<int>();
+        else if (node->tag() == "min-health")
+            minHealth = node->value<int>();
+        else if (node->tag() == "micro-limit")
+            microLimit = node->value<int>();
+    }
+
+    // passo <= 0 dividiria por zero no laco de marcacao; macro menor que micro
+    // inverteria a hierarquia (o corte "grosso" cairia dentro do fino).
+    if (microStep <= 0 || macroStep <= 0 || macroStep < microStep) {
+        g_logger.warning(stdext::format(
+            "Invalid health-bar steps (micro=%d, macro=%d); keeping %d/%d.",
+            microStep, macroStep, m_healthBarMicroStep, m_healthBarMacroStep));
+    } else {
+        m_healthBarMicroStep = microStep;
+        m_healthBarMacroStep = macroStep;
+    }
+
+    m_healthBarMinHealth = std::max(0, minHealth);
+    m_healthBarMicroLimit = std::max(0, microLimit);
 }
