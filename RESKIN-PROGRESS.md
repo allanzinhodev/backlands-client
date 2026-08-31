@@ -356,6 +356,19 @@ interna — que é o critério que esta sessão usou.
   checkboxes fazendo cada uma ancorar à direita com uma margem própria, para que os rótulos
   começassem todos no mesmo x **naquela** fonte. Com outra fonte cada um cresce para a
   esquerda em ritmo diferente. Ancore a coluna à esquerda num x fixo.
+- **`setColor` em runtime não aparece em varredura de `.otui`.** A maior parte do vocabulário
+  de cor da skin antiga estava em `.lua`, aplicado depois que a tela carrega: 162 chamadas
+  (`#c0c0c0` para linha normal, `#f4f4f4` para selecionada, `#707070` para inativa). Nenhum
+  lint, nenhum censo e nenhuma auditoria de geometria alcança isso — só um `grep` por
+  `setColor` no Lua.
+- **O tooltip inverte a hierarquia.** Ele tem fundo dourado (`#c68f66`) e tinta escura, então
+  ali claro é fundo e escuro é texto — o contrário de todo painel do jogo. Uma troca cega de
+  `#c0c0c0` para a paleta pintou a mensagem da janela de morte de `#231815` sobre um painel
+  `#231815`. Ao mexer em cor de texto no Lua, verifique se o destino é `setTooltip` ou
+  `setColoredText` num rótulo de janela.
+- **Estilo base que declara `font` mas não `color`** herda o branco do `UIWidget`. `CheckBox`,
+  `CheckBoxCircle` e `PopupMenuCheckBoxCircle` estavam assim, e o `$disabled` das três só
+  trocava o cursor — caixa desabilitada ficava idêntica à habilitada.
 - **Rótulo sem `size:` e sem `text-auto-resize`** fica com a largura que o estilo base deu, e
   o estilo base foi medido na fonte antiga. Dez rótulos do Helper estavam assim. Auto-resize
   é a correção certa quando há espaço à direita — mas confira o vizinho depois, porque dois
