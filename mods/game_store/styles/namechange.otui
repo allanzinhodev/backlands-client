@@ -7,7 +7,7 @@ NameChangeWindow < MainWindow
     anchors.left: parent.left
     margin-top: 5
     margin-left: 5
-    !text: tr('Please enter the new name for your character:')
+    !text: tr('New name for your character:')
     text-auto-resize: true
   TextEdit
     id: nameText

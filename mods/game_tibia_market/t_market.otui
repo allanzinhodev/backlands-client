@@ -448,7 +448,7 @@ MarketMainWindow < Panel
 
   Button
     id: levelButton
-    size: 60 20
+    size: 54 20
     anchors.top: category.bottom
     anchors.left: parent.left
     margin-top: 30
@@ -457,7 +457,7 @@ MarketMainWindow < Panel
 
   Button
     id: vocButton
-    size: 50 20
+    size: 45 20
     anchors.top: prev.top
     anchors.left: prev.right
     margin-left: 5
@@ -466,7 +466,7 @@ MarketMainWindow < Panel
 
   Button
     id: oneButton
-    size: 37 20
+    size: 27 20
     anchors.top: prev.top
     anchors.left: prev.right
     margin-left: 5
@@ -476,7 +476,7 @@ MarketMainWindow < Panel
 
   Button
     id: twoButton
-    size: 37 20
+    size: 29 20
     anchors.top: prev.top
     anchors.left: prev.right
     margin-left: 5
@@ -505,7 +505,7 @@ MarketMainWindow < Panel
   CheckBox
     id: lockerOnly
     size: 12 12
-    !text: tr('Show Locker only')
+    !text: tr('Locker only')
     font: $var-cip-font
     text-auto-resize: true
     color: $var-text-cip-color

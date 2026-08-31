@@ -37,7 +37,7 @@ GiftWindow < NewMainWindow
     Label
       anchors.top: prev.bottom
       anchors.left: parent.left
-      !text: tr('Transferable Astra Coins:')
+      !text: tr('Transferable Coins:')
       font: $var-cip-font
       color: $var-text-cip-color
       text-auto-resize: true
