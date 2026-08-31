@@ -23,7 +23,7 @@ UIWindow
       anchors.left: parent.left
       anchors.right: parent.right
       height: 5
-      background: #ffffff44
+      background: #ebbf9044
       phantom: false
       draggable: true
 
@@ -32,7 +32,7 @@ UIWindow
       anchors.top: bar.top
       anchors.left: bar.left
       anchors.bottom: bar.bottom
-      background: #ffffff
+      background: $var-text-cip-color
       width: 0
       phantom: true
 
@@ -77,7 +77,7 @@ UIWindow
       anchors.verticalCenter: fullscreen.verticalCenter
       width: 50
       height: 5
-      background: #ffffff44
+      background: #ebbf9044
       phantom: false
       draggable: true
 

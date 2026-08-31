@@ -9,7 +9,7 @@ ComboBoxPopupScrollMenuButton < UIButton
 
   $hover !disabled:
     color: #ebbf90
-    background-color: #86868750
+    background-color: #4e2f2480
 
   $disabled:
     color: #ebbf9088
@@ -30,7 +30,7 @@ ComboBoxPopupMenuButton < UIButton
 
   $hover !disabled:
     color: #ebbf90
-    background-color: #86868750
+    background-color: #4e2f2480
 
   $disabled:
     color: #ebbf9088
@@ -78,7 +78,7 @@ ComboBoxRoundedPopupScrollMenuButton < UIButton
 
   $hover !disabled:
     color: #ebbf90
-    background-color: #355d89
+    background-color: #4e2f24
 
   $disabled:
     color: #ebbf9088
@@ -98,7 +98,7 @@ ComboBoxRoundedPopupMenuButton < UIButton
 
   $hover !disabled:
     color: #ebbf90
-    background-color: #355d89
+    background-color: #4e2f24
 
   $disabled:
     color: #ebbf9088

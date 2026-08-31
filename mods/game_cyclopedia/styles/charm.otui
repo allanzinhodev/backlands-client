@@ -7,7 +7,7 @@ CharmListLabel < Label
   @onFocusChange: modules.game_cyclopedia.Charm:onMonsterFocusChange(self, self:isFocused())
 
   $focus:
-    background-color: #ffffff22
+    background-color: #ebbf9022
     color: #ebbf90
   $!focus:
     background-color: #2c1e19

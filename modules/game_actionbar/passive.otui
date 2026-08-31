@@ -11,7 +11,7 @@ PassivePreview < UICheckBox
     background-color: alpha
 
   $checked:
-    background-color: #ffffff22
+    background-color: #ebbf9022
 
   $disabled:
     image-color: #dfdfdf88

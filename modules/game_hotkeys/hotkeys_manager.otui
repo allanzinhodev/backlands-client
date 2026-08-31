@@ -6,7 +6,7 @@ HotkeyListLabel < UILabel
   phantom: false
 
   $focus:
-    background-color: #ffffff22
+    background-color: #ebbf9022
 
   // Shown only when the hotkey text resolves to a known spell. Phantom so it
   // never steals the click that focuses the row.

@@ -962,7 +962,7 @@ PreyHuntingCreatureBox < UICheckBox
 
   $!on:
     image-color: #ffffff88
-    color: #aaaaaa88
+    color: $var-text-color-disabled
 
 SlotPanel < Panel
   size: 218 354

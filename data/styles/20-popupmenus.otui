@@ -9,7 +9,7 @@ PopupMenuButton < UIButton
   background-color: alpha
 
   $hover !disabled:
-    background-color: #ffffff44
+    background-color: #ebbf9044
     image-clip: 0 40 20 20
 
   $disabled:
@@ -53,7 +53,7 @@ PopupScrollMenuButton < UIButton
 
   $hover !disabled:
     color: #ebbf90
-    background-color: #ffffff44
+    background-color: #ebbf9044
     image-clip: 0 40 20 20
 
   $disabled:
@@ -112,7 +112,7 @@ PopupMenuCheckBox < UICheckBox
     color: #6b4d40
 
   $hover !disabled:
-    background-color: #ffffff44
+    background-color: #ebbf9044
 
 
 PopupMenuCheckBoxCircle < UICheckBox

@@ -1231,7 +1231,7 @@ CategoryListLabel < Label
   focusable: true
 
   $focus:
-    background-color: #ffffff22
+    background-color: #ebbf9022
     color: #ebbf90
   $!focus:
     background-color: #281b17

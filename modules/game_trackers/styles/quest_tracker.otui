@@ -96,7 +96,7 @@ ButtonTrackerMenuOption < UIButton
   padding: 3 6
 
   $hover:
-    background-color: #ffffff1a
+    background-color: #ebbf901a
 
   $disabled:
     color: $var-text-cip-color
@@ -120,7 +120,7 @@ QuestTrackerLabel < Panel
 
     $hover:
       color: $var-text-cip-color-white
-      background-color: #ffffff11
+      background-color: #ebbf9011
   HorizontalSeparator
     margin-top: 3
 

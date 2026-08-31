@@ -37,7 +37,7 @@ UIWindow
     anchors.top: parent.top
     anchors.left: parent.left
     anchors.right: parent.right
-    background-color: #ffffff11
+    background-color: #ebbf9011
     text-align: left
     text-offset: 4 0
     height: 18

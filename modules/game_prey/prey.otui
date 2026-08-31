@@ -904,7 +904,7 @@ PreyCreatureBox < UIWidget
 
   $!on:
     image-color: #ffffff88
-    color: #aaaaaa88
+    color: $var-text-color-disabled
 
 PreySlotPanel < Panel
   size: 218 329

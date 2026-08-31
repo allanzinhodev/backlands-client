@@ -19,7 +19,7 @@ PodiumCreatureBox < UIWidget
     $!checked:
       border-color: alpha
     $!on:
-      color: #aaaaaa88
+      color: $var-text-color-disabled
 
     UICreature
       id: creature

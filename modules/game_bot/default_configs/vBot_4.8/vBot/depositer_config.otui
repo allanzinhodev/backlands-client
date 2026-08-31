@@ -79,7 +79,7 @@ DepositerPanel < MainWindow
     maximum: 800
     margin-left: 3
     margin-right: 3
-    background: #ffffff88
+    background: #ebbf9088
 
   HorizontalSeparator
     id: sep

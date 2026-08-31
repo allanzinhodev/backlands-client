@@ -219,7 +219,7 @@ InventoryWindow < MiniWindow
         margin-top: 4
         border-width: 1
         border-color: #00000077
-        background-color: #ffffff22
+        background-color: #ebbf9022
         
     Panel
       margin-top: 5

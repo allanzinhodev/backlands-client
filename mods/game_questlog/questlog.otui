@@ -1,7 +1,7 @@
 QuestLabel < UIWidget
   height: 16
   $focus:
-    background-color: #ffffff22
+    background-color: #ebbf9022
   UIWidget
     id: completeIcon
     size: 12 9
