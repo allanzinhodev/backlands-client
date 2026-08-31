@@ -56,6 +56,14 @@ Cap/Soul nos slots de 32px) e 45 no terminal de dev, que fica de fora de propós
 A única janela que não abre é `npctrade`: o Lua dela quer dados de troca vindos do servidor,
 não é defeito de UI.
 
+> **As duas "exceções" não são resíduo — são fontes pixel menores.** `verdana-8px-rounded`
+> (F1–F12), `verdana-cap-bold` (Cap/Soul) e `verdana-11px-rounded` (nomes no mapa) têm
+> **dois níveis de alfa, 0 e 255**: são bitmap sem antialiasing, tão pixel quanto a
+> silkscreen — que, ironicamente, é a única das cinco com alfa intermediário. O nome
+> "verdana" engana; o que elas são é uma face menor, escolhida onde 16px de altura não cabem
+> (slot de 32px) ou onde 16px de largura empurrariam o texto sobre o vizinho ("10000" mede
+> 53px num slot de 34). Não há nada a migrar ali.
+
 > **A medição errada esconde a metade do trabalho.** Três vezes nesta migração uma
 > ferramenta deu "tudo limpo" enquanto a tela estava errada, sempre pelo mesmo motivo: ela
 > perguntava ao *disco* ou ao *fonte* uma coisa que só o **cliente rodando** sabe.
