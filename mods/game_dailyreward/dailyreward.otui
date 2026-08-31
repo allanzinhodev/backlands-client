@@ -47,7 +47,7 @@ MainWindow
     id: miniWindowBonuses
     anchors.top: parent.top
     anchors.right: parent.right
-    size: 506 126
+    size: 506 162
     margin-top: -5
     !text: tr('Resting Area Bonuses')
     color: #a87f68

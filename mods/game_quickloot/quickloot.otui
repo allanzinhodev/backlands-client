@@ -108,7 +108,7 @@ NewMainWindow
       anchors.top: parent.top
       anchors.left: parent.left
     Label
-      !text: tr('Use main container as fallback')
+      !text: tr('Main container fallback')
       anchors.top: parent.top
       anchors.left: quickLootFallbackToMainContainer.right
       margin-left: 5
@@ -190,7 +190,7 @@ NewMainWindow
     padding: 3
     &save: true
     Label
-      !text: tr('Quick Loot Filter:')
+      !text: tr('Loot Filter:')
       anchors.top: parent.top
       anchors.left: parent.left
       margin-left: 6

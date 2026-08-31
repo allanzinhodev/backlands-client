@@ -23,12 +23,12 @@ WhiteListLabel < Label
 MainWindow
   id: communicationWindow
   !text: tr('Edit Ignore List and White List')
-  size: 540 375
+  size: 566 375
   @onEscape: self:destroy()
 
   FlatPanel
     id: checkboxUseIgnoreListPanel
-    size: 244 22
+    size: 262 22
     anchors.left: parent.left
     anchors.top: parent.top
 
@@ -67,7 +67,7 @@ MainWindow
     id: ignoreNameEdit
     anchors.top: prev.bottom
     anchors.left: parent.left
-    width: 150
+    width: 140
     margin-top: 7
 
   Button
@@ -98,7 +98,7 @@ MainWindow
     color: #ebbf90
 
   FlatPanel
-    size: 244 22
+    size: 262 22
     anchors.left: parent.left
     anchors.top: prev.bottom
     margin-top: 4
@@ -115,7 +115,7 @@ MainWindow
         color: #ebbf90
 
   FlatPanel
-    size: 244 22
+    size: 262 22
     anchors.left: parent.left
     anchors.top: prev.bottom
     margin-top: 14
@@ -133,14 +133,14 @@ MainWindow
 
   FlatPanel
     id: checkboxUseWhiteListPanel
-    size: 244 22
+    size: 262 22
     anchors.top: parent.top
     anchors.left: ignoreList.right
-    margin-left: 20
+    margin-left: 8
 
     CheckBox
       id: checkboxUseWhiteList
-      !text: tr('Activate Ignore List')
+      !text: tr('Activate White List')
       anchors.left: parent.left
       anchors.right: parent.right
       anchors.verticalCenter: parent.verticalCenter
@@ -173,13 +173,13 @@ MainWindow
     id: whitelistNameEdit
     anchors.top: prev.bottom
     anchors.left: prev.left
-    width: 150
+    width: 140
     margin-top: 7
 
   Button
     id: buttonWhitelistAdd
     !text: tr('Add')
-    width: 43
+    width: 40
     height: 20
     margin-top: -2
     margin-left: 5
@@ -189,7 +189,7 @@ MainWindow
   Button
     id: buttonWhitelistRemove
     !text: tr('Delete')
-    width: 66
+    width: 60
     height: 20
     margin-left: 5
     anchors.top: prev.top
@@ -204,14 +204,14 @@ MainWindow
     color: #ebbf90
 
   FlatPanel
-    size: 244 22
+    size: 262 22
     anchors.left: prev.left
     anchors.top: prev.bottom
     margin-top: 4
 
     CheckBox
       id: checkboxAllowVIPs
-      !text: tr('Allow VIPs to message you')
+      !text: tr('Allow VIPs to message')
       anchors.left: parent.left
       anchors.right: parent.right
       anchors.verticalCenter: parent.verticalCenter
