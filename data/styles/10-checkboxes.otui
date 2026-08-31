@@ -1,5 +1,6 @@
 CheckBox < UICheckBox
   font: $var-cip-font
+  color: $var-text-cip-color
   size: 12 12
   text-align: left
   text-offset: 18 -1
@@ -17,10 +18,12 @@ CheckBox < UICheckBox
     image-clip: 0 12 12 12
 
   $disabled:
+    color: $var-text-color-disabled
     change-cursor-image: false
 
 CheckBoxCircle < UICheckBox
   font: $var-cip-font
+  color: $var-text-cip-color
   size: 12 12
   text-align: left
   text-offset: 18 -1
@@ -39,6 +42,7 @@ CheckBoxCircle < UICheckBox
     image-clip: 0 12 12 12
 
   $disabled:
+    color: $var-text-color-disabled
     change-cursor-image: false
 
 ThickCheckBox < UICheckBox

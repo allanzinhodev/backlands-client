@@ -121,6 +121,7 @@ PopupMenuCheckBoxCircle < UICheckBox
   text-offset: 18 -1
   image-rect: 0 0 12 12
   font: $var-cip-font
+  color: $var-text-cip-color
   image-source: /images/ui/checkboxcircle
   change-cursor-image: true
   cursor: pointer
