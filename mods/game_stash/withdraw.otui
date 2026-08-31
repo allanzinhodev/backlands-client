@@ -56,8 +56,8 @@ CountWithdraw < NewMainWindow
       id: buttonCancel
       anchors.right: parent.right
       anchors.bottom: parent.bottom
-      size: 43 20
-      font: cipsoftFont
+      size: 74 20
+      font: $var-cip-font
       !text: tr('Cancel')
 
     Button
@@ -66,5 +66,5 @@ CountWithdraw < NewMainWindow
       anchors.bottom: parent.bottom
       margin-right: 6
       size: 43 20
-      font: cipsoftFont
+      font: $var-cip-font
       !text: tr('Ok')

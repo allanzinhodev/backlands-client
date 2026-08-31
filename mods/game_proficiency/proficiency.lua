@@ -2099,7 +2099,7 @@ local function applyShapeSideButtonMaxRankState(button, costPanel)
 		height = 26
 	})
 	button:setEnabled(false)
-	button:setColor("#707070")
+	button:setColor("#6b4d40")
 	button:setTooltip(SHAPE_MAX_RANK_TOOLTIP)
 
 	if costPanel then
@@ -2160,12 +2160,12 @@ function WeaponProficiency:updateShapeRefineButtonState(shape)
 
 	if hasEnoughDust then
 		refineButton:setEnabled(true)
-		refineButton:setColor("#c0c0c0")
+		refineButton:setColor("#a87f68")
 		refineButton:setTooltip("")
-		refineCostText:setColor("#c0c0c0")
+		refineCostText:setColor("#a87f68")
 	else
 		refineButton:setEnabled(false)
-		refineButton:setColor("#707070")
+		refineButton:setColor("#6b4d40")
 		refineButton:setTooltip(SHAPE_NOT_ENOUGH_DUST_TOOLTIP)
 		refineCostText:setColor("#d33c3c")
 	end
@@ -2195,12 +2195,12 @@ function WeaponProficiency:updateShapeReshapeButtonState(shape)
 
 	if hasEnoughDust then
 		reshapeButton:setEnabled(true)
-		reshapeButton:setColor("#c0c0c0")
+		reshapeButton:setColor("#a87f68")
 		reshapeButton:setTooltip("")
-		reshapeCostText:setColor("#c0c0c0")
+		reshapeCostText:setColor("#a87f68")
 	else
 		reshapeButton:setEnabled(false)
-		reshapeButton:setColor("#707070")
+		reshapeButton:setColor("#6b4d40")
 		reshapeButton:setTooltip(SHAPE_NOT_ENOUGH_DUST_TOOLTIP)
 		reshapeCostText:setColor("#d33c3c")
 	end
@@ -2247,12 +2247,12 @@ function WeaponProficiency:updateShapeMaximiseButtonState(shape)
 
 	if hasEnoughOrbs then
 		maximiseButton:setEnabled(true)
-		maximiseButton:setColor("#c0c0c0")
+		maximiseButton:setColor("#a87f68")
 		maximiseButton:setTooltip("")
-		maximiseCostText:setColor("#c0c0c0")
+		maximiseCostText:setColor("#a87f68")
 	else
 		maximiseButton:setEnabled(false)
-		maximiseButton:setColor("#707070")
+		maximiseButton:setColor("#6b4d40")
 		maximiseButton:setTooltip(SHAPE_NOT_ENOUGH_ORBS_TOOLTIP)
 		maximiseCostText:setColor("#d33c3c")
 	end
@@ -2648,7 +2648,7 @@ function WeaponProficiency:updateModifyCost()
 	if currentDust < cost then
 		modifyCostText:setColor("#d33c3c")
 	else
-		modifyCostText:setColor("#c0c0c0")
+		modifyCostText:setColor("#a87f68")
 	end
 end
 

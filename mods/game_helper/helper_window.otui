@@ -1,7 +1,7 @@
 NewHeadlessWindow
   id: helperWindow
   anchors.horizontalCenter: parent.horizontalCenter
-  size: 295 365
+  size: 380 365
   @onEscape: hide()
   UIWidget
     size: 145 56
@@ -221,7 +221,8 @@ NewHeadlessWindow
       margin-right: 5
       margin-bottom: 3
       !text: tr('Shortcuts')
-      font: $var-main-font
+      width: 106
+      font: $var-cip-font
       color: $var-text-color
       phantom: false
       @onClick: |
@@ -240,8 +241,8 @@ NewHeadlessWindow
       anchors.bottom: parent.bottom
       anchors.left: parent.left
       margin-bottom: 8
-      !text: tr('Helper Status:')
-      font: $var-main-font
+      !text: tr('Helper:')
+      font: $var-cip-font
       color: $var-text-color
       text-auto-resize: true
 
@@ -250,7 +251,7 @@ NewHeadlessWindow
       anchors.top: prev.bottom
       anchors.left: parent.left
       !text: tr('Status')
-      font: $var-main-font
+      font: $var-cip-font
       color: $var-text-color
       text-auto-resize: true
 
@@ -279,9 +280,9 @@ NewHeadlessWindow
       id: cavebotStatusLabel
       anchors.right: cavebotToggleButton.left
       anchors.verticalCenter: cavebotToggleButton.verticalCenter
-      margin-right: 2
+      margin-right: 6
       !text: tr('Cavebot:')
-      font: $var-main-font
+      font: $var-cip-font
       color: $var-text-color
       text-auto-resize: true
 
@@ -294,5 +295,5 @@ NewHeadlessWindow
       margin-bottom: 4
       !text: tr('Off')
       color: #e40b0bff
-      font: $var-main-font
+      font: $var-cip-font
       @onClick: toggleCavebotFromButton()

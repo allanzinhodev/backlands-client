@@ -101,7 +101,7 @@ InventoryButton < Button
 
 SoulCapLabel < GameLabel
   text-align: center
-  color: #FFFFFF
+  color: #ebbf90
   font: cipsoftFont
   margin-top: 4
   text-offset: 0 3
@@ -219,7 +219,7 @@ InventoryWindow < MiniWindow
         margin-top: 4
         border-width: 1
         border-color: #00000077
-        background-color: #ffffff22
+        background-color: #ebbf9022
         
     Panel
       margin-top: 5

@@ -1242,7 +1242,7 @@ function Character.showRecentDeaths(currentPage, totalPages, deaths)
             widget.name:setTooltip(entry.name)
         end
 
-        local color = ((count % 2 == 0) and '#484848' or '#414141')
+        local color = ((count % 2 == 0) and '#2c1e19' or '#281b17')
         count = count + 1
         widget:setBackgroundColor(color)
     end
@@ -1268,14 +1268,14 @@ function Character.onSelectRecentWidget(self)
 
 	for _, data in pairs(lastSelectedRecentDeath) do
 		data.widget:setBackgroundColor(data.color)
-		data.widget.rank:setColor("#c0c0c0")
-		data.widget.name:setColor("#c0c0c0")
+		data.widget.rank:setColor("#a87f68")
+		data.widget.name:setColor("#a87f68")
 	end
 
 	local oldBackgroundColor = parent:getBackgroundColor()
 	parent:setBackgroundColor("#35241d")
-	parent.rank:setColor("#f4f4f4")
-	parent.name:setColor("#f4f4f4")
+	parent.rank:setColor("#ebbf90")
+	parent.name:setColor("#ebbf90")
 	lastSelectedRecentDeath = {{widget = parent, color = oldBackgroundColor}}
 end
 
@@ -1338,7 +1338,7 @@ function Character.showPvPDeaths(currentPage, totalPages, deaths)
             widget.status:setColor("#d33c3c")
         end
 
-        local color = ((count % 2 == 0) and '#484848' or '#414141')
+        local color = ((count % 2 == 0) and '#2c1e19' or '#281b17')
         count = count + 1
         widget:setBackgroundColor(color)
     end

@@ -1,6 +1,7 @@
 SmartMode < CheckBox
   id: smartMode
   text: Smart mode
+  text-auto-resize: true
   margin-top: 6
   margin-left: 32
   font: $var-cip-font
@@ -10,6 +11,7 @@ SmartMode < CheckBox
 RoundCheckBox < CheckBox
   image-source: /images/ui/checkboxcircle
   text-offset: 15 -3
+  text-auto-resize: true
 
   $first:
     margin-top: 2
@@ -19,7 +21,7 @@ RoundCheckBox < CheckBox
 
 CustomObjectWindow < NewMainWindow
   id: assignItemWindow
-  size: 275 198
+  size: 360 198
   Panel
     id: contentPanel
     anchors.fill: parent
@@ -52,7 +54,7 @@ CustomObjectWindow < NewMainWindow
 
     Panel
       id: checks
-      size: 160 86
+      size: 250 86
       anchors.top: parent.top
       anchors.left: itemListFlatPanel.right
       margin-left: 6
@@ -156,16 +158,16 @@ CustomObjectWindow < NewMainWindow
       id: buttonClose
       anchors.right: parent.right
       anchors.bottom: parent.bottom
-      size: 43 20
-      font: cipsoftFont
+      size: 74 20
+      font: $var-cip-font
       text: Cancel
     Button
       id: buttonApply
       anchors.right: prev.left
       anchors.bottom: parent.bottom
       margin-right: 6
-      size: 43 20
-      font: cipsoftFont
+      size: 66 20
+      font: $var-cip-font
       text: Apply
     Button
       id: buttonOk
@@ -173,5 +175,5 @@ CustomObjectWindow < NewMainWindow
       anchors.bottom: parent.bottom
       margin-right: 6
       size: 43 20
-      font: cipsoftFont
+      font: $var-cip-font
       text: Ok

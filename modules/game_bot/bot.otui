@@ -41,25 +41,26 @@ MiniWindow
       anchors.right: parent.right
       margin-top: 2
       margin-left: 2
-      margin-right: 75
+      margin-right: 2
       text-offset: 3 0
 
     Button
       id: editConfig
-      anchors.top: prev.top
-      anchors.left: prev.right
-      anchors.right: parent.right
+      anchors.top: prev.bottom
+      anchors.left: parent.left
+      anchors.right: parent.horizontalCenter
       !text: tr('Edit')
       @onClick: modules.game_bot.edit()
-      margin-left: 3
-      margin-right: 37
+      margin-top: 3
+      margin-left: 2
+      margin-right: 2
 
     Button
       id: enableButton
       anchors.top: prev.top
       anchors.left: prev.right
       anchors.right: parent.right
-      margin-left: 3
+      margin-left: 2
       margin-right: 2
 
       $on:

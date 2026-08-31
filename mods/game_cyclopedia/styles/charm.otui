@@ -7,8 +7,8 @@ CharmListLabel < Label
   @onFocusChange: modules.game_cyclopedia.Charm:onMonsterFocusChange(self, self:isFocused())
 
   $focus:
-    background-color: #ffffff22
-    color: #f4f4f4
+    background-color: #ebbf9022
+    color: #ebbf90
   $!focus:
     background-color: #2c1e19
     color: $var-text-cip-color
@@ -69,7 +69,7 @@ CharmDataPanel < Panel
   anchors.fill: parent
   Panel
     id: informationPanel
-    size: 550 117
+    size: 550 160
     anchors.top: parent.top
     anchors.left: parent.left
     image-source: /images/ui/t2pixel-up-frame-borderimage
@@ -89,7 +89,7 @@ CharmDataPanel < Panel
       margin: 20 7 5 6
       Label
         id: informationText
-        size: 164 90
+        size: 190 130
         font: $var-cip-font
         color: $var-text-cip-color
         anchors.top: parent.top
@@ -127,7 +127,6 @@ CharmDataPanel < Panel
         anchors.left: charmPanel.right
         margin-left: 6
         !text: tr('Unlock')
-        font: cipsoftFont
         color: $var-text-cip-color
         @onClick: modules.game_cyclopedia.Charm:onUpgradeCharm()
       Panel
@@ -165,8 +164,7 @@ CharmDataPanel < Panel
         anchors.top: prev.bottom
         anchors.left: prev.left
         margin-top: 5
-        !text: tr('Clear Charm')
-        font: cipsoftFont
+        !text: tr('Clear')
         color: $var-text-cip-color
         @onClick: modules.game_cyclopedia.Charm:onClearCharm()
       Panel
@@ -200,11 +198,13 @@ CharmDataPanel < Panel
           margin-top: 1
       TextEdit
         id: searchTextCharm
-        size: 148 20
-        anchors.top: parent.top
+        size: 120 20
+        anchors.top: selectCreatureButton.bottom
         anchors.left: prev.right
         margin-left: 6
-        !placeholder: tr('Type to search')
+        margin-top: 5
+        !placeholder: tr('Search')
+        placeholder-font: $var-cip-font
         font: $var-cip-font
         placeholder-color: $var-cip-inactive-color
         @onTextChange: modules.game_cyclopedia.Charm:onSearchTextChange(self:getText())
@@ -227,7 +227,7 @@ CharmDataPanel < Panel
 
       TextList
         id: monsterList
-        size: 148 67
+        size: 120 60
         anchors.top: searchTextCharm.bottom
         anchors.left: searchTextCharm.left
         margin-top: 6
@@ -245,16 +245,15 @@ CharmDataPanel < Panel
 
       Button
         id: selectCreatureButton
-        size: 78 20
+        size: 205 20
         anchors.top: parent.top
         anchors.right: parent.right
         !text: tr('Select Creature')
-        font: cipsoftFont
         color: $var-text-cip-color
         @onClick: modules.game_cyclopedia.Charm:onSelectCreature()
       UIWidget
         id: creatureWidget
-        size: 78 66
+        size: 78 85
         anchors.top: prev.bottom
         anchors.right: parent.right
         margin-top: 5
@@ -271,7 +270,7 @@ CharmDataPanel < Panel
   
   Panel
     id: resetPanel
-    size: 113 117
+    size: 113 160
     anchors.top: parent.top
     anchors.right: parent.right
     image-source: /images/ui/2pixel-up-frame-borderimage
@@ -282,7 +281,7 @@ CharmDataPanel < Panel
       margin: 7 6 8 7
       Label
         id: resetText
-        size: 105 27
+        size: 100 64
         anchors.top: parent.top
         anchors.left: parent.left
         font: $var-cip-font
@@ -298,6 +297,7 @@ CharmDataPanel < Panel
         margin-top: 6
         margin-right: 4
         image-source: /images/ui/buttons-blue
+        color: #ebbf90
         icon: /images/store/icon-store-16x10
         @onClick: modules.game_cyclopedia.Charm.redirectToStore()
       UIWidget
@@ -316,8 +316,7 @@ CharmDataPanel < Panel
         anchors.top: openStore.bottom
         anchors.right: parent.right
         margin-top: 6
-        !text: tr('Reset All Charms')
-        font: cipsoftFont
+        !text: tr('Reset All')
         color: $var-text-cip-color
         @onClick: modules.game_cyclopedia.Charm:onResetAllCharm()
       
@@ -353,7 +352,7 @@ CharmDataPanel < Panel
 
   Panel
     id: charmsPanel
-    size: 668 294
+    size: 668 251
     anchors.top: prev.bottom
     anchors.left: parent.left
     image-source: /images/ui/2pixel-up-frame-borderimage

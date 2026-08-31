@@ -200,7 +200,7 @@ function initFields()
     local colorCount = 0
     for _, pair in pairs(categoryList) do
         local widget = g_ui.createWidget("CategoryItemListLabel", optionList)
-        local color = colorCount % 2 == 0 and "#414141" or "#484848"
+        local color = colorCount % 2 == 0 and "#281b17" or "#2c1e19"
         widget:setActionId(pair[1])
         widget.color = color
         widget:setId(pair[2])
@@ -394,12 +394,12 @@ function onSelectChildCategory(widget, selected, resetFilter)
 
     if lastSelectedCategory then
         lastSelectedCategory:setBackgroundColor(lastSelectedCategory.color)
-        lastSelectedCategory:setColor("#c0c0c0")
+        lastSelectedCategory:setColor("#a87f68")
     end
 
     lastSelectedCategory = selected
     selected:setBackgroundColor("#35241d")
-    selected:setColor("#f4f4f4")
+    selected:setColor("#ebbf90")
 
     if table.contains(enableCategories, selected:getActionId()) then
         searchlocker:recursiveGetChildById("oneButton"):setEnabled(true)
@@ -489,7 +489,7 @@ local function updateWidgets(widget, value, startItem, i, titemList, itemListSor
         return false
     end
 
-    local color = ((itemId % 2 == 0) and "#484848" or "#414141")
+    local color = ((itemId % 2 == 0) and "#2c1e19" or "#281b17")
     widget:setBackgroundColor(color)
     widget.background = color
     if widget.item then

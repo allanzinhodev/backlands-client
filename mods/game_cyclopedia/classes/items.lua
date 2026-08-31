@@ -423,7 +423,7 @@ function CyclopediaItems.showCategories()
 
 	for _, pair in ipairs(categoryList) do
 		local widget = g_ui.createWidget("CategoryItemListLabel", VisibleCyclopediaPanel.leftInfo.categoriesList)
-		local color = colorCount % 2 == 0 and '#414141' or '#484848'
+		local color = colorCount % 2 == 0 and '#281b17' or '#2c1e19'
 		widget:setActionId(pair[1])
 		widget:setId(tostring(pair[2] or ""))
 		widget.color = color
@@ -520,7 +520,7 @@ function CyclopediaItems.categoryListChildFocus(self, selected)
 		if modules.game_analyser.isInDropTracker(itemInfo.thingType:getId()) then
 			widget.name:setColor("#FF9854")
 		else
-			widget.name:setColor("#c0c0c0")
+			widget.name:setColor("#a87f68")
 		end
 		widget:setBackgroundColor('#271b17')
 
@@ -651,15 +651,15 @@ function CyclopediaItems.showNpcData(item)
 			end
 
 			local widget = g_ui.createWidget("SaleList", VisibleCyclopediaPanel.panelitemshide.sellToList)
-			local color = sellToCount % 2 == 0 and '#414141' or '#484848'
+			local color = sellToCount % 2 == 0 and '#281b17' or '#2c1e19'
 
 			widget.valueLabel:setText(comma_value(buyPrice) .. " gp, " .. npc)
 			widget.locationLabel:setText("Residence: " .. location)
 
 			if sellToCount == 0 then
 				widget:setBackgroundColor("#35241d")
-				widget.valueLabel:setColor("#f4f4f4")
-				widget.locationLabel:setColor("#f4f4f4")
+				widget.valueLabel:setColor("#ebbf90")
+				widget.locationLabel:setColor("#ebbf90")
 				oldBuyChild = widget
 			else
 				widget:setBackgroundColor(color)
@@ -671,7 +671,7 @@ function CyclopediaItems.showNpcData(item)
 
 		if salePrice ~= 0 then
 			local widget = g_ui.createWidget("SaleList", VisibleCyclopediaPanel.panelitemshide.buyFromList)
-			local color = buyFromCount % 2 == 0 and '#414141' or '#484848'
+			local color = buyFromCount % 2 == 0 and '#281b17' or '#2c1e19'
 
 			if v.currencyQuestFlagDisplayName == '' then
 				widget.valueLabel:setText(comma_value(salePrice) .. " gp, " .. npc)
@@ -682,8 +682,8 @@ function CyclopediaItems.showNpcData(item)
 
 			if buyFromCount == 0 then
 				widget:setBackgroundColor("#35241d")
-				widget.valueLabel:setColor("#f4f4f4")
-				widget.locationLabel:setColor("#f4f4f4")
+				widget.valueLabel:setColor("#ebbf90")
+				widget.locationLabel:setColor("#ebbf90")
 				oldSaleChild = widget
 			else
 				widget:setBackgroundColor(color)
@@ -878,7 +878,7 @@ function CyclopediaItems.showSearchResult(list)
 		if modules.game_analyser.isInDropTracker(data.thingType:getId()) then
 			widget.name:setColor("#FF9854")
 		else
-			widget.name:setColor("#c0c0c0")
+			widget.name:setColor("#a87f68")
 		end
 		widget:setBackgroundColor('#271b17')
 		:: Continue ::
@@ -991,7 +991,7 @@ function CyclopediaItems.onSortFields(widget, checked)
 		if modules.game_analyser.isInDropTracker(itemInfo.thingType:getId()) then
 			widget.name:setColor("#FF9854")
 		else
-			widget.name:setColor("#c0c0c0")
+			widget.name:setColor("#a87f68")
 		end
 		widget:setBackgroundColor('#271b17')
 
@@ -1189,7 +1189,7 @@ function CyclopediaItems.onRedirect(itemId)
 				if modules.game_analyser.isInDropTracker(itemInfo.thingType:getId()) then
 					widget.name:setColor("#FF9854")
 				else
-					widget.name:setColor("#c0c0c0")
+					widget.name:setColor("#a87f68")
 				end
 				widget:setBackgroundColor('#271b17')
 				goto escape

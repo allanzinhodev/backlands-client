@@ -53,6 +53,7 @@ NewMainWindow
     width: 210
     margin: 4 16 0 16
     placeholder: 100
+    placeholder-font: $var-cip-font
 
   Label
     id: durationLabel
@@ -69,6 +70,7 @@ NewMainWindow
     anchors.right: parent.right
     margin: 4 20 0 16
     placeholder: 24
+    placeholder-font: $var-cip-font
 
   Label
     id: descriptionLabel
@@ -97,7 +99,7 @@ NewMainWindow
     margin: 8 16 0 16
     text-align: center
     text-wrap: true
-    font: $var-cip-main-font
+    font: $var-cip-font
 
   Button
     id: refreshButton

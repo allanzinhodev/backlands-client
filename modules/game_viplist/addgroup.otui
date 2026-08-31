@@ -1,5 +1,5 @@
 MainWindow
-  size: 360 121
+  size: 442 121
   text: Add VIP group (User-Created groups left: %s)
   font: $var-cip-font
   text-offset: 0 1

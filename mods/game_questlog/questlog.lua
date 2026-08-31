@@ -442,13 +442,13 @@ function onQuestListFocus(selected, oldFocus)
 		oldFocus:setBackgroundColor(oldFocusedIndex % 2 == 0 and "#281b17" or "#2c1e19")
 		oldFocus:recursiveGetChildById("pinIcon"):setVisible(false)
 		oldFocus:recursiveGetChildById("hideIcon"):setVisible(false)
-		oldFocus:recursiveGetChildById("noteText"):setColor("#c0c0c0")
+		oldFocus:recursiveGetChildById("noteText"):setColor("#a87f68")
 	end
 
 	if selected then
 		selected:recursiveGetChildById("pinIcon"):setVisible(true)
 		selected:recursiveGetChildById("hideIcon"):setVisible(true)
-		selected:recursiveGetChildById("noteText"):setColor("#f4f4f4")
+		selected:recursiveGetChildById("noteText"):setColor("#ebbf90")
 
 		g_game.doThing(false)
 		g_game.requestQuestLine(selected.questId)
@@ -464,11 +464,11 @@ function onMissionListFocus(selected, oldFocus)
 	if oldFocus then
 		local oldFocusedIndex = oldFocus:getActionId()
 		oldFocus:setBackgroundColor(oldFocusedIndex % 2 == 0 and "#281b17" or "#2c1e19")
-		oldFocus:recursiveGetChildById("noteText"):setColor("#c0c0c0")
+		oldFocus:recursiveGetChildById("noteText"):setColor("#a87f68")
 	end
 
 	if selected then
-		selected:recursiveGetChildById("noteText"):setColor("#f4f4f4")
+		selected:recursiveGetChildById("noteText"):setColor("#ebbf90")
 		questlog:recursiveGetChildById("missionDesc"):setText(selected.missionDescription)
 	end
 

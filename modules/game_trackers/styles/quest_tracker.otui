@@ -28,7 +28,7 @@ QuestLogTracker < MiniWindow
     margin-right: 50
     font: verdana-11px-monochrome
     height: 13
-    color: #9d9d9dff
+    color: $var-text-cip-color-grey
 
   UIButton
     id: menuButton
@@ -83,20 +83,20 @@ QuestLogTracker < MiniWindow
         text: Add  Tracked  Quest
         margin-left: 20
         margin-right: 20
-        color: white
+        color: #ebbf90
         @onClick: modules.game_questlog.show()
 
 
 ButtonTrackerMenuOption < UIButton
   text-offset: 5 1
   text-align: left
-  color: white
+  color: #ebbf90
   background-color: alpha
   font: $var-cip-font-mono-rounded
   padding: 3 6
 
   $hover:
-    background-color: #ffffff1a
+    background-color: #ebbf901a
 
   $disabled:
     color: $var-text-cip-color
@@ -120,7 +120,7 @@ QuestTrackerLabel < Panel
 
     $hover:
       color: $var-text-cip-color-white
-      background-color: #ffffff11
+      background-color: #ebbf9011
   HorizontalSeparator
     margin-top: 3
 

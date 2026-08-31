@@ -525,7 +525,7 @@ function TaskWeekly.loadData(data)
     -- Remaining days
     local remainingLabel = taskHuntWindow:recursiveGetChildById('remainingLabel')
     if remainingLabel then
-        remainingLabel:setText(tr('%d day(s) remaining', data.remainingDays))
+        remainingLabel:setText(tr('%d day(s) left', data.remainingDays))
     end
 
     -- Extra slot shop buttons

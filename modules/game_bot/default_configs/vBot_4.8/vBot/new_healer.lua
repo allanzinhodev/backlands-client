@@ -162,7 +162,7 @@ local function validate(widget, category)
         label:setTooltip("! WARNING ! \nTurn on check players in extras to use this feature!")
         return
     else
-        label:setColor("#dfdfdf")
+        label:setColor("#a87f68")
         label:setTooltip("")
     end
 
@@ -177,7 +177,7 @@ local function validate(widget, category)
         label:setColor("#d9321f")
         label:setTooltip("! WARNING ! \nNo category selected!")
     else
-        label:setColor("#dfdfdf")
+        label:setColor("#a87f68")
         label:setTooltip("")
     end
 end

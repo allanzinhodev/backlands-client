@@ -440,7 +440,8 @@ BosstiaryGroupPanel < Panel
     anchors.left: nextListButton.right
     margin-left: 135
     text-color: $var-text-cip-color
-    !placeholder: tr('Type to search')
+    !placeholder: tr('Search')
+    placeholder-font: $var-cip-font
     box-text-padding: 27
     @onTextChange: modules.game_cyclopedia.Bosstiary.onSearchChange(self)
 

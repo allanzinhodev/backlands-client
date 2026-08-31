@@ -2,7 +2,7 @@ ListHighscore < UIWidget
   height: 16
   Panel
     id: rank
-    width: 40
+    width: 50
     anchors.top: parent.top
     anchors.left: parent.left
     text-align: left
@@ -16,7 +16,7 @@ ListHighscore < UIWidget
     margin-bottom: -1
   Panel
     id: name
-    width: 209
+    width: 194
     anchors.top: parent.top
     anchors.left: prev.right
     text-align: left
@@ -42,7 +42,7 @@ ListHighscore < UIWidget
     margin-bottom: -1
   Panel
     id: gameworld
-    width: 100
+    width: 108
     anchors.top: parent.top
     anchors.left: prev.right
     font: $var-cip-font
@@ -54,7 +54,7 @@ ListHighscore < UIWidget
     margin-bottom: -1
   Panel
     id: level
-    width: 40
+    width: 52
     anchors.top: parent.top
     anchors.left: prev.right
     font: $var-cip-font
@@ -66,7 +66,7 @@ ListHighscore < UIWidget
     margin-bottom: -1
   Panel
     id: points
-    width: 151
+    width: 132
     anchors.top: parent.top
     anchors.left: prev.right
     anchors.right: parent.right
@@ -76,7 +76,7 @@ ListHighscore < UIWidget
     font: $var-cip-font
 
 HighscoreMiniWindow < Panel
-  font: verdana-11px-antialised
+  font: $var-cip-font
   icon-rect: 4 4 16 16
   width: 192
   height: 200
@@ -269,10 +269,11 @@ MainWindow
     background-color: #221714
     UIWidget
       id: rank
-      size: 40 14
+      size: 50 14
       anchors.top: parent.top
       anchors.left: parent.left
       !text: tr("Rank")
+      font: $var-cip-font
       color: $var-text-cip-color
       margin-top: 1
     UIWidget
@@ -284,10 +285,11 @@ MainWindow
       margin-left: 1
     UIWidget
       id: character
-      size: 209 14
+      size: 194 14
       anchors.top: parent.top
       anchors.left: prev.right
       !text: tr("Character")
+      font: $var-cip-font
       color: $var-text-cip-color
       margin-top: 1
       text-align: left
@@ -305,6 +307,7 @@ MainWindow
       anchors.top: parent.top
       anchors.left: prev.right
       !text: tr("Vocation")
+      font: $var-cip-font
       color: $var-text-cip-color
       margin-top: 1
     UIWidget
@@ -315,10 +318,11 @@ MainWindow
       margin-bottom: -1
     UIWidget
       id: gameworld
-      size: 100 14
+      size: 108 14
       anchors.top: parent.top
       anchors.left: prev.right
       !text: tr("Game World")
+      font: $var-cip-font
       color: $var-text-cip-color
       margin-top: 1
     UIWidget
@@ -329,10 +333,11 @@ MainWindow
       margin-bottom: -1
     UIWidget
       id: level
-      size: 40 14
+      size: 52 14
       anchors.top: parent.top
       anchors.left: prev.right
       !text: tr("Level")
+      font: $var-cip-font
       color: $var-text-cip-color
       margin-top: 1
     UIWidget
@@ -343,12 +348,14 @@ MainWindow
       margin-bottom: -1
     UIWidget
       id: points
-      size: 151 14
+      size: 132 14
       anchors.top: parent.top
       anchors.left: prev.right
       anchors.right: parent.right
       !text: tr("Points")
-      text-offset: 120 2
+      font: $var-cip-font
+      text-align: right
+      text-offset: 0 2
       color: $var-text-cip-color
 
   TextList

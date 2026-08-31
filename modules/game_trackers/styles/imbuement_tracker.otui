@@ -1,13 +1,13 @@
 ImbuementTrackerMenuOption < ThickCheckBox
   text-offset: 18 1
   text-align: left
-  color: white
+  color: #ebbf90
   background-color: alpha
   font: $var-cip-font-mono-rounded
   padding: 3 6
 
   $hover:
-    background-color: #ffffff1a
+    background-color: #ebbf901a
 
   $disabled:
     color: $var-text-cip-color
@@ -114,7 +114,7 @@ ImbuementTracker < MiniWindow
     font: verdana-11px-monochrome
     height: 13
     !text: tr('Imbuements')
-    color: #9d9d9dff
+    color: $var-text-cip-color-grey
 
   MiniWindowContents
     id: contentsPanel

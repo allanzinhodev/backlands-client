@@ -55,7 +55,8 @@ SelectBossPanel < Panel
     margin-bottom: 28
     box-text-padding: 27
     @onTextChange: modules.game_cyclopedia.BosstiarySlot.onSearchChange(self)
-    !placeholder: tr('Type to search')
+    !placeholder: tr('Search')
+    placeholder-font: $var-cip-font
 
   Button
     id: clearSlotButton
@@ -508,7 +509,7 @@ BossslotGroupPanel < Panel
       margin-left: 11
     ProgressBarSD
       id: bossPointsProgress
-      size: 276 18
+      size: 220 18
       anchors.top: prev.top
       anchors.left: prev.left
       anchors.right: prev.right
@@ -520,12 +521,12 @@ BossslotGroupPanel < Panel
         !text: tr("1 / 10")
         font: $var-cip-font
         text-auto-resize: true
-        color: #ffffff
+        color: #ebbf90
         anchors.verticalCenter: parent.verticalCenter
         anchors.horizontalCenter: parent.horizontalCenter
     Label
       id: inforText
-      !text: tr("Equipment Loot Bonus: 25 Next: 26")
+      !text: tr("Loot Bonus: 25% Next: 26%")
       font: $var-cip-font
       text-auto-resize: true
       color: $var-text-cip-color

@@ -701,7 +701,7 @@ local function markChild(child)
     if mainWindow:isVisible() then
         for i, child in ipairs(listPanel.list:getChildren()) do
             if child ~= widget then
-                child:setColor('white')
+                child:setColor("#ebbf90")
             end
         end
         widget:setColor('green')

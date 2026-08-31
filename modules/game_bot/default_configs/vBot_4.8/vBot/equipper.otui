@@ -192,10 +192,10 @@ ListPanel < FlatPanel
     id: up
     anchors.right: parent.right
     anchors.top: list.bottom
-    size: 60 17
+    size: 86 17
     text: Move Up
     text-align: center
-    font: cipsoftFont
+    font: $var-cip-font
     margin-top: 5
     tooltip: Increase priority of selected rule.
 
@@ -203,11 +203,11 @@ ListPanel < FlatPanel
     id: down
     anchors.right: prev.left
     anchors.verticalCenter: prev.verticalCenter
-    size: 60 17
+    size: 112 17
     margin-right: 5
     text: Move Down
     text-align: center
-    font: cipsoftFont
+    font: $var-cip-font
     tooltip: Decrease priority of selected rule.
 
 InputPanel < FlatPanel
@@ -525,15 +525,15 @@ EquipWindow < MainWindow
   Button
     id: closeButton
     !text: tr('Close')
-    font: cipsoftFont
+    font: $var-cip-font
     anchors.right: parent.right
     anchors.bottom: parent.bottom
-    size: 45 21
+    size: 62 21
 
   Button
     id: bossList
     !text: tr('Boss list')
-    font: cipsoftFont
+    font: $var-cip-font
     anchors.left: parent.left
     anchors.bottom: parent.bottom
-    size: 65 21
+    size: 96 21

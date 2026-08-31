@@ -29,6 +29,7 @@ Window
 
     Label
       text: Mana Circle
+      width: 122
       anchors.verticalCenter: parent.verticalCenter
       anchors.left: parent.left
       margin-left: 10
@@ -47,6 +48,7 @@ Window
 
     Label
       text: Exp Circle
+      width: 108
       anchors.verticalCenter: parent.verticalCenter
       anchors.left: parent.left
       margin-left: 10
@@ -65,6 +67,7 @@ Window
 
     Label
       text: Skill Circle
+      width: 120
       anchors.verticalCenter: parent.verticalCenter
       anchors.left: parent.left
       margin-left: 10
@@ -151,6 +154,7 @@ Window
 
     Label
       text: Spell Effect Opacity
+      width: 202
       anchors.verticalCenter: parent.verticalCenter
       anchors.left: parent.left
       margin-left: 10

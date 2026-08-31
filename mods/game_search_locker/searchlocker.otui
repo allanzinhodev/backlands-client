@@ -245,7 +245,8 @@ SearchPage < Panel
     margin-top: 3
     margin-right: 6
     @onTextChange: onTextChange()
-    !placeholder: tr('Type to search')
+    !placeholder: tr('Search')
+    placeholder-font: $var-cip-font
 
   Button
     id: clearSearchButton
@@ -452,7 +453,7 @@ UIMiniWindow
   id: lockerSearchWindow
   !text: tr('Search Locker')
   focusable: true
-  font: verdana-11px-antialised
+  font: $var-cip-font
   color: #a87f68
   icon-rect: 4 4 12 12
   width: 175

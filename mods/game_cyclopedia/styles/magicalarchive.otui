@@ -71,7 +71,7 @@ FilterPanel < UIWidget
     phantom: true
   CheckBox
     id: charVocationFilter
-    width: 195
+    width: 224
     anchors.top: parent.top
     anchors.left: parent.left
     margin-left: 7
@@ -86,7 +86,7 @@ FilterPanel < UIWidget
     @onCheckChange: modules.game_cyclopedia.MagicalArchive.onFilterChange(self)
   CheckBox
     id: charLevelFilter
-    width: 160
+    width: 188
     anchors.top: prev.bottom
     anchors.left: parent.left
     margin-left: 7
@@ -279,7 +279,7 @@ FilterPanel < UIWidget
 
   CheckBox
     id: allSpellsFilter
-    width: 160
+    width: 196
     anchors.top: prev.bottom
     anchors.left: parent.left
     margin-left: 7
@@ -305,7 +305,7 @@ FilterPanel < UIWidget
 
   CheckBox
     id: premmyFilter
-    width: 160
+    width: 194
     anchors.top: prev.bottom
     anchors.left: parent.left
     margin-left: 7
@@ -417,7 +417,8 @@ SpellListPanel < Panel
     anchors.bottom: parent.bottom
     anchors.left: parent.left
     padding-top: 3
-    !placeholder: tr('Type to search')
+    !placeholder: tr('Search')
+    placeholder-font: $var-cip-font
     font: $var-cip-font
     placeholder-color: $var-cip-inactive-color
     @onTextChange: modules.game_cyclopedia.MagicalArchive.onSearchTextChange(self)

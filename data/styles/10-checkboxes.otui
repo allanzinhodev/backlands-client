@@ -1,4 +1,6 @@
 CheckBox < UICheckBox
+  font: $var-cip-font
+  color: $var-text-cip-color
   size: 12 12
   text-align: left
   text-offset: 18 -1
@@ -16,9 +18,12 @@ CheckBox < UICheckBox
     image-clip: 0 12 12 12
 
   $disabled:
+    color: $var-text-color-disabled
     change-cursor-image: false
 
 CheckBoxCircle < UICheckBox
+  font: $var-cip-font
+  color: $var-text-cip-color
   size: 12 12
   text-align: left
   text-offset: 18 -1
@@ -28,7 +33,7 @@ CheckBoxCircle < UICheckBox
   cursor: pointer
 
   $hover !disabled:
-    color: #ffffff
+    color: #ebbf90
 
   $!checked:
     image-clip: 0 0 12 12
@@ -37,6 +42,7 @@ CheckBoxCircle < UICheckBox
     image-clip: 0 12 12 12
 
   $disabled:
+    color: $var-text-color-disabled
     change-cursor-image: false
 
 ThickCheckBox < UICheckBox
@@ -52,7 +58,7 @@ ThickCheckBox < UICheckBox
   cursor: pointer
 
   $hover !disabled:
-    color: #ffffff
+    color: #ebbf90
 
   $checked:
     image-source: /images/ui/checkbox-checked
@@ -62,7 +68,7 @@ ThickCheckBox < UICheckBox
 
   $disabled:
     image-color: #dfdfdf88
-    color: #dfdfdf88
+    color: #ebbf9088
     opacity: 0.8
     change-cursor-image: false
 
@@ -78,8 +84,8 @@ ColorBox < UICheckBox
     image-clip: 0 0 13 13
 
 ButtonBox < UICheckBox
-  font: verdana-11px-antialised
-  color: white
+  font: $var-cip-font
+  color: #ebbf90
   size: 106 23
   text-offset: 0 0
   text-align: center
@@ -95,12 +101,12 @@ ButtonBox < UICheckBox
 
   $checked:
     image-clip: 0 46 22 23
-    color: white
+    color: #ebbf90
     text-offset: 2 2
     change-cursor-image: false
 
   $disabled:
-    color: #dfdfdf88
+    color: #ebbf9088
     image-color: #dfdfdf88
     change-cursor-image: false
 

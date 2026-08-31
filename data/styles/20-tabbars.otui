@@ -113,12 +113,12 @@ TabBarVerticalButton < UIButton
     anchors.top: prev.bottom
     margin-top: 10
   $hover !checked:
-    color: white
+    color: #ebbf90
     icon-color: #dfdfdf
   $disabled:
     icon-color: #333333
   $checked:
     icon-color: #ffffff
-    color: #80c7f8
+    color: $var-text-cip-color
   $on !checked:
     color: #F55E5E

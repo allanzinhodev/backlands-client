@@ -314,7 +314,7 @@ function MagicalArchive.onSelectSpell(focused, oldFocused)
     if oldFocused then
         local oldNameLabel = oldFocused:recursiveGetChildById("name")
         if oldNameLabel then
-            oldNameLabel:setColor("#c0c0c0")
+            oldNameLabel:setColor("#a87f68")
         end
     end
 
@@ -331,7 +331,7 @@ function MagicalArchive.onSelectSpell(focused, oldFocused)
 
     local nameLabel = focused:recursiveGetChildById("name")
     if nameLabel then
-        nameLabel:setColor("#f4f4f4")
+        nameLabel:setColor("#ebbf90")
     end
 
     local spellData = focused.spellData

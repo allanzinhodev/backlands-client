@@ -1,5 +1,5 @@
 NpcWindow < UIMiniWindow
-  font: verdana-11px-antialised
+  font: $var-cip-font
   color: #a87f68
   icon-rect: 4 4 12 12
   width: 175
@@ -93,24 +93,25 @@ NpcWindow < UIMiniWindow
     anchors.top: prev.bottom
     anchors.left: parent.left
     anchors.right: parent.right
-    height: 64
+    height: 87
     width: 168
     margin-left: 3
     margin-right: 3
     margin-top: 2
 
     Label
-      font: verdana-11px-monochrome
+      font: $var-cip-font
       anchors.left: parent.left
       anchors.top: parent.top
       margin-top: 4
       margin-left: 4
       !text: tr('Currency:')
+      width: 106
       color: $var-text-cip-color
 
     UIWidget
       id: currencyLabel
-      font: verdana-11px-monochrome
+      font: $var-cip-font
       anchors.left: parent.left
       anchors.top: prev.bottom
       margin-top: 5
@@ -122,7 +123,7 @@ NpcWindow < UIMiniWindow
 
     Label
       id: quickSellLabel
-      font: verdana-11px-monochrome
+      font: $var-cip-font
       anchors.left: parent.left
       anchors.top: prev.bottom
       margin-top: 10
@@ -173,9 +174,10 @@ NpcWindow < UIMiniWindow
       id: quickSellButton
       size: 86 20
       !text: tr('Sell All')
-      anchors.top: prev.bottom
+      anchors.top: quickSellLabel.bottom
       anchors.right: parent.right
       image-source: /images/ui/buttons-blue
+      color: #ebbf90
       margin-right: 3
       margin-top: 3
       visible: true
@@ -226,7 +228,8 @@ NpcWindow < UIMiniWindow
       @onClick: modules.game_npctrade.toggleNPCFocus(true)
       @onHoverChange: modules.game_npctrade.onTypeFieldsHover(self, self:isHovered())
       @onTextChange: modules.game_npctrade.onSearchTextChange()
-      !placeholder: tr('Type to search')
+      !placeholder: tr('Search')
+      placeholder-font: $var-cip-font
       UIButton
         id: clearSearchButton
         anchors.top: parent.top
@@ -281,6 +284,7 @@ NpcWindow < UIMiniWindow
       @onTextChange: modules.game_npctrade.onAmountEdit(self)
       only-number: true
       !placeholder: tr('0')
+      placeholder-font: $var-cip-font
 
     Label
       text-auto-resize: true
@@ -366,5 +370,5 @@ NpcWindowContents < TextList
   anchors.bottom: setupPanel.top
   margin-left: 4
   margin-bottom: 2
-  margin-top: 78
+  margin-top: 101
   vertical-scrollbar: miniwindowScrollBar

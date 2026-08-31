@@ -20,13 +20,13 @@ BountySetupWindow < StaticWindow
     anchors.top: parent.top
     anchors.bottom: parent.bottom
     anchors.left: setupTooltipIcon.right
-    margin-left: 25
+    margin-left: 12
 
   Label
     id: difficultyLabel
     anchors.verticalCenter: parent.verticalCenter
     anchors.left: prev.right
-    margin-left: 25
+    margin-left: 12
     font: $var-cip-main-font
     color: $var-text-cip-color
     text-auto-resize: true
@@ -37,7 +37,7 @@ BountySetupWindow < StaticWindow
     size: 108 20
     anchors.verticalCenter: parent.verticalCenter
     anchors.left: difficultyLabel.right
-    margin-left: 25
+    margin-left: 12
     mouse-scroll: false
     @onSetup: |
       self:addOption(tr('Beginner'))
@@ -52,13 +52,13 @@ BountySetupWindow < StaticWindow
     size: 144 20
     anchors.verticalCenter: parent.verticalCenter
     anchors.left: difficultyComboBox.right
-    margin-left: 25
+    margin-left: 12
 
   VerticalSeparator
     anchors.top: parent.top
     anchors.bottom: parent.bottom
     anchors.left: preferredList.right
-    margin-left: 25
+    margin-left: 12
     
   Button
     id: rerollTasks   
@@ -66,7 +66,7 @@ BountySetupWindow < StaticWindow
     size: 132 20
     anchors.verticalCenter: parent.verticalCenter
     anchors.left: prev.right
-    margin-left: 25
+    margin-left: 12
 
   Panel
     id: claimDailyValue
@@ -112,18 +112,18 @@ BountySetupWindow < StaticWindow
 
   Button
     id: claimDaily
-    size: 108 20
+    size: 116 20
     anchors.verticalCenter: parent.verticalCenter
-    anchors.left: claimDailyWarning.right
-    margin-left: 15
+    anchors.right: boostKills.left
+    margin-right: 8
     !text: tr("Claim Daily")
 
   Button
     id: boostKills
-    size: 108 20
+    size: 116 20
     anchors.verticalCenter: parent.verticalCenter
-    anchors.left: claimDaily.right
-    margin-left: 8
+    anchors.right: parent.right
+    margin-right: 4
     image-source: /images/ui/button-blue-qt
     image-clip: 0 0 98 40
     image-border: 1
@@ -145,11 +145,11 @@ BountySetupWindow < StaticWindow
     Label
       id: btnLabel
       anchors.centerIn: parent
-      margin-left: 12
       font: $var-cip-main-font
       color: $var-text-cip-color-white
       text-align: center
       !text: tr('Boost Kills')
+      width: 116
       phantom: true
 
 BountyTaskPanel < Panel
@@ -227,7 +227,7 @@ BountyTaskPanel < Panel
     anchors.top: rewardTitle.bottom
     anchors.left: parent.left
     margin-top: 8
-    margin-left: 20
+    margin-left: 30
     font: $var-cip-main-font
     color: $var-text-cip-color
     text-auto-resize: true
@@ -235,6 +235,7 @@ BountyTaskPanel < Panel
 
   Label
     id: bulletXp
+    text-auto-resize: true
     anchors.verticalCenter: rewardXpLabel.verticalCenter
     anchors.left: parent.left
     margin-left: 12
@@ -248,7 +249,7 @@ BountyTaskPanel < Panel
     anchors.top: rewardXpLabel.bottom
     anchors.left: parent.left
     margin-top: 2
-    margin-left: 20
+    margin-left: 30
     font: $var-cip-main-font
     color: $var-text-cip-color
     text-auto-resize: true
@@ -256,6 +257,7 @@ BountyTaskPanel < Panel
 
   Label
     id: bulletPoints
+    text-auto-resize: true
     anchors.verticalCenter: rewardPointsLabel.verticalCenter
     anchors.left: parent.left
     margin-left: 12
@@ -278,7 +280,7 @@ BountyTaskPanel < Panel
     anchors.top: rewardPointsLabel.bottom
     anchors.left: parent.left
     margin-top: 2
-    margin-left: 20
+    margin-left: 30
     font: $var-cip-main-font
     color: $var-text-cip-color
     text-auto-resize: true
@@ -286,6 +288,7 @@ BountyTaskPanel < Panel
 
   Label
     id: bulletReroll
+    text-auto-resize: true
     anchors.verticalCenter: rewardRerollLabel.verticalCenter
     anchors.left: parent.left
     margin-left: 12
@@ -340,7 +343,7 @@ BountyTaskContainer < UIWidget
     margin-left: 10
 
 TalismanEntry < Panel
-  width: 222
+  width: 216
   anchors.top: parent.top
   anchors.bottom: parent.bottom
 
@@ -357,10 +360,12 @@ TalismanEntry < Panel
     id: entryTitle
     anchors.top: entryIcon.top
     anchors.left: entryIcon.right
+    anchors.right: parent.right
     margin-left: 6
+    margin-right: 4
+    height: 32
     font: $var-cip-main-font
     color: $var-text-cip-color
-    text-auto-resize: true
 
   Label
     id: entryCurrentLabel
@@ -376,16 +381,16 @@ TalismanEntry < Panel
     anchors.bottom: parent.bottom
     anchors.left: parent.left
     margin-left: 8
-    size: 128 20
+    size: 124 20
     !text: tr('Upgrade')
     color: $var-text-cip-color-white
 
   Panel
     id: entryCostPanel
-    size: 86 20
+    size: 80 20
     anchors.verticalCenter: entryUpgradeButton.verticalCenter
     anchors.left: entryUpgradeButton.right
-    margin-left: 6
+    margin-left: 4
     image-source: /images/ui/infoPanel
     image-border: 2
 
@@ -438,7 +443,7 @@ BountyTalismanWindow < StaticWindow
   TalismanEntry
     id: talismanEntry1
     anchors.left: talismanSeparator.right
-    margin-left: 6
+    margin-left: 2
 
   VerticalSeparator
     id: talismanSep2
@@ -450,7 +455,7 @@ BountyTalismanWindow < StaticWindow
   TalismanEntry
     id: talismanEntry2
     anchors.left: talismanSep2.right
-    margin-left: 6
+    margin-left: 2
 
   VerticalSeparator
     id: talismanSep3
@@ -462,7 +467,7 @@ BountyTalismanWindow < StaticWindow
   TalismanEntry
     id: talismanEntry3
     anchors.left: talismanSep3.right
-    margin-left: 6
+    margin-left: 2
 
   VerticalSeparator
     id: talismanSep4
@@ -474,4 +479,4 @@ BountyTalismanWindow < StaticWindow
   TalismanEntry
     id: talismanEntry4
     anchors.left: talismanSep4.right
-    margin-left: 6
+    margin-left: 2

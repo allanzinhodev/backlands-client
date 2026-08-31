@@ -20,7 +20,7 @@ local TALISMAN_TITLES = {
     [1] = 'Damage Against\nCreatures',
     [2] = 'Life Leech',
     [3] = 'More Loot',
-    [4] = 'Chance for Double\nBeast Scroll Progress',
+    [4] = 'Double Beast\nScroll Chance',
 }
 
 local TALISMAN_BASE_VALUES = {

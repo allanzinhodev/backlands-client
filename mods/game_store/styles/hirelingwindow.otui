@@ -1,12 +1,12 @@
 HirelingWindow < MainWindow
-  size: 350 200
+  size: 350 260
   !text: tr('Customise Hireling')
 
   Panel
     id: infoLabel
     anchors.top: parent.top
     anchors.left: parent.left
-    size: 320 64
+    size: 320 120
     Label
       anchors.top: parent.top
       anchors.left: parent.left
@@ -29,7 +29,7 @@ HirelingWindow < MainWindow
     anchors.top: infoLabel.bottom
     margin-top: 5
     margin-left: 10
-    width: 275
+    width: 240
     @onTextChange: modules.game_store.onNameHirelingTextChange(self)
   Label
     id: sexLabel
@@ -45,7 +45,7 @@ HirelingWindow < MainWindow
     anchors.top: nameText.bottom
     margin-top: 5
     margin-left: 20
-    size: 275 20
+    size: 240 20
     @onSetup: |
       self:addOption("Male")
       self:addOption("Female")
@@ -58,8 +58,8 @@ HirelingWindow < MainWindow
 
   Button
     id: cancelHirelingButton
-    font: cipsoftFont
-    size: 40 20
+    font: $var-cip-font
+    size: 74 20
     !text: tr('Cancel')
     anchors.right: parent.right
     anchors.top: separator.bottom
@@ -68,8 +68,8 @@ HirelingWindow < MainWindow
 
   Button
     id: okHirelingButton
-    font: cipsoftFont
-    size: 40 20
+    font: $var-cip-font
+    size: 90 20
     !text: tr('Buy Now')
     anchors.right: prev.left
     anchors.top: separator.bottom

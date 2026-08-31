@@ -10,7 +10,7 @@ SpellPreview < UICheckBox
   color: $var-text-cip-color
 
   $hover !disabled:
-    color: #ffffff
+    color: #ebbf90
 
   $!checked:
     background-color: alpha
@@ -18,11 +18,11 @@ SpellPreview < UICheckBox
 
   $checked:
     background-color: #35241d
-    color: #f4f4f4
+    color: #ebbf90
 
   $disabled:
     image-color: #dfdfdf88
-    color: #dfdfdf88
+    color: #ebbf9088
     opacity: 0.8
 
   UIWidget
@@ -114,7 +114,8 @@ SpellMainWindow < NewMainWindow
       margin-top: 1
       margin-right: 1
       margin-left: 1
-      !placeholder: tr('Type to search')
+      !placeholder: tr('Search')
+      placeholder-font: $var-cip-font
       padding: 2
       font: $var-cip-font
       placeholder-color: $var-cip-inactive-color
@@ -204,8 +205,8 @@ SpellMainWindow < NewMainWindow
       id: buttonClose
       anchors.right: parent.right
       anchors.bottom: parent.bottom
-      size: 43 20
-      font: cipsoftFont
+      size: 74 20
+      font: $var-cip-font
       text: Cancel
 
     Button
@@ -213,8 +214,8 @@ SpellMainWindow < NewMainWindow
       anchors.right: prev.left
       margin-right: 6
       anchors.bottom: parent.bottom
-      size: 43 20
-      font: cipsoftFont
+      size: 66 20
+      font: $var-cip-font
       text: Apply
 
     Button
@@ -223,5 +224,5 @@ SpellMainWindow < NewMainWindow
       margin-right: 6
       anchors.bottom: parent.bottom
       size: 43 20
-      font: cipsoftFont
+      font: $var-cip-font
       text: Ok

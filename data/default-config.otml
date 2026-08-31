@@ -149,8 +149,12 @@ spellsOthers: false
 optimiseConnectionStability: false
 resetconfig: true
 map
-  viewport: 8 6
-  extended-view-ui: false
+  # 12 6 -> aware range 26x14 (2*viewport+2) -> 23x11 tiles visiveis.
+  # A margem de 3 nao e folga: mapview.cpp:428 faz drawDimension = visible + 3,
+  # entao o maximo desenhavel e aware-3. O classico confirma: 15=18-3, 11=14-3.
+  # O servidor precisa casar: Map::maxClientViewportX/Y em server/src/map.h.
+  viewport: 12 6
+  extended-view-ui: true
   max-z: 15
   sea-floor: 7
   underground-floor: 8

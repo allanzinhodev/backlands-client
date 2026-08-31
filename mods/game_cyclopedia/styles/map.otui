@@ -431,9 +431,10 @@ MapDataPanel < Panel
               margin-left: 3
           TextEdit
             id: donateAmountTextEdit
-            size: 84 16
+            size: 63 16
             !placeholder: tr("Amount")
-            placeholder-color: #707070
+            placeholder-font: $var-cip-font
+            placeholder-color: $var-cip-inactive-color
             placeholder-align: LeftCenter
             anchors.top: goldProgressBox.bottom
             anchors.left: goldProgressBox.left
@@ -450,9 +451,9 @@ MapDataPanel < Panel
               margin-right: 2
           Button
             id: donateButton
-            size: 43 20
+            size: 76 20
             !text: tr('Donate')
-            font: Verdana 9px-anti-espaco
+            font: $var-cip-font
             text-align: Center
             text-offset: -1 -1
             anchors.top: donateAmountTextEdit.top
@@ -475,8 +476,8 @@ MapDataPanel < Panel
           Button
             id: discoveringButton
             size: 132 20
-            !text: tr('Start Discovering')
-            font: Verdana 9px-anti-espaco
+            !text: tr('Discover')
+            font: $var-cip-font
             color: #6b4d40
             text-align: Center
             text-offset: -1 -1

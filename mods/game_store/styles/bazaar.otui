@@ -195,7 +195,8 @@ CharacterItens < Panel
     anchors.right: parent.right
     margin-top: 5
     margin-right: 5
-    placeholder: Type to search
+    placeholder: Search
+    placeholder-font: $var-cip-font
     placeholder-opacity: 0.5
     box-text-padding: 27
     @onTextChange: modules.game_store.Bazaar:onSearchItem(self:getText())
@@ -508,7 +509,8 @@ CharacterArguments < Panel
     anchors.right: parent.right
     margin-top: 5
     margin-right: 5
-    placeholder: Type to search
+    placeholder: Search
+    placeholder-font: $var-cip-font
     placeholder-opacity: 0.5
     box-text-padding: 27
     @onTextChange: modules.game_store.Bazaar:onSearchArgument(self:getText())

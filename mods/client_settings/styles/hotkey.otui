@@ -100,37 +100,37 @@ HotkeyPanel < FlatPanel
     anchors.left: prev.right
     margin-top: 3
     margin-left: 5
-    font: cipsoftFont
+    font: $var-cip-font
     enabled: false
   Button
     id: copy
     !text: tr('Copy')
-    size: 40 20
+    size: 56 20
     anchors.top: parent.top
     anchors.left: prev.right
     margin-top: 3
     margin-left: 5
-    font: cipsoftFont
+    font: $var-cip-font
     enabled: false
   Button
     id: rename
     !text: tr('Rename')
-    size: 60 20
+    size: 76 20
     anchors.top: parent.top
     anchors.left: prev.right
     margin-top: 3
     margin-left: 5
-    font: cipsoftFont
+    font: $var-cip-font
     enabled: false
   Button
     id: remove
     !text: tr('Remove')
-    size: 60 20
+    size: 76 20
     anchors.top: parent.top
     anchors.left: prev.right
     margin-top: 3
     margin-left: 5
-    font: cipsoftFont
+    font: $var-cip-font
     enabled: false
   FlatPanel
     id: autoSwitchPanel
@@ -317,10 +317,10 @@ HotkeyPanel < FlatPanel
     id: newAction
     anchors.bottom: parent.bottom
     anchors.left: parent.left
-    size: 60 20
+    size: 114 20
     margin: 5 5 5 5
     !text: tr('New Action')
-    font: cipsoftFont
+    font: $var-cip-font
     visible: false
 
   Button
@@ -330,4 +330,4 @@ HotkeyPanel < FlatPanel
     size: 60 20
     margin: 5 5 5 5
     !text: tr('Reset')
-    font: cipsoftFont
+    font: $var-cip-font

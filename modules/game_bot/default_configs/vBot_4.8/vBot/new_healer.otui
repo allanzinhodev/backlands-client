@@ -406,8 +406,8 @@ FriendHealer < MainWindow
   Button
     id: closeButton
     !text: tr('Close')
-    font: cipsoftFont
+    font: $var-cip-font
     anchors.right: parent.right
     anchors.bottom: parent.bottom
-    size: 45 21
+    size: 62 21
     @onClick: self:getParent():hide()

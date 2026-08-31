@@ -1,5 +1,5 @@
 NpcDialogLabel < UITextEdit
-  font: verdana-11px-antialised
+  font: $var-cip-font
   height: 14
   color: #ebbf90
   margin-left: 2
@@ -116,7 +116,8 @@ Window
     margin-right: 5
     margin-bottom: 2
     placeholder: Type here to chat...
-    placeholder-color: #6e706f
+    placeholder-font: $var-cip-font
+    placeholder-color: $var-cip-inactive-color
     shift-navigation: true
     change-cursor-image: false
     max-length: 255
@@ -173,6 +174,6 @@ Window
       anchors.fill: parent
       text-align: center
       text-offset: 0 1
-      font: verdana-11px-rounded
-      color: #ffffff
+      font: $var-cip-font
+      color: #ebbf90
       phantom: true

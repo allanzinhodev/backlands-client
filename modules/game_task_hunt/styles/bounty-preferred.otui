@@ -269,8 +269,9 @@ BountyPreferredWindow < Window
       width: 257
       height: 22
       margin-top: 15
-      placeholder: Type to search
-      placeholder-color: #6E706F
+      placeholder: Search
+      placeholder-font: $var-cip-font
+      placeholder-color: $var-cip-inactive-color
       color: $var-text-cip-color
 
       ClearSearch

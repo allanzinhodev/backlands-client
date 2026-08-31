@@ -101,7 +101,7 @@ function Channel:onChannelList(channelList)
             label.channelColor = getChannelListColor(channelName)
             label:setColor(label.channelColor)
             label:setHeight(16)
-            local backgroundColor = (count % 2 == 0) and '#484848' or '#414141'
+            local backgroundColor = (count % 2 == 0) and '#2c1e19' or '#281b17'
             label:setBackgroundColor(backgroundColor)
             label:setActionId(count)
             label:setPhantom(false)

@@ -14,7 +14,7 @@ WildcardLabel < UIWidget
   phantom: false
   text-offset: 21 0
   $focus:
-    color: #f4f4f4
+    color: #ebbf90
 
   UIWidget
     id: icon
@@ -56,7 +56,8 @@ WildcardPreyPanel < Panel
   TextEdit
     id: searchText
     size: 205 21
-    !placeholder: tr('Type to search')
+    !placeholder: tr('Search')
+    placeholder-font: $var-cip-font
     color: $var-text-cip-color
     text-offset: 1 1
     anchors.top: prev.bottom
@@ -396,14 +397,14 @@ InactivePreyPanel < Panel
 
       CheckBox
         id: autoRerollCheck
-        size: 170 15
+        size: 264 15
         anchors.verticalCenter: parent.verticalCenter
         anchors.left: parent.left
         margin-top: 2
         margin-left: 5
         image-source: /images/ui/checkbox
         image-border: 1
-        text: Automatic Bonus Reroll
+        text: Auto Reroll
         text-offset: 15 -3
         font: $var-cip-font
         color: $var-text-cip-color
@@ -577,14 +578,14 @@ ActivePreyPanel < Panel
 
       CheckBox
         id: autoRerollCheck
-        size: 170 15
+        size: 264 15
         anchors.verticalCenter: parent.verticalCenter
         anchors.left: parent.left
         margin-top: 2
         margin-left: 5
         image-source: /images/ui/checkbox
         image-border: 1
-        text: Automatic Bonus Reroll
+        text: Auto Reroll
         text-offset: 15 -3
         font: $var-cip-font
         color: $var-text-cip-color
@@ -903,7 +904,7 @@ PreyCreatureBox < UIWidget
 
   $!on:
     image-color: #ffffff88
-    color: #aaaaaa88
+    color: $var-text-color-disabled
 
 PreySlotPanel < Panel
   size: 218 329
@@ -1074,9 +1075,8 @@ NewMainWindow
     anchors.bottom: parent.bottom
     margin-bottom: 12
     margin-right: 12
-    size: 43 20
+    size: 62 20
     text: Close
-    font: cipsoftFont
     @onClick: modules.game_prey.hide(true)
 
   Panel

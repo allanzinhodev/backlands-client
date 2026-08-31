@@ -154,7 +154,8 @@ WildcardHuntingPanel < Panel
   TextEdit
     id: searchText
     size: 204 21
-    !placeholder: tr('Type to search')
+    !placeholder: tr('Search')
+    placeholder-font: $var-cip-font
     color: #a87f68
     text-offset: 1 1
     anchors.right: parent.right
@@ -961,7 +962,7 @@ PreyHuntingCreatureBox < UICheckBox
 
   $!on:
     image-color: #ffffff88
-    color: #aaaaaa88
+    color: $var-text-color-disabled
 
 SlotPanel < Panel
   size: 218 354
@@ -1112,9 +1113,9 @@ NewMainWindow
     anchors.top: prev.bottom
     margin-top: 10
     margin-right: 10
-    size: 43 20
+    size: 62 20
     text: Close
-    font: cipsoftFont
+    font: $var-cip-font
     @onClick: modules.game_prey_hunting.hide()
 
   Panel

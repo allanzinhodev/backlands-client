@@ -22,7 +22,6 @@ TradeWindow < MiniWindow
       anchors.top: parent.top
       anchors.left: parent.left
       anchors.right: parent.horizontalCenter
-      font: cipsoftFont
       color: $var-text-cip-color
       text-align: left
 
@@ -31,7 +30,6 @@ TradeWindow < MiniWindow
       anchors.top: parent.top
       anchors.left: parent.horizontalCenter
       anchors.right: parent.right
-      font: cipsoftFont
       color: $var-text-cip-color
       text-align: left
       margin-left: -5
@@ -139,7 +137,6 @@ TradeWindow < MiniWindow
       anchors.right: rejectButton.left
       anchors.left: parent.left
       visible: true
-      font: cipsoftFont
       color: $var-text-cip-color
       text-align: center
 

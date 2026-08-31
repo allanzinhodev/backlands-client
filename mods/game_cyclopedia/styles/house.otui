@@ -835,7 +835,7 @@ HouseGroupPanel < Panel
       Label
         id: noBidHouseHeader
         font: $var-cip-font
-        color: #f7f7f7
+        color: #ebbf90
         !text: tr("Auction")
         text-auto-resize: true
         anchors.top: rental.top
@@ -958,7 +958,7 @@ HouseGroupPanel < Panel
       id: houseInformation
       font: $var-cip-font
       !text: tr("House Information")
-      color: #f7f7f7
+      color: #ebbf90
       anchors.top: parent.top
       anchors.left: parent.left
       margin-top: 12
@@ -1076,7 +1076,7 @@ HouseGroupPanel < Panel
       id: auctionInformation
       font: $var-cip-font
       !text: tr("Auction Information")
-      color: #f7f7f7
+      color: #ebbf90
       anchors.top: rentValue.bottom
       anchors.left: houseInformation.left
       margin-top: 3
@@ -1174,7 +1174,7 @@ HouseGroupPanel < Panel
       margin-bottom: -2
       text-align: right
       text-offset: 15 0
-      placeholder-color: #707070
+      placeholder-color: $var-cip-inactive-color
       placeholder-align: LeftCenter
       @onTextChange: modules.game_cyclopedia.House.onBidChangeValue(self)
     UIWidget
@@ -1940,6 +1940,7 @@ HouseGroupPanel < Panel
         margin-top: -2
         @onTextChange:
         !placeholder: tr('Name of new owner')
+        placeholder-font: $var-cip-font
         @onTextChange: modules.game_cyclopedia.House.onTransferTarget(self)
 
       UIWidget
@@ -1981,6 +1982,7 @@ HouseGroupPanel < Panel
         margin-top: -2
         @onTextChange:
         !placeholder: tr('0')
+        placeholder-font: $var-cip-font
         @onTextChange: modules.game_cyclopedia.House.onTransferValue(self)
 
       UIWidget

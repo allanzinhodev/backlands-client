@@ -335,7 +335,7 @@ function onClaimReward(widget)
       end
     end
 
-    selectRewardWindow.freeCapacityLabel:setText(string.format("Free Capacity: %d oz", freeCap))
+    selectRewardWindow.freeCapacityLabel:setText(string.format("Capacity: %d oz", freeCap))
     local m = {}
     setStringColor(m, "You have selected ", "#C0C0C0")
     setStringColor(m, "0", "#F75F5F")
@@ -387,7 +387,7 @@ function onClickAmount(widget)
   local value = tonumber(widget.window.countEdit:getText()) or 0
   totalOz = (value * widget.window.ozNumber)
   widget.window.oz:setText(string.format("%.2f oz", (widget.window.ozNumber * value)/100))
-  selectRewardWindow.totalWeightLabel:setText(string.format('Total Weight:        %.2f oz', totalOz/100))
+  selectRewardWindow.totalWeightLabel:setText(string.format('Weight: %.2f oz', totalOz/100))
 
   -- arrumando as coisas
   if selectedAmount < rewardAmount then

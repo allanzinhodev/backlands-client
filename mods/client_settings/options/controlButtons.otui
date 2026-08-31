@@ -6,7 +6,7 @@ ControlLabel < Label
   focusable: true
 
   $focus:
-    color: #f4f4f4
+    color: #ebbf90
     background-color: #35241d
 
 ControlsButtonsWindow < Panel

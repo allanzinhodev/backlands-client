@@ -30,10 +30,15 @@ Add-Type -AssemblyName System.Drawing
 # 10-labels.otui; Button e os que derivam dele herdam de 10-buttons.otui desde que
 # a fonte dos botoes deixou de ser a cipsoftFont de 8px. FlatLabel e GameLabel
 # derivam direto de UILabel e seguem em Verdana - nao entram.
-$PixelFontTypes = 'Label|MenuLabel|Button|QtButton|InputBoxButton|MessageBoxButton|PageButton'
+$PixelFontTypes = 'Label|MenuLabel|Button|QtButton|InputBoxButton|MessageBoxButton|PageButton|CheckBox|CheckBoxCircle|ButtonBox'
 
 # Largura que o estilo ja da a quem nao declara size:. Sem isto, todo botao sem
 # tamanho virava "sem-tam" mesmo cabendo: um QtButton nasce com 106px, nao 43.
+# Tipos que ja herdam text-auto-resize do proprio estilo: o widget cresce com o
+# texto e nao existe "sem tamanho" para eles. Sem isto a varredura pede largura
+# para quem nao precisa.
+$AutoResizeTypes = 'RoundCheckBox|SmartMode'
+
 $DefaultWidth = @{
     'Label'            = 86
     'MenuLabel'        = 86
@@ -41,6 +46,9 @@ $DefaultWidth = @{
     'InputBoxButton'   = 43
     'PageButton'       = 16
     'QtButton'         = 106
+    'CheckBox'         = 12
+    'CheckBoxCircle'   = 12
+    'ButtonBox'        = 106
 }
 
 $repo = Split-Path -Parent $PSScriptRoot
@@ -134,7 +142,7 @@ function Scan-Containers($file, $lines) {
             $stack[$stack.Count - 1].Width = [int]$Matches[1]
         }
         elseif ($line -match '^\s*margin-left:\s*(\d+)') { $stack[$stack.Count - 1].Inset += [int]$Matches[1] }
-        elseif ($line -match '^\s*!?text:\s*(?:tr\()?[''"]([^''"]+)[''"]') {
+        elseif ($line -match '^\s*!?text:.*?[''"]([^''"]+)[''"]' -or $line -match '^\s*!?text:\s*([^''"\s][^\r\n]*?)\s*$') {
             $txt = $Matches[1]
             # TextButton e os Qt*/Next/Previous derivam de UIButton e seguem em Verdana
             if ($stack[$stack.Count - 1].Type -match '^(TextButton|ImageButton|TabButton|(Next|Previous).*Button)$') { continue }
@@ -161,7 +169,7 @@ function Scan-Containers($file, $lines) {
 foreach ($file in $files) {
     $lines = @(Get-Content $file.FullName)
     # um "bloco" e o widget corrente; propriedades vivem num nivel de indentacao maior
-    $blockIndent = -1; $text = $null; $box = 0; $boxH = 0; $autoResize = $false; $textLine = 0
+    $blockIndent = -1; $text = $null; $box = 0; $boxH = 0; $autoResize = $false; $textLine = 0; $textOffset = 0
     $usesFont = $false; $wrap = $false; $anyFont = $false; $typeInherits = $false
     $aFill = $false; $aLeft = $false; $aRight = $false
     $flush = {
@@ -169,6 +177,7 @@ foreach ($file in $files) {
         # Label e MenuLabel herdam silkscreen-16 de 10-labels.otui quando nao declaram fonte.
         # FlatLabel e GameLabel derivam direto de UILabel e seguem em Verdana - nao entram.
         if ($typeInherits -and -not $anyFont) { $usesFont = $true }
+        if ($blockType -and $blockType -match "^($script:AutoResizeTypes)`$") { $autoResize = $true }
         if ($text -and $usesFont) {
             $need = Measure-Text $text
             # altura: compara com a tinta real do texto. Uma caixa de 15px so corta se o
@@ -195,16 +204,16 @@ foreach ($file in $files) {
                 }
             }
             # largura so importa quando o texto nao quebra nem se auto-redimensiona
-            if ($box -gt 0 -and -not $autoResize -and -not $wrap -and $need -gt $box) {
+            if ($box -gt 0 -and -not $autoResize -and -not $wrap -and ($need + $textOffset) -gt $box) {
                 $script:findings += [pscustomobject]@{
                     File = $file.FullName.Substring($repo.Length + 1).Replace('\', '/')
                     Line = $textLine; Text = $text; Kind = 'largura'; Type = $blockType
-                    Box  = $box; Need = $need; Overflow = $need - $box
+                    Box  = $box; Need = $need + $textOffset; Overflow = $need + $textOffset - $box
                 }
             }
         }
         $script:text = $null; $script:box = 0; $script:boxH = 0; $script:blockType = ''
-        $script:autoResize = $false; $script:usesFont = $false; $script:wrap = $false
+        $script:autoResize = $false; $script:usesFont = $false; $script:wrap = $false; $script:textOffset = 0
         $script:anyFont = $false; $script:typeInherits = $false
         $script:aFill = $false; $script:aLeft = $false; $script:aRight = $false
     }
@@ -214,12 +223,13 @@ foreach ($file in $files) {
         $indent = ($line -replace '^(\s*).*$', '$1').Length
 
         # linha de propriedade? (contem ':' e nao abre bloco novo no mesmo nivel)
-        if ($line -match '^\s*!?text:\s*(?:tr\()?[''"]([^''"]+)[''"]') {
+        if ($line -match '^\s*!?text:.*?[''"]([^''"]+)[''"]' -or $line -match '^\s*!?text:\s*([^''"\s][^\r\n]*?)\s*$') {
             $text = $Matches[1]; $textLine = $i + 1
         }
         elseif ($line -match '^\s*size:\s*(\d+)\s+(\d+)') { $box = [int]$Matches[1]; $boxH = [int]$Matches[2] }
         elseif ($line -match '^\s*width:\s*(\d+)') { $box = [int]$Matches[1] }
         elseif ($line -match '^\s*height:\s*(\d+)') { $boxH = [int]$Matches[1] }
+        elseif ($line -match '^\s*text-offset:\s*(-?\d+)') { $textOffset = [Math]::Abs([int]$Matches[1]) }
         elseif ($line -match '^\s*text-wrap:\s*true') { $wrap = $true }
         elseif ($line -match '^\s*anchors\.fill:') { $aFill = $true }
         elseif ($line -match '^\s*anchors\.left:') { $aLeft = $true }
@@ -227,7 +237,7 @@ foreach ($file in $files) {
         elseif ($line -match '^\s*text-auto-resize:\s*true') { $autoResize = $true }
         elseif ($line -match '^\s*font:') {
             $anyFont = $true
-            if ($line -match '^\s*font:\s*(\$var-cip-font|silkscreen-16)\s*$') { $usesFont = $true }
+            if ($line -match '^\s*font:\s*(\$var-cip-font|\$var-cip-font-(?:new|off|rounded|lowspace|outline)|\$var-cip-main-font|\$var-main-font|\$var-text-cip-font|silkscreen-16)\s*$') { $usesFont = $true }
         }
         elseif ($line -notmatch ':') {
             # nome de widget = novo bloco; fecha o anterior

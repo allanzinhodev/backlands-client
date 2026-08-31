@@ -4,8 +4,8 @@ CamListLabel < Label
   focusable: true
 
   $focus:
-    background-color: #ffffff22
-    color: #ffffff
+    background-color: #ebbf9022
+    color: #ebbf90
 
 CamLabel < Label
   anchors.left: parent.left

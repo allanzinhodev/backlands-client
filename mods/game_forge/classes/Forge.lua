@@ -259,7 +259,7 @@ function ForgeSystem.init(classPrice, transferMap, fusionPrices, transferPrices,
 	conversionMenu.windowIncreaseDustLimit.itemCount.amount:setColor("#d33c3c")
 	conversionMenu.windowIncreaseDustLimit.increaseButton.item:setItemId(37160)
 	conversionMenu.windowIncreaseDustLimit.increaseButton.itemRight:setItemId(37160)
-	conversionMenu.windowIncreaseDustLimit.baseText:setText('Raise limit from')
+	conversionMenu.windowIncreaseDustLimit.baseText:setText('Raise from')
 	conversionMenu.windowIncreaseDustLimit.currentDust:setVisible(true)
 	conversionMenu.windowIncreaseDustLimit.img1:setVisible(true)
 	conversionMenu.windowIncreaseDustLimit.img2:setVisible(true)
@@ -1176,13 +1176,13 @@ function ForgeSystem.updateConversion()
 	conversionMenu.windowIncreaseDustLimit.nextDust:setText('to ' .. math.min(ForgeSystem.maxPlayerDust + 1, ForgeSystem.maxDust))
 
 	if ForgeSystem.maxPlayerDust >= ForgeSystem.maxDust then
-		conversionMenu.windowIncreaseDustLimit.baseText:setText('Maximum Reached')
+		conversionMenu.windowIncreaseDustLimit.baseText:setText('Max Reached')
 		conversionMenu.windowIncreaseDustLimit.currentDust:setVisible(false)
 		conversionMenu.windowIncreaseDustLimit.img1:setVisible(false)
 		conversionMenu.windowIncreaseDustLimit.img2:setVisible(false)
 		conversionMenu.windowIncreaseDustLimit.nextDust:setVisible(false)
 	else
-		conversionMenu.windowIncreaseDustLimit.baseText:setText('Raise limit from')
+		conversionMenu.windowIncreaseDustLimit.baseText:setText('Raise from')
 		conversionMenu.windowIncreaseDustLimit.currentDust:setVisible(true)
 		conversionMenu.windowIncreaseDustLimit.img1:setVisible(true)
 		conversionMenu.windowIncreaseDustLimit.img2:setVisible(true)
@@ -1195,7 +1195,7 @@ end
 
 function ForgeSystem.onForgeHistory(history)
     historyMenu.historyList:destroyChildren()
-    local colors = { '#414141', '#484848' }
+    local colors = { '#281b17', '#2c1e19' }
 
     for id, info in ipairs(history) do
         local widget = g_ui.createWidget('HistoryForgePanel', historyMenu.historyList)

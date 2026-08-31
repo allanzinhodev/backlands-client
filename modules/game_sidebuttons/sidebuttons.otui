@@ -76,8 +76,8 @@ NonClosableMiniWindow
       icon-source: /images/game/battlepass/mainIcon1
       icon-size: 18 16
       icon-offset: 5 2
-      !text: tr('    Battle Pass')
-      font: $var-cip-font-wheel
+      !text: tr('  Battle')
+      font: $var-cip-font
       color: $var-text-cip-color
       text-offset: 0 -1
       margin-left: 4

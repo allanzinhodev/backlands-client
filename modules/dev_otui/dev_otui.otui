@@ -9,7 +9,7 @@ OtuiTreeItem < UILabel
 
   $focus:
     background-color: #35241d
-    color: #ffffff
+    color: #ebbf90
 
 OtuiSectionLabel < UILabel
   height: 12

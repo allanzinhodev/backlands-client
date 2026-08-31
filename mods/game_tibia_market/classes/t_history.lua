@@ -35,7 +35,7 @@ function MarketHistory.onTopListValueChange(scroll, value, delta)
     local index = value > 0 and (startLabel + i - 1) or (startLabel + i)
     local data = topListData[index]
 	if data then
-		local color = ((index % 2 == 0) and '#484848' or '#414141')
+		local color = ((index % 2 == 0) and '#2c1e19' or '#281b17')
 		widget:setId(color)
 		widget:setActionId(index)
 		widget:setBackgroundColor(color)
@@ -44,12 +44,12 @@ function MarketHistory.onTopListValueChange(scroll, value, delta)
 		widget.name:setText(g_things.getThingType(data.itemId):getMarketData().name)
 		widget.endAt:setText(os.date("%Y-%m-%d, %H:%M:%S", data.timestamp))
 		widget.status:setText(MarketSellStatus[data.state])
-		widget.piecePrice:setColor("#c0c0c0")
-		widget.totalPrice:setColor("#c0c0c0")
-		widget.name:setColor("#c0c0c0")
-		widget.amount:setColor("#c0c0c0")
-		widget.endAt:setColor("#c0c0c0")
-		widget.status:setColor("#c0c0c0")
+		widget.piecePrice:setColor("#a87f68")
+		widget.totalPrice:setColor("#a87f68")
+		widget.name:setColor("#a87f68")
+		widget.amount:setColor("#a87f68")
+		widget.endAt:setColor("#a87f68")
+		widget.status:setColor("#a87f68")
 
 		if data.itemTier > 0 then
 			widget.name:setText(widget.name:getText() .. " (Tier " .. data.itemTier .. ")")
@@ -90,7 +90,7 @@ function MarketHistory.onBottomListValueChange(scroll, value, delta)
 		break
 	  end
 
-	  local color = ((index % 2 == 0) and '#484848' or '#414141')
+	  local color = ((index % 2 == 0) and '#2c1e19' or '#281b17')
 	  widget:setId(color)
 	  widget:setActionId(index)
 	  widget:setBackgroundColor(color)
@@ -99,12 +99,12 @@ function MarketHistory.onBottomListValueChange(scroll, value, delta)
 	  widget.name:setText(g_things.getThingType(data.itemId):getMarketData().name)
 	  widget.endAt:setText(os.date("%Y-%m-%d, %H:%M:%S", data.timestamp))
 	  widget.status:setText(MarketBuyStatus[data.state])
-	  widget.piecePrice:setColor("#c0c0c0")
-	  widget.totalPrice:setColor("#c0c0c0")
-	  widget.name:setColor("#c0c0c0")
-	  widget.amount:setColor("#c0c0c0")
-	  widget.endAt:setColor("#c0c0c0")
-	  widget.status:setColor("#c0c0c0")
+	  widget.piecePrice:setColor("#a87f68")
+	  widget.totalPrice:setColor("#a87f68")
+	  widget.name:setColor("#a87f68")
+	  widget.amount:setColor("#a87f68")
+	  widget.endAt:setColor("#a87f68")
+	  widget.status:setColor("#a87f68")
 
 	  if data.itemTier > 0 then
 		  widget.name:setText(widget.name:getText() .. " (Tier " .. data.itemTier .. ")")
@@ -157,7 +157,7 @@ function MarketHistory.onParseMarketHistory(buyOffers, sellOffers)
 			goto continue
 		end
 
-		local color = i % 2 == 0 and '#414141' or '#484848'
+		local color = i % 2 == 0 and '#281b17' or '#2c1e19'
 		widget:setId(color)
 		widget:setActionId(i)
 		widget:setBackgroundColor(color)
@@ -205,7 +205,7 @@ function MarketHistory.onParseMarketHistory(buyOffers, sellOffers)
 			goto continue
 		end
 
-		local color = i % 2 == 0 and '#414141' or '#484848'
+		local color = i % 2 == 0 and '#281b17' or '#2c1e19'
 		widget:setId(color)
 		widget:setActionId(i)
 		widget:setBackgroundColor(color)
@@ -266,12 +266,12 @@ function MarketHistory.onSelectHistoryChild(widget, selected, selling)
 			lastSelected = nil
 		else
 			lastSelected:setBackgroundColor(lastSelected:getId())
-			lastSelected.piecePrice:setColor("#c0c0c0")
-			lastSelected.totalPrice:setColor("#c0c0c0")
-			lastSelected.name:setColor("#c0c0c0")
-			lastSelected.amount:setColor("#c0c0c0")
-			lastSelected.endAt:setColor("#c0c0c0")
-			lastSelected.status:setColor("#c0c0c0")
+			lastSelected.piecePrice:setColor("#a87f68")
+			lastSelected.totalPrice:setColor("#a87f68")
+			lastSelected.name:setColor("#a87f68")
+			lastSelected.amount:setColor("#a87f68")
+			lastSelected.endAt:setColor("#a87f68")
+			lastSelected.status:setColor("#a87f68")
 		end
 	end
 
@@ -282,10 +282,10 @@ function MarketHistory.onSelectHistoryChild(widget, selected, selling)
 	end
 
 	selected:setBackgroundColor('#35241d')
-	selected.piecePrice:setColor("#f4f4f4")
-	selected.totalPrice:setColor("#f4f4f4")
-	selected.name:setColor("#f4f4f4")
-	selected.amount:setColor("#f4f4f4")
-	selected.endAt:setColor("#f4f4f4")
-	selected.status:setColor("#f4f4f4")
+	selected.piecePrice:setColor("#ebbf90")
+	selected.totalPrice:setColor("#ebbf90")
+	selected.name:setColor("#ebbf90")
+	selected.amount:setColor("#ebbf90")
+	selected.endAt:setColor("#ebbf90")
+	selected.status:setColor("#ebbf90")
 end

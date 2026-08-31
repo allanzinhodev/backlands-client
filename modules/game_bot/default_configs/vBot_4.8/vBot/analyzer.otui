@@ -19,7 +19,7 @@ BossCreaturePanel < Panel
     anchors.bottom: creature.verticalCenter
     anchors.right: parent.right
     font: verdana-11px-rounded
-    color: #FFFFFF
+    color: #ebbf90
     text: Duke Krule
 
   Label
@@ -35,7 +35,8 @@ BossCreaturePanel < Panel
 
 
 SearchPanel < TextEdit
-  placeholder: Type to search
+  placeholder: Search
+  placeholder-font: $var-cip-font
   margin-top: 1
   @onClick: modules.client_textedit.show(self)
 
@@ -217,7 +218,7 @@ AnalyzerLootItem < UIItem
   Label
     id: count
     font: verdana-11px-rounded
-    color: white
+    color: #ebbf90
     opacity: 0.87
     anchors.left: parent.left
     anchors.right: parent.right
@@ -504,9 +505,9 @@ FeaturesWindow < MainWindow
   Button
     id: closeButton
     !text: tr('Close')
-    font: cipsoftFont
+    font: $var-cip-font
     anchors.right: parent.right
     anchors.bottom: parent.bottom
-    size: 45 21
+    size: 62 21
     margin-top: 15
     margin-right: 5

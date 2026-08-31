@@ -1225,17 +1225,17 @@ InspectLabel < Panel
     anchors.left: prev.right
 
 CategoryListLabel < Label
-  font: verdana-11px-monochrome
+  font: $var-cip-font
   background-color: alpha
   text-offset: 2 0
   focusable: true
 
   $focus:
-    background-color: #ffffff22
-    color: #ffffff
+    background-color: #ebbf9022
+    color: #ebbf90
   $!focus:
     background-color: #281b17
-    color: #ffffff
+    color: #ebbf90
 
 SlotItems < UIWidget
   size: 34 34
@@ -1282,7 +1282,6 @@ ButtonExtraPanel < Panel
   UIWidget
     id: buttonsExtra1
     size: 148 20
-    font: cipsoftFont
     color: $var-text-cip-color-white
     !text: tr("Unknow")
     anchors.top: parent.top
@@ -1317,7 +1316,7 @@ ButtonExtraPanel < Panel
       icon-offset: 6 1
 
     $disabled:
-      color: #dfdfdf88
+      color: #ebbf9088
       opacity: 0.8
       change-cursor-image: false
     UIWidget
@@ -1331,7 +1330,6 @@ ButtonExtraPanel < Panel
   UIWidget
     id: buttonsExtra2
     size: 148 20
-    font: cipsoftFont
     color: $var-text-cip-color-white
     !text: tr("Unknow")
     anchors.top: prev.bottom
@@ -1367,7 +1365,7 @@ ButtonExtraPanel < Panel
       icon-offset: 6 1
 
     $disabled:
-      color: #dfdfdf88
+      color: #ebbf9088
       opacity: 0.8
       change-cursor-image: false
     UIWidget
@@ -1382,7 +1380,6 @@ ButtonExtraPanel < Panel
   UIWidget
     id: buttonsExtra3
     size: 148 20
-    font: cipsoftFont
     color: $var-text-cip-color-white
     !text: tr("Unknow")
     anchors.top: prev.bottom
@@ -1418,7 +1415,7 @@ ButtonExtraPanel < Panel
       icon-offset: 6 1
 
     $disabled:
-      color: #dfdfdf88
+      color: #ebbf9088
       opacity: 0.8
       change-cursor-image: false
     UIWidget
@@ -1433,7 +1430,6 @@ ButtonExtraPanel < Panel
   UIWidget
     id: buttonsExtra4
     size: 148 20
-    font: cipsoftFont
     color: $var-text-cip-color-white
     !text: tr("Unknow")
     anchors.top: prev.bottom
@@ -1469,7 +1465,7 @@ ButtonExtraPanel < Panel
       icon-offset: 6 1
 
     $disabled:
-      color: #dfdfdf88
+      color: #ebbf9088
       opacity: 0.8
       change-cursor-image: false
     UIWidget
@@ -1482,7 +1478,7 @@ ButtonExtraPanel < Panel
       visible: false
 
 OptionsPanel < Panel
-  size: 150 22
+  size: 182 22
   image-source: /images/ui/panel-1-pixel
   image-border: 1
   anchors.top: parent.top
@@ -1490,9 +1486,9 @@ OptionsPanel < Panel
   phantom: true
   UIWidget
     id: buttons
-    size: 148 20
-    font: cipsoftFont
+    size: 180 20
     color: $var-text-cip-color-white
+    font: $var-cip-font
     anchors.top: parent.top
     anchors.left: parent.left
     margin-left: 1
@@ -1526,7 +1522,7 @@ OptionsPanel < Panel
       icon-offset: 6 1
 
     $disabled:
-      color: #dfdfdf88
+      color: #ebbf9088
       opacity: 0.8
       change-cursor-image: false
     UIWidget
@@ -1591,7 +1587,7 @@ CharacterStats < Panel
       $checked:
         image-clip: 0 14 78 14
       $disabled:
-        color: #dfdfdf88
+        color: #ebbf9088
         opacity: 0.8
         change-cursor-image: false
 
@@ -2136,7 +2132,7 @@ CombatStats < Panel
       $checked:
         image-source: /game_cyclopedia/images/icons/stats/blessp
       $disabled:
-        color: #dfdfdf88
+        color: #ebbf9088
         opacity: 0.8
         change-cursor-image: false
 
@@ -2305,7 +2301,7 @@ RecentDeaths < Panel
     background-color: #221714
     opacity: 1.0
     $pressed:
-      color: #dfdfdf88
+      color: #ebbf9088
       opacity: 0.8
   UIWidget
     height: 14
@@ -2330,12 +2326,12 @@ RecentDeaths < Panel
     background-color: #221714
     opacity: 1.0
     $pressed:
-      color: #dfdfdf88
+      color: #ebbf9088
       opacity: 0.8
   UIWidget
     id: previousButton
     size: 86 20
-    font: Verdana-9px-antialiased
+    font: $var-cip-font
     color: $var-text-cip-color
     text: Previous
     text-align: Center
@@ -2365,7 +2361,7 @@ RecentDeaths < Panel
       text-offset: 2 2
 
     $disabled:
-      color: #dfdfdf88
+      color: #ebbf9088
       opacity: 0.8
       change-cursor-image: false
   Label
@@ -2380,7 +2376,7 @@ RecentDeaths < Panel
   UIWidget
     id: nextButton
     size: 86 20
-    font: Verdana-9px-antialiased
+    font: $var-cip-font
     color: $var-text-cip-color
     !text: tr("Next")
     text-align: Center
@@ -2411,7 +2407,7 @@ RecentDeaths < Panel
       text-offset: 2 2
 
     $disabled:
-      color: #dfdfdf88
+      color: #ebbf9088
       opacity: 0.8
       change-cursor-image: false
 
@@ -2467,7 +2463,7 @@ RecentPvpKills < Panel
     background-color: #221714
     opacity: 1.0
     $pressed:
-      color: #dfdfdf88
+      color: #ebbf9088
       opacity: 0.8
   UIWidget
     height: 14
@@ -2492,7 +2488,7 @@ RecentPvpKills < Panel
     opacity: 1.0
     font: $var-cip-font
     $pressed:
-      color: #dfdfdf88
+      color: #ebbf9088
       opacity: 0.8
   UIWidget
     height: 14
@@ -2518,12 +2514,12 @@ RecentPvpKills < Panel
     opacity: 1.0
     font: $var-cip-font
     $pressed:
-      color: #dfdfdf88
+      color: #ebbf9088
       opacity: 0.8
   UIWidget
     id: previousButton
     size: 86 20
-    font: Verdana-9px-antialiased
+    font: $var-cip-font
     color: $var-text-cip-color
     text: Previous
     text-align: Center
@@ -2553,7 +2549,7 @@ RecentPvpKills < Panel
       text-offset: 2 2
 
     $disabled:
-      color: #dfdfdf88
+      color: #ebbf9088
       opacity: 0.8
       change-cursor-image: false
   Label
@@ -2568,7 +2564,7 @@ RecentPvpKills < Panel
   UIWidget
     id: nextButton
     size: 86 20
-    font: Verdana-9px-antialiased
+    font: $var-cip-font
     color: $var-text-cip-color
     !text: tr("Next")
     text-align: Center
@@ -2599,7 +2595,7 @@ RecentPvpKills < Panel
       text-offset: 2 2
 
     $disabled:
-      color: #dfdfdf88
+      color: #ebbf9088
       opacity: 0.8
       change-cursor-image: false
 
@@ -2999,8 +2995,9 @@ Summary < Panel
         margin-top: 13
         margin-left: 365
         text-align: LeftCenter
-        !placeholder: tr("Type to search")
-        placeholder-color: #707070
+        !placeholder: tr("Search")
+        placeholder-font: $var-cip-font
+        placeholder-color: $var-cip-inactive-color
         placeholder-align: LeftCenter
         @onTextChange: modules.game_cyclopedia.Character.onSummarySearch(self)
       CheckBox
@@ -3187,7 +3184,7 @@ Summary < Panel
       background-color: #221714
       opacity: 1.0
       $pressed:
-        color: #dfdfdf88
+        color: #ebbf9088
         opacity: 0.8
 
     UIWidget
@@ -3211,7 +3208,7 @@ Summary < Panel
       background-color: #221714
       opacity: 1.0
       $pressed:
-        color: #dfdfdf88
+        color: #ebbf9088
         opacity: 0.8
 
     UIWidget
@@ -3546,7 +3543,7 @@ CharacterDataPanel < Panel
   anchors.fill: parent
   UIWidget
     id: outfitWindow
-    size: 164 119
+    size: 196 119
     anchors.top: parent.top
     anchors.left: parent.left
     image-source: /game_cyclopedia/images/ui/bestiary-slot
@@ -3605,7 +3602,7 @@ CharacterDataPanel < Panel
       phantom: true
   UIWidget
     id: buttonsWindow
-    size: 164 291
+    size: 196 291
     anchors.top: outfitWindow.bottom
     anchors.left: parent.left
     margin-top: 6
@@ -3619,7 +3616,7 @@ CharacterDataPanel < Panel
     phantom: true
     Panel
       id: buttonPanel
-      size: 150 276
+      size: 182 276
       anchors.top: parent.top
       anchors.left: parent.left
       margin-top: 5
@@ -3690,7 +3687,7 @@ CharacterDataPanel < Panel
         image-clip: 0 33 33 33
 
       $disabled:
-        color: #dfdfdf88
+        color: #ebbf9088
         opacity: 0.8
         change-cursor-image: false
     UIWidget
@@ -3723,7 +3720,7 @@ CharacterDataPanel < Panel
         icon-offset: 1 1
 
       $disabled:
-        color: #dfdfdf88
+        color: #ebbf9088
         opacity: 0.8
         change-cursor-image: false
     Label
@@ -4024,7 +4021,8 @@ CharacterTitles < Panel
       margin-right: 7
       box-text-padding: 30
       @onTextChange: modules.game_cyclopedia.Titles.onSearchTextChange()
-      !placeholder: tr('Type to search')
+      !placeholder: tr('Search')
+      placeholder-font: $var-cip-font
       Button
         id: clearSearchText
         anchors.top: parent.top
@@ -4092,7 +4090,7 @@ CharacterTitles < Panel
         background-color: #221714
         opacity: 1.0
         $pressed:
-          color: #dfdfdf88
+          color: #ebbf9088
           opacity: 0.8
       UIWidget
         height: 14
@@ -4102,7 +4100,7 @@ CharacterTitles < Panel
         margin-top: 1
       UIWidget
         id: permanentButton
-        size: 79 15
+        size: 110 15
         text: Permanent
         color: $var-text-cip-color
         text-offset: 1 -1
@@ -4117,7 +4115,7 @@ CharacterTitles < Panel
         opacity: 1.0
         font: $var-cip-font
         $pressed:
-          color: #dfdfdf88
+          color: #ebbf9088
           opacity: 0.8
       UIWidget
         height: 14
@@ -4127,7 +4125,7 @@ CharacterTitles < Panel
         margin-top: 1
       UIWidget
         id: unlockedButton
-        size: 68 15
+        size: 96 15
         text: Unlocked
         color: $var-text-cip-color
         text-offset: 1 -1
@@ -4145,5 +4143,5 @@ CharacterTitles < Panel
         opacity: 1.0
         font: $var-cip-font
         $pressed:
-          color: #dfdfdf88
+          color: #ebbf9088
           opacity: 0.8

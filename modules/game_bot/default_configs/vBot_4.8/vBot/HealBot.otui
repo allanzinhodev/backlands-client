@@ -196,7 +196,7 @@ SpellHealing < FlatPanel
     anchors.bottom: spellList.bottom
     text: Add
     size: 40 17
-    font: cipsoftFont
+    font: $var-cip-font
 
   Button
     id: MoveUp
@@ -204,8 +204,8 @@ SpellHealing < FlatPanel
     anchors.bottom: prev.bottom
     margin-right: 5
     text: Move Up
-    size: 55 17
-    font: cipsoftFont
+    size: 86 17
+    font: $var-cip-font
 
   Button
     id: MoveDown
@@ -213,8 +213,8 @@ SpellHealing < FlatPanel
     anchors.bottom: prev.bottom
     margin-right: 5
     text: Move Down
-    size: 55 17
-    font: cipsoftFont
+    size: 112 17
+    font: $var-cip-font
 
 ItemHealing < FlatPanel
   size: 490 120
@@ -309,7 +309,7 @@ ItemHealing < FlatPanel
     anchors.bottom: itemList.bottom
     text: Add
     size: 40 17
-    font: cipsoftFont
+    font: $var-cip-font
 
   Button
     id: MoveUp
@@ -317,8 +317,8 @@ ItemHealing < FlatPanel
     anchors.bottom: prev.bottom
     margin-right: 5
     text: Move Up
-    size: 55 17
-    font: cipsoftFont
+    size: 86 17
+    font: $var-cip-font
 
   Button
     id: MoveDown
@@ -326,8 +326,8 @@ ItemHealing < FlatPanel
     anchors.bottom: prev.bottom
     margin-right: 5
     text: Move Down
-    size: 55 17
-    font: cipsoftFont
+    size: 112 17
+    font: $var-cip-font
 
 HealerPanel < Panel
   size: 510 275
@@ -477,16 +477,16 @@ HealWindow < MainWindow
   Button
     id: closeButton
     !text: tr('Close')
-    font: cipsoftFont
+    font: $var-cip-font
     anchors.right: parent.right
     anchors.bottom: parent.bottom
-    size: 45 21
+    size: 62 21
     margin-right: 5
 
   Button
     id: settingsButton
     !text: tr('Settings')
-    font: cipsoftFont
+    font: $var-cip-font
     anchors.left: parent.left
     anchors.bottom: parent.bottom
-    size: 45 21
+    size: 88 21

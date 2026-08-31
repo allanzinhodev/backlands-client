@@ -54,7 +54,6 @@ MainWindow
     size: 64 22
     anchors.right: parent.right
     anchors.bottom: parent.bottom
-    font: cipsoftFont
     @onClick: modules.client_background.closeCastList()
 
   Button
@@ -64,7 +63,6 @@ MainWindow
     anchors.right: cancelButton.left
     anchors.bottom: parent.bottom
     margin-right: 8
-    font: cipsoftFont
     @onClick: modules.client_background.watchSelectedCast()
 
   HorizontalSeparator

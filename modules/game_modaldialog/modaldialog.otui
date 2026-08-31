@@ -7,10 +7,10 @@ ChoiceListLabel < Label
 
   $focus:
     background-color: #35241d
-    color: #f4f4f4
+    color: #ebbf90
   @onFocusChange: |
     if not self:isFocused() then
-      self:setBackgroundColor(self:getActionId() % 2 == 0 and "#414141" or "#484848")
+      self:setBackgroundColor(self:getActionId() % 2 == 0 and "#281b17" or "#2c1e19")
     end
 
 ChoiceList < TextList
@@ -61,8 +61,8 @@ ModalDialog < MainWindow
     anchors.top: parent.top
     anchors.left: parent.left
     anchors.right: parent.right
-    margin-top: -7
-    margin-left: -1
+    margin-top: 0
+    margin-left: 0
     text-align: left
     text-auto-resize: true
     text-wrap: true

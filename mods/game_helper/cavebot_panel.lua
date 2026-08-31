@@ -614,7 +614,7 @@ function onGameEnd()
     recordingEvent = nil
   end
   if ui.recordButton then
-    ui.recordButton:setText(tr('Not Recording'))
+    ui.recordButton:setText(tr('Rec: Off'))
     ui.recordButton:setColor('$var-text-cip-color-white')
     ui.recordButton:setBackgroundColor('#AA3333')
   end
@@ -649,7 +649,7 @@ function cavebot.stopRecording()
     recordingEvent = nil
     local btn = ui.recordButton
     if btn then
-      btn:setText(tr('Not Recording'))
+      btn:setText(tr('Rec: Off'))
       btn:setColor('$var-text-cip-color-white')
       btn:setBackgroundColor('#AA3333')
     end
@@ -668,7 +668,7 @@ function cavebot.toggleRecording()
     cavebot.stopRecording()
   else
     if btn then
-      btn:setText(tr('Recording'))
+      btn:setText(tr('Rec: On'))
       btn:setColor('$var-text-cip-color-white')
       btn:setBackgroundColor('#33AA33')
     end
@@ -1732,7 +1732,7 @@ function cavebot.refreshSessionList()
       label:setColor('yellow')
       label:setFont('$var-cip-font-mono-rounded')
     else
-      label:setColor('white')
+      label:setColor("#ebbf90")
       label:setFont('$var-main-font')
     end
 

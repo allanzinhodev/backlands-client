@@ -27,7 +27,8 @@ MainWindow
     color: $var-text-cip-color
     padding-left: 4
     padding-top: 3
-    !placeholder: tr('Type to search')
+    !placeholder: tr('Search')
+    placeholder-font: $var-cip-font
     box-text-padding: 27
     @onTextChange: modules.game_store.onSearchEdit(self)
     focusable: true

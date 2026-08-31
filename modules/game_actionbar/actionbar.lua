@@ -2665,7 +2665,7 @@ function setupHotkeyButton(button)
 	if not Options.currentHotkeySet then
 		return
 	end
-	button.hotkeyLabel:setColor("#dfdfdf")
+	button.hotkeyLabel:setColor("#ebbf90")
 	button.hotkeyLabel:setTooltip("")
 	-- Cleared every pass so a key that the classic manager has since released
 	-- does not keep showing a stale preview.
@@ -3622,7 +3622,7 @@ renderClassicHotkeyPreview = function(button)
 	-- setupHotkeyButton marked the key as blocked before we knew the slot was
 	-- empty. Nothing is blocked here: the key and the click both work, so the
 	-- warning would be a lie.
-	button.hotkeyLabel:setColor("#dfdfdf")
+	button.hotkeyLabel:setColor("#ebbf90")
 	button.hotkeyLabel:setTooltip("")
 	return true
 end

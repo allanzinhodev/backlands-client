@@ -8,11 +8,11 @@ ComboBoxPopupScrollMenuButton < UIButton
   margin: 1
 
   $hover !disabled:
-    color: #f4f4f4
-    background-color: #86868750
+    color: #ebbf90
+    background-color: #4e2f2480
 
   $disabled:
-    color: #dfdfdf88
+    color: #ebbf9088
 
 ComboBoxPopupScrollMenu < UIPopupScrollMenu
   image-source: /images/ui/combobox_square
@@ -29,11 +29,11 @@ ComboBoxPopupMenuButton < UIButton
   margin: 1
 
   $hover !disabled:
-    color: #f4f4f4
-    background-color: #86868750
+    color: #ebbf90
+    background-color: #4e2f2480
 
   $disabled:
-    color: #dfdfdf88
+    color: #ebbf9088
 
 ComboBoxPopupMenu < UIPopupMenu
   image-source: /images/ui/combobox_square
@@ -62,7 +62,7 @@ ComboBox < UIComboBox
     image-clip: 0 40 91 20
 
   $disabled:
-    color: #dfdfdf88
+    color: #ebbf9088
     opacity: 0.8
   
   $checked:
@@ -77,11 +77,11 @@ ComboBoxRoundedPopupScrollMenuButton < UIButton
   background-color: alpha
 
   $hover !disabled:
-    color: #ffffff
-    background-color: #355d89
+    color: #ebbf90
+    background-color: #4e2f24
 
   $disabled:
-    color: #dfdfdf88
+    color: #ebbf9088
 
 ComboBoxRoundedPopupScrollMenu < UIPopupScrollMenu
   image-source: /images/ui/combobox_rounded
@@ -97,11 +97,11 @@ ComboBoxRoundedPopupMenuButton < UIButton
   background-color: alpha
 
   $hover !disabled:
-    color: #ffffff
-    background-color: #355d89
+    color: #ebbf90
+    background-color: #4e2f24
 
   $disabled:
-    color: #dfdfdf88
+    color: #ebbf9088
 
 ComboBoxRoundedPopupMenu < UIPopupMenu
   image-source: /images/ui/combobox_rounded

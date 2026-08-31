@@ -518,8 +518,9 @@ NewMainWindow
         padding-top: 2
         padding-left: 5
         @onTextChange: modules.game_proficiency.WeaponProficiency:onSearchTextChange(self:getText())
-        !placeholder: tr('Type to search')
-        placeholder-color: #707070
+        !placeholder: tr('Search')
+        placeholder-font: $var-cip-font
+        placeholder-color: $var-cip-inactive-color
 
       UIWidget
         id: clearSearchButton
@@ -619,7 +620,7 @@ NewMainWindow
 
       UIWidget
         id: vocationWarning
-        size: 754 17
+        size: 774 17
         anchors.top: prev.top
         anchors.left: prev.left
         margin-top: 1
@@ -667,7 +668,7 @@ NewMainWindow
       image-clip: 0 0 43 20
       text-offset: 0 2
     $!on:
-      color: #dfdfdf88
+      color: #ebbf9088
       opacity: 0.8
       change-cursor-image: false
     $on pressed:
@@ -692,7 +693,7 @@ NewMainWindow
       image-clip: 0 0 43 20
       text-offset: 0 2
     $!on:
-      color: #dfdfdf88
+      color: #ebbf9088
       opacity: 0.8
       change-cursor-image: false
     $on pressed:
@@ -717,7 +718,7 @@ NewMainWindow
       image-clip: 0 0 43 20
       text-offset: 0 2
     $!on:
-      color: #dfdfdf88
+      color: #ebbf9088
       opacity: 0.8
       change-cursor-image: false
     $on pressed:
@@ -742,7 +743,7 @@ NewMainWindow
       image-clip: 0 0 43 20
       text-offset: 0 2
     $!on:
-      color: #dfdfdf88
+      color: #ebbf9088
       opacity: 0.8
       change-cursor-image: false
     $on pressed:

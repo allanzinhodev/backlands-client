@@ -3,7 +3,7 @@ Label < UILabel
   color: #ebbf90
 
   $disabled:
-    color: #dfdfdf88
+    color: #ebbf9088
 
 FlatLabel < UILabel
   font: verdana-11px-antialised
@@ -14,7 +14,7 @@ FlatLabel < UILabel
   image-border: 1
 
   $disabled:
-    color: #dfdfdf88
+    color: #ebbf9088
 
 MenuLabel < Label
 

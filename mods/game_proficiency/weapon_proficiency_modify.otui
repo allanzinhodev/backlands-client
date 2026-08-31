@@ -556,6 +556,7 @@ ReshapeDialog < UIWindow
 
     Label
       !text: tr('Current perk')
+      width: 136
       font: $var-cip-font-new
       color: #ebbf90
       anchors.verticalCenter: parent.verticalCenter
@@ -593,6 +594,7 @@ ReshapeDialog < UIWindow
 
     Label
       !text: tr('Reshape perk selection')
+      width: 228
       font: $var-cip-font-new
       color: #ebbf90
       anchors.verticalCenter: parent.verticalCenter
@@ -744,8 +746,9 @@ PerkShapingOptionsDialog < UIWindow
     size: 568 20
     anchors.top: parent.top
     anchors.left: parent.left
-    !placeholder: tr('Type to search')
-    placeholder-color: #6E706F
+    !placeholder: tr('Search')
+    placeholder-font: $var-cip-font
+    placeholder-color: $var-cip-inactive-color
     placeholder-offset: 1 -1
     padding-right: 18
     padding-top: 3

@@ -14,7 +14,7 @@ ToolsPanel < Panel
       anchors.horizontalCenter: parent.horizontalCenter
       margin-top: 1
       !text: tr('Tools Helper')
-      font: $var-main-font
+      font: $var-cip-font
       color: #a87f68
       text-auto-resize: true
     Panel
@@ -28,7 +28,7 @@ ToolsPanel < Panel
         anchors.top: parent.top
         anchors.left: parent.left
         !text: tr('Mana Training')
-        font: $var-main-font
+        font: $var-cip-font
         color: $var-text-color
         text-auto-resize: true
       UIButton
@@ -42,12 +42,12 @@ ToolsPanel < Panel
         !tooltip: tr('Click to select a Spell')
       CheckBox
         id: enableTraining0
-        width: 60
+        width: 98
         anchors.top: prev.top
         anchors.left: spellTrainingButton0.right
         !text: tr('Enable')
         margin-left: 5
-        font: $var-main-font
+        font: $var-cip-font
         color: $var-text-color
         text-offset: 13 0
         change-cursor-image: false
@@ -86,7 +86,7 @@ ToolsPanel < Panel
         anchors.top: prev.bottom
         anchors.left: parent.left
         !text: tr('Auto Haste')
-        font: $var-main-font
+        font: $var-cip-font
         color: $var-text-color
         text-auto-resize: true
         margin-top: 5
@@ -101,12 +101,12 @@ ToolsPanel < Panel
         !tooltip: tr('Click to select a Spell')
       CheckBox
         id: enableHaste0
-        width: 60
+        width: 98
         anchors.top: prev.top
         anchors.left: hasteButton0.right
         !text: tr('Enable')
         margin-left: 5
-        font: $var-main-font
+        font: $var-cip-font
         color: $var-text-color
         text-offset: 13 0
         @onCheckChange: toggleAutoHaste(self:isChecked())
@@ -115,13 +115,13 @@ ToolsPanel < Panel
           color: $var-text-cip-color
       CheckBox
         id: castOnPz
-        width: 70
+        width: 106
         anchors.top: prev.bottom
         anchors.left: hasteButton0.right
         !text: tr('PZ Cast')
         margin-left: 5
         margin-top: 5
-        font: $var-main-font
+        font: $var-cip-font
         color: $var-text-color
         text-offset: 13 0
         @onCheckChange: toggleAutoHastePz(self:isChecked())
@@ -130,13 +130,13 @@ ToolsPanel < Panel
           color: $var-text-cip-color
       CheckBox
         id: onlyWalking
-        width: 85
+        width: 132
         anchors.top: prev.bottom
         anchors.left: hasteButton0.right
         !text: tr('If Walking')
         margin-left: 5
         margin-top: 5
-        font: $var-main-font
+        font: $var-cip-font
         color: $var-text-color
         text-offset: 13 0
         @onCheckChange: toggleAutoHasteOnlyWalking(self:isChecked())
@@ -176,7 +176,7 @@ ToolsPanel < Panel
         anchors.top: parent.top
         anchors.left: parent.left
         !text: tr('Others Tools')
-        font: $var-main-font
+        font: $var-cip-font
         color: $var-text-color
         text-auto-resize: true
         margin-top: 5
@@ -189,13 +189,13 @@ ToolsPanel < Panel
 
       CheckBox
         id: autoTrainingCheck
-        width: 136
+        width: 200
         anchors.top: toolsLabel2.bottom
         anchors.left: parent.left
         !text: tr('Exercise Training')
         margin-top: 7
         margin-left: 2
-        font: $var-main-font
+        font: $var-cip-font
         color: $var-text-color
         text-offset: 13 0
         @onCheckChange: toggleExerciseTraining(self:isChecked())
@@ -205,13 +205,13 @@ ToolsPanel < Panel
 
       CheckBox
         id: changeGold
-        width: 110
+        width: 152
         anchors.top: prev.bottom
         anchors.left: parent.left
         !text: tr('Change Gold')
         margin-top: 7
         margin-left: 2
-        font: $var-main-font
+        font: $var-cip-font
         color: $var-text-color
         text-offset: 13 0
         change-cursor-image: false
@@ -222,13 +222,13 @@ ToolsPanel < Panel
 
       CheckBox
         id: eatFood
-        width: 110
+        width: 166
         anchors.top: prev.bottom
         anchors.left: parent.left
         !text: tr('Auto Eat Food')
         margin-top: 7
         margin-left: 2
-        font: $var-main-font
+        font: $var-cip-font
         color: $var-text-color
         text-offset: 13 0
         @onCheckChange: toggleAutoEat(self:isChecked())
@@ -238,13 +238,13 @@ ToolsPanel < Panel
 
       CheckBox
         id: smartFollow
-        width: 55
+        width: 98
         anchors.top: prev.bottom
         anchors.left: parent.left
         !text: tr('Follow')
         margin-top: 7
         margin-left: 2
-        font: $var-main-font
+        font: $var-cip-font
         color: $var-text-color
         text-offset: 13 0
         @onCheckChange: toggleSmartFollow(self:isChecked())
@@ -268,7 +268,7 @@ ToolsPanel < Panel
         !text: tr('Alarms')
         margin-top: 7
         margin-left: 2
-        font: $var-main-font
+        font: $var-cip-font
         color: $var-text-color
         text-auto-resize: true
       UIButton
@@ -301,7 +301,7 @@ ToolsPanel < Panel
       anchors.horizontalCenter: parent.horizontalCenter
       margin-top: 1
       !text: tr('Quiver Refill')
-      font: $var-main-font
+      font: $var-cip-font
       color: #a87f68
       text-auto-resize: true
     UITooltipGrey
@@ -334,7 +334,7 @@ ToolsPanel < Panel
         margin-left: 8
         margin-top: 2
         !text: tr('Min:')
-        font: $var-main-font
+        font: $var-cip-font
         color: $var-text-color
         text-auto-resize: true
       TextEdit
@@ -353,7 +353,7 @@ ToolsPanel < Panel
         margin-left: 10
         margin-top: 2
         !text: tr('Refill:')
-        font: $var-main-font
+        font: $var-cip-font
         color: $var-text-color
         text-auto-resize: true
       TextEdit
@@ -372,7 +372,7 @@ ToolsPanel < Panel
         anchors.left: parent.left
         !text: tr('Enable')
         margin-top: 8
-        font: $var-main-font
+        font: $var-cip-font
         color: $var-text-color
         text-offset: 13 0
         @onCheckChange: modules.game_helper.tools.toggleQuiverRefill(self:isChecked())
@@ -397,7 +397,7 @@ ToolsPanel < Panel
       anchors.horizontalCenter: parent.horizontalCenter
       margin-top: 1
       !text: tr('Magic Shield')
-      font: $var-main-font
+      font: $var-cip-font
       color: #a87f68
       text-auto-resize: true
     UITooltipGrey
@@ -418,12 +418,12 @@ ToolsPanel < Panel
       // Utamo Vita Row
       CheckBox
         id: enableUtamoVita
-        width: 110
+        width: 184
         anchors.top: parent.top
         anchors.left: parent.left
         margin-top: 3
         !text: tr('Utamo Vita HP <')
-        font: $var-main-font
+        font: $var-cip-font
         color: $var-text-color
         text-offset: 13 0
         @onCheckChange: modules.game_helper.tools.toggleUtamoVita(self:isChecked())
@@ -444,19 +444,19 @@ ToolsPanel < Panel
         anchors.left: utamoHpPercent.right
         margin-left: 3
         text: %
-        font: $var-main-font
+        font: $var-cip-font
         color: $var-text-color
         text-auto-resize: true
 
       // Exana Vita Row
       CheckBox
         id: enableExanaVita
-        width: 110
+        width: 186
         anchors.top: enableUtamoVita.bottom
         anchors.left: parent.left
         margin-top: 8
         !text: tr('Exana Vita HP >')
-        font: $var-main-font
+        font: $var-cip-font
         color: $var-text-color
         text-offset: 13 0
         @onCheckChange: modules.game_helper.tools.toggleExanaVita(self:isChecked())
@@ -477,19 +477,19 @@ ToolsPanel < Panel
         anchors.left: exanaHpPercent.right
         margin-left: 3
         text: %
-        font: $var-main-font
+        font: $var-cip-font
         color: $var-text-color
         text-auto-resize: true
 
       // Magic Shield Potion Row
       CheckBox
         id: enableMagicShieldPotion
-        width: 210
+        width: 362
         anchors.top: enableExanaVita.bottom
         anchors.left: parent.left
         margin-top: 8
         !text: tr('Use Magic Potion if Support on CD')
-        font: $var-main-font
+        font: $var-cip-font
         color: $var-text-color
         text-offset: 13 0
         @onCheckChange: modules.game_helper.tools.toggleMagicShieldPotion(self:isChecked())

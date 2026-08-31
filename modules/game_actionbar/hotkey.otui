@@ -61,8 +61,8 @@ MainWindow
     id: buttonClose
     anchors.right: parent.right
     anchors.bottom: parent.bottom
-    size: 45 21
-    font: cipsoftFont
+    size: 62 21
+    font: $var-cip-font
     text: Close
     @onClick: self:getParent():destroy()
 
@@ -71,8 +71,8 @@ MainWindow
     anchors.right: prev.left
     margin-right: 5
     anchors.bottom: parent.bottom
-    size: 45 21
-    font: cipsoftFont
+    size: 62 21
+    font: $var-cip-font
     text: Clear
 
   Button
@@ -81,5 +81,5 @@ MainWindow
     margin-right: 5
     anchors.bottom: parent.bottom
     size: 45 21
-    font: cipsoftFont
+    font: $var-cip-font
     text: Ok

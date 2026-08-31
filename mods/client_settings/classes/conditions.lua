@@ -793,7 +793,7 @@ function ConditionsHUD:configure()
             condition:setVisibleBar(visibleBar)
             widget.showInBarCheckBox:setChecked(visibleBar)
 
-            widget.bgcolor = i % 2 == 0 and "#414141" or "#484848"
+            widget.bgcolor = i % 2 == 0 and "#281b17" or "#2c1e19"
             widget:setBackgroundColor(widget.bgcolor)
             ConditionsHUD.widgets[condition:getId()] = widget
 
@@ -1156,7 +1156,7 @@ function ConditionsHUD:updateOrder(reset)
         local widget = ConditionsHUD.widgets[condition:getId()]
         if widget then
             widget:getParent():moveChildToIndex(widget, condition:getIndex())
-            widget.bgcolor = i % 2 == 0 and "#414141" or "#484848"
+            widget.bgcolor = i % 2 == 0 and "#281b17" or "#2c1e19"
             widget:setBackgroundColor(widget.bgcolor)
             if reset then
                 widget.showInHudCheckBox:setChecked(condition.visibleHud)
@@ -1434,12 +1434,12 @@ function ConditionsHUD:notifierTaintsChange(localPlayer, now, old)
         if specialCondition:isVisibleBar() and m_settings.getOption('showInBarCheckBox') then
             inventoryWidget:setVisible(true)
             inventoryWidget:setTooltip(specialCondition:getTooltipBar())
-            inventoryWidget:setTooltipFont("Verdana Bold-11px-wheel")
+            inventoryWidget:setTooltipFont("silkscreen-16")
 
             if topbarWidget then
                 topbarWidget:setVisible(true)
                 topbarWidget:setTooltip(specialCondition:getTooltipBar())
-                topbarWidget:setTooltipFont("Verdana Bold-11px-wheel")
+                topbarWidget:setTooltipFont("silkscreen-16")
             end
         end
     else

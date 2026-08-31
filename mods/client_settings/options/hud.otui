@@ -1,7 +1,7 @@
 ConditionLabelSettings < UIWidget
   size: 456 16
   tooltip-delayed: true
-  tooltip-font: Verdana Bold-11px-wheel
+  tooltip-font: silkscreen-16
   $checked:
     background-color: $var-textlist-selected
 
@@ -64,7 +64,7 @@ HudWindow < Panel
     SettingsCheckBox
       id: ownHUDCharacter
       size: 12 12
-      !text: tr('Show HUD for Own Character')
+      !text: tr('Own Character')
       font: $var-cip-font
       text-auto-resize: true
       color: $var-text-cip-color
@@ -223,7 +223,7 @@ HudWindow < Panel
     SettingsCheckBox
       id: otherHUDCreatures
       size: 12 12
-      !text: tr('Show HUD for Other Creatures')
+      !text: tr('Other Creatures')
       font: $var-cip-font
       text-auto-resize: true
       color: $var-text-cip-color
@@ -303,7 +303,7 @@ HudWindow < Panel
     SettingsCheckBox
       id: prestigeEmblem
       size: 12 12
-      !text: tr('Show Division Icon')
+      !text: tr('Division Icon')
       font: $var-cip-font
       text-auto-resize: true
       color: $var-text-cip-color
@@ -462,7 +462,7 @@ HudWindow < Panel
       id: showInHudLabel
       anchors.top: prev.top
       anchors.left: specialConditionLabel.right
-      margin-left: 123
+      margin-left: 40
       !text: tr('Show in HUD')
       font: $var-cip-font
       text-auto-resize: true

@@ -158,7 +158,7 @@ function CustomHotkeys.createList(save)
         end
       end
 
-      local background = i % 2 == 0 and "#484848" or "#414141"
+      local background = i % 2 == 0 and "#2c1e19" or "#281b17"
       widget:setBackgroundColor(background)
       widget.background = background
 
@@ -349,7 +349,7 @@ function CustomHotkeys.assignSpellButton(button, param)
   widget.action:setMarginLeft(-15)
   widget.item:setItem(nil)
   widget.item:setVisible(false)
-  widget.action:setColor("#dfdfdf")
+  widget.action:setColor("#a87f68")
 
   widget.actionEdit.onClick = function()
     local menu = g_ui.createWidget('PopupMenu')
@@ -373,7 +373,7 @@ function CustomHotkeys.assignSpellButton(button, param)
   -- configure secondary button
   widget.secondaryEdit.onClick = function() CustomHotkeys.onAssignHotkey(widget, true) end
 
-  local background = customList:getChildCount() % 2 == 0 and "#484848" or "#414141"
+  local background = customList:getChildCount() % 2 == 0 and "#2c1e19" or "#281b17"
   widget:setBackgroundColor(background)
   widget.background = background
   return widget
@@ -624,7 +624,7 @@ function CustomHotkeys.assignItemButton(button, itemId, itemTier, smartMode, use
     -- configure secondary button
     widget.secondaryEdit.onClick = function() CustomHotkeys.onAssignHotkey(widget, true) end
 
-    local background = customList:getChildCount() % 2 == 0 and "#484848" or "#414141"
+    local background = customList:getChildCount() % 2 == 0 and "#2c1e19" or "#281b17"
     widget:setBackgroundColor(background)
     widget.background = background
     return widget
@@ -719,7 +719,7 @@ function CustomHotkeys.assignTextButton(button, text, autoSay)
     widget.action:setMarginLeft(-15)
     widget.item:setItem(nil)
     widget.item:setVisible(false)
-    widget.action:setColor("#dfdfdf")
+    widget.action:setColor("#a87f68")
 
     if text then
       local spellData, param = Spells.getSpellDataByParamWords(text:lower())
@@ -746,7 +746,7 @@ function CustomHotkeys.assignTextButton(button, text, autoSay)
     widget.primaryEdit.onClick = function() CustomHotkeys.onAssignHotkey(widget) end
     widget.secondaryEdit.onClick = function() CustomHotkeys.onAssignHotkey(widget, true) end
 
-    local background = customList:getChildCount() % 2 == 0 and "#484848" or "#414141"
+    local background = customList:getChildCount() % 2 == 0 and "#2c1e19" or "#281b17"
     widget:setBackgroundColor(background)
     widget.background = background
     return widget

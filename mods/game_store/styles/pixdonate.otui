@@ -115,6 +115,7 @@ DonaterInfo < Panel
     box-text-padding: 20
     max-length: 49
     !placeholder: tr('000.000.000-00')
+    placeholder-font: $var-cip-font
     @onTextChange: modules.game_store.onCpfChange(self, self:getText())
   Button
     id: hidden1
@@ -218,6 +219,7 @@ QrCode < Panel
     margin-top: 5
     enabled: true
     !placeholder: tr('')
+    placeholder-font: $var-cip-font
     padding-top: 2
     UIButton
       id: copyCode

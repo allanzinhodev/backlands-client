@@ -298,7 +298,7 @@ GeneralOffersPanel < Panel
       visible: true
       margin-left: 2
       width: 260
-      color: #f4f4f4
+      color: #ebbf90
 
     Panel
       id: package

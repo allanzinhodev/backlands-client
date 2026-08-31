@@ -322,7 +322,7 @@ function magicShooter.clearForm()
   local nameLabel = formPanel:recursiveGetChildById('itemNameLabel')
   if nameLabel then
     nameLabel:setText("(select spell or rune)")
-    nameLabel:setColor("#888888")
+    nameLabel:setColor("#6b4d40")
   end
 
   -- Hide clear button

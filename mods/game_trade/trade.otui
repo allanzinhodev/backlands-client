@@ -71,7 +71,7 @@ MiniWindow
       anchors.top: parent.top
       anchors.left: parent.left
       !text: tr('Your offer')
-      font: cipsoftFont
+      font: $var-cip-font
       color: $var-text-cip-color
       text-auto-resize: true
       text-overflow-length: 11
@@ -83,7 +83,7 @@ MiniWindow
       anchors.left: parent.horizontalCenter
       anchors.right: parent.right
       !text: tr('Counter offer')
-      font: cipsoftFont
+      font: $var-cip-font
       color: $var-text-cip-color
       text-auto-resize: true
       text-overflow-length: 11
@@ -113,7 +113,7 @@ MiniWindow
       anchors.left: parent.left
       visible: true
       !text: tr('Please wait for a\ncounteroffer')
-      font: cipsoftFont
+      font: $var-cip-font
       color: $var-text-cip-color
       text-align: center
 

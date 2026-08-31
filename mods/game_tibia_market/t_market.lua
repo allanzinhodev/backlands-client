@@ -502,7 +502,7 @@ local function renderMarketCategories(generation, onComplete)
 		for index = nextIndex, batchEnd do
 			local pair = categoryList[index]
 			local widget = g_ui.createWidget('CategoryItemListLabel', categoryPanel)
-			local color = (index - 1) % 2 == 0 and '#414141' or '#484848'
+			local color = (index - 1) % 2 == 0 and '#281b17' or '#2c1e19'
 			widget:setActionId(pair[1])
 			widget.color = color
 			widget:setId(pair[2])
@@ -714,7 +714,7 @@ function onMarketBrowse(itemID, tier, buyList, sellList)
 		end
 
 		local widget = g_ui.createWidget('MarketOfferWidget', mainMarket.buyOffersList)
-		local color = colorCount % 2 == 0 and '#414141' or '#484848'
+		local color = colorCount % 2 == 0 and '#281b17' or '#2c1e19'
 		local holder = data.holder
 		widget:setId(color)
 		widget:setActionId(i)
@@ -767,7 +767,7 @@ function onMarketBrowse(itemID, tier, buyList, sellList)
 		end
 
 		local widget = g_ui.createWidget('MarketOfferWidget', mainMarket.sellOffersList)
-		local color = colorCount % 2 == 0 and '#414141' or '#484848'
+		local color = colorCount % 2 == 0 and '#281b17' or '#2c1e19'
 		local holder = data.holder
 		widget:setId(color)
 		widget:setActionId(i)
@@ -844,7 +844,7 @@ function onBuyListValueChange(scroll, value, delta)
 	  local data = cache.SCROLL_BUY_OFFERS.listData[index]
 
 	  if data then
-		local color = index % 2 == 0 and '#414141' or '#484848'
+		local color = index % 2 == 0 and '#281b17' or '#2c1e19'
 		local holder = data.holder
 		widget:setId(color)
 		widget:setActionId(index)
@@ -871,11 +871,11 @@ function onBuyListValueChange(scroll, value, delta)
 
 		if index == cache.SCROLL_BUY_OFFERS.lastSelected then
 			widget:setBackgroundColor('#35241d')
-			widget.piecePrice:setColor("#f4f4f4")
-			widget.totalPrice:setColor("#f4f4f4")
-			widget.name:setColor("#f4f4f4")
-			widget.amount:setColor("#f4f4f4")
-			widget.endAt:setColor("#f4f4f4")
+			widget.piecePrice:setColor("#ebbf90")
+			widget.totalPrice:setColor("#ebbf90")
+			widget.name:setColor("#ebbf90")
+			widget.amount:setColor("#ebbf90")
+			widget.endAt:setColor("#ebbf90")
 		end
 	  end
 	end
@@ -895,7 +895,7 @@ function onSellListValueChange(scroll, value, delta)
 	  local data = cache.SCROLL_SELL_OFFERS.listData[index]
 
 	  if data then
-		local color = index % 2 == 0 and '#414141' or '#484848'
+		local color = index % 2 == 0 and '#281b17' or '#2c1e19'
 		local holder = data.holder
 		widget:setId(color)
 		widget:setActionId(index)
@@ -931,11 +931,11 @@ function onSellListValueChange(scroll, value, delta)
 
 		if index == cache.SCROLL_SELL_OFFERS.lastSelected then
 			widget:setBackgroundColor('#35241d')
-			widget.piecePrice:setColor("#f4f4f4")
-			widget.totalPrice:setColor("#f4f4f4")
-			widget.name:setColor("#f4f4f4")
-			widget.amount:setColor("#f4f4f4")
-			widget.endAt:setColor("#f4f4f4")
+			widget.piecePrice:setColor("#ebbf90")
+			widget.totalPrice:setColor("#ebbf90")
+			widget.name:setColor("#ebbf90")
+			widget.amount:setColor("#ebbf90")
+			widget.endAt:setColor("#ebbf90")
 		end
 	  end
 	end
@@ -1294,11 +1294,11 @@ function onSelectSellOffer(widget, selected, oldFocus)
 	end
 
 	selected:setBackgroundColor('#35241d')
-	selected.piecePrice:setColor("#f4f4f4")
-	selected.totalPrice:setColor("#f4f4f4")
-	selected.name:setColor("#f4f4f4")
-	selected.amount:setColor("#f4f4f4")
-	selected.endAt:setColor("#f4f4f4")
+	selected.piecePrice:setColor("#ebbf90")
+	selected.totalPrice:setColor("#ebbf90")
+	selected.name:setColor("#ebbf90")
+	selected.amount:setColor("#ebbf90")
+	selected.endAt:setColor("#ebbf90")
 	cache.SCROLL_SELL_OFFERS.lastSelected = selected:getActionId()
 
 	local currentOffer = sellOffers[cache.SCROLL_SELL_OFFERS.lastSelected]
@@ -1356,11 +1356,11 @@ function onSelectBuyOffer(widget, selected, oldFocus)
 	end
 
 	selected:setBackgroundColor('#35241d')
-	selected.piecePrice:setColor("#f4f4f4")
-	selected.totalPrice:setColor("#f4f4f4")
-	selected.name:setColor("#f4f4f4")
-	selected.amount:setColor("#f4f4f4")
-	selected.endAt:setColor("#f4f4f4")
+	selected.piecePrice:setColor("#ebbf90")
+	selected.totalPrice:setColor("#ebbf90")
+	selected.name:setColor("#ebbf90")
+	selected.amount:setColor("#ebbf90")
+	selected.endAt:setColor("#ebbf90")
 	cache.SCROLL_BUY_OFFERS.lastSelected = selected:getActionId()
 
 	if count == 0 then
@@ -1670,7 +1670,7 @@ function onSearchItem(textField)
 	if lastSelectedCategory then
 		local colourCount = 0
 		for i, pair in ipairs(categoryList) do
-			local colour = colourCount % 2 == 0 and '#414141' or '#484848'
+			local colour = colourCount % 2 == 0 and '#281b17' or '#2c1e19'
 			if pair[2] == lastSelectedCategory:getText() then
 				lastSelectedCategory:setBackgroundColor(colour)
 				lastSelectedCategory:setColor('#c0c0c0')
@@ -1796,7 +1796,7 @@ function onShowRedirect(item)
 	if lastSelectedCategory then
 		local colourCount = 0
 		for i, pair in ipairs(categoryList) do
-			local colour = colourCount % 2 == 0 and '#414141' or '#484848'
+			local colour = colourCount % 2 == 0 and '#281b17' or '#2c1e19'
 			if pair[2] == lastSelectedCategory:getText() then
 				lastSelectedCategory:setBackgroundColor(colour)
 				lastSelectedCategory:setColor('#c0c0c0')

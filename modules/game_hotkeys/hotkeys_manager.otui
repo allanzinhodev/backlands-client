@@ -1,12 +1,12 @@
 HotkeyListLabel < UILabel
-  font: verdana-11px-monochrome
+  font: $var-cip-font
   background-color: alpha
   text-offset: 2 0
   focusable: true
   phantom: false
 
   $focus:
-    background-color: #ffffff22
+    background-color: #ebbf9022
 
   // Shown only when the hotkey text resolves to a known spell. Phantom so it
   // never steals the click that focuses the row.
@@ -22,7 +22,7 @@ HotkeyListLabel < UILabel
 MainWindow
   id: hotkeysWindow
   !text: tr('Hotkeys')
-  size: 380 494
+  size: 460 494
 
   @onEnter: modules.game_hotkeys.ok()
   @onEscape: modules.game_hotkeys.cancel()
@@ -157,7 +157,7 @@ MainWindow
   ButtonBox
     id: useOnSelf
     !text: tr('Use on yourself')
-    width: 128
+    width: 228
     enabled: false
     anchors.left: selectObjectButton.right
     anchors.right: parent.right
@@ -168,7 +168,7 @@ MainWindow
   ButtonBox
     id: useOnTarget
     !text: tr('Use on target')
-    width: 128
+    width: 228
     enabled: false
     anchors.left: prev.left
     anchors.right: parent.right
@@ -179,7 +179,7 @@ MainWindow
   ButtonBox
     id: useWith
     !text: tr('With crosshair')
-    width: 128
+    width: 228
     enabled: false
     anchors.left: prev.left
     anchors.right: parent.right
@@ -190,7 +190,7 @@ MainWindow
   ButtonBox
     id: useAtCursor
     !text: tr('Use at cursor position')
-    width: 128
+    width: 228
     enabled: false
     anchors.left: prev.left
     anchors.right: parent.right
@@ -225,7 +225,7 @@ MainWindow
 HotkeyAssignWindow < MainWindow
   id: assignWindow
   !text: tr('Button Assign')
-  size: 360 150
+  size: 360 170
   @onEscape: self:destroy()
 
   Label
@@ -233,7 +233,8 @@ HotkeyAssignWindow < MainWindow
     anchors.left: parent.left
     anchors.right: parent.right
     anchors.top: parent.top
-    text-auto-resize: true
+    text-wrap: true
+    height: 36
     text-align: left
 
   Label

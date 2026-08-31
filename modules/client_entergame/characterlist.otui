@@ -151,7 +151,7 @@ CharacterWidgetOn < UIWidget
     id: worldName
     anchors.top: parent.top
     anchors.left: prev.right
-    margin-left: 2
+    margin-left: 6
     margin-top: -1
     font: $var-cip-font
     color: $var-text-cip-color
@@ -164,7 +164,7 @@ CharacterWidgetOn < UIWidget
       color: $var-text-cip-color
 
 CharacterWidgetOff < UIWidget
-  height: 29
+  height: 32
   background-color: alpha
   @onFocusChange: modules.client_entergame.onUpdateOnStates(self)
   @onSetup: modules.client_entergame.onUpdateOnStates(self)
@@ -308,7 +308,7 @@ CharacterWidgetOff < UIWidget
     id: worldName
     anchors.top: parent.top
     anchors.left: prev.right
-    margin-left: 2
+    margin-left: 6
     margin-top: -1
     font: $var-cip-font
     color: $var-text-cip-color
@@ -428,7 +428,7 @@ StaticMainWindow
       image-source: /images/ui/separator_vertical
     UIButton
       id: levelSort
-      size: 50 14
+      size: 64 14
       anchors.top: parent.top
       anchors.left: prev.right
       !text: tr('Level')
@@ -519,7 +519,7 @@ StaticMainWindow
     size: 701 2
     anchors.top: parent.top
     anchors.left: parent.left
-    margin-top: 9
+    margin-top: 17
     image-source: /images/ui/separator_horizontal
 
   VerticalScrollBar

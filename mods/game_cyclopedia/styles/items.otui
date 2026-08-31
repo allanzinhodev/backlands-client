@@ -9,7 +9,7 @@ SaleList < UIWidget
     anchors.top: parent.top
     anchors.left: parent.left
     text-offset: 1 -1
-    font: Verdana Bold-11px
+    font: $var-cip-font
     color: #ebbf90
 
   Label
@@ -20,7 +20,7 @@ SaleList < UIWidget
     anchors.left: parent.left
     margin-top: 14
     text-offset: 1 -2
-    font: Verdana Bold-11px
+    font: $var-cip-font
     color: #ebbf90
 
 ItemListLabel < UIWidget
@@ -50,7 +50,7 @@ ItemListLabel < UIWidget
     id: name
     size: 145 34
     !text: tr("Unknow")
-    font: Verdana Bold-11px
+    font: $var-cip-font
     color: #ebbf90
     text-wrap: true
     text-auto-reduce: true
@@ -61,8 +61,8 @@ ItemListLabel < UIWidget
     margin-left: 5
 
 CategoryItemListLabel < Label
-  font: Verdana Bold-11px
-  height: 16
+  font: $var-cip-font
+  height: 17
   background-color: alpha
   text-offset: 1 -1
   focusable: true
@@ -116,12 +116,11 @@ ItemDataPanel < UIWidget
 
     Button
       id: levelButton
-      size: 47 20
+      size: 60 20
       anchors.top: categoriesList.bottom
       anchors.left: parent.left
       !text: tr('Level')
       margin-top: 31
-      font: cipsoftFont
       @onClick: modules.game_cyclopedia.CyclopediaItems.onSortFields(self, self:isChecked())
 
     Button
@@ -131,7 +130,6 @@ ItemDataPanel < UIWidget
       anchors.left: prev.right
       !text: tr('Voc.')
       margin-left: 6
-      font: cipsoftFont
       @onClick: modules.game_cyclopedia.CyclopediaItems.onSortFields(self, self:isChecked())
 
     Button
@@ -141,7 +139,6 @@ ItemDataPanel < UIWidget
       anchors.left: prev.right
       !text: tr('1H')
       margin-left: 6
-      font: cipsoftFont
       enabled: false
       @onClick: modules.game_cyclopedia.CyclopediaItems.onSortFields(self, self:isChecked())
 
@@ -152,7 +149,6 @@ ItemDataPanel < UIWidget
       anchors.left: prev.right
       !text: tr('2H')
       margin-left: 6
-      font: cipsoftFont
       enabled: false
       @onClick: modules.game_cyclopedia.CyclopediaItems.onSortFields(self, self:isChecked())
 
@@ -161,7 +157,7 @@ ItemDataPanel < UIWidget
       anchors.left: parent.left
       anchors.top: prev.bottom
       margin-top: 6
-      font: Verdana Bold-11px
+      font: $var-cip-font
       color: #ebbf90
       text-offset: -20 2
       size: 77 20
@@ -242,7 +238,8 @@ ItemDataPanel < UIWidget
       margin-left: -1
       margin-top: 8
       focusable: true
-      !placeholder: tr('Type to search...')
+      !placeholder: tr('Search')
+      placeholder-font: $var-cip-font
       box-text-padding: 20
       @onTextChange: modules.game_cyclopedia.CyclopediaItems.onSearch(self)
 
@@ -271,6 +268,7 @@ ItemDataPanel < UIWidget
       font: $var-cip-font
       color: $var-text-cip-color
       text: Loot Value Source:
+      text-auto-resize: true
 
     CheckBox
       id: circlenpc
@@ -290,7 +288,7 @@ ItemDataPanel < UIWidget
       @onClick: modules.game_cyclopedia.CyclopediaItems.onSourceValueChange(self:isChecked(), true)
 
       $hover !disabled:
-        color: #ffffff
+        color: #ebbf90
 
       $!checked:
         image-clip: 0 0 12 12
@@ -303,7 +301,7 @@ ItemDataPanel < UIWidget
 
       $disabled:
         image-color: #dfdfdf88
-        color: #dfdfdf88
+        color: #ebbf9088
         opacity: 0.8
 
       UIWidget
@@ -332,7 +330,7 @@ ItemDataPanel < UIWidget
       @onClick: modules.game_cyclopedia.CyclopediaItems.onSourceValueChange(self:isChecked(), false)
 
       $hover !disabled:
-        color: #ffffff
+        color: #ebbf90
 
       $!checked:
         image-clip: 0 0 12 12
@@ -345,7 +343,7 @@ ItemDataPanel < UIWidget
 
       $disabled:
         image-color: #dfdfdf88
-        color: #dfdfdf88
+        color: #ebbf9088
         opacity: 0.8
 
       UIWidget
@@ -382,13 +380,13 @@ ItemDataPanel < UIWidget
 
   UILabel
     id: emptyLabel
-    size: 333 10
+    size: 430 40
     !text: tr('Please select an item from the list to see its details here.')
     anchors.top: parent.top
     anchors.left: parent.left
     color: #ebbf90
-    font: Verdana Bold-11px
-    text-auto-resize: true
+    font: $var-cip-font
+    text-wrap: true
     margin-left: 221
     margin-top: -1
 
@@ -502,7 +500,7 @@ ItemDataPanel < UIWidget
       id: averageMarketPrice
       !text: tr('0')
       text-auto-resize: true
-      font: Verdana Bold-11px
+      font: $var-cip-font
       color: #ebbf90
       anchors.top: text-gold-box-one-gold.top
       anchors.right: text-gold-box-one-gold.left
@@ -527,7 +525,7 @@ ItemDataPanel < UIWidget
 
     TextEdit
       id: customPrice
-      font: Verdana Bold-11px
+      font: $var-cip-font
       height: 18
       anchors.top: text-gold-box-two.top
       anchors.left: text-gold-box-two.left
@@ -545,7 +543,7 @@ ItemDataPanel < UIWidget
     Label
       id: customPricePlaceholder
       !text: tr('Type to set')
-      font: Verdana Bold-11px
+      font: $var-cip-font
       color: #a87f68
       height: 18
       anchors.top: text-gold-box-two.top
@@ -592,7 +590,7 @@ ItemDataPanel < UIWidget
       id: resultingValue
       !text: tr('0')
       text-auto-resize: true
-      font: Verdana Bold-11px
+      font: $var-cip-font
       color: #ebbf90
       anchors.top: text-gold-box-three-gold.top
       anchors.right: text-gold-box-three-gold.left
@@ -662,7 +660,7 @@ ItemDataPanel < UIWidget
       @onClick: modules.game_cyclopedia.CyclopediaItems.updateDropTracker(self, self:isChecked())
 
       $hover !disabled:
-        color: #ffffff
+        color: #ebbf90
 
       $!checked:
         image-clip: 0 0 12 12
@@ -675,7 +673,7 @@ ItemDataPanel < UIWidget
 
       $disabled:
         image-color: #dfdfdf88
-        color: #dfdfdf88
+        color: #ebbf9088
         opacity: 0.8
         change-cursor-image: false
 
@@ -709,7 +707,7 @@ ItemDataPanel < UIWidget
       @onClick: modules.game_cyclopedia.CyclopediaItems.manageQuickloot(self, self:isChecked())
 
       $hover !disabled:
-        color: #ffffff
+        color: #ebbf90
 
       $!checked:
         image-clip: 0 0 12 12
@@ -722,7 +720,7 @@ ItemDataPanel < UIWidget
 
       $disabled:
         image-color: #dfdfdf88
-        color: #dfdfdf88
+        color: #ebbf9088
         opacity: 0.8
         change-cursor-image: false
 
@@ -756,7 +754,7 @@ ItemDataPanel < UIWidget
       @onClick: modules.game_cyclopedia.CyclopediaItems.manageQuickSellWhitelist(self, self:isChecked())
 
       $hover !disabled:
-        color: #ffffff
+        color: #ebbf90
 
       $!checked:
         image-clip: 0 0 12 12
@@ -769,7 +767,7 @@ ItemDataPanel < UIWidget
 
       $disabled:
         image-color: #dfdfdf88
-        color: #dfdfdf88
+        color: #ebbf9088
         opacity: 0.8
         change-cursor-image: false
 
@@ -792,12 +790,11 @@ ItemDataPanel < UIWidget
 
   Button
     id: manageContainer
-    size: 128 20
+    size: 190 20
     anchors.top: parent.bottom
     anchors.left: parent.left
     !text: tr('Manage Containers')
     margin-top: -31
-    font: cipsoftFont
     text-color: #c0c0c0
     enabled: true
     @onClick: modules.game_cyclopedia.CyclopediaItems.onClickLootContainers()

@@ -1022,7 +1022,7 @@ RuleLabel < UIWidget
   @onFocusChange: modules.game_report.onRuleFocusChange(self)
 
 NewMainWindow
-  id: mainWindow
+  id: reportWindow
   size: 545 455
   !text: tr('Report')
   anchors.horizontalCenter: parent.horizontalCenter

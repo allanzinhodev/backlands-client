@@ -80,7 +80,7 @@ function MarketOwnOffers.onParseMyOffers(buyOffers, sellOffers)
         end
 
         local widget = g_ui.createWidget('MarketCurrentWidget', window.sellOffersList)
-		local color = i % 2 == 0 and '#414141' or '#484848'
+		local color = i % 2 == 0 and '#281b17' or '#2c1e19'
 		widget:setId(color)
 		widget:setActionId(i)
 		widget:setBackgroundColor(color)
@@ -125,7 +125,7 @@ function MarketOwnOffers.onParseMyOffers(buyOffers, sellOffers)
         end
 
 		local widget = g_ui.createWidget('MarketCurrentWidget', window.buyOffersList)
-		local color = i % 2 == 0 and '#414141' or '#484848'
+		local color = i % 2 == 0 and '#281b17' or '#2c1e19'
 		widget:setId(color)
 		widget:setActionId(i)
 		widget:setBackgroundColor(color)
@@ -190,11 +190,11 @@ function MarketOwnOffers.onSelectMyOffersChild(self, selected, selling)
 			lastSelected = nil
 		else
 			lastSelected:setBackgroundColor(lastSelected:getId())
-			lastSelected.piecePrice:setColor("#c0c0c0")
-			lastSelected.totalPrice:setColor("#c0c0c0")
-			lastSelected.name:setColor("#c0c0c0")
-			lastSelected.amount:setColor("#c0c0c0")
-			lastSelected.endAt:setColor("#c0c0c0")
+			lastSelected.piecePrice:setColor("#a87f68")
+			lastSelected.totalPrice:setColor("#a87f68")
+			lastSelected.name:setColor("#a87f68")
+			lastSelected.amount:setColor("#a87f68")
+			lastSelected.endAt:setColor("#a87f68")
 		end
 	end
 
@@ -211,11 +211,11 @@ function MarketOwnOffers.onSelectMyOffersChild(self, selected, selling)
 	selectedCounter = selected.counter
 
 	selected:setBackgroundColor('#35241d')
-	selected.piecePrice:setColor("#f4f4f4")
-	selected.totalPrice:setColor("#f4f4f4")
-	selected.name:setColor("#f4f4f4")
-	selected.amount:setColor("#f4f4f4")
-	selected.endAt:setColor("#f4f4f4")
+	selected.piecePrice:setColor("#ebbf90")
+	selected.totalPrice:setColor("#ebbf90")
+	selected.name:setColor("#ebbf90")
+	selected.amount:setColor("#ebbf90")
+	selected.endAt:setColor("#ebbf90")
 end
 
 function MarketOwnOffers.cancelMarketOffer(selling)
@@ -257,7 +257,7 @@ function MarketOwnOffers.onTopListValueChange(scroll, value, delta)
 		break
 	  end
 
-      local color = i % 2 == 0 and '#414141' or '#484848'
+      local color = i % 2 == 0 and '#281b17' or '#2c1e19'
       widget:setId(color)
       widget:setActionId(index)
       widget:setBackgroundColor(color)
@@ -265,11 +265,11 @@ function MarketOwnOffers.onTopListValueChange(scroll, value, delta)
       widget.name:setText(g_things.getThingType(data.itemId):getMarketData().name)
       widget.endAt:setText(os.date("%Y-%m-%d, %H:%M:%S", data.timestamp))
       widget.counter = data.counter
-	  widget.piecePrice:setColor("#c0c0c0")
-	  widget.totalPrice:setColor("#c0c0c0")
-	  widget.name:setColor("#c0c0c0")
-	  widget.amount:setColor("#c0c0c0")
-	  widget.endAt:setColor("#c0c0c0")
+	  widget.piecePrice:setColor("#a87f68")
+	  widget.totalPrice:setColor("#a87f68")
+	  widget.name:setColor("#a87f68")
+	  widget.amount:setColor("#a87f68")
+	  widget.endAt:setColor("#a87f68")
 
       if data.itemTier > 0 then
         widget.name:setText(widget.name:getText() .. " (Tier " .. data.itemTier .. ")")
@@ -289,11 +289,11 @@ function MarketOwnOffers.onTopListValueChange(scroll, value, delta)
 
       if MarketOwnOffers.selectedSellCounter.counter == data.counter then
 		widget:setBackgroundColor('#35241d')
-		widget.piecePrice:setColor("#f4f4f4")
-		widget.totalPrice:setColor("#f4f4f4")
-		widget.name:setColor("#f4f4f4")
-		widget.amount:setColor("#f4f4f4")
-		widget.endAt:setColor("#f4f4f4")
+		widget.piecePrice:setColor("#ebbf90")
+		widget.totalPrice:setColor("#ebbf90")
+		widget.name:setColor("#ebbf90")
+		widget.amount:setColor("#ebbf90")
+		widget.endAt:setColor("#ebbf90")
 		window.sellOffersList:focusChild(widget)
       end
     end
@@ -306,7 +306,7 @@ local function createWidgetMarket(widget, count, value, startLabel, i)
 	if not data then
 		return false
 	end
-	local color = count % 2 == 0 and '#414141' or '#484848'
+	local color = count % 2 == 0 and '#281b17' or '#2c1e19'
 
 	widget:setId(color)
 	widget:setActionId(index)
@@ -315,11 +315,11 @@ local function createWidgetMarket(widget, count, value, startLabel, i)
 	widget.name:setText(g_things.getThingType(data.itemId):getMarketData().name)
 	widget.endAt:setText(os.date("%Y-%m-%d, %H:%M:%S", data.timestamp))
 	widget.counter = data.counter
-	widget.piecePrice:setColor("#c0c0c0")
-	widget.totalPrice:setColor("#c0c0c0")
-	widget.name:setColor("#c0c0c0")
-	widget.amount:setColor("#c0c0c0")
-	widget.endAt:setColor("#c0c0c0")
+	widget.piecePrice:setColor("#a87f68")
+	widget.totalPrice:setColor("#a87f68")
+	widget.name:setColor("#a87f68")
+	widget.amount:setColor("#a87f68")
+	widget.endAt:setColor("#a87f68")
 
 	if data.itemTier > 0 then
 	  widget.name:setText(widget.name:getText() .. " (Tier " .. data.itemTier .. ")")
@@ -339,11 +339,11 @@ local function createWidgetMarket(widget, count, value, startLabel, i)
 
 	if MarketOwnOffers.selectedBuyCounter.counter == data.counter then
 	  widget:setBackgroundColor('#35241d')
-	  widget.piecePrice:setColor("#f4f4f4")
-	  widget.totalPrice:setColor("#f4f4f4")
-	  widget.name:setColor("#f4f4f4")
-	  widget.amount:setColor("#f4f4f4")
-	  widget.endAt:setColor("#f4f4f4")
+	  widget.piecePrice:setColor("#ebbf90")
+	  widget.totalPrice:setColor("#ebbf90")
+	  widget.name:setColor("#ebbf90")
+	  widget.amount:setColor("#ebbf90")
+	  widget.endAt:setColor("#ebbf90")
 	  window.buyOffersList:focusChild(widget)
 	end
 

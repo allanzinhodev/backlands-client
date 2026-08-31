@@ -71,6 +71,7 @@ BuyOfferWindow < NewMainWindow
       !text: tr('ok')
       font: $var-cip-font
       color: $var-text-cip-color
+      text-auto-resize: true
       text-wrap: true
     Label
       id: offerPrice

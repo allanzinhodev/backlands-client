@@ -5,7 +5,7 @@ MagicShooterRuleItem < RuleListItem
 
 ConditionSettingsWindow < MainWindow
   id: conditionSettingsWindow
-  size: 220 185
+  size: 310 185
   !text: tr('Condition Settings')
   @onEscape: modules.game_helper.magicShooter.closeConditionSettings()
 
@@ -202,6 +202,7 @@ MagicShooterPanel < Panel
         anchors.left: parent.left
         margin-top: 3
         text: Select:
+        text-auto-resize: true
         font: $var-main-font
         color: #a87f68
 
@@ -229,7 +230,7 @@ MagicShooterPanel < Panel
         size: 34 34
         anchors.top: parent.top
         anchors.left: spellButton.right
-        margin-left: 10
+        margin-left: 16
         image-source: /images/game/actionbar/actionbarslot
         !tooltip: tr('Click to select a Rune')
 
@@ -255,7 +256,7 @@ MagicShooterPanel < Panel
 
       Button
         id: clearButton
-        size: 45 17
+        size: 62 17
         anchors.left: itemNameLabel.right
         anchors.verticalCenter: spellButton.verticalCenter
         margin-left: 8
@@ -278,7 +279,7 @@ MagicShooterPanel < Panel
           anchors.top: parent.top
           margin-top: 15
           !text: tr('Creature:')
-          width: 60
+          width: 98
           font: $var-main-font
           color: #a87f68
 
@@ -288,6 +289,7 @@ MagicShooterPanel < Panel
           anchors.bottom: creaturesCombo.top
           margin-bottom: 2
           !text: tr('Count')
+          text-auto-resize: true
           font: $var-main-font
           color: #a87f68
 
@@ -329,6 +331,7 @@ MagicShooterPanel < Panel
           anchors.bottom: hpMinInput.top
           margin-bottom: 2
           !text: tr('HP%% Min.')
+          width: 102
           font: $var-main-font
           color: #a87f68
 
@@ -338,7 +341,7 @@ MagicShooterPanel < Panel
           size: 60 20
           anchors.left: hpMinInput.right
           anchors.verticalCenter: creaturesCombo.verticalCenter
-          margin-left: 15
+          margin-left: 24
           text: 0
           text-align: center
           font: $var-main-font
@@ -350,6 +353,7 @@ MagicShooterPanel < Panel
           anchors.bottom: hpMaxInput.top
           margin-bottom: 2
           !text: tr('HP%% Max.')
+          width: 108
           font: $var-main-font
           color: #a87f68
 
@@ -359,7 +363,7 @@ MagicShooterPanel < Panel
           anchors.left: parent.left
           anchors.bottom: parent.bottom
           !text: tr('Player:')
-          width: 60
+          width: 80
           font: $var-main-font
           color: #a87f68
 
@@ -380,6 +384,7 @@ MagicShooterPanel < Panel
           anchors.bottom: manaPercentInput.top
           margin-bottom: 2
           text: MP%
+          text-auto-resize: true
           font: $var-main-font
           color: #a87f68
 
@@ -400,6 +405,7 @@ MagicShooterPanel < Panel
           anchors.bottom: healthPercentInput.top
           margin-bottom: 2
           text: HP%
+          text-auto-resize: true
           font: $var-main-font
           color: #a87f68
 
@@ -442,6 +448,7 @@ MagicShooterPanel < Panel
           anchors.bottom: delayInput.top
           margin-bottom: 2
           text: Delay
+          text-auto-resize: true
           font: $var-main-font
           color: #a87f68
 
@@ -460,6 +467,7 @@ MagicShooterPanel < Panel
           anchors.left: parent.left
           anchors.verticalCenter: parent.verticalCenter
           text: Ranged Monster Names:
+          width: 232
           font: $var-main-font
           color: #a87f68
 
@@ -471,7 +479,8 @@ MagicShooterPanel < Panel
           anchors.verticalCenter: parent.verticalCenter
           margin-left: 5
           placeholder: minotaur archer, minotaur mage
-          placeholder-color: #666666
+          placeholder-font: $var-cip-font
+          placeholder-color: $var-cip-inactive-color
           color: $var-text-color
           !tooltip: tr('Monster names to count for this spell (comma-separated). Only these monsters will be counted for the creature threshold.')
 
@@ -500,12 +509,13 @@ MagicShooterPanel < Panel
         anchors.left: parent.left
         margin-top: 3
         text: Ignore Monster List
+        width: 198
         font: $var-main-font
         color: #a87f68
 
       Button
         id: applyIgnoreButton
-        size: 50 17
+        size: 66 17
         anchors.top: ignoreMonsterLabel.bottom
         anchors.right: parent.right
         margin-top: 2
@@ -520,7 +530,8 @@ MagicShooterPanel < Panel
         margin-top: 2
         margin-right: 5
         placeholder: rat, cave rat, minotaur
-        placeholder-color: #666666
+        placeholder-font: $var-cip-font
+        placeholder-color: $var-cip-inactive-color
         color: $var-text-color
         !tooltip: tr('Monsters to ignore (separated by comma). Affects Auto Target and Magic Shooter. Numbers are not allowed.')
 
@@ -537,7 +548,7 @@ MagicShooterPanel < Panel
 
       Button
         id: applyPriorityButton
-        size: 50 17
+        size: 66 17
         anchors.top: priorityMonsterLabel.bottom
         anchors.right: parent.right
         margin-top: 2
@@ -554,14 +565,15 @@ MagicShooterPanel < Panel
         margin-top: 2
         margin-right: 5
         placeholder: dragon, dragon lord, demon
-        placeholder-color: #666666
+        placeholder-font: $var-cip-font
+        placeholder-color: $var-cip-inactive-color
         color: $var-text-color
         visible: false
         !tooltip: tr('Priority targets in order (separated by comma). First monster has highest priority.')
 
       CheckBox
         id: enableAutoTarget
-        width: 90
+        width: 146
         anchors.top: ignoreMonsterInput.bottom
         anchors.left: parent.left
         !text: tr('Auto Target')
@@ -616,7 +628,7 @@ MagicShooterPanel < Panel
 
       CheckBox
         id: enableMagicShooter
-        width: 140
+        width: 180
         anchors.top: enableAutoTarget.bottom
         anchors.left: parent.left
         !text: tr('Enable Shooter')
@@ -646,13 +658,14 @@ MagicShooterPanel < Panel
         anchors.right: parent.right
         margin-top: 5
         image-source: /images/ui/buttons-blue
+        color: #ebbf90
         !text: tr('Set Key (Target/Shooter)')
         color: $var-text-cip-color-white
         @onClick: manageHotkeys("Enable/Disable Target and Magic Shooter")
 
       CheckBox
         id: disableInProtectZone
-        width: 140
+        width: 244
         anchors.top: setKeyDisableButton.bottom
         anchors.left: parent.left
         anchors.verticalCenter: setKeyDisableButton.bottom

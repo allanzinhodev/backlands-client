@@ -773,7 +773,7 @@ function onUpdateOnStates(self)
   self:setBackgroundColor("#35241d")
   local children = self:getChildren()
   for i=1,#children do
-    children[i]:setColor("#f4f4f4")
+    children[i]:setColor("#ebbf90")
     if children[i]:getId() == "pin" then
       children[i]:setVisible(true)
       if Options.getOption("characterSelectionShowOutfits") then
@@ -790,16 +790,16 @@ function onUpdateOnStates(self)
       lastWidget.pin:setVisible(false)
     end
     if lastWidget.name then
-      lastWidget.name:setColor("#c0c0c0")
+      lastWidget.name:setColor("#a87f68")
     end
     if lastWidget.level then
-      lastWidget.level:setColor("#c0c0c0")
+      lastWidget.level:setColor("#a87f68")
     end
     if lastWidget.vocation then
-      lastWidget.vocation:setColor("#c0c0c0")
+      lastWidget.vocation:setColor("#a87f68")
     end
     if lastWidget.worldName then
-      lastWidget.worldName:setColor("#c0c0c0")
+      lastWidget.worldName:setColor("#a87f68")
     end
   end
 
@@ -860,10 +860,10 @@ function onReorderCharacterList()
   if lastWidget and lastWidget.pin then
     lastWidget:setBackgroundColor(lastWidget.realColor)
     lastWidget.pin:setVisible(false)
-    lastWidget.name:setColor("#c0c0c0")
-    lastWidget.level:setColor("#c0c0c0")
-    lastWidget.vocation:setColor("#c0c0c0")
-    lastWidget.worldName:setColor("#c0c0c0")
+    lastWidget.name:setColor("#a87f68")
+    lastWidget.level:setColor("#a87f68")
+    lastWidget.vocation:setColor("#a87f68")
+    lastWidget.worldName:setColor("#a87f68")
   end
 
   lastWidget = nil
@@ -956,7 +956,7 @@ function onReorderCharacterList()
 
   for i, characterInfo in ipairs(characters) do
     local widget = g_ui.createWidget(showOutfit and 'CharacterWidgetOn' or 'CharacterWidgetOff', characterList)
-    widget.realColor = (i % 2 == 0 and "#414141" or "#484848")
+    widget.realColor = (i % 2 == 0 and "#281b17" or "#2c1e19")
     widget:setBackgroundColor(widget.realColor)
 
     for key,value in pairs(characterInfo) do
