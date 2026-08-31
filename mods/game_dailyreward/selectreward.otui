@@ -122,7 +122,7 @@ MainWindowSelect < MainWindow
     anchors.left: parent.left
     anchors.bottom: bottomSep.top
     margin-bottom: 5
-    !text: tr('Free Capacity: xx.xx oz')
+    !text: tr('Capacity: xx.xx oz')
     font: $var-cip-font
     color: $var-text-cip-color
     text-auto-resize: true
@@ -132,7 +132,7 @@ MainWindowSelect < MainWindow
     anchors.right: parent.right
     anchors.bottom: bottomSep.top
     margin-bottom: 5
-    !text: tr('Total Weight:        0.00 oz')
+    !text: tr('Weight: 0.00 oz')
     text-auto-resize: true
     font: $var-cip-font
     color: $var-text-cip-color

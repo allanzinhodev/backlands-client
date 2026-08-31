@@ -21,7 +21,7 @@ RoundCheckBox < CheckBox
 
 CustomObjectWindow < NewMainWindow
   id: assignItemWindow
-  size: 275 198
+  size: 360 198
   Panel
     id: contentPanel
     anchors.fill: parent
@@ -54,7 +54,7 @@ CustomObjectWindow < NewMainWindow
 
     Panel
       id: checks
-      size: 160 86
+      size: 250 86
       anchors.top: parent.top
       anchors.left: itemListFlatPanel.right
       margin-left: 6

@@ -5,7 +5,7 @@ CavebotSettingsWindow < NewMainWindow
   !text: tr('Cavebot Settings')
   font: $var-main-font
   color: #a87f68
-  size: 270 390
+  size: 320 390
   @onEscape: self:hide()
 
   Panel
@@ -35,8 +35,8 @@ CavebotSettingsWindow < NewMainWindow
 
       Label
         id: minMonstersLabel
-        !text: tr('Min monsters to wait lure:')
-        width: 264
+        !text: tr('Min monsters to lure:')
+        width: 212
         anchors.top: safetyLureTitle.bottom
         anchors.left: parent.left
         margin-top: 8
@@ -63,8 +63,8 @@ CavebotSettingsWindow < NewMainWindow
 
       Label
         id: nearMonstersLabel
-        !text: tr('Near monsters to run:')
-        width: 226
+        !text: tr('Monsters to run:')
+        width: 175
         anchors.top: minMonstersLabel.bottom
         anchors.left: parent.left
         margin-top: 10
@@ -114,6 +114,7 @@ CavebotSettingsWindow < NewMainWindow
       Label
         id: distanceLabel
         !text: tr('Distance:')
+        text-auto-resize: true
         anchors.top: autoRecorderTitle.bottom
         anchors.left: parent.left
         margin-top: 8
@@ -142,6 +143,7 @@ CavebotSettingsWindow < NewMainWindow
       Label
         id: typeLabel
         !text: tr('Type:')
+        text-auto-resize: true
         anchors.top: distanceLabel.bottom
         anchors.left: parent.left
         margin-top: 10
@@ -154,7 +156,7 @@ CavebotSettingsWindow < NewMainWindow
         anchors.verticalCenter: typeLabel.verticalCenter
         anchors.left: typeLabel.right
         margin-left: 10
-        width: 55
+        width: 76
 
       CheckBoxCircle
         id: typeNode
@@ -162,7 +164,7 @@ CavebotSettingsWindow < NewMainWindow
         anchors.verticalCenter: typeLabel.verticalCenter
         anchors.left: typeStand.right
         margin-left: 15
-        width: 55
+        width: 65
 
       Label
         id: recordingKeyLabel
@@ -208,6 +210,7 @@ CavebotSettingsWindow < NewMainWindow
       Label
         id: nodeDistanceLabel
         !text: tr('Distance:')
+        text-auto-resize: true
         anchors.top: nodeTitle.bottom
         anchors.left: parent.left
         margin-top: 8
@@ -268,7 +271,7 @@ CavebotSettingsWindow < NewMainWindow
         anchors.left: parent.left
         margin-top: 8
         margin-left: 8
-        width: 98
+        width: 108
 
       CheckBoxCircle
         id: walkArrowKeys
@@ -277,7 +280,7 @@ CavebotSettingsWindow < NewMainWindow
         anchors.left: walkMapWalk.right
         margin-top: 8
         margin-left: 10
-        width: 120
+        width: 130
 
       Label
         id: walkDelayLabel
@@ -301,6 +304,7 @@ CavebotSettingsWindow < NewMainWindow
       Label
         id: walkDelayMs
         !text: tr('ms')
+        text-auto-resize: true
         anchors.verticalCenter: walkDelayLabel.verticalCenter
         anchors.left: walkDelay.right
         margin-left: 5

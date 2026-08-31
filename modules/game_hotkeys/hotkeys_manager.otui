@@ -225,7 +225,7 @@ MainWindow
 HotkeyAssignWindow < MainWindow
   id: assignWindow
   !text: tr('Button Assign')
-  size: 360 150
+  size: 360 170
   @onEscape: self:destroy()
 
   Label
@@ -233,7 +233,8 @@ HotkeyAssignWindow < MainWindow
     anchors.left: parent.left
     anchors.right: parent.right
     anchors.top: parent.top
-    text-auto-resize: true
+    text-wrap: true
+    height: 36
     text-align: left
 
   Label

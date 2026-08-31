@@ -1,6 +1,6 @@
 AlarmSettingsWindow < MainWindow
   id: alarmSettingsWindow
-  size: 220 250
+  size: 260 250
   !text: tr('Alarm Settings')
   @onEscape: modules.game_helper.alarmSettings.close()
 
@@ -189,7 +189,7 @@ AlarmSettingsWindow < MainWindow
     anchors.top: miscellaneous.bottom
     anchors.left: parent.left
     margin-top: 8
-    width: 184
+    width: 196
     !text: tr('Flash ATC Taskbar')
     font: $var-main-font
     color: $var-text-color

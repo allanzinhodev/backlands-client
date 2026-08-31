@@ -1,6 +1,6 @@
 ItemSelectorWindow < MainWindow
   id: itemSelector
-  size: 260 120
+  size: 320 120
   !text: tr("Select item")
 
   Item
@@ -18,7 +18,7 @@ ItemSelectorWindow < MainWindow
     margin-top: 15
     margin-left: 5
     padding-left: 5
-    width: 70
+    width: 76
     minimum: 0
     maximum: 999999
     focusable: true
@@ -37,7 +37,7 @@ ItemSelectorWindow < MainWindow
     margin-top: 15
     margin-left: 5
     padding-left: 5
-    width: 120
+    width: 160
     minimum: 1
     maximum: 100
     focusable: true

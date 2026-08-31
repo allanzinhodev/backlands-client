@@ -1,5 +1,5 @@
 AssingObjectWindow < MainWindow
-  size: 275 170
+  size: 360 170
   !text: tr('Assing Object')
 
   FlatPanel

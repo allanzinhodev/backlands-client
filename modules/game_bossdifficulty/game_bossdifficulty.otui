@@ -264,7 +264,7 @@ BossDifficultyWindow < MainWindow
 
       Label
         id: groupHighestLabel
-        !text: tr('Highest Difficulty in Group:')
+        !text: tr('Group Highest:')
         anchors.top: parent.top
         anchors.left: parent.left
         font: $var-cip-font
@@ -283,7 +283,7 @@ BossDifficultyWindow < MainWindow
 
       Label
         id: personalHighestLabel
-        !text: tr('Personal Highest Difficulty:')
+        !text: tr('Personal Highest:')
         anchors.top: groupHighestLabel.bottom
         anchors.left: parent.left
         margin-top: 6
@@ -303,7 +303,7 @@ BossDifficultyWindow < MainWindow
 
       Label
         id: badLuckLabel
-        !text: tr('Current Bad Luck Drop Bonus:')
+        !text: tr('Bad Luck Bonus:')
         anchors.top: personalHighestLabel.bottom
         anchors.left: parent.left
         margin-top: 6

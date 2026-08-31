@@ -538,9 +538,9 @@ HirelingOutfitWindow < MainWindow
     phantom: true
     Label
       id: addon1
-      size: 210 22
+      size: 131 22
       padding: 1 1 1 1
-      text: Nothing to configure
+      text: No options
       font: $var-cip-font
       color: $var-text-cip-color
       anchors.top: parent.top

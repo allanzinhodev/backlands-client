@@ -1,6 +1,6 @@
 LowSupplyAlarmWindow < MainWindow
   id: lowSupplyAlarmWindow
-  size: 350 380
+  size: 400 380
   padding-top: 27
   !text: tr('Low Supply Alarm Settings')
   @onEscape: modules.game_helper.lowSupplyAlarm.closeSettings()
