@@ -187,7 +187,7 @@ SuppliesWindow < MainWindow
     anchors.top: prev.bottom
     size: 35 15
     text: New
-    font: cipsoftFont
+    font: $var-cip-font
     tooltip: Create new supplies profile.
 
   VerticalScrollBar
@@ -218,10 +218,10 @@ SuppliesWindow < MainWindow
   Button
     id: closeButton
     !text: tr('Close')
-    font: cipsoftFont
+    font: $var-cip-font
     anchors.right: parent.right
     anchors.bottom: parent.bottom
-    size: 45 21
+    size: 62 21
     margin-top: 15
     tooltip: Close supplies window and save settings.
     @onClick: self:getParent():hide()

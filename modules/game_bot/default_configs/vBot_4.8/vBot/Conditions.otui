@@ -394,7 +394,8 @@ HoldConditions < Panel
     margin-top: 3
     margin-left: 5
     text: Don't Cast in Protection Zones
-    font: cipsoftFont
+    text-auto-resize: true
+    font: $var-cip-font
 
   CheckBox
     id: StopHaste
@@ -408,7 +409,8 @@ HoldConditions < Panel
     margin-top: 3
     margin-left: 5
     text: Stop Haste if TargetBot Is Active
-    font: cipsoftFont
+    text-auto-resize: true
+    font: $var-cip-font
 
 ConditionsWindow < MainWindow
   !text: tr('Condition Manager')
@@ -455,9 +457,9 @@ ConditionsWindow < MainWindow
   Button
     id: closeButton
     !text: tr('Close')
-    font: cipsoftFont
+    font: $var-cip-font
     anchors.right: parent.right
     anchors.bottom: parent.bottom
-    size: 45 21
+    size: 62 21
     margin-top: 15
     margin-right: 5

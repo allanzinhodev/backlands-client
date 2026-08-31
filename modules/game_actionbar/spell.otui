@@ -205,8 +205,8 @@ NewMainWindow
       id: buttonClose
       anchors.right: parent.right
       anchors.bottom: parent.bottom
-      size: 43 20
-      font: cipsoftFont
+      size: 74 20
+      font: $var-cip-font
       text: Cancel
 
     Button
@@ -214,8 +214,8 @@ NewMainWindow
       anchors.right: prev.left
       margin-right: 6
       anchors.bottom: parent.bottom
-      size: 43 20
-      font: cipsoftFont
+      size: 66 20
+      font: $var-cip-font
       text: Apply
 
     Button
@@ -224,5 +224,5 @@ NewMainWindow
       margin-right: 6
       anchors.bottom: parent.bottom
       size: 43 20
-      font: cipsoftFont
+      font: $var-cip-font
       text: Ok

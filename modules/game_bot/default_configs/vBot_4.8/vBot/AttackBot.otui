@@ -252,7 +252,7 @@ AttackBotPanel < Panel
     margin-top: 5
     size: 405 15
     text: monster names
-    font: cipsoftFont
+    font: $var-cip-font
     background: #363636
 
   Label
@@ -364,10 +364,10 @@ AttackBotPanel < Panel
     id: up
     anchors.right: parent.right
     anchors.top: entryList.bottom
-    size: 60 17
+    size: 86 17
     text: Move Up
     text-align: center
-    font: cipsoftFont
+    font: $var-cip-font
     margin-top: 7
     margin-right: 8
 
@@ -375,11 +375,11 @@ AttackBotPanel < Panel
     id: down
     anchors.right: prev.left
     anchors.verticalCenter: prev.verticalCenter
-    size: 60 17
+    size: 112 17
     margin-right: 5
     text: Move Down
     text-align: center
-    font: cipsoftFont
+    font: $var-cip-font
 
   Button
     id: addEntry
@@ -388,7 +388,7 @@ AttackBotPanel < Panel
     size: 40 19
     text-align: center
     text: New
-    font: cipsoftFont
+    font: $var-cip-font
 
   BotItem
     id: itemId
@@ -407,7 +407,7 @@ AttackBotPanel < Panel
     height: 15
     text: spell name
     background: #363636
-    font: cipsoftFont
+    font: $var-cip-font
     visible: false
 
 SettingsPanel < Panel
@@ -612,14 +612,14 @@ AttackBotWindow < MainWindow
     id: closeButton
     anchors.right: parent.right
     anchors.bottom: parent.bottom
-    size: 45 21
+    size: 62 21
     text: Close
-    font: cipsoftFont
+    font: $var-cip-font
 
   Button
     id: settings
     anchors.left: parent.left
     anchors.verticalCenter: prev.verticalCenter
-    size: 50 21
-    font: cipsoftFont
+    size: 88 21
+    font: $var-cip-font
     text: Settings
