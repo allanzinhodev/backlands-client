@@ -86,6 +86,7 @@ RulesSection < Panel
     anchors.left: parent.left
     anchors.verticalCenter: addButton.verticalCenter
     text: Rules:
+    text-auto-resize: true
     font: $var-main-font
     color: #a87f68
 

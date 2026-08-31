@@ -241,7 +241,7 @@ NewHeadlessWindow
       anchors.bottom: parent.bottom
       anchors.left: parent.left
       margin-bottom: 8
-      !text: tr('Helper Status:')
+      !text: tr('Helper:')
       font: $var-cip-font
       color: $var-text-color
       text-auto-resize: true
@@ -280,7 +280,7 @@ NewHeadlessWindow
       id: cavebotStatusLabel
       anchors.right: cavebotToggleButton.left
       anchors.verticalCenter: cavebotToggleButton.verticalCenter
-      margin-right: 2
+      margin-right: 6
       !text: tr('Cavebot:')
       font: $var-cip-font
       color: $var-text-color

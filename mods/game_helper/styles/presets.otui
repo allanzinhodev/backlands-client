@@ -83,9 +83,9 @@ PresetsSection < Panel
     id: duplicateButton
     anchors.top: parent.top
     anchors.right: newPresetButton.right
-    width: 98
+    width: 56
     height: 20
-    !text: tr('Duplicate')
+    !text: tr('Copy')
     font: $var-main-font
     color: $var-text-color
     margin-top: 2
@@ -93,7 +93,7 @@ PresetsSection < Panel
 
   Button
     id: newPresetButton
-    size: 120 20
+    size: 154 20
     anchors.top: presetsLabel.bottom
     anchors.right: parent.right
     margin-top: 7

@@ -33,7 +33,7 @@ EquipPanel < Panel
       anchors.top: presetsSection.bottom
       anchors.left: parent.left
       anchors.right: parent.right
-      height: 165
+      height: 215
       margin: 5 10 5 10
 
       UIButton
@@ -205,7 +205,7 @@ EquipPanel < Panel
 
       CheckBox
         id: actionEquip
-        size: 60 15
+        size: 68 15
         anchors.top: cond1Resource.bottom
         anchors.left: actionLabel.right
         margin-top: 8
@@ -217,7 +217,7 @@ EquipPanel < Panel
 
       CheckBox
         id: actionUnequip
-        size: 82 15
+        size: 92 15
         anchors.top: actionEquip.top
         anchors.left: actionEquip.right
         margin-left: 10
@@ -283,9 +283,9 @@ EquipPanel < Panel
 
       Label
         id: conditionsLabel
-        anchors.top: skipIfEquippedCheck.top
-        anchors.left: condSeparator.right
-        margin-left: 8
+        anchors.top: skipItemButton.bottom
+        anchors.left: parent.left
+        margin-top: 8
         text: Conditions:
         width: 116
         font: $var-main-font
@@ -293,7 +293,7 @@ EquipPanel < Panel
 
       CheckBox
         id: condRooted
-        size: 72 12
+        size: 82 12
         anchors.top: conditionsLabel.bottom
         anchors.left: conditionsLabel.left
         margin-top: 5
@@ -303,7 +303,7 @@ EquipPanel < Panel
 
       CheckBox
         id: condFeared
-        size: 60 12
+        size: 80 12
         anchors.top: condRooted.top
         anchors.left: condRooted.right
         margin-left: 8
@@ -323,7 +323,7 @@ EquipPanel < Panel
 
       CheckBox
         id: condNonPz
-        size: 76 12
+        size: 86 12
         anchors.top: condRooted.bottom
         anchors.left: conditionsLabel.left
         margin-top: 5
@@ -333,7 +333,7 @@ EquipPanel < Panel
 
       CheckBox
         id: condUtamo
-        size: 112 12
+        size: 122 12
         anchors.top: condNonPz.top
         anchors.left: condNonPz.right
         margin-left: 8

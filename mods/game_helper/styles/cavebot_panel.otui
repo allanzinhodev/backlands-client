@@ -137,7 +137,7 @@ CavebotPanel < Panel
 
           QtButton
             id: recordButton
-            !text: tr('Not Recording')
+            !text: tr('Rec: Off')
             !tooltip: tr('Toggles automatic recording of movements and actions.')
             anchors.bottom: parent.bottom
             anchors.left: parent.left
@@ -279,7 +279,7 @@ CavebotPanel < Panel
                 height: 44
                 layout:
                   type: grid
-                  cell-size: 40 20
+                  cell-size: 65 20
                   cell-spacing: 2
                   num-columns: 4
 

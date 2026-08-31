@@ -202,6 +202,7 @@ MagicShooterPanel < Panel
         anchors.left: parent.left
         margin-top: 3
         text: Select:
+        text-auto-resize: true
         font: $var-main-font
         color: #a87f68
 
@@ -229,7 +230,7 @@ MagicShooterPanel < Panel
         size: 34 34
         anchors.top: parent.top
         anchors.left: spellButton.right
-        margin-left: 10
+        margin-left: 16
         image-source: /images/game/actionbar/actionbarslot
         !tooltip: tr('Click to select a Rune')
 
@@ -288,6 +289,7 @@ MagicShooterPanel < Panel
           anchors.bottom: creaturesCombo.top
           margin-bottom: 2
           !text: tr('Count')
+          text-auto-resize: true
           font: $var-main-font
           color: #a87f68
 
@@ -339,7 +341,7 @@ MagicShooterPanel < Panel
           size: 60 20
           anchors.left: hpMinInput.right
           anchors.verticalCenter: creaturesCombo.verticalCenter
-          margin-left: 15
+          margin-left: 24
           text: 0
           text-align: center
           font: $var-main-font
@@ -382,6 +384,7 @@ MagicShooterPanel < Panel
           anchors.bottom: manaPercentInput.top
           margin-bottom: 2
           text: MP%
+          text-auto-resize: true
           font: $var-main-font
           color: #a87f68
 
@@ -402,6 +405,7 @@ MagicShooterPanel < Panel
           anchors.bottom: healthPercentInput.top
           margin-bottom: 2
           text: HP%
+          text-auto-resize: true
           font: $var-main-font
           color: #a87f68
 
@@ -444,6 +448,7 @@ MagicShooterPanel < Panel
           anchors.bottom: delayInput.top
           margin-bottom: 2
           text: Delay
+          text-auto-resize: true
           font: $var-main-font
           color: #a87f68
 
@@ -660,7 +665,7 @@ MagicShooterPanel < Panel
 
       CheckBox
         id: disableInProtectZone
-        width: 232
+        width: 244
         anchors.top: setKeyDisableButton.bottom
         anchors.left: parent.left
         anchors.verticalCenter: setKeyDisableButton.bottom

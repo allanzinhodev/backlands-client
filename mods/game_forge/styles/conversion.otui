@@ -291,7 +291,7 @@ Panel
         image-border: 3
     Label
       id: baseText
-      !text: tr('Raise limit from')
+      !text: tr('Raise from')
       anchors.top: increaseButton.bottom
       anchors.right: increaseButton.right
       anchors.left: increaseButton.left
