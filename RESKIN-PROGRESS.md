@@ -28,16 +28,25 @@ foi preciso desativar `Verdana-11px-italic.otfont` para caber a silkscreen.
 
 ## Estado atual: todas as telas alcançáveis auditam limpas
 
-`tools/uisweep.ps1` abre **36 janelas de módulo**, `tools/uiminis.ps1` audita as **47
-mini-janelas** dos painéis laterais, `tools/uideep.ps1` percorre **26 janelas painel a
-painel** (todas as abas, não só a visível), e as três passam limpas. A varredura estática
-(`tools/otui-textfit.ps1`) reporta **0 estouros**. `tools/otui-lint.js` passa nos 473 arquivos
-OTML do cliente.
+Quatro varreduras, cada uma alcançando o que a anterior não via, e as quatro passam limpas:
 
-> **Auditar a aba visível esconde a maior parte do trabalho.** O Cyclopedia tem nove abas, a
-> janela de Opções quinze páginas, o Helper seis, o Prey três estados por slot. A varredura
-> normal via uma de cada. Percorrer todas achou **49 defeitos** que doze varreduras anteriores
-> não tinham tocado — 24 só no Helper. `uideep.ps1` faz isso hoje.
+| Ferramenta | Alcance | Como chega lá |
+|---|---|---|
+| `tools/uisweep.ps1` | 47 janelas de módulo | abre pela função pública do módulo |
+| `tools/uiminis.ps1` | 47 mini-janelas | pergunta ao cliente quais existem nos painéis |
+| `tools/uideep.ps1` | 26 janelas, painel a painel | todas as abas, não só a visível |
+| `tools/uistyles.ps1` | 50 estilos de janela | instancia pelo nome, sem passar pelo módulo |
+
+A varredura estática (`tools/otui-textfit.ps1`) reporta **0 estouros**. `tools/otui-lint.js`
+passa nos 473 arquivos OTML do cliente.
+
+> **Cada vez que o alcance da varredura cresceu, apareceu defeito.** Auditar só a aba visível
+> escondia 49 (o Cyclopedia tem nove abas, a de Opções quinze páginas, o Helper seis, o Prey
+> três estados por slot). Abrir só o que tem função pública de abrir escondia mais 15 — o
+> cliente declara 84 janelas e metade só abre com dado que o servidor manda (a Store precisa
+> do catálogo, o Market das ofertas, o Wheel da árvore de perícia). Instanciar o estilo pelo
+> nome passa por cima disso: o layout é o mesmo, só o conteúdo fica vazio, e é o layout que a
+> fonte nova quebra.
 
 `tools/fontcensus.lua` pergunta `getFont()` nos 20446 widgets do cliente com tudo aberto:
 **1725 widgets com texto em silkscreen-16**, 14 nas duas exceções documentadas (F1–F12 e
@@ -113,7 +122,14 @@ Tudo em `tools/` da raiz do workspace, porque atravessa repositórios.
 .\tools\uisweep.ps1 -OutDir shots           # as 36 janelas de módulo, uma a uma
 .\tools\uiminis.ps1                         # as 47 mini-janelas da sidebar
 .\tools\uideep.ps1                          # 26 janelas, painel a painel
+# e as que so abrem com dado de servidor, instanciadas pelo nome do estilo:
+.\tools\uidrive.ps1 -Action lua -File tools\uistyles.lua -LuaArg "cria BossDifficultyWindow ..."
+.\tools\uidrive.ps1 -Action lua -File tools\uistyles.lua -LuaArg "audita"
 ```
+
+`uistyles` vai em duas chamadas de propósito: `createWidget` só **agenda** o layout, e medir
+no mesmo quadro pega os filhos em posição provisória — isso produziu uma dúzia de
+`ESCAPA-Y buttonOk` que sumiam sozinhos no quadro seguinte. Vale a mesma regra do `uipanels`.
 
 `uideep` junta as duas maneiras de trocar de painel. Onde o módulo só mostra e esconde,
 `uipanels.lua` **descobre os grupos sozinho**: irmãos com o mesmo retângulo, dos quais no
