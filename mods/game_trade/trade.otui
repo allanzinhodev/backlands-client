@@ -71,7 +71,7 @@ MiniWindow
       anchors.top: parent.top
       anchors.left: parent.left
       !text: tr('Your offer')
-      font: cipsoftFont
+      font: $var-cip-font
       color: $var-text-cip-color
       text-auto-resize: true
       text-overflow-length: 11
@@ -83,7 +83,7 @@ MiniWindow
       anchors.left: parent.horizontalCenter
       anchors.right: parent.right
       !text: tr('Counter offer')
-      font: cipsoftFont
+      font: $var-cip-font
       color: $var-text-cip-color
       text-auto-resize: true
       text-overflow-length: 11
@@ -113,14 +113,14 @@ MiniWindow
       anchors.left: parent.left
       visible: true
       !text: tr('Please wait for a\ncounteroffer')
-      font: cipsoftFont
+      font: $var-cip-font
       color: $var-text-cip-color
       text-align: center
 
     Button
       !text: tr('Cancel')
       id: rejectButton
-      width: 43
+      width: 74
       height: 20
       anchors.bottom: parent.bottom
       anchors.right: parent.right
@@ -130,7 +130,7 @@ MiniWindow
     Button
       !text: tr('Accept')
       id: acceptButton
-      width: 43
+      width: 72
       height: 20
       anchors.bottom: parent.bottom
       anchors.right: prev.left

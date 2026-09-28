@@ -20,7 +20,7 @@ TerminalSelectText < UITextEdit
 UIWindow
   id: terminalWindow
   @onClose: modules.client_terminal.hide()
-  background-color: #0f0f1a
+  background-color: #0d0907
   opacity: 0.95
   border-radius: 6
   padding: 6
@@ -33,11 +33,11 @@ UIWindow
     id: titleBar
     !text: tr('Terminal')
     border: 1 black
-    color: white
+    color: #ebbf90
     anchors.top: parent.top
     anchors.left: parent.left
     anchors.right: parent.right
-    background-color: #ffffff11
+    background-color: #ebbf9011
     text-align: left
     text-offset: 4 0
     height: 18

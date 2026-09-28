@@ -9,6 +9,7 @@ TargetBotLootingPanel < Panel
   Label
     margin-top: 5
     text: Items to loot
+    width: 134
     text-align: center
 
   BotContainer
@@ -23,6 +24,7 @@ TargetBotLootingPanel < Panel
   Label
     margin-top: 5
     text: Containers for loot
+    width: 202
     text-align: center
 
   BotContainer
@@ -47,6 +49,7 @@ TargetBotLootingPanel < Panel
       anchors.left: parent.left
       anchors.verticalCenter: prev.verticalCenter
       text: Max. danger:
+      width: 132
       margin-left: 5
 
   Panel
@@ -66,6 +69,7 @@ TargetBotLootingPanel < Panel
       anchors.left: parent.left
       anchors.verticalCenter: prev.verticalCenter
       text: Min. capacity:
+      width: 142
       margin-left: 5
 
   Label

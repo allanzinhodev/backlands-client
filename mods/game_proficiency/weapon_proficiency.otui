@@ -175,7 +175,7 @@ BonusIcon < UIWidget
       anchors.horizontalCenter: parent.horizontalCenter
       anchors.verticalCenter: parent.verticalCenter
       text-align: center
-      color: #c0c0c0
+      color: #ebbf90
       font: $var-cip-font
       margin-right: 1
       text-auto-resize: true
@@ -281,7 +281,7 @@ BonusDetailPanel < UIWidget
     margin-left: -2
     margin-top: -1
     font: $var-cip-font-wheel
-    color: #c0c0c0
+    color: #ebbf90
     text-align: topLeft
     text-wrap: true
     tooltip-delayed: true
@@ -293,7 +293,7 @@ NewMainWindow
   id: weaponProficiencyWindow
   !text: tr('Weapon Proficiency')
   font: $var-cip-font-new
-  color: #909090
+  color: #a87f68
   size: 1000 572
   text-offset: 0 2
   margin-top: -1
@@ -318,7 +318,7 @@ NewMainWindow
           anchors.top: parent.top
           !text: tr('Unknown Item')
           font: $var-cip-font-new
-          color: #909090
+          color: #a87f68
           text-auto-resize: true
           margin-top: 2
         
@@ -368,7 +368,7 @@ NewMainWindow
           anchors.right: parent.right
           margin-top: 5
           !text: tr('0 / 0')
-          color: #c0c0c0
+          color: #ebbf90
           font: $var-cip-font
           text-auto-resize: true
           text-wrap: true
@@ -380,7 +380,7 @@ NewMainWindow
           anchors.right: parent.right
           margin-top: 4
           !text: tr('0 XP for next level')
-          color: #c0c0c0
+          color: #ebbf90
           font: $var-cip-font
           text-auto-resize: true
           text-wrap: true
@@ -418,7 +418,7 @@ NewMainWindow
             id: modifyCostText
             !text: tr('250')
             font: $var-cip-font
-            color: #c0c0c0
+            color: #ebbf90
             text-align: center
             text-auto-resize: true
 
@@ -440,7 +440,7 @@ NewMainWindow
 
       Button
         id: levelButton
-        size: 47 20
+        size: 60 20
         anchors.top: modifyCost.bottom
         anchors.left: parent.left
         margin-top: 11
@@ -489,7 +489,7 @@ NewMainWindow
         anchors.top: prev.bottom
         anchors.left: parent.left
         font: $var-cip-font
-        color: #c0c0c0
+        color: #ebbf90
         margin-top: 6
         text-offset: -13 1
         @onSetup: |
@@ -518,8 +518,9 @@ NewMainWindow
         padding-top: 2
         padding-left: 5
         @onTextChange: modules.game_proficiency.WeaponProficiency:onSearchTextChange(self:getText())
-        !placeholder: tr('Type to search')
-        placeholder-color: #707070
+        !placeholder: tr('Search')
+        placeholder-font: $var-cip-font
+        placeholder-color: $var-cip-inactive-color
 
       UIWidget
         id: clearSearchButton
@@ -543,7 +544,7 @@ NewMainWindow
         vertical-scrollbar: itemListScroll
         margin-top: 7
         font: $var-cip-font
-        color: #c0c0c0
+        color: #ebbf90
         keep-scroll-range: true
         padding-top: 1
         padding-bottom: 1
@@ -553,7 +554,7 @@ NewMainWindow
         image-source: /images/ui/1pixel-down-frame
         image-border: 3
         border-width: 0
-        background-color: #404040
+        background-color: #271b17
         layout:
           type: grid
           cell-size: 36 36
@@ -619,7 +620,7 @@ NewMainWindow
 
       UIWidget
         id: vocationWarning
-        size: 754 17
+        size: 774 17
         anchors.top: prev.top
         anchors.left: prev.left
         margin-top: 1
@@ -659,7 +660,7 @@ NewMainWindow
     anchors.bottom: parent.bottom
     anchors.right: parent.right
     !text: tr('Close')
-    size: 43 20
+    size: 62 20
     margin-bottom: 12
     margin-right: 12
     on: true
@@ -667,7 +668,7 @@ NewMainWindow
       image-clip: 0 0 43 20
       text-offset: 0 2
     $!on:
-      color: #dfdfdf88
+      color: #ebbf9088
       opacity: 0.8
       change-cursor-image: false
     $on pressed:
@@ -683,7 +684,7 @@ NewMainWindow
     anchors.bottom: parent.bottom
     anchors.right: prev.left
     !text: tr('Reset')
-    size: 43 20
+    size: 60 20
     margin-bottom: 12
     margin-right: 5
     tooltip-delayed: true
@@ -692,7 +693,7 @@ NewMainWindow
       image-clip: 0 0 43 20
       text-offset: 0 2
     $!on:
-      color: #dfdfdf88
+      color: #ebbf9088
       opacity: 0.8
       change-cursor-image: false
     $on pressed:
@@ -708,7 +709,7 @@ NewMainWindow
     anchors.bottom: parent.bottom
     anchors.right: prev.left
     !text: tr('Apply')
-    size: 43 20
+    size: 66 20
     margin-bottom: 12
     margin-right: 5
     tooltip-delayed: true
@@ -717,7 +718,7 @@ NewMainWindow
       image-clip: 0 0 43 20
       text-offset: 0 2
     $!on:
-      color: #dfdfdf88
+      color: #ebbf9088
       opacity: 0.8
       change-cursor-image: false
     $on pressed:
@@ -742,7 +743,7 @@ NewMainWindow
       image-clip: 0 0 43 20
       text-offset: 0 2
     $!on:
-      color: #dfdfdf88
+      color: #ebbf9088
       opacity: 0.8
       change-cursor-image: false
     $on pressed:
@@ -782,7 +783,7 @@ NewMainWindow
       margin-top: 1
       !text: tr('0/0')
       font: $var-cip-font
-      color: #c0c0c0
+      color: #ebbf90
       text-align: right
       text-auto-resize: true
         

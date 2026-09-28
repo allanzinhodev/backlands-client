@@ -108,7 +108,7 @@ TargetBotPanel < Panel
         anchors.bottom: parent.bottom
         anchors.right: parent.right
         text: Remove
-        width: 56
+        width: 76
 
     BotSwitch
       id: debug

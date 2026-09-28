@@ -985,7 +985,7 @@ end
       if i == AttackBotConfig.currentBotProfile then
         ui[i]:setColor("green")
       else
-        ui[i]:setColor("white")
+        ui[i]:setColor("#ebbf90")
       end
     end
   end

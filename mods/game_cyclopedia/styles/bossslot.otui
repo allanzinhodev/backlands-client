@@ -55,7 +55,8 @@ SelectBossPanel < Panel
     margin-bottom: 28
     box-text-padding: 27
     @onTextChange: modules.game_cyclopedia.BosstiarySlot.onSearchChange(self)
-    !placeholder: tr('Type to search')
+    !placeholder: tr('Search')
+    placeholder-font: $var-cip-font
 
   Button
     id: clearSlotButton
@@ -76,7 +77,7 @@ SelectBossPanel < Panel
 
   Button
     id: selectBossButton
-    size: 43 20
+    size: 68 20
     !text: tr('Select')
     anchors.bottom: parent.bottom
     anchors.right: parent.right
@@ -257,10 +258,10 @@ SelectedBossPanel < Panel
 BossBox < UIWidget
   id: bossWidget
   !text: tr('Creature...')
-  color: #909090
+  color: #a87f68
   font: $var-cip-font
   text-offset: 0 -88
-  size: 88 103
+  size: 105 103
   image-source: /images/ui/t2pixel-up-frame-borderimage
   border-width: 0
   border-color: alpha
@@ -343,7 +344,7 @@ MarkCheckPanel < Panel
 CyclopediaSlotFilled < Panel
   size: 220 340
   font: $var-cip-font
-  color: #909090
+  color: #a87f68
   text-offset: -2 1
   text-align: Center
   text-align: Top
@@ -477,7 +478,7 @@ BossslotGroupPanel < Panel
     size: 668 48
     !text: tr('Progress')
     font: $var-cip-font
-    color: #909090
+    color: #a87f68
     text-offset: -2 1
     text-align: Center
     text-align: Top
@@ -508,7 +509,7 @@ BossslotGroupPanel < Panel
       margin-left: 11
     ProgressBarSD
       id: bossPointsProgress
-      size: 276 18
+      size: 220 18
       anchors.top: prev.top
       anchors.left: prev.left
       anchors.right: prev.right
@@ -520,12 +521,12 @@ BossslotGroupPanel < Panel
         !text: tr("1 / 10")
         font: $var-cip-font
         text-auto-resize: true
-        color: #ffffff
+        color: #ebbf90
         anchors.verticalCenter: parent.verticalCenter
         anchors.horizontalCenter: parent.horizontalCenter
     Label
       id: inforText
-      !text: tr("Equipment Loot Bonus: 25 Next: 26")
+      !text: tr("Loot Bonus: 25% Next: 26%")
       font: $var-cip-font
       text-auto-resize: true
       color: $var-text-cip-color
@@ -549,7 +550,7 @@ BossslotGroupPanel < Panel
     size: 223 360
     !text: tr('Slot 1: Locked')
     font: $var-cip-font
-    color: #909090
+    color: #a87f68
     text-offset: -2 1
     text-align: Center
     text-align: Top
@@ -597,7 +598,7 @@ BossslotGroupPanel < Panel
     size: 223 360
     !text: tr('Slot 2: Locked')
     font: $var-cip-font
-    color: #909090
+    color: #a87f68
     text-offset: -2 1
     text-align: Center
     text-align: Top

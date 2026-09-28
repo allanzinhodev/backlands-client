@@ -45,7 +45,7 @@ RuleListItem < UIWidget
     margin-right: 4
     margin-top: 2
     font: $var-main-font
-    color: #aaaaaa
+    color: #a87f68
     text-align: left
     text-auto-resize: false
     phantom: true
@@ -88,8 +88,9 @@ RulesSection < Panel
     anchors.left: parent.left
     anchors.verticalCenter: addButton.verticalCenter
     text: Rules:
+    text-auto-resize: true
     font: $var-main-font
-    color: #aaaaaa
+    color: #a87f68
 
   UIButton
     id: conditionSettingsButton
@@ -112,6 +113,7 @@ RulesSection < Panel
     font: $var-main-font
     color: $var-text-color
     image-source: /images/ui/buttons-blue
+    color: #ebbf90
 
   TextList
     id: rulesList

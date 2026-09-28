@@ -4,6 +4,7 @@ AssingTextWindow < MainWindow
 
   Label
     !text: tr('Text:')
+    text-auto-resize: true
     anchors.top: parent.top
     anchors.left: parent.left
 
@@ -30,6 +31,7 @@ AssingTextWindow < MainWindow
       margin-top: 5
     Label
       !text: tr('Send automatically')
+      text-auto-resize: true
       anchors.top: parent.top
       anchors.left: prev.right
       margin-left: 5
@@ -46,8 +48,8 @@ AssingTextWindow < MainWindow
     !text: tr('Cancel')
     anchors.bottom: parent.bottom
     anchors.right: parent.right
-    size: 60 20
-    font: cipsoftFont
+    size: 74 20
+    font: $var-cip-font
     opacity: 0.7
   Button
     id: okButton
@@ -55,7 +57,7 @@ AssingTextWindow < MainWindow
     anchors.bottom: parent.bottom
     anchors.right: prev.left
     size: 60 20
-    font: cipsoftFont
+    font: $var-cip-font
     margin-right: 5
     opacity: 0.7
     enabled: false

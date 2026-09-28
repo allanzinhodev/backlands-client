@@ -60,7 +60,7 @@ function BosstiarySlot.configureWindow()
 
     slotPanel.informationProgress.bossPointsProgress.bossPointsText:setText(tr('%s/%s', bossBalance, requiredPoints))
     slotPanel.informationProgress.bossPointsProgress:setPercent(bossBalance * 100 / requiredPoints)
-    slotPanel.informationProgress.inforText:setText("Equipment Loot Bonus: " .. lootBonus .. "% Next: " .. nextLootBonus .. "%")
+    slotPanel.informationProgress.inforText:setText("Loot Bonus: " .. lootBonus .. "% Next: " .. nextLootBonus .. "%")
 
     if lootBonus > 100 and nextLootBonus > 100 then
         slotPanel.informationProgress.bossPointsBg:setWidth(262)
@@ -193,7 +193,7 @@ function BosstiarySlot.showFirstSlot(data, sortText)
 				slotPanel.slot1.selectBoss.gold.text:setColor("#d33c3c")
 			else
 				slotPanel.slot1.selectBoss.removeButton:enable()
-				slotPanel.slot1.selectBoss.gold.text:setColor("#c0c0c0")
+				slotPanel.slot1.selectBoss.gold.text:setColor("#a87f68")
 			end
 		end
 	else
@@ -321,7 +321,7 @@ function BosstiarySlot.showSecondSlot(data, sortText)
 				slotPanel.slot2.selectBoss.gold:setColor("#d33c3c")
 			else
 				slotPanel.slot2.selectBoss.removeButton:enable()
-				slotPanel.slot2.selectBoss.gold:setColor("#c0c0c0")
+				slotPanel.slot2.selectBoss.gold:setColor("#a87f68")
 			end
 		end
 	else

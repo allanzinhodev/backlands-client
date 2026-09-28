@@ -49,7 +49,7 @@ MapDataPanel < Panel
         size: 146 253
         !text: tr('Display')
         font: $var-cip-font
-        color: #909090
+        color: #a87f68
         text-offset: -2 1
         text-align: Center
         text-align: Top
@@ -212,7 +212,7 @@ MapDataPanel < Panel
         size: 146 97
         !text: tr('Navigation')
         font: $var-cip-font
-        color: #909090
+        color: #a87f68
         text-offset: -2 1
         text-align: Center
         text-align: Top
@@ -326,7 +326,7 @@ MapDataPanel < Panel
         size: 146 201
         !text: tr('Subarea')
         font: $var-cip-font
-        color: #909090
+        color: #a87f68
         text-offset: -2 1
         text-align: Center
         text-align: Top
@@ -431,9 +431,10 @@ MapDataPanel < Panel
               margin-left: 3
           TextEdit
             id: donateAmountTextEdit
-            size: 84 16
+            size: 63 16
             !placeholder: tr("Amount")
-            placeholder-color: #707070
+            placeholder-font: $var-cip-font
+            placeholder-color: $var-cip-inactive-color
             placeholder-align: LeftCenter
             anchors.top: goldProgressBox.bottom
             anchors.left: goldProgressBox.left
@@ -450,9 +451,9 @@ MapDataPanel < Panel
               margin-right: 2
           Button
             id: donateButton
-            size: 43 20
+            size: 76 20
             !text: tr('Donate')
-            font: Verdana 9px-anti-espaco
+            font: $var-cip-font
             text-align: Center
             text-offset: -1 -1
             anchors.top: donateAmountTextEdit.top
@@ -475,9 +476,9 @@ MapDataPanel < Panel
           Button
             id: discoveringButton
             size: 132 20
-            !text: tr('Start Discovering')
-            font: Verdana 9px-anti-espaco
-            color: #606060
+            !text: tr('Discover')
+            font: $var-cip-font
+            color: #6b4d40
             text-align: Center
             text-offset: -1 -1
             anchors.top: respawnText.bottom

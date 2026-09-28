@@ -1,6 +1,6 @@
 DatailsLabel < UILabel
   width: 520
-  color: #c0c0c0
+  color: #ebbf90
   font: $var-cip-font
   margin-left: 6
   margin-top: 1
@@ -15,7 +15,7 @@ StatisticWidget < UIWidget
     id: header
     anchors.top: parent.top
     anchors.left: parent.left
-    color: #c0c0c0
+    color: #ebbf90
     font: $var-cip-font
     text-auto-resize: true
     margin-left: 3
@@ -26,7 +26,7 @@ StatisticWidget < UIWidget
     anchors.top: prev.bottom
     anchors.left: parent.left
     margin-left: 11
-    color: #c0c0c0
+    color: #ebbf90
     font: $var-cip-font
     text-auto-resize: true
     margin-top: -1
@@ -37,7 +37,7 @@ StatisticWidget < UIWidget
     anchors.top: prev.bottom
     anchors.left: parent.left
     margin-left: 11
-    color: #c0c0c0
+    color: #ebbf90
     font: $var-cip-font
     text-auto-resize: true
     margin-top: -1
@@ -48,7 +48,7 @@ StatisticWidget < UIWidget
     anchors.top: prev.bottom
     anchors.left: parent.left
     margin-left: 11
-    color: #c0c0c0
+    color: #ebbf90
     font: $var-cip-font
     text-auto-resize: true
     margin-top: -1
@@ -59,7 +59,7 @@ StatisticWidget < UIWidget
     anchors.top: prev.bottom
     anchors.left: parent.left
     margin-left: 11
-    color: #c0c0c0
+    color: #ebbf90
     font: $var-cip-font
     text-auto-resize: true
     margin-top: -1
@@ -74,7 +74,7 @@ MarketHistoryWidget < UIWidget
     anchors.left: parent.left
     text-align: left
     text-offset: 1 -1
-    color: #c0c0c0
+    color: #ebbf90
     font: $var-cip-font
 
   UIWidget
@@ -88,7 +88,7 @@ MarketHistoryWidget < UIWidget
     id: amount
     size: 54 16
     text-align: right
-    color: #c0c0c0
+    color: #ebbf90
     font: $var-cip-font
     anchors.top: parent.top
     anchors.left: prev.right
@@ -110,7 +110,7 @@ MarketHistoryWidget < UIWidget
     id: piecePrice
     size: 78 16
     text-align: right
-    color: #c0c0c0
+    color: #ebbf90
     font: $var-cip-font
     anchors.top: parent.top
     anchors.left: prev.right
@@ -132,7 +132,7 @@ MarketHistoryWidget < UIWidget
     id: totalPrice
     size: 78 16
     text-align: right
-    color: #c0c0c0
+    color: #ebbf90
     font: $var-cip-font
     anchors.top: parent.top
     anchors.left: prev.right
@@ -156,7 +156,7 @@ MarketHistoryWidget < UIWidget
     anchors.left: prev.right
     text-align: left
     text-offset: 2 -1
-    color: #c0c0c0
+    color: #ebbf90
     font: $var-cip-font
 
   UIWidget
@@ -173,7 +173,7 @@ MarketHistoryWidget < UIWidget
     anchors.left: prev.right
     text-align: left
     text-offset: 2 -1
-    color: #c0c0c0
+    color: #ebbf90
     font: $var-cip-font
 
 MarketCurrentWidget < UIWidget
@@ -186,7 +186,7 @@ MarketCurrentWidget < UIWidget
     anchors.left: parent.left
     text-align: left
     text-offset: 1 -1
-    color: #c0c0c0
+    color: #ebbf90
     font: $var-cip-font
 
   UIWidget
@@ -200,7 +200,7 @@ MarketCurrentWidget < UIWidget
     id: amount
     size: 54 16
     text-align: right
-    color: #c0c0c0
+    color: #ebbf90
     font: $var-cip-font
     anchors.top: parent.top
     anchors.left: prev.right
@@ -222,7 +222,7 @@ MarketCurrentWidget < UIWidget
     id: piecePrice
     size: 78 16
     text-align: right
-    color: #c0c0c0
+    color: #ebbf90
     font: $var-cip-font
     anchors.top: parent.top
     anchors.left: prev.right
@@ -244,7 +244,7 @@ MarketCurrentWidget < UIWidget
     id: totalPrice
     size: 78 16
     text-align: right
-    color: #c0c0c0
+    color: #ebbf90
     font: $var-cip-font
     anchors.top: parent.top
     anchors.left: prev.right
@@ -268,7 +268,7 @@ MarketCurrentWidget < UIWidget
     anchors.left: prev.right
     text-align: left
     text-offset: 2 -1
-    color: #c0c0c0
+    color: #ebbf90
     font: $var-cip-font
 
 MarketOfferWidget < UIWidget
@@ -280,7 +280,7 @@ MarketOfferWidget < UIWidget
     anchors.left: parent.left
     text-align: left
     text-offset: 1 -1
-    color: #c0c0c0
+    color: #ebbf90
     font: $var-cip-font
 
   UIWidget
@@ -294,7 +294,7 @@ MarketOfferWidget < UIWidget
     id: amount
     size: 122 16
     text-align: right
-    color: #c0c0c0
+    color: #ebbf90
     font: $var-cip-font
     anchors.top: parent.top
     anchors.left: prev.right
@@ -316,7 +316,7 @@ MarketOfferWidget < UIWidget
     id: piecePrice
     size: 122 16
     text-align: right
-    color: #c0c0c0
+    color: #ebbf90
     font: $var-cip-font
     anchors.top: parent.top
     anchors.left: prev.right
@@ -338,7 +338,7 @@ MarketOfferWidget < UIWidget
     id: totalPrice
     size: 122 16
     text-align: right
-    color: #c0c0c0
+    color: #ebbf90
     font: $var-cip-font
     anchors.top: parent.top
     anchors.left: prev.right
@@ -362,7 +362,7 @@ MarketOfferWidget < UIWidget
     anchors.left: prev.right
     text-align: left
     text-offset: 2 -1
-    color: #c0c0c0
+    color: #ebbf90
     font: $var-cip-font
 
 MarketItemList < UIWidget
@@ -387,7 +387,7 @@ MarketItemList < UIWidget
     anchors.left: parent.left
     anchors.verticalCenter: parent.verticalCenter
     margin-left: 2
-    font: verdana-11px-rounded
+    font: $var-cip-font
     show-count: false
     virtual-count: true
     focusable: true
@@ -397,8 +397,8 @@ MarketItemList < UIWidget
     id: name
     size: 108 32
     !text: tr("Unknow")
-    font: Verdana Bold-11px
-    color: #c0c0c0
+    font: $var-cip-font
+    color: #ebbf90
     anchors.top: parent.top
     anchors.left: prev.right
     text-wrap: true
@@ -410,7 +410,7 @@ MarketItemList < UIWidget
   UIWidget
     id: grayHover
     size: 146 36
-    background-color: #404040
+    background-color: #271b17
     opacity: 0.5
     anchors.left: parent.left
     phantom: true
@@ -448,7 +448,7 @@ MarketMainWindow < Panel
 
   Button
     id: levelButton
-    size: 37 20
+    size: 54 20
     anchors.top: category.bottom
     anchors.left: parent.left
     margin-top: 30
@@ -457,7 +457,7 @@ MarketMainWindow < Panel
 
   Button
     id: vocButton
-    size: 37 20
+    size: 45 20
     anchors.top: prev.top
     anchors.left: prev.right
     margin-left: 5
@@ -466,7 +466,7 @@ MarketMainWindow < Panel
 
   Button
     id: oneButton
-    size: 37 20
+    size: 27 20
     anchors.top: prev.top
     anchors.left: prev.right
     margin-left: 5
@@ -476,7 +476,7 @@ MarketMainWindow < Panel
 
   Button
     id: twoButton
-    size: 37 20
+    size: 29 20
     anchors.top: prev.top
     anchors.left: prev.right
     margin-left: 5
@@ -505,7 +505,7 @@ MarketMainWindow < Panel
   CheckBox
     id: lockerOnly
     size: 12 12
-    !text: tr('Show Locker only')
+    !text: tr('Locker only')
     font: $var-cip-font
     text-auto-resize: true
     color: $var-text-cip-color
@@ -518,7 +518,7 @@ MarketMainWindow < Panel
     change-cursor-image: false
 
     $hover !disabled:
-      color: #c0c0c0
+      color: #ebbf90
 
   Label
     anchors.top: prev.bottom
@@ -567,7 +567,7 @@ MarketMainWindow < Panel
     size: 32 32
     virtual: true
     priceable: true
-    font: verdana-11px-rounded
+    font: $var-cip-font
     anchors.top: prev.top
     anchors.left: parent.left
     margin-top: 1
@@ -595,7 +595,8 @@ MarketMainWindow < Panel
     margin-left: 8
     margin-top: 5
     @onTextChange: modules.game_tibia_market.onSearchItem(self)
-    !placeholder: tr('Type to search')
+    !placeholder: tr('Search')
+    placeholder-font: $var-cip-font
 
   Button
     id: clearSearchButton
@@ -718,8 +719,7 @@ MarketMainWindow < Panel
       id: amountSell
       anchors.top: prev.top
       anchors.left: prev.right
-      anchors.right: parent.right
-      margin-right: 344
+      margin-left: 6
       !text: tr('0')
       text-auto-resize: true
       font: $var-cip-font
@@ -742,9 +742,10 @@ MarketMainWindow < Panel
       @onValueChange: modules.game_tibia_market.updateSellCount(self, self:getValue())
 
     Label
+      id: totalSellLabel
       anchors.top: prev.top
-      anchors.left: amountSellScrollBar.right
-      margin-left: 15
+      anchors.right: totalValue.left
+      margin-right: 6
       margin-top: -1
       !text: tr('Total:')
       text-auto-resize: true
@@ -754,8 +755,8 @@ MarketMainWindow < Panel
     Label
       id: totalValue
       anchors.top: goldCoin.top
-      anchors.right: parent.right
-      margin-right: 60
+      anchors.right: goldCoin.left
+      margin-right: 4
       margin-top: -3
       !text: tr('0')
       text-auto-resize: true
@@ -764,7 +765,7 @@ MarketMainWindow < Panel
 
     Button
       id: sellAcceptButton
-      size: 43 20
+      size: 72 20
       anchors.top: parent.top
       anchors.right: parent.right
       !text: tr('Accept')
@@ -800,7 +801,7 @@ MarketMainWindow < Panel
       anchors.left: sellOffersList.left
       margin-left: 1
       border-width-bottom: 1
-      border-color-bottom: #757575
+      border-color-bottom: #503125
 
     UIWidget
       id: nameButton
@@ -815,11 +816,11 @@ MarketMainWindow < Panel
       margin-top: 1
       margin-left: 1
       border-width-bottom: 1
-      border-color-bottom: #292a29
-      background-color: #363636
+      border-color-bottom: #110b0a
+      background-color: #221714
       opacity: 1.0
       $pressed:
-        color: #dfdfdf88
+        color: #ebbf9088
         opacity: 0.8
 
     UIWidget
@@ -835,17 +836,18 @@ MarketMainWindow < Panel
       text: Amount
       font: $var-cip-font
       color: $var-text-cip-color
-      text-offset: 68 -1
+      text-align: right
+      text-offset: 0 -1
       anchors.top: sellOffersList.top
       anchors.left: prev.right
       margin-top: 1
       margin-left: 2
       border-width-bottom: 1
-      border-color-bottom: #292a29
-      background-color: #363636
+      border-color-bottom: #110b0a
+      background-color: #221714
       opacity: 1.0
       $pressed:
-        color: #dfdfdf88
+        color: #ebbf9088
         opacity: 0.8
 
     UIWidget
@@ -861,17 +863,18 @@ MarketMainWindow < Panel
       text: Piece Price
       font: $var-cip-font
       color: $var-text-cip-color
-      text-offset: 45 -1
+      text-align: right
+      text-offset: 0 -1
       anchors.top: sellOffersList.top
       anchors.left: prev.right
       margin-top: 1
       margin-left: 2
       border-width-bottom: 1
-      border-color-bottom: #292a29
-      background-color: #363636
+      border-color-bottom: #110b0a
+      background-color: #221714
       opacity: 1.0
       $pressed:
-        color: #dfdfdf88
+        color: #ebbf9088
         opacity: 0.8
 
     UIWidget
@@ -887,17 +890,18 @@ MarketMainWindow < Panel
       text: Total Price
       font: $var-cip-font
       color: $var-text-cip-color
-      text-offset: 48 -1
+      text-align: right
+      text-offset: 0 -1
       anchors.top: sellOffersList.top
       anchors.left: prev.right
       margin-top: 1
       margin-left: 2
       border-width-bottom: 1
-      border-color-bottom: #292a29
-      background-color: #363636
+      border-color-bottom: #110b0a
+      background-color: #221714
       opacity: 1.0
       $pressed:
-        color: #dfdfdf88
+        color: #ebbf9088
         opacity: 0.8
 
     UIWidget
@@ -920,11 +924,11 @@ MarketMainWindow < Panel
       margin-top: 1
       margin-left: 2
       border-width-bottom: 1
-      border-color-bottom: #292a29
-      background-color: #363636
+      border-color-bottom: #110b0a
+      background-color: #221714
       opacity: 1.0
       $pressed:
-        color: #dfdfdf88
+        color: #ebbf9088
         opacity: 0.8
     // HEADER
     VerticalScrollBar
@@ -964,8 +968,7 @@ MarketMainWindow < Panel
       id: amountBuy
       anchors.top: prev.top
       anchors.left: prev.right
-      anchors.right: parent.right
-      margin-right: 344
+      margin-left: 6
       !text: tr('0')
       text-align: right
       text-auto-resize: true
@@ -987,9 +990,10 @@ MarketMainWindow < Panel
       @onValueChange: modules.game_tibia_market.updateBuyCount(self, self:getValue())
 
     Label
+      id: totalBuyLabel
       anchors.top: prev.top
-      anchors.left: amountBuyScrollBar.right
-      margin-left: 13
+      anchors.right: totalSellValue.left
+      margin-right: 6
       margin-top: -1
       !text: tr('Total:')
       text-auto-resize: true
@@ -999,8 +1003,8 @@ MarketMainWindow < Panel
     Label
       id: totalSellValue
       anchors.top: bGoldCoin.top
-      anchors.right: parent.right
-      margin-right: 60
+      anchors.right: bGoldCoin.left
+      margin-right: 4
       margin-top: -3
       !text: tr('0')
       text-auto-resize: true
@@ -1009,7 +1013,7 @@ MarketMainWindow < Panel
 
     Button
       id: buyAcceptButton
-      size: 43 20
+      size: 72 20
       anchors.top: sellOffersList.bottom
       anchors.right: parent.right
       margin-top: 12
@@ -1046,7 +1050,7 @@ MarketMainWindow < Panel
       anchors.left: buyOffersList.left
       margin-left: 1
       border-width-bottom: 1
-      border-color-bottom: #757575
+      border-color-bottom: #503125
 
     UIWidget
       id: nameButton
@@ -1061,11 +1065,11 @@ MarketMainWindow < Panel
       margin-top: 1
       margin-left: 1
       border-width-bottom: 1
-      border-color-bottom: #292a29
-      background-color: #363636
+      border-color-bottom: #110b0a
+      background-color: #221714
       opacity: 1.0
       $pressed:
-        color: #dfdfdf88
+        color: #ebbf9088
         opacity: 0.8
 
     UIWidget
@@ -1081,17 +1085,18 @@ MarketMainWindow < Panel
       text: Amount
       font: $var-cip-font
       color: $var-text-cip-color
-      text-offset: 68 -1
+      text-align: right
+      text-offset: 0 -1
       anchors.top: buyOffersList.top
       anchors.left: prev.right
       margin-top: 1
       margin-left: 2
       border-width-bottom: 1
-      border-color-bottom: #292a29
-      background-color: #363636
+      border-color-bottom: #110b0a
+      background-color: #221714
       opacity: 1.0
       $pressed:
-        color: #dfdfdf88
+        color: #ebbf9088
         opacity: 0.8
 
     UIWidget
@@ -1107,17 +1112,18 @@ MarketMainWindow < Panel
       text: Piece Price
       font: $var-cip-font
       color: $var-text-cip-color
-      text-offset: 45 -1
+      text-align: right
+      text-offset: 0 -1
       anchors.top: buyOffersList.top
       anchors.left: prev.right
       margin-top: 1
       margin-left: 2
       border-width-bottom: 1
-      border-color-bottom: #292a29
-      background-color: #363636
+      border-color-bottom: #110b0a
+      background-color: #221714
       opacity: 1.0
       $pressed:
-        color: #dfdfdf88
+        color: #ebbf9088
         opacity: 0.8
 
     UIWidget
@@ -1133,17 +1139,18 @@ MarketMainWindow < Panel
       text: Total Price
       font: $var-cip-font
       color: $var-text-cip-color
-      text-offset: 48 -1
+      text-align: right
+      text-offset: 0 -1
       anchors.top: buyOffersList.top
       anchors.left: prev.right
       margin-top: 1
       margin-left: 2
       border-width-bottom: 1
-      border-color-bottom: #292a29
-      background-color: #363636
+      border-color-bottom: #110b0a
+      background-color: #221714
       opacity: 1.0
       $pressed:
-        color: #dfdfdf88
+        color: #ebbf9088
         opacity: 0.8
 
     UIWidget
@@ -1166,11 +1173,11 @@ MarketMainWindow < Panel
       margin-top: 1
       margin-left: 2
       border-width-bottom: 1
-      border-color-bottom: #292a29
-      background-color: #363636
+      border-color-bottom: #110b0a
+      background-color: #221714
       opacity: 1.0
       $pressed:
-        color: #dfdfdf88
+        color: #ebbf9088
         opacity: 0.8
 
     VerticalScrollBar
@@ -1211,7 +1218,7 @@ MarketMainWindow < Panel
       @onClick: modules.game_tibia_market.changeOfferType(self, true)
 
       $hover !disabled:
-        color: #c0c0c0
+        color: #ebbf90
 
     CheckBox
       id: createOfferBuy
@@ -1230,7 +1237,7 @@ MarketMainWindow < Panel
       @onClick: modules.game_tibia_market.changeOfferType(self, false)
 
       $hover !disabled:
-        color: #c0c0c0
+        color: #ebbf90
 
     Label
       id: createOfferAmount
@@ -1370,7 +1377,8 @@ MarketMainWindow < Panel
       id: profitCoin
       image-source: /images/game/cyclopedia/icons/icon-goldcoin
       anchors.top: profitLabel.top
-      anchors.right: parent.right
+      anchors.right: createButton.left
+      margin-right: 10
       margin-top: 3
 
     CheckBox
@@ -1381,20 +1389,19 @@ MarketMainWindow < Panel
       text-auto-resize: true
       color: $var-text-cip-color
       text-offset: 14 -2
-      anchors.left: profitLabel.right
-      anchors.top: profitLabel.bottom
-      margin-top: 8
-      margin-left: -22
+      anchors.left: getPotionsButton.right
+      anchors.verticalCenter: createButton.verticalCenter
+      margin-left: 20
       image-source: /images/ui/checkbox
       image-clip: 0 0 12 12
       change-cursor-image: false
 
       $hover !disabled:
-        color: #c0c0c0
+        color: #ebbf90
 
     Button
       id: createButton
-      size: 43 20
+      size: 70 20
       anchors.bottom: parent.bottom
       anchors.right: parent.right
       enabled: false
@@ -1442,8 +1449,8 @@ MarketMainWindow < Panel
       margin-right: 5
       margin-top: 3
       text-auto-resize: true
-      color: #c0c0c0
-      font: Verdana Bold-11px
+      color: #ebbf90
+      font: $var-cip-font
       tooltip-font: $var-cip-font-wheel
 
   Panel
@@ -1468,8 +1475,8 @@ MarketMainWindow < Panel
       margin-right: 5
       margin-top: 3
       text-auto-resize: true
-      color: #c0c0c0
-      font: Verdana Bold-11px
+      color: #ebbf90
+      font: $var-cip-font
       tooltip-font: $var-cip-font-wheel
 
   Button
@@ -1509,7 +1516,7 @@ MarketMainWindow < Panel
     anchors.bottom: parent.bottom
     anchors.right: prev.left
     !text: tr('My Offers')
-    size: 75 20
+    size: 104 20
     margin-right: 5
     @onClick: myOffersButton(self)
 
@@ -1548,7 +1555,7 @@ MarketHistory < Panel
       anchors.top: parent.top
       anchors.right: parent.right
       !text: tr('Cancel Off...')
-      size: 75 20
+      size: 126 20
       enabled: false
       @onClick: modules.game_tibia_market.MarketOwnOffers.cancelMarketOffer(true)
 
@@ -1582,7 +1589,7 @@ MarketHistory < Panel
       anchors.left: sellOffersList.left
       margin-left: 1
       border-width-bottom: 1
-      border-color-bottom: #757575
+      border-color-bottom: #503125
 
     UIWidget
       id: itemButton
@@ -1597,11 +1604,11 @@ MarketHistory < Panel
       margin-top: 1
       margin-left: 1
       border-width-bottom: 1
-      border-color-bottom: #292a29
-      background-color: #363636
+      border-color-bottom: #110b0a
+      background-color: #221714
       opacity: 1.0
       $pressed:
-        color: #dfdfdf88
+        color: #ebbf9088
         opacity: 0.8
 
     UIWidget
@@ -1613,7 +1620,7 @@ MarketHistory < Panel
 
     UIWidget
       id: amountButton
-      size: 59 15
+      size: 76 15
       text: Amount
       font: $var-cip-font
       color: $var-text-cip-color
@@ -1624,11 +1631,11 @@ MarketHistory < Panel
       margin-top: 1
       margin-left: 2
       border-width-bottom: 1
-      border-color-bottom: #292a29
-      background-color: #363636
+      border-color-bottom: #110b0a
+      background-color: #221714
       opacity: 1.0
       $pressed:
-        color: #dfdfdf88
+        color: #ebbf9088
         opacity: 0.8
 
     UIWidget
@@ -1640,7 +1647,7 @@ MarketHistory < Panel
 
     UIWidget
       id: piecepriceButton
-      size: 84 15
+      size: 110 15
       text: Piece Price
       font: $var-cip-font
       color: $var-text-cip-color
@@ -1651,11 +1658,11 @@ MarketHistory < Panel
       margin-top: 1
       margin-left: 2
       border-width-bottom: 1
-      border-color-bottom: #292a29
-      background-color: #363636
+      border-color-bottom: #110b0a
+      background-color: #221714
       opacity: 1.0
       $pressed:
-        color: #dfdfdf88
+        color: #ebbf9088
         opacity: 0.8
 
     UIWidget
@@ -1667,7 +1674,7 @@ MarketHistory < Panel
 
     UIWidget
       id: totalpriceButton
-      size: 84 15
+      size: 114 15
       text: Total Price
       font: $var-cip-font
       color: $var-text-cip-color
@@ -1678,11 +1685,11 @@ MarketHistory < Panel
       margin-top: 1
       margin-left: 2
       border-width-bottom: 1
-      border-color-bottom: #292a29
-      background-color: #363636
+      border-color-bottom: #110b0a
+      background-color: #221714
       opacity: 1.0
       $pressed:
-        color: #dfdfdf88
+        color: #ebbf9088
         opacity: 0.8
 
     UIWidget
@@ -1694,7 +1701,7 @@ MarketHistory < Panel
 
     UIWidget
       id: sellEndButton
-      size: 220 15
+      size: 147 15
       //220 tela 1 - 149 tela 2
       text: Ended At
       font: $var-cip-font
@@ -1706,11 +1713,11 @@ MarketHistory < Panel
       margin-top: 1
       margin-left: 2
       border-width-bottom: 1
-      border-color-bottom: #292a29
-      background-color: #363636
+      border-color-bottom: #110b0a
+      background-color: #221714
       opacity: 1.0
       $pressed:
-        color: #dfdfdf88
+        color: #ebbf9088
         opacity: 0.8
 
     UIWidget
@@ -1736,12 +1743,12 @@ MarketHistory < Panel
       margin-top: 1
       margin-left: 152
       border-width-bottom: 1
-      border-color-bottom: #292a29
-      background-color: #363636
+      border-color-bottom: #110b0a
+      background-color: #221714
       opacity: 1.0
       visible: false
       $pressed:
-        color: #dfdfdf88
+        color: #ebbf9088
         opacity: 0.8
 
     VerticalScrollBar
@@ -1772,7 +1779,7 @@ MarketHistory < Panel
       anchors.top: prev.top
       anchors.right: parent.right
       !text: tr('Cancel Off...')
-      size: 75 20
+      size: 126 20
       enabled: false
       @onClick: modules.game_tibia_market.MarketOwnOffers.cancelMarketOffer(false)
 
@@ -1793,7 +1800,7 @@ MarketHistory < Panel
       anchors.left: buyOffersList.left
       margin-left: 1
       border-width-bottom: 1
-      border-color-bottom: #757575
+      border-color-bottom: #503125
 
     UIWidget
       id: itemButton
@@ -1808,11 +1815,11 @@ MarketHistory < Panel
       margin-top: 1
       margin-left: 1
       border-width-bottom: 1
-      border-color-bottom: #292a29
-      background-color: #363636
+      border-color-bottom: #110b0a
+      background-color: #221714
       opacity: 1.0
       $pressed:
-        color: #dfdfdf88
+        color: #ebbf9088
         opacity: 0.8
 
     UIWidget
@@ -1824,7 +1831,7 @@ MarketHistory < Panel
 
     UIWidget
       id: amountButton
-      size: 59 15
+      size: 76 15
       text: Amount
       font: $var-cip-font
       color: $var-text-cip-color
@@ -1835,11 +1842,11 @@ MarketHistory < Panel
       margin-top: 1
       margin-left: 2
       border-width-bottom: 1
-      border-color-bottom: #292a29
-      background-color: #363636
+      border-color-bottom: #110b0a
+      background-color: #221714
       opacity: 1.0
       $pressed:
-        color: #dfdfdf88
+        color: #ebbf9088
         opacity: 0.8
 
     UIWidget
@@ -1851,7 +1858,7 @@ MarketHistory < Panel
 
     UIWidget
       id: piecepriceButton
-      size: 84 15
+      size: 110 15
       text: Piece Price
       font: $var-cip-font
       color: $var-text-cip-color
@@ -1862,11 +1869,11 @@ MarketHistory < Panel
       margin-top: 1
       margin-left: 2
       border-width-bottom: 1
-      border-color-bottom: #292a29
-      background-color: #363636
+      border-color-bottom: #110b0a
+      background-color: #221714
       opacity: 1.0
       $pressed:
-        color: #dfdfdf88
+        color: #ebbf9088
         opacity: 0.8
 
     UIWidget
@@ -1878,7 +1885,7 @@ MarketHistory < Panel
 
     UIWidget
       id: totalpriceButton
-      size: 84 15
+      size: 114 15
       text: Total Price
       font: $var-cip-font
       color: $var-text-cip-color
@@ -1889,11 +1896,11 @@ MarketHistory < Panel
       margin-top: 1
       margin-left: 2
       border-width-bottom: 1
-      border-color-bottom: #292a29
-      background-color: #363636
+      border-color-bottom: #110b0a
+      background-color: #221714
       opacity: 1.0
       $pressed:
-        color: #dfdfdf88
+        color: #ebbf9088
         opacity: 0.8
 
     UIWidget
@@ -1905,7 +1912,7 @@ MarketHistory < Panel
 
     UIWidget
       id: buyEndButton
-      size: 220 15
+      size: 147 15
       text: Ended At
       font: $var-cip-font
       color: $var-text-cip-color
@@ -1916,11 +1923,11 @@ MarketHistory < Panel
       margin-top: 1
       margin-left: 2
       border-width-bottom: 1
-      border-color-bottom: #292a29
-      background-color: #363636
+      border-color-bottom: #110b0a
+      background-color: #221714
       opacity: 1.0
       $pressed:
-        color: #dfdfdf88
+        color: #ebbf9088
         opacity: 0.8
 
     UIWidget
@@ -1946,12 +1953,12 @@ MarketHistory < Panel
       margin-top: 1
       margin-left: 152
       border-width-bottom: 1
-      border-color-bottom: #292a29
-      background-color: #363636
+      border-color-bottom: #110b0a
+      background-color: #221714
       opacity: 1.0
       visible: false
       $pressed:
-        color: #dfdfdf88
+        color: #ebbf9088
         opacity: 0.8
 
     VerticalScrollBar
@@ -1994,9 +2001,8 @@ MarketHistory < Panel
         margin-right: 5
         margin-top: 3
         text-auto-resize: true
-        color: #c0c0c0
-        font: Verdana Bold-11px
-
+        color: #ebbf90
+        font: $var-cip-font
     Panel
       id: coinPanel
       size: 130 20
@@ -2019,9 +2025,8 @@ MarketHistory < Panel
         margin-right: 5
         margin-top: 3
         text-auto-resize: true
-        color: #c0c0c0
-        font: Verdana Bold-11px
-
+        color: #ebbf90
+        font: $var-cip-font
     Button
       id: getCoins
       size: 64 20
@@ -2049,7 +2054,7 @@ MarketHistory < Panel
       anchors.bottom: parent.bottom
       anchors.right: prev.left
       !text: tr('Offer History')
-      size: 75 20
+      size: 138 20
       margin-right: 5
       @onClick: myOffersButton(self)
 
@@ -2058,7 +2063,7 @@ MarketHistory < Panel
       anchors.bottom: parent.bottom
       anchors.right: prev.left
       !text: tr('Current Offers')
-      size: 75 20
+      size: 154 20
       margin-right: 5
       @onClick: myOffersButton(self)
 
@@ -2163,9 +2168,8 @@ MarketHistory < Panel
         margin-right: 5
         margin-top: 3
         text-auto-resize: true
-        color: #c0c0c0
-        font: Verdana Bold-11px
-
+        color: #ebbf90
+        font: $var-cip-font
     Panel
       id: coinPanel
       size: 130 20
@@ -2188,9 +2192,8 @@ MarketHistory < Panel
         margin-right: 5
         margin-top: 3
         text-auto-resize: true
-        color: #c0c0c0
-        font: Verdana Bold-11px
-
+        color: #ebbf90
+        font: $var-cip-font
     Button
       id: getCoins
       size: 64 20
@@ -2217,7 +2220,7 @@ MarketHistory < Panel
       anchors.bottom: parent.bottom
       anchors.right: prev.left
       !text: tr('Offer History')
-      size: 75 20
+      size: 138 20
       margin-right: 5
 
     Button
@@ -2225,7 +2228,7 @@ MarketHistory < Panel
       anchors.bottom: parent.bottom
       anchors.right: prev.left
       !text: tr('Current Offers')
-      size: 75 20
+      size: 154 20
       margin-right: 5
 
 NewMainWindow

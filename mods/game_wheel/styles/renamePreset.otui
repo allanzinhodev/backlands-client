@@ -41,6 +41,7 @@ NewMainWindow
       margin-top: 7
       @onTextChange: modules.game_wheel.WheelOfDestiny.onPresetNameChange(self:getText())
       !placeholder: tr('Enter a unique name')
+      placeholder-font: $var-cip-font
 
     HorizontalSeparator
       id: separator
@@ -54,7 +55,7 @@ NewMainWindow
       anchors.bottom: parent.bottom
       anchors.right: parent.right
       !text: tr('Cancel')
-      size: 43 20
+      size: 74 20
       @onClick: modules.game_wheel.WheelOfDestiny.onConfirmRenamePreset(true)
 
     Button

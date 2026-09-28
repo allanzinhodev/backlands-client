@@ -526,7 +526,7 @@ function onStoreTransactionHistory(currentPage, pageCount, offers)
     while nextOfferIndex <= lastOfferIndex do
       local item = offers[nextOfferIndex]
       local itemBox = g_ui.createWidget('HistoryLabel', displayPanel.historyListPanel)
-      local color = (count % 2) == 0 and '#484848' or '#414141'
+      local color = (count % 2) == 0 and '#2c1e19' or '#281b17'
       itemBox:setBackgroundColor(color)
 
       if count == 0 then
@@ -830,7 +830,7 @@ function createDonateRules()
     label:setTextWrap(true)
     label:setTextAutoResize(true)
     label:setMarginRight(15)
-    label:setBackgroundColor('#414141')
+    label:setBackgroundColor('#281b17')
 
     local rulesScrollBar = pixWindow:recursiveGetChildById('rulesScrollBar')
     if rulesScrollBar then

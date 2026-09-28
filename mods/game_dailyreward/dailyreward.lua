@@ -331,11 +331,11 @@ function onClaimReward(widget)
         w.leftSkip.window = w
         w.rightSkip.window = w
         w.rightSkipPlus.window = w
-        w:setBackgroundColor((c % 2 ~= 0 and "#484848" or "#414141"))
+        w:setBackgroundColor((c % 2 ~= 0 and "#2c1e19" or "#281b17"))
       end
     end
 
-    selectRewardWindow.freeCapacityLabel:setText(string.format("Free Capacity: %d oz", freeCap))
+    selectRewardWindow.freeCapacityLabel:setText(string.format("Capacity: %d oz", freeCap))
     local m = {}
     setStringColor(m, "You have selected ", "#C0C0C0")
     setStringColor(m, "0", "#F75F5F")
@@ -387,7 +387,7 @@ function onClickAmount(widget)
   local value = tonumber(widget.window.countEdit:getText()) or 0
   totalOz = (value * widget.window.ozNumber)
   widget.window.oz:setText(string.format("%.2f oz", (widget.window.ozNumber * value)/100))
-  selectRewardWindow.totalWeightLabel:setText(string.format('Total Weight:        %.2f oz', totalOz/100))
+  selectRewardWindow.totalWeightLabel:setText(string.format('Weight: %.2f oz', totalOz/100))
 
   -- arrumando as coisas
   if selectedAmount < rewardAmount then
@@ -538,6 +538,6 @@ function onDailyRewardHistory(dailyRewardHistories)
     widget.date:setText(os.date("%Y.%m.%d, %X", info[1]))
     widget.streak:setText(info[4])
     widget.description:setText(info[3])
-    widget:setBackgroundColor(i % 2 == 0 and "#414141" or "#484848")
+    widget:setBackgroundColor(i % 2 == 0 and "#281b17" or "#2c1e19")
   end
 end

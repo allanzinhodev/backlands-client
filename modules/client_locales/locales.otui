@@ -1,13 +1,12 @@
 LocalesMainLabel < Label
-  font: sans-bold-16px
+  font: $var-cip-font
 
 LocalesButton < UIWidget
   size: 96 96
   image-size: 96 96
   image-smooth: true
   text-offset: 0 96
-  font: verdana-11px-antialised
-
+  font: $var-cip-font
 UIWindow
   id: localesWindow
   background-color: #000000

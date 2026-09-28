@@ -5,7 +5,7 @@ SmallSpellList < UIWidget
   background-color: alpha
 
   $focus:
-    background-color: #737373
+    background-color: #4d2f24
 
   UIItem
     id: spellIcon
@@ -71,7 +71,7 @@ FilterPanel < UIWidget
     phantom: true
   CheckBox
     id: charVocationFilter
-    width: 160
+    width: 224
     anchors.top: parent.top
     anchors.left: parent.left
     margin-left: 7
@@ -82,11 +82,11 @@ FilterPanel < UIWidget
     text-offset: 13 -3
     change-cursor-image: false
     $hover !disabled:
-    color: #c0c0c0
+    color: #ebbf90
     @onCheckChange: modules.game_cyclopedia.MagicalArchive.onFilterChange(self)
   CheckBox
     id: charLevelFilter
-    width: 160
+    width: 188
     anchors.top: prev.bottom
     anchors.left: parent.left
     margin-left: 7
@@ -97,7 +97,7 @@ FilterPanel < UIWidget
     text-offset: 13 -3
     change-cursor-image: false
     $hover !disabled:
-    color: #c0c0c0
+    color: #ebbf90
     @onCheckChange: modules.game_cyclopedia.MagicalArchive.onFilterChange(self)
   CheckBox
     id: learntSpellFilter
@@ -112,7 +112,7 @@ FilterPanel < UIWidget
     text-offset: 13 -3
     change-cursor-image: false
     $hover !disabled:
-    color: #c0c0c0
+    color: #ebbf90
     @onCheckChange: modules.game_cyclopedia.MagicalArchive.onFilterChange(self)
 
   HorizontalSeparator
@@ -137,7 +137,7 @@ FilterPanel < UIWidget
     text-offset: 13 -3
     change-cursor-image: false
     $hover !disabled:
-    color: #c0c0c0
+    color: #ebbf90
     @onCheckChange: modules.game_cyclopedia.MagicalArchive.onFilterChange(self)
 
   CheckBox
@@ -153,7 +153,7 @@ FilterPanel < UIWidget
     text-offset: 13 -3
     change-cursor-image: false
     $hover !disabled:
-    color: #c0c0c0
+    color: #ebbf90
     @onCheckChange: modules.game_cyclopedia.MagicalArchive.onFilterChange(self)
 
   CheckBox
@@ -169,7 +169,7 @@ FilterPanel < UIWidget
     text-offset: 13 -3
     change-cursor-image: false
     $hover !disabled:
-    color: #c0c0c0
+    color: #ebbf90
     @onCheckChange: modules.game_cyclopedia.MagicalArchive.onFilterChange(self)
 
   CheckBox
@@ -185,7 +185,7 @@ FilterPanel < UIWidget
     text-offset: 13 -3
     change-cursor-image: false
     $hover !disabled:
-    color: #c0c0c0
+    color: #ebbf90
     @onCheckChange: modules.game_cyclopedia.MagicalArchive.onFilterChange(self)
 
   CheckBox
@@ -201,7 +201,7 @@ FilterPanel < UIWidget
     text-offset: 13 -3
     change-cursor-image: false
     $hover !disabled:
-    color: #c0c0c0
+    color: #ebbf90
     @onCheckChange: modules.game_cyclopedia.MagicalArchive.onFilterChange(self)
 
   CheckBox
@@ -217,7 +217,7 @@ FilterPanel < UIWidget
     text-offset: 13 -3
     change-cursor-image: false
     $hover !disabled:
-    color: #c0c0c0
+    color: #ebbf90
     @onCheckChange: modules.game_cyclopedia.MagicalArchive.onFilterChange(self)
 
   HorizontalSeparator
@@ -242,7 +242,7 @@ FilterPanel < UIWidget
     text-offset: 13 -3
     change-cursor-image: false
     $hover !disabled:
-    color: #c0c0c0
+    color: #ebbf90
     @onCheckChange: modules.game_cyclopedia.MagicalArchive.onFilterChange(self)
 
   CheckBox
@@ -258,7 +258,7 @@ FilterPanel < UIWidget
     text-offset: 13 -3
     change-cursor-image: false
     $hover !disabled:
-    color: #c0c0c0
+    color: #ebbf90
     @onCheckChange: modules.game_cyclopedia.MagicalArchive.onFilterChange(self)
 
   CheckBox
@@ -274,12 +274,12 @@ FilterPanel < UIWidget
     text-offset: 13 -3
     change-cursor-image: false
     $hover !disabled:
-    color: #c0c0c0
+    color: #ebbf90
     @onCheckChange: modules.game_cyclopedia.MagicalArchive.onFilterChange(self)
 
   CheckBox
     id: allSpellsFilter
-    width: 160
+    width: 196
     anchors.top: prev.bottom
     anchors.left: parent.left
     margin-left: 7
@@ -290,7 +290,7 @@ FilterPanel < UIWidget
     text-offset: 13 -3
     change-cursor-image: false
     $hover !disabled:
-    color: #c0c0c0
+    color: #ebbf90
     @onCheckChange: modules.game_cyclopedia.MagicalArchive.onFilterChange(self)
 
 
@@ -305,7 +305,7 @@ FilterPanel < UIWidget
 
   CheckBox
     id: premmyFilter
-    width: 160
+    width: 194
     anchors.top: prev.bottom
     anchors.left: parent.left
     margin-left: 7
@@ -316,7 +316,7 @@ FilterPanel < UIWidget
     text-offset: 13 -3
     change-cursor-image: false
     $hover !disabled:
-    color: #c0c0c0
+    color: #ebbf90
     @onCheckChange: modules.game_cyclopedia.MagicalArchive.onFilterChange(self)
 
   CheckBox
@@ -332,7 +332,7 @@ FilterPanel < UIWidget
     text-offset: 13 -3
     change-cursor-image: false
     $hover !disabled:
-    color: #c0c0c0
+    color: #ebbf90
     @onCheckChange: modules.game_cyclopedia.MagicalArchive.onFilterChange(self)
 
   
@@ -358,7 +358,7 @@ FilterPanel < UIWidget
     text-offset: 13 -3
     change-cursor-image: false
     $hover !disabled:
-    color: #c0c0c0
+    color: #ebbf90
     @onCheckChange: modules.game_cyclopedia.MagicalArchive.onFilterChange(self)
 
   CheckBox
@@ -374,7 +374,7 @@ FilterPanel < UIWidget
     text-offset: 13 -3
     change-cursor-image: false
     $hover !disabled:
-    color: #c0c0c0
+    color: #ebbf90
     @onCheckChange: modules.game_cyclopedia.MagicalArchive.onFilterChange(self)
 
 SpellListPanel < Panel
@@ -396,8 +396,8 @@ SpellListPanel < Panel
     border-width: 1
     border-color-top: #181818
     border-color-left: #181818
-    border-color-right: #737373
-    border-color-bottom: #737373
+    border-color-right: #4d2f24
+    border-color-bottom: #4d2f24
     vertical-scrollbar: spellListScrollBar
     layout:
       type: verticalBox
@@ -417,7 +417,8 @@ SpellListPanel < Panel
     anchors.bottom: parent.bottom
     anchors.left: parent.left
     padding-top: 3
-    !placeholder: tr('Type to search')
+    !placeholder: tr('Search')
+    placeholder-font: $var-cip-font
     font: $var-cip-font
     placeholder-color: $var-cip-inactive-color
     @onTextChange: modules.game_cyclopedia.MagicalArchive.onSearchTextChange(self)
@@ -727,8 +728,8 @@ AdditionalStats < Panel
     padding-bottom: 2
     border-color-top: #181818
     border-color-left: #181818
-    border-color-right: #737373
-    border-color-bottom: #737373
+    border-color-right: #4d2f24
+    border-color-bottom: #4d2f24
     Label
       id: aboutInfo
       anchors.top: parent.top
@@ -942,8 +943,8 @@ InfoPanel < Panel
       border-width: 1
       border-color-top: #181818
       border-color-left: #181818
-      border-color-right: #737373
-      border-color-bottom: #737373
+      border-color-right: #4d2f24
+      border-color-bottom: #4d2f24
     Label
       id: spellName
       anchors.top: parent.top
@@ -1115,6 +1116,7 @@ MagicalArchiveDataPanel < Panel
       anchors.horizontalCenter: parent.horizontalCenter
       anchors.verticalCenter: parent.verticalCenter
       !text: tr('Select a spell to view detailed information.')
+      text-auto-resize: true
       font: $var-cip-font
       color: $var-text-cip-color
 

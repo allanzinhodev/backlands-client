@@ -1,6 +1,7 @@
 BugReportWindow < NewMainWindow
+  id: bugReportWindow
   !text: tr('Reporting')
-  size: 300 318
+  size: 440 318
   @onEscape: self:hide()
 
   Panel
@@ -35,6 +36,8 @@ BugReportWindow < NewMainWindow
 
       UIWidget
         id: map
+        font: $var-cip-font
+        text-auto-resize: true
         !text: tr('Map')
         text-align: left
         color: $var-text-cip-color-highlight
@@ -43,6 +46,8 @@ BugReportWindow < NewMainWindow
         @onSetup: self:focus(); updateOnStates(self, "$var-textlist-odd", 0)
       UIWidget
         id: type
+        font: $var-cip-font
+        text-auto-resize: true
         !text: tr('Type')
         text-align: left
         color: $var-text-cip-color-highlight
@@ -51,6 +56,8 @@ BugReportWindow < NewMainWindow
         @onSetup: updateOnStates(self, "$var-textlist-even", 1)
       UIWidget
         id: technical
+        font: $var-cip-font
+        text-auto-resize: true
         !text: tr('Technical')
         text-align: left
         color: $var-text-cip-color-highlight
@@ -59,6 +66,8 @@ BugReportWindow < NewMainWindow
         @onSetup: updateOnStates(self, "$var-textlist-odd", 2)
       UIWidget
         id: other
+        font: $var-cip-font
+        text-auto-resize: true
         !text: tr('Other')
         text-align: left
         color: $var-text-cip-color-highlight
@@ -108,7 +117,7 @@ BugReportWindow < NewMainWindow
 
     Button
       id: cancelButton
-      size: 43 20
+      size: 74 20
       !text: tr('Cancel')
       anchors.bottom: parent.bottom
       anchors.right: parent.right
@@ -116,7 +125,7 @@ BugReportWindow < NewMainWindow
 
     Button
       id: sendButton
-      size: 43 20
+      size: 54 20
       !text: tr('Send')
       anchors.bottom: parent.bottom
       anchors.right: prev.left

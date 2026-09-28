@@ -1,6 +1,6 @@
 HistoryLabel < Panel
   size: 547 15
-  background-color: #353535
+  background-color: #221714
   Label
     id: date
     size: 148 15
@@ -79,7 +79,7 @@ HistoryPanel < Panel
     anchors.left: historyListPanel.left
     margin-left: 1
     border-width-bottom: 1
-    border-color-bottom: #757575
+    border-color-bottom: #503125
   UIWidget
     id: dateButton
     size: 148 15
@@ -93,11 +93,11 @@ HistoryPanel < Panel
     margin-top: 1
     margin-left: 1
     border-width-bottom: 1
-    border-color-bottom: #292a29
-    background-color: #363636
+    border-color-bottom: #110b0a
+    background-color: #221714
     opacity: 1.0
     $pressed:
-      color: #dfdfdf88
+      color: #ebbf9088
       opacity: 0.8
   UIWidget
     height: 14
@@ -107,7 +107,7 @@ HistoryPanel < Panel
     margin-top: 1
   UIWidget
     id: balanceButton
-    size: 88 15
+    size: 146 15
     !text: tr('Balance')
     color: $var-text-cip-color
     font: $var-cip-font
@@ -117,11 +117,11 @@ HistoryPanel < Panel
     margin-top: 1
     margin-left: 2
     border-width-bottom: 1
-    border-color-bottom: #292a29
-    background-color: #363636
+    border-color-bottom: #110b0a
+    background-color: #221714
     opacity: 1.0
     $pressed:
-      color: #dfdfdf88
+      color: #ebbf9088
       opacity: 0.8
   UIWidget
     height: 14
@@ -142,11 +142,11 @@ HistoryPanel < Panel
     margin-top: 1
     margin-left: 2
     border-width-bottom: 1
-    border-color-bottom: #292a29
-    background-color: #363636
+    border-color-bottom: #110b0a
+    background-color: #221714
     opacity: 1.0
     $pressed:
-      color: #dfdfdf88
+      color: #ebbf9088
       opacity: 0.8
   UIWidget
     height: 14
@@ -161,11 +161,11 @@ HistoryPanel < Panel
     margin-top: 1
     margin-left: 2
     border-width-bottom: 1
-    border-color-bottom: #292a29
-    background-color: #363636
+    border-color-bottom: #110b0a
+    background-color: #221714
     opacity: 1.0
     $pressed:
-      color: #dfdfdf88
+      color: #ebbf9088
       opacity: 0.8
   Button
     id: previousButton
@@ -173,8 +173,8 @@ HistoryPanel < Panel
     anchors.left: parent.left
     margin-top: 5
     margin-left: 6
-    size: 88 20
-    font: cipsoftFont
+    size: 142 20
+    font: $var-cip-font
     !text: tr('Previous Page')
     enabled: true
   Label
@@ -192,7 +192,7 @@ HistoryPanel < Panel
     anchors.right: parent.right
     margin-top: 5
     margin-right: 6
-    size: 88 20
-    font: cipsoftFont
+    size: 104 20
+    font: $var-cip-font
     !text: tr('Next Page')
     enabled: true

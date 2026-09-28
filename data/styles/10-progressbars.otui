@@ -3,7 +3,7 @@ ProgressBar < UIProgressBar
   background-color: red
   image-source: /images/ui/progressbar
   image-border: 2
-  font: verdana-11px-rounded
+  font: $var-cip-font
   text-offset: 0 2
 
   $!on:
@@ -19,7 +19,7 @@ LifeProgressBar < UIProgressBar
   height: 16
   background-color: green
   border: 1 black
-  font: verdana-11px-rounded
+  font: $var-cip-font
   text-offset: 0 2
   margin: 2
 
@@ -28,8 +28,7 @@ ProgressRect < UIProgressRect
   phantom: true
   color: white
   background-color: #00000088
-  font: verdana-11px-rounded
-
+  font: $var-cip-font
 HealthBar < ProgressBar
   image-source: /images/ui/progressbarhpmana
   image-border: 3
@@ -41,6 +40,7 @@ ManaBar < ProgressBar
 
 ProgressBarSD < UIProgressBarSD
   height: 22
+  font: $var-cip-font
   tooltip-delayed: true
 
 HealthBarSD < ProgressBarSD

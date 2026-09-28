@@ -69,11 +69,11 @@ function Channel:onChannelListFocusChange(list, selected, lastSelected)
 
   if lastSelected then
     local index = lastSelected:getActionId()
-    lastSelected:setBackgroundColor((index % 2 == 0) and '#484848' or '#414141')
+    lastSelected:setBackgroundColor((index % 2 == 0) and '#2c1e19' or '#281b17')
     lastSelected:setColor(lastSelected.channelColor or DEFAULT_CHANNEL_COLOR)
   end
 
-  selected:setBackgroundColor('#585858')
+  selected:setBackgroundColor('#35241d')
   selected:setColor("$var-text-cip-color-highlight")
 end
 
@@ -101,7 +101,7 @@ function Channel:onChannelList(channelList)
             label.channelColor = getChannelListColor(channelName)
             label:setColor(label.channelColor)
             label:setHeight(16)
-            local backgroundColor = (count % 2 == 0) and '#484848' or '#414141'
+            local backgroundColor = (count % 2 == 0) and '#2c1e19' or '#281b17'
             label:setBackgroundColor(backgroundColor)
             label:setActionId(count)
             label:setPhantom(false)

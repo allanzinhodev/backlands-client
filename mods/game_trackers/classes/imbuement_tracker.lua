@@ -121,7 +121,7 @@ function ImbuementTracker.showTrackerData()
 						elseif hours < 3 then
 							source:setColor("#f8db38")
 						else
-							source:setColor("#bfbfbf")
+							source:setColor("#a87f68")
 						end
 					else
 						-- Empty slot
@@ -129,7 +129,7 @@ function ImbuementTracker.showTrackerData()
 						source:setImageClip("0 0 32 32")
 						source:setText("")
 						source:setTooltip(tr("Empty slot"))
-						source:setColor("#bfbfbf")
+						source:setColor("#a87f68")
 					end
 				else
 					panel:setVisible(false)

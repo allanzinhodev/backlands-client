@@ -716,9 +716,9 @@ function CharacterList.create(characters, account, otui)
     showOutfit = true
   end
   if not showOutfit then
-    charactersWindow.characterTable.characterSort:setTextOffset("-206 0")
+    charactersWindow.characterTable.characterSort:setTextOffset("2 0")
   else
-    charactersWindow.characterTable.characterSort:setTextOffset("-73 0")
+    charactersWindow.characterTable.characterSort:setTextOffset("68 0")
   end
 
   local outfitCheckBox = charactersWindow:recursiveGetChildById('checkBoxOutfit')
@@ -939,10 +939,10 @@ function onUpdateOnStates(self)
     return
   end
 
-  self:setBackgroundColor("#585858")
+  self:setBackgroundColor("#35241d")
   local children = self:getChildren()
   for i=1,#children do
-    children[i]:setColor("#f4f4f4")
+    children[i]:setColor("#ebbf90")
     if children[i]:getId() == "pin" then
       children[i]:setVisible(true)
     end
@@ -954,13 +954,13 @@ function onUpdateOnStates(self)
       lastWidget.pin:setVisible(false)
     end
     if lastWidget.name then
-      lastWidget.name:setColor("#c0c0c0")
+      lastWidget.name:setColor("#a87f68")
     end
     if lastWidget.level then
-      lastWidget.level:setColor("#c0c0c0")
+      lastWidget.level:setColor("#a87f68")
     end
     if lastWidget.vocation then
-      lastWidget.vocation:setColor("#c0c0c0")
+      lastWidget.vocation:setColor("#a87f68")
     end
     local worldLabel = lastWidget:getChildById('worldName')
     if worldLabel then
@@ -1013,7 +1013,7 @@ function CharacterList.rebuildCharactersList(focusNameOverride, focusWorldOverri
   local firstWidget
   for i, characterInfo in ipairs(characters) do
     local widget = g_ui.createWidget(showOutfit and 'CharacterWidgetOn' or 'CharacterWidgetOff', characterList)
-    widget.realColor = i % 2 == 0 and '#414141' or '#484848'
+    widget.realColor = (i % 2 == 0 and "#281b17" or "#2c1e19")
     widget:setBackgroundColor(widget.realColor)
 
     local pvpType = PvPTypes[characterInfo.pvpType] or PvPTypes[0] or ''

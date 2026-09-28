@@ -111,7 +111,7 @@ function showOffset()
         local data = v.data
         if data then
             local widget = g_ui.createWidget('ListLabel', creatureList)
-            local color = k % 2 == 0 and '#414141' or '#484848'
+            local color = k % 2 == 0 and '#281b17' or '#2c1e19'
             widget:setText(string.format("Look: %s", data.type))
             widget:setBackgroundColor(color)
             widget:setId(data.type)
@@ -141,7 +141,7 @@ function onSelectOutfit(list, selected, oldSelection)
 
     if oldSelection then
         local childIndex = list:getChildIndex(oldSelection)
-        oldSelection:setBackgroundColor(childIndex % 2 == 0 and '#414141' or '#484848')
+        oldSelection:setBackgroundColor(childIndex % 2 == 0 and '#281b17' or '#2c1e19')
     end
 
     if not selected.data then

@@ -1,6 +1,7 @@
 EventsScheduleLabel < UIWidget
   id: event
   !text: tr('Event')
+  text-auto-resize: true
   font: $var-cip-font
   color: $var-text-cip-color
   background-color: #0db432
@@ -149,5 +150,5 @@ NewMainWindow
       anchors.bottom: parent.bottom
       anchors.right: parent.right
       !text: tr('Close')
-      size: 43 20
+      size: 62 20
       @onClick: modules.game_schedule.terminate()

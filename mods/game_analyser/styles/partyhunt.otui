@@ -209,7 +209,7 @@ MiniWindow
 
     Label
       id: lootTypeLabel
-      !text: tr('Loot Type:')
+      !text: tr('Type:')
       anchors.top: prev.bottom
       anchors.left: parent.left
       margin-top: 5

@@ -58,7 +58,7 @@ FusionItemBox < UICheckBox
     width: 24
     height: 12
     text-align: right
-    color: #ffffff
+    color: #ebbf90
     font: verdana-11px-antialised
 
 Panel
@@ -75,7 +75,8 @@ Panel
       anchors.horizontalCenter: parent.horizontalCenter
       anchors.top: parent.top
       !text: tr('Select Item For Fusion')
-      color: #909090
+      text-auto-resize: true
+      color: #a87f68
       margin-top: 2
 
     TextList
@@ -179,7 +180,8 @@ Panel
       anchors.horizontalCenter: parent.horizontalCenter
       anchors.top: parent.top
       !text: tr('Further Items Needed For Fusion')
-      color: #909090
+      text-auto-resize: true
+      color: #a87f68
       margin-top: 2
 
     Panel
@@ -273,20 +275,20 @@ Panel
       id: successLabel
       !text: tr('50%%')
       anchors.top: parent.top
-      anchors.right: improveRateSuccessPanel.right
+      anchors.left: successRate.right
+      margin-left: 4
       margin-top: 22
       text-auto-resize: true
       color: #f75f5f
 
     Button
       id: improveRateSuccessButton
-      size: 108 20
+      size: 168 20
       !text: tr('Improve to 65%%')
       anchors.top: successRate.bottom
       anchors.left: dustCount.right
       margin-left: 5
       margin-top: 2
-      font: cipsoftFont
       enabled: false
       $checked:
         background-color: #243824
@@ -330,19 +332,19 @@ Panel
       id: tierLossLabel
       !text: tr('100%%')
       anchors.top: prev.top
-      anchors.right: improveRateSuccessPanel.right
+      anchors.left: prev.right
+      margin-left: 4
       text-auto-resize: true
       color: #f75f5f
 
     Button
       id: tierLossButton
-      size: 108 20
+      size: 156 20
       !text: tr('Reduce to 50%%')
       anchors.top: prev.bottom
       anchors.left: dustCount.right
       margin-left: 5
       margin-top: 2
-      font: cipsoftFont
       opacity: 0.7
       enabled: false
       $checked:
@@ -507,6 +509,7 @@ Panel
         anchors.top: parent.top
         margin-top: 2
         text-auto-resize: true
+        text-align: center
         font: $var-cip-font
         color: #d33c3c
       Label
@@ -531,7 +534,8 @@ Panel
       anchors.horizontalCenter: parent.horizontalCenter
       anchors.top: parent.top
       !text: tr('Further Items Needed For Convergence Fusion')
-      color: #909090
+      text-auto-resize: true
+      color: #a87f68
       margin-top: 2
 
     Panel

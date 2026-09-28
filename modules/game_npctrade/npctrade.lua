@@ -1023,11 +1023,11 @@ function checkItemToSell(self)
   local checkBox = parent:recursiveGetChildById('sellCheckbox')
   local gray = parent:recursiveGetChildById('gray')
   if checkBox:isChecked() then
-    self:setBackgroundColor("#404040")
+    self:setBackgroundColor("#271b17")
     checkBox:setChecked(false)
     gray:setVisible(true)
   else
-    self:setBackgroundColor("#585858")
+    self:setBackgroundColor("#35241d")
     checkBox:setChecked(true)
     gray:setVisible(false)
   end
@@ -1082,7 +1082,7 @@ local function updateBlacklist(window)
   for i, itemId in pairs(sellAllWhitelist) do
     count = count + 1
     local widget = g_ui.createWidget('QuickSellItemBox', list)
-    local color = (count % 2) == 0 and '#414141' or '#484848'
+    local color = (count % 2) == 0 and '#281b17' or '#2c1e19'
     widget:setId(itemId)
     widget.itemName:setText(getItemServerName(itemId))
     widget.itemId:setItemId(itemId)
@@ -1161,7 +1161,7 @@ function onTradeAllClick()
       window.contentPanel.total:setText("Total: " .. formatMoney(saleValue, ",") .. " gps")
     end
 
-    itemSquare.itemButton:setBackgroundColor("#585858")
+    itemSquare.itemButton:setBackgroundColor("#35241d")
     itemSquare.sellCheckbox:setChecked(true)
 
     local itemWidget = itemSquare:getChildById('item')

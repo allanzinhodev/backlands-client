@@ -74,6 +74,7 @@ MessageBoxButtonHolder < UIWidget
 
 MessageBoxButton < Button
   margin-left: 10
+  text-auto-resize: true
 
 WarningToolWindow < UIWindow
   size: 420 280
@@ -92,7 +93,7 @@ WarningToolWindow < UIWindow
     anchors.top: parent.top
     anchors.left: parent.left
     anchors.right: parent.right
-    color: #ffffff
+    color: #ebbf90
     opacity: 1.0
     margin-top: 1
 
@@ -123,14 +124,14 @@ WarningToolWindow < UIWindow
     margin-left: 15
     margin-bottom: 10
     font: $var-main-font
-    color: #aaaaaa
+    color: #a87f68
     text-offset: 16 -1
     text-auto-resize: true
     !text: tr('Do not show this warning again.')
 
   QtButton
     id: warningAcceptButton
-    size: 86 20
+    size: 134 20
     anchors.bottom: parent.bottom
     anchors.horizontalCenter: parent.horizontalCenter
     margin-bottom: 10

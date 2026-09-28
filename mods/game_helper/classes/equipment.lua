@@ -143,7 +143,7 @@ function equip.clearForm()
   local itemNameLabel = formPanel:getChildById('itemNameLabel')
   if itemNameLabel then
     itemNameLabel:setText("(click to select an item)")
-    itemNameLabel:setColor("#888888")
+    itemNameLabel:setColor("#6b4d40")
   end
 
   -- Hide clear button

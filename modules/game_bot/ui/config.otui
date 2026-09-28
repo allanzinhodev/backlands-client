@@ -53,6 +53,6 @@ BotConfig < Panel
     anchors.top: prev.top
     anchors.right: parent.right
     text: Remove
-    width: 56
+    width: 76
     height: 18
     text-offet: 0 2

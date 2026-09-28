@@ -202,6 +202,7 @@ KillTracker < MiniWindow
 
     Label
       !text: tr('Prey Creatures')
+      width: 156
       font: $var-cip-main-font
       color: $var-text-cip-color
 
@@ -228,6 +229,7 @@ KillTracker < MiniWindow
 
     Label
       !text: tr('Bounty Task')
+      width: 128
       font: $var-cip-main-font
       color: $var-text-cip-color
       margin-top: 5
@@ -243,6 +245,7 @@ KillTracker < MiniWindow
     Label
       id: weeklyTasksLabel
       !text: tr('Weekly Tasks')
+      width: 136
       font: $var-cip-main-font
       color: $var-text-cip-color
       margin-top: 5

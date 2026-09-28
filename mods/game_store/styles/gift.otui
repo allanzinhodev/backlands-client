@@ -37,7 +37,7 @@ GiftWindow < NewMainWindow
     Label
       anchors.top: prev.bottom
       anchors.left: parent.left
-      !text: tr('Transferable Astra Coins:')
+      !text: tr('Transferable Coins:')
       font: $var-cip-font
       color: $var-text-cip-color
       text-auto-resize: true
@@ -98,6 +98,7 @@ GiftWindow < NewMainWindow
     Button
       id: buttonCancel
       !text: tr('Cancel')
+      width: 74
       height: 20
       anchors.bottom: parent.bottom
       anchors.right: parent.right

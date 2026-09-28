@@ -19,7 +19,7 @@ VipGroupList < UIWidget
     anchors.top: parent.top
     anchors.left: parent.left
     font: Verdana Bold-11px
-    color: #f7f7f7
+    color: #ebbf90
     text-align: topLeft
     !text: tr('No Group')
     text-auto-resize: true

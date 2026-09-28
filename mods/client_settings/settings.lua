@@ -886,7 +886,7 @@ function onHKFocusChange(widget)
 
   lastFocusHK = widget
   lastFocusHK.lastColor = lastFocusHK:getBackgroundColor()
-  lastFocusHK:setBackgroundColor("#585858")
+  lastFocusHK:setBackgroundColor("#35241d")
   lastFocusHK.firstKey.actionEdit:setVisible(true)
   lastFocusHK.secondKey.actionEdit:setVisible(true)
 end
@@ -905,7 +905,7 @@ function onCFocusChange(widget)
 
   lastFocusHK = widget
   lastFocusHK.lastColor = lastFocusHK:getBackgroundColor()
-  lastFocusHK:setBackgroundColor("#585858")
+  lastFocusHK:setBackgroundColor("#35241d")
   lastFocusHK.action.actionEdit:setVisible(true)
   lastFocusHK.firstKey.actionEdit:setVisible(true)
   lastFocusHK.secondKey.actionEdit:setVisible(true)
@@ -1168,7 +1168,7 @@ function configureGeneralHotkeys(searchText)
       end
 
       local widget = g_ui.createWidget("HotkeysLabel", panel)
-      widget:setBackgroundColor((count % 2 == 0 and '#414141' or '#484848'))
+      widget:setBackgroundColor((count % 2 == 0 and '#281b17' or '#2c1e19'))
       widget.a = action
       widget.o = option
 
@@ -1951,7 +1951,7 @@ function displayControlButtons()
   local count = 1
   for _, id in pairs(activeButtons) do
     local label = g_ui.createWidget("ControlLabel", activeList)
-    local background = count % 2 == 0 and "#484848" or "#414141"
+    local background = count % 2 == 0 and "#2c1e19" or "#281b17"
     label:setText(ControlButtonNames[id])
     label:setId(id)
     label:setBackgroundColor(background)
@@ -1967,7 +1967,7 @@ function displayControlButtons()
   count = 1
   for _, id in pairs(inactiveButtons) do
     local label = g_ui.createWidget("ControlLabel", inactiveList)
-    local background = count % 2 == 0 and "#484848" or "#414141"
+    local background = count % 2 == 0 and "#2c1e19" or "#281b17"
     label:setText(ControlButtonNames[id])
     label:setId(id)
     label:setBackgroundColor(background)
@@ -2029,7 +2029,7 @@ function onHideControlButton()
   widget:destroy()
 
   local newLabel = g_ui.createWidget("ControlLabel", inactiveList)
-  local background = inactiveList:getChildCount() % 2 == 0 and "#484848" or "#414141"
+  local background = inactiveList:getChildCount() % 2 == 0 and "#2c1e19" or "#281b17"
   newLabel:setId(currentId)
   newLabel:setText(ControlButtonNames[currentId])
   newLabel:setBackgroundColor(background)
@@ -2066,7 +2066,7 @@ function onDisplayControlButton()
   widget:destroy()
 
   local newLabel = g_ui.createWidget("ControlLabel", activeList)
-  local background = activeList:getChildCount() % 2 == 0 and "#484848" or "#414141"
+  local background = activeList:getChildCount() % 2 == 0 and "#2c1e19" or "#281b17"
   newLabel:setId(currentId)
   newLabel:setText(ControlButtonNames[currentId])
   newLabel:setBackgroundColor(background)

@@ -56,7 +56,7 @@ SkillPanel < Panel
     anchors.bottom: parent.bottom
     anchors.horizontalCenter: parent.horizontalCenter
     text: 999
-    font: verdana-11px-rounded
+    font: $var-cip-font
     text-align: right
     text-auto-resize: true
     margin-bottom: 12

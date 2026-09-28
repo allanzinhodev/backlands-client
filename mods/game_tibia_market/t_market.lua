@@ -567,7 +567,7 @@ local function renderMarketCategories(generation, onComplete)
 		for index = nextIndex, batchEnd do
 			local pair = categoryList[index]
 			local widget = g_ui.createWidget('CategoryItemListLabel', categoryPanel)
-			local color = (index - 1) % 2 == 0 and '#414141' or '#484848'
+			local color = (index - 1) % 2 == 0 and '#281b17' or '#2c1e19'
 			widget:setActionId(pair[1])
 			widget.color = color
 			widget:setId(pair[2])
@@ -869,7 +869,7 @@ function onMarketBrowse(itemID, tier, buyList, sellList)
 		end
 
 		local widget = g_ui.createWidget('MarketOfferWidget', mainMarket.buyOffersList)
-		local color = colorCount % 2 == 0 and '#414141' or '#484848'
+		local color = colorCount % 2 == 0 and '#281b17' or '#2c1e19'
 		local holder = data.holder
 		widget:setId(color)
 		widget:setActionId(i)
@@ -922,7 +922,7 @@ function onMarketBrowse(itemID, tier, buyList, sellList)
 		end
 
 		local widget = g_ui.createWidget('MarketOfferWidget', mainMarket.sellOffersList)
-		local color = colorCount % 2 == 0 and '#414141' or '#484848'
+		local color = colorCount % 2 == 0 and '#281b17' or '#2c1e19'
 		local holder = data.holder
 		widget:setId(color)
 		widget:setActionId(i)
@@ -999,7 +999,7 @@ function onBuyListValueChange(scroll, value, delta)
 	  local data = cache.SCROLL_BUY_OFFERS.listData[index]
 
 	  if data then
-		local color = index % 2 == 0 and '#414141' or '#484848'
+		local color = index % 2 == 0 and '#281b17' or '#2c1e19'
 		local holder = data.holder
 		widget:setId(color)
 		widget:setActionId(index)
@@ -1025,12 +1025,12 @@ function onBuyListValueChange(scroll, value, delta)
 		widget.endAt:setColor(count > 0 and "#c0c0c0" or "#808080")
 
 		if index == cache.SCROLL_BUY_OFFERS.lastSelected then
-			widget:setBackgroundColor('#585858')
-			widget.piecePrice:setColor("#f4f4f4")
-			widget.totalPrice:setColor("#f4f4f4")
-			widget.name:setColor("#f4f4f4")
-			widget.amount:setColor("#f4f4f4")
-			widget.endAt:setColor("#f4f4f4")
+			widget:setBackgroundColor('#35241d')
+			widget.piecePrice:setColor("#ebbf90")
+			widget.totalPrice:setColor("#ebbf90")
+			widget.name:setColor("#ebbf90")
+			widget.amount:setColor("#ebbf90")
+			widget.endAt:setColor("#ebbf90")
 		end
 	  end
 	end
@@ -1050,7 +1050,7 @@ function onSellListValueChange(scroll, value, delta)
 	  local data = cache.SCROLL_SELL_OFFERS.listData[index]
 
 	  if data then
-		local color = index % 2 == 0 and '#414141' or '#484848'
+		local color = index % 2 == 0 and '#281b17' or '#2c1e19'
 		local holder = data.holder
 		widget:setId(color)
 		widget:setActionId(index)
@@ -1085,12 +1085,12 @@ function onSellListValueChange(scroll, value, delta)
 		widget.endAt:setColor(hasMoney and "#c0c0c0" or "#808080")
 
 		if index == cache.SCROLL_SELL_OFFERS.lastSelected then
-			widget:setBackgroundColor('#585858')
-			widget.piecePrice:setColor("#f4f4f4")
-			widget.totalPrice:setColor("#f4f4f4")
-			widget.name:setColor("#f4f4f4")
-			widget.amount:setColor("#f4f4f4")
-			widget.endAt:setColor("#f4f4f4")
+			widget:setBackgroundColor('#35241d')
+			widget.piecePrice:setColor("#ebbf90")
+			widget.totalPrice:setColor("#ebbf90")
+			widget.name:setColor("#ebbf90")
+			widget.amount:setColor("#ebbf90")
+			widget.endAt:setColor("#ebbf90")
 		end
 	  end
 	end
@@ -1171,7 +1171,7 @@ function onSelectChildCategory(widget, selected, keepFilter)
 	end
 
 	lastSelectedCategory = selected
-	selected:setBackgroundColor('#585858')
+	selected:setBackgroundColor('#35241d')
 	selected:setColor('#f4f4f4')
 
 	cache.SCROLL_MARKET_ITEMS.listFit = math.floor(itemList:getHeight() / 36) + 1
@@ -1258,7 +1258,7 @@ function onSelectChildCategory(widget, selected, keepFilter)
 			widget.name:setTooltip(itemInfo.marketData.name)
 		end
 
-		widget:setBackgroundColor('#404040')
+		widget:setBackgroundColor('#271b17')
 		widget.item:getItem():setCount(count)
 		widget.item:setActionId(i)
 		widget.item:setTooltip(tr("%s%s%s%s", comma_value(count), "x", (count > 65000 and "+ " or " "), itemInfo.marketData.name))
@@ -1326,17 +1326,17 @@ function onSelectChildItem(widget, selected, oldFocus)
 	if not selected or not selected.item then return end
 
 	if oldFocus then
-		oldFocus:setBackgroundColor('#404040')
+		oldFocus:setBackgroundColor('#271b17')
 	end
 
 	if lastSelectedItem.lastWidget then
-		lastSelectedItem.lastWidget:setBackgroundColor('#404040')
+		lastSelectedItem.lastWidget:setBackgroundColor('#271b17')
 	end
 
 	local item = selected.item:getItem()
 	if not item then return end
 
-	selected:setBackgroundColor('#585858')
+	selected:setBackgroundColor('#35241d')
 	local itemID = selected.item:getItemId()
 	local itemTier = item:getTier()
 	if lastSelectedItem.itemId == itemID and lastSelectedItem.tier == itemTier then
@@ -1448,12 +1448,12 @@ function onSelectSellOffer(widget, selected, oldFocus)
 		oldFocus.endAt:setColor(color)
 	end
 
-	selected:setBackgroundColor('#585858')
-	selected.piecePrice:setColor("#f4f4f4")
-	selected.totalPrice:setColor("#f4f4f4")
-	selected.name:setColor("#f4f4f4")
-	selected.amount:setColor("#f4f4f4")
-	selected.endAt:setColor("#f4f4f4")
+	selected:setBackgroundColor('#35241d')
+	selected.piecePrice:setColor("#ebbf90")
+	selected.totalPrice:setColor("#ebbf90")
+	selected.name:setColor("#ebbf90")
+	selected.amount:setColor("#ebbf90")
+	selected.endAt:setColor("#ebbf90")
 	cache.SCROLL_SELL_OFFERS.lastSelected = selected:getActionId()
 
 	local currentOffer = sellOffers[cache.SCROLL_SELL_OFFERS.lastSelected]
@@ -1510,12 +1510,12 @@ function onSelectBuyOffer(widget, selected, oldFocus)
 		oldFocus.endAt:setColor(color)
 	end
 
-	selected:setBackgroundColor('#585858')
-	selected.piecePrice:setColor("#f4f4f4")
-	selected.totalPrice:setColor("#f4f4f4")
-	selected.name:setColor("#f4f4f4")
-	selected.amount:setColor("#f4f4f4")
-	selected.endAt:setColor("#f4f4f4")
+	selected:setBackgroundColor('#35241d')
+	selected.piecePrice:setColor("#ebbf90")
+	selected.totalPrice:setColor("#ebbf90")
+	selected.name:setColor("#ebbf90")
+	selected.amount:setColor("#ebbf90")
+	selected.endAt:setColor("#ebbf90")
 	cache.SCROLL_BUY_OFFERS.lastSelected = selected:getActionId()
 
 	if count == 0 then
@@ -1825,7 +1825,7 @@ function onSearchItem(textField)
 	if lastSelectedCategory then
 		local colourCount = 0
 		for i, pair in ipairs(categoryList) do
-			local colour = colourCount % 2 == 0 and '#414141' or '#484848'
+			local colour = colourCount % 2 == 0 and '#281b17' or '#2c1e19'
 			if pair[2] == lastSelectedCategory:getText() then
 				lastSelectedCategory:setBackgroundColor(colour)
 				lastSelectedCategory:setColor('#c0c0c0')
@@ -1914,7 +1914,7 @@ function onSearchItem(textField)
 			widget.name:setTooltip(itemInfo.marketData.name)
 		end
 
-		widget:setBackgroundColor('#404040')
+		widget:setBackgroundColor('#271b17')
 		widget.item:getItem():setCount(count)
 		widget.item:setActionId(i)
 		widget.item:setTooltip(tr("%s%s%s%s", comma_value(count), "x", (count > 65000 and "+ " or " "), itemInfo.marketData.name))
@@ -1951,7 +1951,7 @@ function onShowRedirect(item)
 	if lastSelectedCategory then
 		local colourCount = 0
 		for i, pair in ipairs(categoryList) do
-			local colour = colourCount % 2 == 0 and '#414141' or '#484848'
+			local colour = colourCount % 2 == 0 and '#281b17' or '#2c1e19'
 			if pair[2] == lastSelectedCategory:getText() then
 				lastSelectedCategory:setBackgroundColor(colour)
 				lastSelectedCategory:setColor('#c0c0c0')
@@ -2041,7 +2041,7 @@ function onShowRedirect(item)
 			widget.name:setTooltip(itemInfo.marketData.name)
 		end
 
-		widget:setBackgroundColor('#404040')
+		widget:setBackgroundColor('#271b17')
 		widget.item:getItem():setCount(count)
 		widget.item:setActionId(i)
 		widget.item:setTooltip(tr("%s%s%s%s", comma_value(count), "x", (count > 65000 and "+ " or " "), itemInfo.marketData.name))

@@ -19,6 +19,7 @@ BotServerData < Panel
     margin-top: 23
     text-align: center
     text: Channel Name:
+    width: 146
     margin-left: 6
 
   TextEdit
@@ -181,10 +182,10 @@ BotServerWindow < MainWindow
   Button
     id: closeButton
     !text: tr('Close')
-    font: cipsoftFont
+    font: $var-cip-font
     anchors.right: parent.right
     anchors.bottom: parent.bottom
-    size: 45 21
+    size: 62 21
     margin-top: 15
     margin-right: 5
 

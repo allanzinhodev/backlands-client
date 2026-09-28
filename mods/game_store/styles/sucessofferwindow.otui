@@ -1,5 +1,5 @@
 SucessOfferWindow < NewMainWindow
-  size: 350 153
+  size: 350 160
   id: sucessOfferWindow
   !text: tr('Purchase completed successfully')
   @onEscape: completePurchase(nil, true)
@@ -11,6 +11,7 @@ SucessOfferWindow < NewMainWindow
     anchors.horizontalCenter: parent.horizontalCenter
     margin-top: -85
     image-source: /images/ui/dragon-animated
+    phantom: true
 
   TextEdit
     id: description

@@ -249,7 +249,7 @@ function onTaintsChange(localPlayer, now, old)
       local icon = g_ui.createWidget('ConditionWidget', content)
       icon:setId('condition_taints')
       icon:setImageSource('/images/game/states/' .. now + 30 )
-      icon:setTooltipFont("Verdana Bold-11px-wheel")
+      icon:setTooltipFont("silkscreen-16")
       icon:setTooltip(TaintsDescriptions[now])
       icon:setParent(content)
   end
@@ -309,7 +309,9 @@ function onOverlayGeometryChange()
     return
   end
 
-  local classic = g_settings.getBoolean("classicView")
+  -- Mesma regra do game_interface: ler `classicView` cru ignora `extended-view-ui`
+  -- e faz as barras calcularem a margem pelo modo errado.
+  local classic = modules.game_interface.isClassicViewActive()
   local minMargin = 40
   if classic then
     topHealthBar:setMarginTop(15)

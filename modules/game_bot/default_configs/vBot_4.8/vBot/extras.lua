@@ -38,7 +38,7 @@ local addCheckBox = function(id, title, defaultValue, dest, tooltip)
         label:setColor("#d9321f")
         label:setTooltip("! WARNING ! \nTurn on check players in extras to use this feature!")
       else
-          label:setColor("#dfdfdf")
+          label:setColor("#ebbf90")
           label:setTooltip("")
       end
     end

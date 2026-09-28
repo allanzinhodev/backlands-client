@@ -85,8 +85,9 @@ NewMainWindow
       anchors.right: categoryCombo.left
       height: 22
       margin-right: 6
-      placeholder: Type to search
-      placeholder-color: #6E706F
+      placeholder: Search
+      placeholder-font: $var-cip-font
+      placeholder-color: $var-cip-inactive-color
       color: $var-text-cip-color
 
       ClearSearch
@@ -129,6 +130,7 @@ NewMainWindow
       font: $var-cip-font
       color: $var-text-cip-color
       !text: tr('Creatures')
+      text-auto-resize: true
 
     Label
       id: soulsealsHeader
@@ -138,6 +140,7 @@ NewMainWindow
       font: $var-cip-font
       color: $var-text-cip-color
       !text: tr('Soulseals')
+      text-auto-resize: true
 
   Panel
     id: listPanel
@@ -199,7 +202,7 @@ NewMainWindow
 
     Button
       id: fightBtn
-      size: 40 20
+      size: 56 20
       anchors.top: parent.top
       anchors.left: creatureFrame.right
       margin-left: 6

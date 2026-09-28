@@ -16,6 +16,7 @@ Dps < Panel
     anchors.right: parent.right
     margin-top: 6
     !placeholder: tr('1')
+    placeholder-font: $var-cip-font
     only-number: true
     @onTextChange: modules.game_analyser.checkNumber(self, self:getText())
 
@@ -37,6 +38,7 @@ Hps < Panel
     anchors.right: parent.right
     margin-top: 6
     !placeholder: tr('1')
+    placeholder-font: $var-cip-font
     only-number: true
     @onTextChange: modules.game_analyser.checkNumber(self, self:getText())
 
@@ -73,7 +75,7 @@ NewMainWindow
       anchors.bottom: parent.bottom
       anchors.right: parent.right
       !text: tr('Cancel')
-      size: 43 20
+      size: 74 20
 
     Button
       id: ok

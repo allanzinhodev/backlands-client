@@ -15,12 +15,12 @@ VoteLabel < Label
 
 
 ListAnnouncementLabel < UIWidget
-  font: verdana-11px-antialised
-  color: #dfdfdf
+  font: $var-cip-font
+  color: #ebbf90
   text-align: left
 
   $disabled:
-    color: #dfdfdf88
+    color: #ebbf9088
 
 SetupPool < NewHeadlessWindow
   id: setuPoolWindow
@@ -117,11 +117,11 @@ SetupPool < NewHeadlessWindow
       anchors.bottom: parent.bottom
       anchors.right: parent.right
       !text: tr('Close')
-      size: 43 20
+      size: 62 20
       @onClick: closePollAnnouncement()
     Button
       id: insertButton
-      size: 43 20
+      size: 68 20
       !text: tr('Insert')
       anchors.bottom: parent.bottom
       anchors.right: prev.left
@@ -198,11 +198,11 @@ SetupLink < NewHeadlessWindow
       anchors.bottom: parent.bottom
       anchors.right: parent.right
       !text: tr('Close')
-      size: 43 20
+      size: 62 20
       @onClick: closeRedirectLink()
     Button
       id: redirectButton
-      size: 43 20
+      size: 86 20
       !text: tr('Redirect')
       anchors.bottom: parent.bottom
       anchors.right: prev.left
@@ -264,7 +264,7 @@ AnnounceWindow < NewHeadlessWindow
     anchors.bottom: parent.bottom
     anchors.horizontalCenter: parent.horizontalCenter
     !text: tr('Close')
-    size: 43 20
+    size: 62 20
     margin-bottom: 10
     @onClick: close()
   Button
@@ -282,11 +282,12 @@ AnnounceWindow < NewHeadlessWindow
       image-clip: 20 20 20 20
   Button
     id: openLinkButton
-    size: 53 20
+    size: 100 20
     anchors.bottom: parent.bottom
     anchors.right: parent.right
     !text: tr('Open Link')
     image-source: /images/ui/buttons-blue
+    color: #ebbf90
     margin-bottom: 10
     margin-right: 15
     visible: false
@@ -421,7 +422,7 @@ PollWindow < NewHeadlessWindow
       anchors.bottom: parent.bottom
       anchors.right: parent.right
       !text: tr('Close')
-      size: 43 20
+      size: 62 20
       @onClick: close()
     Button
       id: voteButton
@@ -446,6 +447,7 @@ AdminFilterPanel < Panel
     margin-top: 10
     !text: tr('Admin Console')
     image-source: /images/ui/buttons-blue
+    color: #ebbf90
     @onClick:
   Button
     id: announcementButton
@@ -455,6 +457,7 @@ AdminFilterPanel < Panel
     margin-top: 5
     !text: tr('Announcement')
     image-source: /images/ui/buttons-blue
+    color: #ebbf90
     @onClick: modules.game_announcement.openAnnouncementList()
   Button
     id: raidsButton
@@ -464,6 +467,7 @@ AdminFilterPanel < Panel
     margin-top: 5
     !text: tr('Raids')
     image-source: /images/ui/buttons-blue
+    color: #ebbf90
     @onClick:
 
 AnnouncementContent < Panel
@@ -477,12 +481,13 @@ AnnouncementContent < Panel
     Button
       id: previewButton
       focusable: false
-      size: 43 20
+      size: 82 20
       anchors.top: name.top
       anchors.right: parent.right
       !text: tr('Preview')
       margin-top: -5
       image-source: /images/ui/buttons-blue
+      color: #ebbf90
       @onClick: previewAnnouncement()
     Label
       id: name
@@ -570,11 +575,12 @@ AnnouncementContent < Panel
     Button
       id: createPollButton
       focusable: false
-      size: 65 20
+      size: 130 20
       anchors.top: parent.top
       anchors.right: parent.right
       !text: tr('Add Answers')
       image-source: /images/ui/buttons-blue
+      color: #ebbf90
       enabled: false
       @onClick: modules.game_announcement.openPollAnnouncement()
 
@@ -599,7 +605,7 @@ AnnouncementContent < Panel
       CheckBox
         id: announcementFilter
         focusable: false
-        width: 180
+        width: 272
         anchors.top: parent.top
         anchors.left: parent.left
         margin-top: 5
@@ -609,7 +615,7 @@ AnnouncementContent < Panel
         text-offset: 13 -3
         change-cursor-image: false
         $hover !disabled:
-        color: #c0c0c0
+        color: #ebbf90
         @onCheckChange:
       CheckBox
         id: createPollFilter
@@ -624,12 +630,12 @@ AnnouncementContent < Panel
         text-offset: 13 -3
         change-cursor-image: false
         $hover !disabled:
-        color: #c0c0c0
+        color: #ebbf90
         @onCheckChange:
       CheckBox
         id: redirectUrlFilter
         focusable: false
-        width: 160
+        width: 248
         anchors.top: prev.bottom
         anchors.left: parent.left
         margin-top: 8
@@ -639,18 +645,19 @@ AnnouncementContent < Panel
         text-offset: 13 -3
         change-cursor-image: false
         $hover !disabled:
-        color: #c0c0c0
+        color: #ebbf90
         @onCheckChange:
 
       Button
         id: linkButton
         focusable: false
-        size: 50 20
+        size: 108 20
         anchors.top: prev.bottom
         anchors.left: parent.left
         !text: tr('Setup Link')
         margin-top: 15
         image-source: /images/ui/buttons-blue
+        color: #ebbf90
         visible: false
         @onClick: setupLinkAnnouncement()
     Label
@@ -691,6 +698,7 @@ AnnouncementContent < Panel
       only-number: true
       @onTextChange: modules.game_announcement.onEditTimeDate(self, self:getText(), 'day')
       !placeholder: tr('00')
+      placeholder-font: $var-cip-font
     Label
       id: monthLabel
       !text: tr('Month:')
@@ -721,6 +729,7 @@ AnnouncementContent < Panel
       only-number: true
       @onTextChange: modules.game_announcement.onEditTimeDate(self, self:getText(), 'month')
       !placeholder: tr('00')
+      placeholder-font: $var-cip-font
     Label
       id: yearLabel
       focusable: false
@@ -751,6 +760,7 @@ AnnouncementContent < Panel
       only-number: true
       @onTextChange: modules.game_announcement.onEditTimeDate(self, self:getText(), 'year')
       !placeholder: tr('00')
+      placeholder-font: $var-cip-font
     Label
       id: hourLabel
       focusable: false
@@ -781,6 +791,7 @@ AnnouncementContent < Panel
       only-number: true
       @onTextChange: modules.game_announcement.onEditTimeDate(self, self:getText(), 'hour')
       !placeholder: tr('00')
+      placeholder-font: $var-cip-font
     Label
       id: minuteLabel
       focusable: false
@@ -810,6 +821,7 @@ AnnouncementContent < Panel
       only-number: true
       @onTextChange: modules.game_announcement.onEditTimeDate(self, self:getText(), 'minutes')
       !placeholder: tr('00')
+      placeholder-font: $var-cip-font
 
     Label
       id: endTitle
@@ -850,6 +862,7 @@ AnnouncementContent < Panel
       margin-top: 5
       only-number: true
       !placeholder: tr('00')
+      placeholder-font: $var-cip-font
     Label
       id: endMonthLabel
       focusable: false
@@ -880,6 +893,7 @@ AnnouncementContent < Panel
       only-number: true
       @onTextChange: modules.game_announcement.onEditTimeDate(self, self:getText(), 'month')
       !placeholder: tr('00')
+      placeholder-font: $var-cip-font
     Label
       id: endYearLabel
       focusable: false
@@ -910,6 +924,7 @@ AnnouncementContent < Panel
       only-number: true
       @onTextChange: modules.game_announcement.onEditTimeDate(self, self:getText(), 'year')
       !placeholder: tr('00')
+      placeholder-font: $var-cip-font
     Label
       id: endHourLabel
       focusable: false
@@ -940,6 +955,7 @@ AnnouncementContent < Panel
       only-number: true
       @onTextChange: modules.game_announcement.onEditTimeDate(self, self:getText(), 'hour')
       !placeholder: tr('00')
+      placeholder-font: $var-cip-font
     Label
       id: endMinuteLabel
       focusable: false
@@ -970,6 +986,7 @@ AnnouncementContent < Panel
       only-number: true
       @onTextChange: modules.game_announcement.onEditTimeDate(self, self:getText(), 'minutes')
       !placeholder: tr('00')
+      placeholder-font: $var-cip-font
   Panel
     id: historyPanel
     focusable: false
@@ -1227,6 +1244,7 @@ RaidsContent < Panel
         only-number: true
         @onTextChange:
         !placeholder: tr('00')
+        placeholder-font: $var-cip-font
       Label
         id: monthLabel
         !text: tr('Month:')
@@ -1257,6 +1275,7 @@ RaidsContent < Panel
         only-number: true
         @onTextChange:
         !placeholder: tr('00')
+        placeholder-font: $var-cip-font
       Label
         id: yearLabel
         focusable: false
@@ -1287,6 +1306,7 @@ RaidsContent < Panel
         only-number: true
         @onTextChange:
         !placeholder: tr('00')
+        placeholder-font: $var-cip-font
       Label
         id: hourLabel
         focusable: false
@@ -1317,6 +1337,7 @@ RaidsContent < Panel
         only-number: true
         @onTextChange:
         !placeholder: tr('00')
+        placeholder-font: $var-cip-font
       Label
         id: minuteLabel
         focusable: false
@@ -1346,6 +1367,7 @@ RaidsContent < Panel
         only-number: true
         @onTextChange:
         !placeholder: tr('00')
+        placeholder-font: $var-cip-font
 
   Panel
     id: raidMessagePanel
@@ -1373,6 +1395,7 @@ RaidsContent < Panel
       padding-left: 3
       padding-top: 1
       !placeholder: tr('Enter the message to be displayed during the raid.')
+      placeholder-font: $var-cip-font
 
   Panel
     id: worldsRaidPanel
@@ -1546,7 +1569,7 @@ NewMainWindow
       anchors.bottom: parent.bottom
       anchors.right: parent.right
       !text: tr('Cancel')
-      size: 43 20
+      size: 74 20
       @onClick: modules.game_announcement.closeAnnouncementList()
     Button
       id: newButton
@@ -1562,7 +1585,7 @@ NewMainWindow
       anchors.bottom: parent.bottom
       anchors.right: prev.left
       !text: tr('Send')
-      size: 43 20
+      size: 54 20
       margin-right: 5
       enabled: false
       @onClick: modules.game_announcement.sendAnnouncement()

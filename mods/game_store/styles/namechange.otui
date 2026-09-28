@@ -7,7 +7,7 @@ NameChangeWindow < MainWindow
     anchors.left: parent.left
     margin-top: 5
     margin-left: 5
-    !text: tr('Please enter the new name for your character:')
+    !text: tr('New name for your character:')
     text-auto-resize: true
   TextEdit
     id: nameText
@@ -26,8 +26,8 @@ NameChangeWindow < MainWindow
 
   Button
     id: cancelButton
-    font: cipsoftFont
-    size: 40 20
+    font: $var-cip-font
+    size: 74 20
     !text: tr('Cancel')
     anchors.right: parent.right
     anchors.top: separator.bottom
@@ -36,7 +36,7 @@ NameChangeWindow < MainWindow
 
   Button
     id: okNameChangeButton
-    font: cipsoftFont
+    font: $var-cip-font
     size: 40 20
     !text: tr('Ok')
     anchors.right: prev.left

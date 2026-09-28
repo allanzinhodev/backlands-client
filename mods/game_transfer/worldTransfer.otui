@@ -19,7 +19,7 @@ StepOne < Panel
     margin-top: -2
     !text: tr('Character Name')
     font: $var-cip-font
-    color: #ffffff
+    color: #ebbf90
     text-auto-resize: true
 
   UIWidget
@@ -118,7 +118,7 @@ StepTwo < Panel
     margin-top: -2
     !text: tr('Character Name')
     font: $var-cip-font
-    color: #ffffff
+    color: #ebbf90
     text-auto-resize: true
 
   Label
@@ -130,7 +130,7 @@ StepTwo < Panel
     !text: tr('World (World Type)')
     font: $var-cip-font
     text-auto-resize: true
-    color: #ffffff
+    color: #ebbf90
     text-auto-resize: true
 
   CheckBox
@@ -182,7 +182,7 @@ StepTwo < Panel
     margin-right: 10
 
 NewMainWindow
-  id: mainWindow
+  id: transferWindow
   !text: tr('Set Up a Character World Transfer - Step 1 of 2')
   size: 450 356
   //StepTwo Window Size 450 430

@@ -1,6 +1,16 @@
+// A placa ja e a arte pixel nova; so o texto continuava na cipsoftFont de 8px, o
+// que deixava todo botao do cliente com uma legenda miuda no meio de uma UI de
+// 16px. E a inconsistencia que mais aparece, porque nao existe janela sem botao.
+//
+// A placa dourada pede tinta escura. A variante `/images/ui/buttons-blue` e o
+// oposto - fundo #150e0c com anel #4e2f24, o botao secundario da tela de login -
+// entao todo widget que troca a image-source para ela precisa declarar
+// `color: #ebbf90` junto, senao o rotulo fica tinta escura sobre fundo escuro e
+// some. Sao 18 sites: npctrade, announcement, battlepass, cyclopedia, helper,
+// lootsplitter e sidebuttons.
 Button < UIButton
-  font: cipsoftFont
-  color: $var-text-color
+  font: $var-cip-font
+  color: #150e0c
   size: 43 20
   text-offset: 0 2
   image-source: /images/ui/buttons
@@ -116,7 +126,7 @@ TextButton < UIButton
   image-clip: 0 0 22 23
   image-border: 3
   text-offset: 0 1
-  color: #e0e0e0
+  color: #ebbf90
 
 ImageButton < UIButton
   size: 22 23
@@ -124,7 +134,7 @@ ImageButton < UIButton
   image-clip: 0 0 22 23
   image-border: 3
   text-offset: 0 1
-  color: #e0e0e0
+  color: #ebbf90
 
 PreviousConsoleQtButton < UIButton
   size: 18 16
@@ -211,7 +221,7 @@ NextQtButton < UIButton
     image-clip: 48 16 16 16
 
 QtButton < UIButton
-  font: cipsoftFont
+  font: $var-cip-font
   size: 106 23
   text-offset: 0 0
   image-source: /images/ui/button
@@ -219,14 +229,14 @@ QtButton < UIButton
   image-border: 3
   padding: 5 10 5 10
   opacity: 1.0
-  color: white
+  color: #ebbf90
 
   $pressed:
     image-clip: 0 46 22 23
     text-offset: 1 1
 
   $disabled:
-    color: white
+    color: #ebbf90
     opacity: 0.6
 
 BigPremiumButton < UIButton
@@ -251,7 +261,7 @@ MiniPremiumButton < UIButton
 
 Button4 < UIButton
   font: $var-main-font
-  color: white
+  color: #ebbf90
   size: 106 23
   text-offset: 0 1
   image-source: /images/ui/button
@@ -371,8 +381,8 @@ MoveDownButton < UIButton
 RemoveButton < UIButton
   size: 17 17
   image-color: #c0c0c0
-  font: $var-main-font
-  color: #c0c0c0
+  font: verdana-11px-antialised
+  color: #ebbf90
   text: ✕
   text-align: center
   $hover:

@@ -12,6 +12,7 @@ Window
     CheckBox
       id: hudMasterCheckBox
       !text: tr('Show in HUD')
+      width: 124
       anchors.verticalCenter: parent.verticalCenter
       anchors.left: parent.left
       margin-left: 5

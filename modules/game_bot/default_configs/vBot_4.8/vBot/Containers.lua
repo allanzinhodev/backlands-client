@@ -231,7 +231,7 @@ ContListsWindow < MainWindow
     margin-top: 5
     text: Add
     width: 40
-    font: cipsoftFont
+    font: $var-cip-font
 
   HorizontalSeparator
     id: separator
@@ -291,7 +291,7 @@ ContListsWindow < MainWindow
   Button
     id: closeButton
     !text: tr('Close')
-    font: cipsoftFont
+    font: $var-cip-font
     anchors.right: parent.right
     anchors.bottom: parent.bottom
     size: 45 21
@@ -518,7 +518,7 @@ if rootWidget then
             end
             contListWindow.contId:setItemId(0)
             contListWindow.contName:setText('')
-            contListWindow.contName:setColor('white')
+            contListWindow.contName:setColor("#ebbf90")
             contListWindow.contName:setImageColor('#ffffff')
             contListWindow.contId:setImageColor('#ffffff')
             refreshContNames(id)

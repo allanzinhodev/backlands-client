@@ -191,6 +191,7 @@ NewMainWindow
           color: $var-text-cip-color-white
           text-align: center
           !text: tr('Boost Kills')
+          width: 116
           phantom: true
 
 
@@ -271,6 +272,7 @@ NewMainWindow
           color: $var-text-cip-color-white
           text-align: center
           !text: tr('Reduce Item Amount')
+          width: 192
           phantom: true
 
 

@@ -158,6 +158,7 @@ ShopPermButton < UIWidget
     color: $var-text-cip-color-white
     text-align: center
     !text: tr('Unlock permanently')
+    width: 206
     phantom: true
 
 WeeklyKillTasksWindow < StaticWindow
@@ -189,7 +190,7 @@ WeeklyProgressWindow < StaticWindow
     !text: tr('Reward Multiplier')
     anchors.top: parent.top
     anchors.left: parent.left
-    width: 130
+    width: 176
     height: 18
     font: $var-cip-main-font
     color: $var-text-cip-color
@@ -200,7 +201,7 @@ WeeklyProgressWindow < StaticWindow
     !text: tr('Completed Tasks')
     anchors.bottom: parent.bottom
     anchors.left: parent.left
-    width: 130
+    width: 164
     height: 18
     font: $var-cip-main-font
     color: $var-text-cip-color
@@ -407,7 +408,7 @@ WeeklyRewardsWindow < Window
     font: $var-cip-main-font
     color: $var-text-cip-color
     text-align: center
-    !text: tr('7 day(s) remaining')
+    !text: tr('7 day(s) left')
 
 DifficultyButton < BaseLargeButtonTemplate
   $on:

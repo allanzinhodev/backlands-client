@@ -11,7 +11,7 @@ ScrollBarSlider < UIButton
 ScrollBarValueLabel < Label
   id: valueLabel
   anchors.fill: parent
-  color: white
+  color: #ebbf90
   text-align: center
 
 VerticalScrollBarSlider < ScrollBarSlider
@@ -70,7 +70,7 @@ HorizontalScrollBar < UIScrollBar
   image-border: 1
 
   $disabled:
-    color: #bbbbbb88
+    color: $var-text-color-disabled
 
   UIButton
     id: decrementButton

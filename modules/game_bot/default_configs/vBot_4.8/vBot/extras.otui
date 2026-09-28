@@ -146,13 +146,13 @@ ExtrasWindow < MainWindow
     maximum: 600
     margin-left: 3
     margin-right: 3
-    background: #ffffff88
+    background: #ebbf9088
 
   Button
     id: closeButton
     !text: tr('Close')
-    font: cipsoftFont
+    font: $var-cip-font
     anchors.right: parent.right
     anchors.bottom: parent.bottom
-    size: 45 21
+    size: 62 21
     margin-right: 5

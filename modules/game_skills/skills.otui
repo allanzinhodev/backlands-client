@@ -101,12 +101,12 @@ MiniWindow
       SkillValueLabel
 
     SkillButton
-      margin-top: -3
+      margin-top: 0
       id: xpGainRate
       height: 15
       SkillNameLabel
         id: gainLabel
-        !text: tr('XP Gain Rate')
+        !text: tr('XP Rate')
       SkillValueLabel
 
     HorizontalSeparator
@@ -139,7 +139,7 @@ MiniWindow
       tooltip-delayed: true
       SkillNameLabel
         id: storeBoostLabel
-        !text: tr('Store Boost')
+        !text: tr('Store')
       SkillValueLabel
         id: storeBoostValue
         margin-top: 0
@@ -158,7 +158,7 @@ MiniWindow
       tooltip-delayed: true
       SkillNameLabel
         id: temporaryBonusLabel
-        !text: tr('Temporary')
+        !text: tr('Bonus')
       SkillValueLabel
         id: temporaryBonusValue
         margin-top: 0
@@ -179,7 +179,7 @@ MiniWindow
       visible: false
       SkillNameLabel
         id: battlePassBoostLabel
-        !text: tr('Battle Pass')
+        !text: tr('Battle')
       SkillValueLabel
         id: battlePassBoostValue
         margin-top: 0
@@ -210,7 +210,7 @@ MiniWindow
       SkillValueLabel
 
     SkillButton
-      margin-top: -3
+      margin-top: 0
       id: mana
       height: 15
       SkillNameLabel
@@ -218,7 +218,7 @@ MiniWindow
       SkillValueLabel
 
     SkillButton
-      margin-top: -3
+      margin-top: 0
       id: soul
       height: 15
       SkillNameLabel
@@ -226,7 +226,7 @@ MiniWindow
       SkillValueLabel
 
     SkillButton
-      margin-top: -3
+      margin-top: 0
       id: capacity
       height: 15
       SkillNameLabel
@@ -234,7 +234,7 @@ MiniWindow
       SkillValueLabel
 
     SkillButton
-      margin-top: -3
+      margin-top: 0
       id: speed
       height: 15
       SkillNameLabel
@@ -242,14 +242,14 @@ MiniWindow
       SkillValueLabel
 
     SkillButton
-      margin-top: -3
+      margin-top: 0
       id: regenerationTime
       SkillNameLabel
         !text: tr('Food')
       SkillValueLabel
 
     SkillButton
-      margin-top: -3
+      margin-top: 0
       id: stamina
       SkillNameLabel
         !text: tr('Stamina')

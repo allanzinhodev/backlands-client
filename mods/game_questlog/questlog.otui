@@ -1,7 +1,7 @@
 QuestLabel < UIWidget
   height: 16
   $focus:
-    background-color: #ffffff22
+    background-color: #ebbf9022
   UIWidget
     id: completeIcon
     size: 12 9
@@ -99,7 +99,7 @@ NewMainWindow
           anchors.left: parent.left
           focusable: true
           vertical-scrollbar: questContentScrollBar
-          background-color: #484848
+          background-color: #2c1e19
         VerticalScrollBar
           id: questContentScrollBar
           anchors.top: prev.top
@@ -130,7 +130,8 @@ NewMainWindow
           image-source: /images/ui/search-text-void
           margin-top: 6
           text-align: LeftCenter
-          !placeholder: tr("Type to search")
+          !placeholder: tr("Search")
+          placeholder-font: $var-cip-font
           focusable: true
           padding-left: 4
           padding-top: 2
@@ -178,19 +179,22 @@ NewMainWindow
           margin-top: 6
           change-cursor-image: false
           @onCheckChange: modules.game_questlog.onVisibleCheck(self:getId(), self:isChecked())
+        // O rotulo e o valor formam um par: ancorado a esquerda com margem fixa ele
+        // crescia contra o valor preso em parent.right e escrevia por cima dele. Preso
+        // ao valor, o par inteiro cresce para a esquerda, onde ha espaco.
         Label
           id: completQuestsLabel
           anchors.top: prev.top
-          anchors.left: parent.left
+          anchors.right: next.left
           margin-top: -1
-          margin-left: 199
+          margin-right: 6
           !text: tr('Quests completed:')
           font: $var-cip-font
           text-auto-resize: true
           color: $var-text-cip-color
         Label
           id: completQuestsValue
-          anchors.top: prev.top
+          anchors.top: showCompleted.top
           anchors.right: parent.right
           margin-right: 1
           !text: tr('0')
@@ -214,16 +218,16 @@ NewMainWindow
         Label
           id: hiddenQuestsLabel
           anchors.top: prev.top
-          anchors.left: parent.left
+          anchors.right: next.left
           margin-top: -1
-          margin-left: 223
+          margin-right: 6
           !text: tr('Quests hidden:')
           font: $var-cip-font
           text-auto-resize: true
           color: $var-text-cip-color
         Label
           id: hiddenQuestsValue
-          anchors.top: prev.top
+          anchors.top: showHidden.top
           anchors.right: parent.right
           margin-right: 1
           !text: tr('0')
@@ -258,7 +262,7 @@ NewMainWindow
           anchors.left: parent.left
           focusable: true
           vertical-scrollbar: missionTitleScrollBar
-          background-color: #404040
+          background-color: #271b17
         VerticalScrollBar
           id: missionTitleScrollBar
           anchors.top: prev.top
@@ -318,21 +322,19 @@ NewMainWindow
       margin-bottom: 10
     Button
       id: closeButton
-      size: 43 20
+      size: 62 20
       !text: tr('Close')
       anchors.right: parent.right
       anchors.bottom: parent.bottom
-      font: cipsoftFont
-      color: #ffffff
+      color: #ebbf90
       @onClick: modules.game_questlog.hide()
     Button
       id: trackerButton
-      size: 86 20
+      size: 142 20
       !text: tr('Quest Tracker')
       anchors.bottom: parent.bottom
       anchors.left: parent.left
-      font: cipsoftFont
-      color: #ffffff
+      color: #ebbf90
       @onClick: modules.game_questlog.toggleTracker()
 
 QuestTrackerLabel < UIWidget

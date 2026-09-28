@@ -557,8 +557,8 @@ function onHealthChange(localPlayer, health, maxHealth)
     healthBar:setImageSource(imageSource)
     healthBar:setImageClip(healthClip)
     healthBar:setImageRect(imageRect)
-    healthBar:setFont("Verdana Bold-11px")
-    healthBar:setColor("#ffffff")
+    healthBar:setFont("silkscreen-16")
+    healthBar:setColor("#ebbf90")
     healthBar:setValue(health, 0, maxHealth)
     if healthBar.statusHealth then
         healthBar.statusHealth:setText(string.format("%d / %d", health, maxHealth))
@@ -626,7 +626,7 @@ function onManaShieldChange(localPlayer, mana, maxMana)
     local shieldTextFormat = currentLayout == 'large' and "%d / %d@" or "(%d / %d@)"
     manaShieldText:setText(shieldTextFormat:format(mana, maxMana))
     manaShieldText:setFont("Icon-VBold-11px")
-    manaShieldText:setColor("#ffffff")
+    manaShieldText:setColor("#ebbf90")
     manaShieldBar:setValue(mana, 0, maxMana)
 end
 
@@ -671,8 +671,8 @@ function onManaChange(localPlayer, mana, maxMana)
     manaBarToUpdate:setImageRect(imageRect)
 
     manaText:setText(string.format("%d / %d", mana, maxMana))
-    manaText:setFont("Verdana Bold-11px")
-    manaText:setColor("#ffffff")
+    manaText:setFont("silkscreen-16")
+    manaText:setColor("#ebbf90")
     manaBarToUpdate:setValue(mana, 0, maxMana)
     manaText:setMarginBottom(currentLayout == 'large' and (useShield and 7 or 0) or 0)
 end
@@ -699,8 +699,8 @@ function onLevelChange(localPlayer, value, percent)
     experienceBar:setPercent(percent)
     if levelLabel then
         levelLabel:setText(value)
-        levelLabel:setFont("Verdana Bold-11px")
-        levelLabel:setColor("#c0c0c0")
+        levelLabel:setFont("silkscreen-16")
+        levelLabel:setColor("#ebbf90")
         levelLabel:setTextAutoResize(true)
     end
 end
@@ -950,8 +950,8 @@ function setSkillValue(id, value)
     local levelLabel = panel.level
     if levelLabel then
         levelLabel:setText(value)
-        levelLabel:setFont("Verdana Bold-11px")
-        levelLabel:setColor("#c0c0c0")
+        levelLabel:setFont("silkscreen-16")
+        levelLabel:setColor("#ebbf90")
         levelLabel:setTextAutoResize(true)
     end
 end

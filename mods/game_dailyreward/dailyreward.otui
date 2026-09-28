@@ -20,7 +20,7 @@ DailyRewardPanel < UIButton
     enabled: false
 
 MiniWindowDailyReward < Panel
-  font: verdana-11px-antialised
+  font: $var-cip-font
   icon-rect: 4 4 16 16
   width: 192
   height: 200
@@ -39,7 +39,7 @@ MiniWindowDailyReward < Panel
 MainWindow
   id: dailyrewardWindow
   !text: tr('Reward Wall')
-  color: #909090
+  color: #a87f68
   size: 538 521
   @onEscape: modules.game_dailyreward.closeDaily()
 
@@ -47,10 +47,10 @@ MainWindow
     id: miniWindowBonuses
     anchors.top: parent.top
     anchors.right: parent.right
-    size: 506 126
+    size: 506 162
     margin-top: -5
     !text: tr('Resting Area Bonuses')
-    color: #909090
+    color: #a87f68
     text-offset: 180 2
     image-source: /images/ui/p2pixel-up-frame-borderimage
     image-border: 3
@@ -108,7 +108,7 @@ MainWindow
           anchors.verticalCenter: parent.verticalCenter
           text-auto-resize: true
           margin-left: -1
-          color: white
+          color: #ebbf90
           font: $var-cip-font
         UIWidget
           id: timerStreakCheck
@@ -121,6 +121,7 @@ MainWindow
 
       FlatPanel
         id: streakWidget
+        font: $var-cip-font
         anchors.bottom: timerStreakPanel.top
         anchors.right: parent.right
         margin-bottom: 5
@@ -217,7 +218,8 @@ MainWindow
       id: bonusLabel
       anchors.top: preyBonus.bottom
       anchors.left: parent.left
-      size: 416 28
+      size: 416 64
+      text-wrap: true
       margin-top: 5
       margin-left: 78
       !text: tr('You already claimed your daily reward.')
@@ -232,7 +234,7 @@ MainWindow
     size: 506 133
     margin-top: 10
     !text: tr('Daily Rewards')
-    color: #909090
+    color: #a87f68
     text-offset: 200 2
     image-source: /images/ui/t2pixel-up-frame-borderimage
     image-auto-resize: true
@@ -709,7 +711,7 @@ MainWindow
       anchors.left: parent.left
       margin-left: 5
       margin-top: 1
-      font: pVerdana Bold-11px
+      font: $var-cip-font
       Label
         id: freeDescLabel
         anchors.top: parent.top
@@ -721,7 +723,7 @@ MainWindow
         margin-left: 1
         opacity: 0.5
         !text: tr('')
-        font: pVerdana Bold-11px
+        font: $var-cip-font
         color: $var-text-cip-color
 
     UIWidget
@@ -757,7 +759,7 @@ MainWindow
   Button
     id: close
     !text: tr('Close')
-    size: 43 20
+    size: 62 20
     anchors.right: parent.right
     anchors.bottom: parent.bottom
     margin-bottom: 7
@@ -766,7 +768,7 @@ MainWindow
   Button
     id: histoy
     !text: tr('History')
-    size: 43 20
+    size: 82 20
     anchors.right: prev.left
     anchors.bottom: parent.bottom
     margin-bottom: 7
