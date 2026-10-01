@@ -9,7 +9,8 @@ local protocolLogin
 local loginEvent
 local characterListEvent
 local settingsSaveEvent
-local showEvent
+local startupEvent
+local autoLoginEvent
 
 local customServerSelectorPanel
 local serverSelectorPanel
@@ -18,6 +19,7 @@ local clientVersionSelector
 local serverHostTextEdit
 local rememberPasswordBox
 local rememberEmailBox
+local autoLoginBox
 local protos = { "860", "1524" }
 
 -- Google Configuration
@@ -536,28 +538,51 @@ function EnterGame.init()
   rememberEmailBox:setChecked(#account > 0)
 
   rememberPasswordBox:setChecked(#password > 0)
+  autoLoginBox = enterGame:getChildById('autoLoginBox')
+  -- migrate the fork's former 'auto-login' setting to upstream's 'autologin'
+  if g_settings.getBoolean('auto-login', false) then
+    g_settings.set('autologin', true)
+    g_settings.remove('auto-login')
+  end
+  autoLoginBox:setChecked(g_settings.getBoolean('autologin'))
+  EnterGame.onAutoLoginChange()
   if hiddenEmail == "1" then
     enterGame.accountNameTextEdit:setTextHidden(true)
-  end
-
-  local autoLoginBox = enterGame:getChildById('autoLoginBox')
-  autoLoginBox:setChecked(g_settings.getBoolean('auto-login', false))
-
-  if g_settings.getBoolean('auto-login', false)
-     and account ~= '' and password ~= ''
-     and not G.autoLoginFired then
-    G.autoLoginFired = true -- dispara uma unica vez por sessao
-    scheduleEvent(function() EnterGame.doLogin() end, 200)
   end
 
   if g_game.isOnline() then
     return EnterGame.hide()
   end
 
-  showEvent = scheduleEvent(function()
-    showEvent = nil
+  startupEvent = scheduleEvent(function()
+    startupEvent = nil
     if not EnterGame then return end
+    if g_game.isOnline() or g_game.isLogging() or G.characters or CharacterList.isVisible()
+        or loginEvent or loadBox or protocolLogin or characterListEvent
+        or httpOperationId then
+      return
+    end
     EnterGame.show()
+    if #account > 0 and #password > 0 and g_settings.getBoolean('autologin') then
+      autoLoginEvent = addEvent(function()
+        autoLoginEvent = nil
+        if #g_crypt.decrypt(g_settings.get('account')) == 0
+            or #g_crypt.decrypt(g_settings.get('password')) == 0 then
+          autoLoginBox:setChecked(false)
+          autoLoginBox:setEnabled(false)
+          g_settings.set('autologin', false)
+          return
+        end
+        if not g_settings.getBoolean('autologin')
+            or not rememberEmailBox:isChecked() or not rememberPasswordBox:isChecked()
+            or g_game.isOnline() or g_game.isLogging() or G.characters or CharacterList.isVisible()
+            or loginEvent or loadBox or protocolLogin or characterListEvent
+            or httpOperationId then
+          return
+        end
+        EnterGame.doLogin()
+      end)
+    end
   end, 100)
 
   connect(g_game, {
@@ -595,9 +620,13 @@ function EnterGame.terminate()
     removeEvent(settingsSaveEvent)
     settingsSaveEvent = nil
   end
-  if showEvent then
-    removeEvent(showEvent)
-    showEvent = nil
+  if startupEvent then
+    removeEvent(startupEvent)
+    startupEvent = nil
+  end
+  if autoLoginEvent then
+    removeEvent(autoLoginEvent)
+    autoLoginEvent = nil
   end
 
   cancelGoogleAuthFlow()
@@ -658,6 +687,7 @@ function EnterGame.terminate()
   serverHostTextEdit = nil
   rememberPasswordBox = nil
   rememberEmailBox = nil
+  autoLoginBox = nil
 
   EnterGame = nil
 end
@@ -865,6 +895,10 @@ local function performLogin(account, password, token, host, gtoken)
 end
 
 function EnterGame.doLogin(account, password, token, host, gtoken)
+  if autoLoginEvent then
+    removeEvent(autoLoginEvent)
+    autoLoginEvent = nil
+  end
   if loginEvent then
     return
   end
@@ -995,17 +1029,18 @@ function chooseButtonVisibility()
   else
     buttonPass:setVisible(false)
   end
+  if autoLoginBox then
+    EnterGame.onAutoLoginChange()
+  end
 end
 
-function chooseAutoLogin()
-  local box = enterGame:getChildById('autoLoginBox')
-  if box:isChecked() then
-    rememberEmailBox:setChecked(true)
-    rememberPasswordBox:setChecked(true)
-    chooseButtonVisibility()
+function EnterGame.onAutoLoginChange()
+  local canAutoLogin = rememberEmailBox:isChecked() and rememberPasswordBox:isChecked()
+  autoLoginBox:setEnabled(canAutoLogin)
+  if not canAutoLogin then
+    autoLoginBox:setChecked(false)
   end
-  g_settings.set('auto-login', box:isChecked())
-  g_settings.save()
+  g_settings.set('autologin', autoLoginBox:isChecked())
 end
 
 local function isValidEmail(value)

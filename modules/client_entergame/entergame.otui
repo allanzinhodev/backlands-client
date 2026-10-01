@@ -12,6 +12,8 @@ ButtonInformation < Button
 EnterGameWindow
   id: enterGame
   size: 280 262
+  $mobile:
+    size: 320 314
   @onEnter: EnterGame.doLogin()
 
   MenuLabel
@@ -161,11 +163,12 @@ EnterGameWindow
 
   CheckBox
     id: autoLoginBox
+    enabled: false
     anchors.left: parent.left
     anchors.right: parent.right
     anchors.top: rememberPasswordBox.bottom
     margin-top: 5
-    @onCheckChange: chooseAutoLogin()
+    @onCheckChange: EnterGame.onAutoLoginChange()
 
     Label
       !text: tr('Auto login')
