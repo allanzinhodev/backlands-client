@@ -21,6 +21,7 @@
  */
 
 #include "protocolgame.h"
+#include "spellcooldown.h"
 
 #include <algorithm>
 #include <ctime>
@@ -2372,10 +2373,9 @@ void ProtocolGame::parsePlayerModes(const InputMessagePtr& msg)
 
 void ProtocolGame::parseSpellCooldown(const InputMessagePtr& msg)
 {
-    int spellId = msg->getU8();
-    int delay = msg->getU32();
+    const auto cooldown = SpellCooldownProtocol::read(*msg, g_game.getFeature(Otc::GameAstraExtendedSpellIds));
 
-    g_lua.callGlobalField("g_game", "onSpellCooldown", spellId, delay);
+    g_lua.callGlobalField("g_game", "onSpellCooldown", cooldown.spellId, cooldown.delay);
 }
 
 void ProtocolGame::parseSpellGroupCooldown(const InputMessagePtr& msg)
@@ -5306,7 +5306,23 @@ void ProtocolGame::parseClientEvent(const InputMessagePtr& msg)
         case Otc::CLIENT_EVENT_TYPE_BOSSTIARY: {
             const auto raceId = msg->getU16();
             const auto progressLevel = msg->getU8();
-            g_lua.callGlobalField("g_game", "onClientEvent", type, raceId, progressLevel);
+            if (g_game.getFeature(Otc::GameAstraBestiaryBannerCreatureData)) {
+                const auto name = msg->getString();
+                Outfit outfit;
+                outfit.setId(msg->getU16());
+                if (outfit.getId() != 0) {
+                    outfit.setHead(msg->getU8());
+                    outfit.setBody(msg->getU8());
+                    outfit.setLegs(msg->getU8());
+                    outfit.setFeet(msg->getU8());
+                    outfit.setAddons(msg->getU8());
+                } else {
+                    outfit.setAuxId(msg->getU16());
+                }
+                g_lua.callGlobalField("g_game", "onClientEvent", type, raceId, progressLevel, name, outfit);
+            } else {
+                g_lua.callGlobalField("g_game", "onClientEvent", type, raceId, progressLevel);
+            }
             break;
         }
         case Otc::CLIENT_EVENT_TYPE_QUEST: {

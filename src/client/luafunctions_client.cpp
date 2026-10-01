@@ -67,6 +67,7 @@ void Client::registerLuaFunctions()
 
     g_lua.registerSingletonClass("g_things");
     g_lua.bindSingletonFunction("g_things", "loadDat", &ThingTypeManager::loadDat, &g_things);
+    g_lua.bindSingletonFunction("g_things", "saveDatDisplacementToWorkDir", &ThingTypeManager::saveDatDisplacementToWorkDir, &g_things);
 #ifdef WITH_ENCRYPTION
     g_lua.bindSingletonFunction("g_things", "saveDat", &ThingTypeManager::saveDat, &g_things);
     g_lua.bindSingletonFunction("g_things", "dumpTextures", &ThingTypeManager::dumpTextures, &g_things);
@@ -82,6 +83,7 @@ void Client::registerLuaFunctions()
     g_lua.bindSingletonFunction("g_things", "getThingType", &ThingTypeManager::getThingType, &g_things);
     g_lua.bindSingletonFunction("g_things", "getItemType", &ThingTypeManager::getItemType, &g_things);
     g_lua.bindSingletonFunction("g_things", "getThingTypes", &ThingTypeManager::getThingTypes, &g_things);
+    g_lua.bindSingletonFunction("g_things", "isValidDatId", &ThingTypeManager::isValidDatId, &g_things);
     g_lua.bindSingletonFunction("g_things", "findItemTypeByClientId", &ThingTypeManager::findItemTypeByClientId, &g_things);
     g_lua.bindSingletonFunction("g_things", "findItemTypeByName", &ThingTypeManager::findItemTypeByName, &g_things);
     g_lua.bindSingletonFunction("g_things", "findItemTypesByName", &ThingTypeManager::findItemTypesByName, &g_things);
@@ -689,6 +691,8 @@ void Client::registerLuaFunctions()
     g_lua.bindClassMemberFunction<ThingType>("getDisplacement", &ThingType::getDisplacement);
     g_lua.bindClassMemberFunction<ThingType>("getDisplacementX", &ThingType::getDisplacementX);
     g_lua.bindClassMemberFunction<ThingType>("getDisplacementY", &ThingType::getDisplacementY);
+    g_lua.bindClassMemberFunction<ThingType>("setDisplacement", &ThingType::setDisplacement);
+    g_lua.bindClassMemberFunction<ThingType>("setDisplacementEnabled", &ThingType::setDisplacementEnabled);
     g_lua.bindClassMemberFunction<ThingType>("getExactSize", &ThingType::getExactSize);
     g_lua.bindClassMemberFunction<ThingType>("getRealSize", &ThingType::getRealSize);
     g_lua.bindClassMemberFunction<ThingType>("getLayers", &ThingType::getLayers);
@@ -807,6 +811,7 @@ void Client::registerLuaFunctions()
     g_lua.bindClassMemberFunction<Item>("setTooltip", &Item::setTooltip);
     g_lua.bindClassMemberFunction<Item>("getQuickLootFlags", &Item::getQuickLootFlags);
     g_lua.bindClassMemberFunction<Item>("setQuickLootFlags", &Item::setQuickLootFlags);
+    g_lua.bindClassMemberFunction<Item>("hasLootHighlight", &Item::hasLootHighlightForLua);
     g_lua.bindClassMemberFunction<Item>("getObtainFlags", &Item::getObtainFlags);
     g_lua.bindClassMemberFunction<Item>("setObtainFlags", &Item::setObtainFlags);
     g_lua.bindClassMemberFunction<Item>("isAmmo", &Item::isAmmo);
@@ -1061,6 +1066,8 @@ void Client::registerLuaFunctions()
     g_lua.bindClassMemberFunction<UICreature>("isAnimating", &UICreature::isAnimating);
     g_lua.bindClassMemberFunction<UICreature>("setCenter", &UICreature::setCenter);
     g_lua.bindClassMemberFunction<UICreature>("setOldScaling", &UICreature::setOldScaling);
+    g_lua.bindClassMemberFunction<UICreature>("setDrawMountOnly", &UICreature::setDrawMountOnly);
+    g_lua.bindClassMemberFunction<UICreature>("setIgnoreDisplacement", &UICreature::setIgnoreDisplacement);
     g_lua.bindClassMemberFunction<UICreature>("isColoredOutfit", &UICreature::isColoredOutfit);
     g_lua.bindClassMemberFunction<UICreature>("isColoredMount", &UICreature::isColoredMount);
 
